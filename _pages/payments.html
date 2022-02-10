@@ -1,0 +1,233 @@
+---
+layout: default
+permalink: /payments/
+title: Payments
+description: Clients can use this page to pay for the services they have received from me.
+keywords: services, payment, freelancing, saif khan, saifkhichi96
+icons: true
+---
+
+<style>
+  form h2 {
+    text-transform: none;
+    font-size: 13pt;
+  }
+
+  .mdc-text-field {
+    height: 36px !important;
+    border-radius: 8px;
+    background-color: #0001;
+  }
+
+  .mdc-text-field input {
+    height: 36px !important;
+    padding: 8px 0px;
+    caret-color: var(--mdc-theme-on-surface) !important;
+  }
+
+  .mdc-text-field input:focus {
+    border: 0;
+  }
+
+  .mdc-button:disabled {
+    background: var(--mdc-theme-overlay) !important;
+  }
+
+</style>
+
+<div class="c-major-r">
+  <section>
+    <p>
+      Do you have a pending invoice for a service you received from us? You can securely and easily pay here with a credit or debit card. All major cards are accepted.
+    </p>
+
+    <p>
+      <strong>How does it work?</strong> You should have received your invoice via our regular channel of communication (e.g., in email). Each invoice has a unique 10-digit identifier of form XXXXXX-XXXX printed on top-right corner. Use this invoice
+      number to complete your payment below. Alternatively, you can also pay directly using the payment link printed on your invoice document.
+    </p>
+  </section>
+
+  <section class="mdc-card mdc-card--outlined">
+    <form class="mdc-card__content">
+      <h2>Invoice #</h2>
+      <p>Enter the 10-digit number (without dash) of the invoice you want to pay.</p>
+      <p>
+        <label class="mdc-text-field" id="invoice-field">
+          <span class="mdc-text-field__ripple"></span>
+          <input class="mdc-text-field__input" type="text" minlength="10" maxlength="10" pattern="\d{10}" required>
+          <span class="mdc-line-ripple"></span>
+        </label>
+      </p>
+      <p><small>When you click 'Next', we validate the invoice number and show customer name and invoice amount for confirmation.</small></p>
+      <div class="mdc-touch-target-wrapper" style="margin-top: 8px;">
+        <button class="mdc-button mdc-button--unelevated" id="load-button">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">Next</span>
+          <span class="mdc-button__touch"></span>
+        </button>
+      </div>
+
+      <div class="mdc-card mdc-card--outlined" id="hidden" style="border: 0 !important;">
+        <br>
+        <h2>Customer Name</h2>
+        <label class="mdc-text-field" id="name-field">
+          <span class="mdc-text-field__ripple"></span>
+          <input class="mdc-text-field__input" type="text" disabled>
+          <span class="mdc-line-ripple"></span>
+        </label>
+
+        <br>
+        <h2>Amount</h2>
+        <p>
+          <label class="mdc-text-field" id="amount-field">
+            <span class="mdc-text-field__ripple"></span>
+            <span id="currency"></span>
+            <input class="mdc-text-field__input" type="text" style="padding-left: 8px;" disabled>
+            <span class="mdc-line-ripple"></span>
+          </label>
+        </p>
+
+        <p><small>By clicking 'Pay with Card', you agree to our terms and conditions. You will be redirected to a 3D Secure page to complete the payment.</small></p>
+        <a class="mdc-button mdc-button--unelevated" href="#" id="pay-button">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">Pay with Card</span>
+          <span class="mdc-button__touch"></span>
+        </a>
+      </div>
+    </form>
+
+    <div id="error-message"></div>
+  </section>
+
+  <section>
+    <h2 style="text-transform: none;">No credit card? <a href="https://www.paypal.com/paypalme/saifkhichi06" target="_blank">Pay with <i class="fab fa-paypal"></i> <strong style="color:#1e477a;">Pay</strong><strong
+          style="color:#3b7bbf;">Pal</strong></a></h2>
+    <p>
+      When paying with PayPal, please send the (exact!) amount mentioned in your invoice, include your invoice number in the transaction reference, and email a screenshot of the payment confirmation from PayPal to <a
+        href="mailto://saifkhichi96@gmail.com">saifkhichi96@gmail.com</a>.
+    </p>
+  </section>
+</div>
+
+<div class="c-minor">
+  <section>
+    <h2>Protecting Your Privacy</h2>
+    <p>We use <a href="https://stripe.com/">Stripe</a> to securely process your payments. All credit card details are encrypted and transferred over a secure network. You can <a href="https://stripe.com/docs/security/stripe">learn more about security
+        at Stripe</a> or <a href="https://www.saifkhichi.com/privacy/">read our privacy policy</a>.</p>
+
+    <h3>Delivery and Return Policy</h3>
+    <p>All our products and services are digital, and do not require physical delivery. By completing your payment here, you confirm that you have already received the services you are paying for in part or full, unless we have agreed to a different
+      arrangement. If necessary, and as agreed beforehand, any pending deliverables would be released once the payment has been processed. Clients are advised to keep a copy of the payment confirmation until then.</p>
+
+    <h3>Refund and Cancellation Policy</h3>
+    <p>If you would like to request a refund, use this <a href="/contact/">contact form</a> to get in touch with us. Please add the words '[Refund Request]' at the start of the subject line, and explain in the message what you are requesting the
+      refund for and why do you want the refund. We will normally get back to you within 1-2 business days of receiving the refund request.</p>
+
+    <p>We <strong>do NOT guarantee</strong> that your refund request will always be accepted. We may ask you to provide further information to justify your claim, and explain what went wrong in our transaction. The final decision to either accept or
+      reject your request lies solely at our discretion.</p>
+  </section>
+</div>
+
+<!-- Stripe Payements -->
+<script src="https://js.stripe.com/v3/"></script>
+
+<!-- Form Handler -->
+<script>
+  $('#invoice-field').focus();
+  // 7611236780
+  $('#hidden').hide();
+  $(function() {
+    // Get UI elements
+    const invoiceField = new mdc.textField.MDCTextField(document.getElementById('invoice-field'));
+    const nameField = new mdc.textField.MDCTextField(document.getElementById('name-field'));
+    const amountField = new mdc.textField.MDCTextField(document.getElementById('amount-field'));
+    const loadButton = $('#load-button')
+    const payButton = $('#pay-button')
+
+    // Load invoice details
+    loadButton.on('click', function() {
+      const invoiceId = invoiceField.value.trim();
+      if (invoiceId.length != 10) {
+        invoiceField.valid = false;
+      } else {
+        loadButton.prop("disabled", true);
+        firebase.auth().signOut()
+        firebase.auth().signInAnonymously()
+          .then(() => {
+            firebase.database().ref('orders/' + invoiceId).get()
+              .then((snapshot) => {
+                firebase.auth().currentUser.delete();
+                const data = snapshot.val();
+                if (data != null) {
+                  nameField.value = data['customer'];
+                  amountField.value = data['amount'];
+                  $('#currency').text(data['currency'].toUpperCase());
+
+                  $('#hidden').show()
+                  $('#invoice-field input').prop("disabled", true);
+                  payButton.prop("disabled", false);
+                  loadButton.hide()
+                } else {
+                  loadButton.prop("disabled", false);
+                  invoiceField.valid = false;
+                }
+              });
+          });
+      }
+    });
+
+    // Open a secure payment page
+    payButton.on('click', function() {
+      var PUBLISHABLE_KEY = 'pk_live_51ILGVWJkkoNLLj3Np9qG2oL496IHDTcuRbYW2lmIVSjP0xCv5eQnnWcnJmLaWpBePl9uXGCA6bKFOFSSAx0Y3khL005i3riBZx';
+
+      // Replace with the domain you want your users to be redirected back to after payment
+      var DOMAIN = location.href.replace(/[^/]*$/, '');
+
+      var stripe = Stripe(PUBLISHABLE_KEY);
+
+      // Handle any errors from Checkout
+      var handleResult = function(result) {
+        if (result.error) {
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      };
+
+      const invoiceField = new mdc.textField.MDCTextField(document.getElementById('invoice-field'));
+      const amountField = new mdc.textField.MDCTextField(document.getElementById('amount-field'));
+
+      var mode = "payment";
+      var priceId = "price_1InXGeJkkoNLLj3NROUmxgtD"
+      switch ($("#currency").text()) {
+        case "PKR":
+          priceId = "price_1InXGeJkkoNLLj3No38ueQ2a";
+          break;
+        case "EUR":
+          priceId = "price_1InXGeJkkoNLLj3NpcXPFn69";
+          break;
+        case "INR":
+          priceId = "price_1InXGeJkkoNLLj3NWZarWEXL";
+          break;
+        case "USD":
+          priceId = "price_1InXGeJkkoNLLj3NROUmxgtD";
+          break;
+      }
+      var items = [{
+        price: priceId,
+        quantity: parseInt(amountField.value)
+      }];
+
+      // Make the call to Stripe.js to redirect to the checkout page
+      // with the sku or plan ID.
+      stripe
+        .redirectToCheckout({
+          mode: mode,
+          lineItems: items,
+          successUrl: DOMAIN + '?checkout=true&order=' + invoiceField.value + '&session_id={CHECKOUT_SESSION_ID}',
+          cancelUrl: DOMAIN + '?checkout=false&order=' + invoiceField.value + '&session_id={CHECKOUT_SESSION_ID}',
+        })
+        .then(handleResult);
+    });
+  });
+
+</script>

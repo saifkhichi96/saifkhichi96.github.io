@@ -1,0 +1,459 @@
+---
+layout: default
+description: Muhammad Saif Ullah KHAN's personal blog and work portfolio containing all their software development projects, AI research and other work history.
+keywords: portfolio, developer, freelancer
+drawer: true
+github_stats: true
+---
+
+<style>
+  #services .hire-callout {
+    background: #f9f7ff;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #services .hire-callout {
+      background: #191330;
+    }
+  }
+
+  #services img {
+    width: 100%;
+    height: auto;
+  }
+
+  .mdc-list-item {
+    height: auto;
+    padding: 8px 4px;
+    border-radius: 8px;
+  }
+
+  .mdc-list-item__secondary-text {
+    position: relative !important;
+    top: -8px !important;
+  }
+
+  .project-tag {
+    font-weight: normal;
+    line-height: 0;
+  }
+
+  pwa-install {
+    display: block;
+  }
+
+  .main-content article {
+    position: relative;
+  }
+
+  .main-content header section {
+    margin: 0;
+  }
+
+  .info-grid .logo {
+    background-image: url('/{{ site.baseurl }}assets/images/banner/home-right.png');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: contain;
+    grid-column: 4 / span 3;
+    grid-row: 1 / span 3;
+    margin-bottom: 8px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .info-grid .logo {
+      background-image: url('/{{ site.baseurl }}assets/images/banner/home-right-dark.png');
+    }
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+  }
+
+  .mySlides {
+    min-height: 448px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbars: none;
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+</style>
+
+<div class="c-major-r">
+  <section>
+    <!-- Business Card -->
+    <section class="business-card">
+      <div class="info-grid">
+        <div class="name">
+          <p class="title text-uppercase"><span class="light">Saif</span> Khan</p>
+        </div>
+        <div class="bio">
+          <p class="text-uppercase"><b>{{ site.github.owner.bio }}</b></p>
+          <hr class="small" style="margin: 0;" />
+        </div>
+        <div class="logo"></div>
+        <div class="email">
+          <a class="mdc-button mdc-button--unelevated" href="/resume/">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label" style="text-transform: none;">Learn More</span>
+          </a>
+          <a class="mdc-button mdc-button--outlined" href="#services" style="margin-left: 8px; background-color: var(--mdc-theme-surface);">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label" style="text-transform: none;">Hire Me</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Callout Actions -->
+    <div class="mdc-layout-grid" style="margin: auto;">
+      <div class="mdc-layout-grid__inner" style="margin: auto;">
+        <a class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1-phone mdc-layout-grid__cell--span-3-tablet mdc-button mdc-button--outlined" href="https://www.goodreads.com/user/show/26736309-muhammad-saif-ullah-khan" rel="noopener"
+          style="text-align: center; padding: 32px;" target="_blank">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label" style="text-transform: none;"><i class="material-icons">auto_stories</i><br> Reading List</span>
+        </a>
+
+        <a class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-phone mdc-layout-grid__cell--span-2-tablet mdc-button mdc-button--outlined" href="/payments/" style="text-align: center; padding: 32px;">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label" style="text-transform: none;"><i class="material-icons">credit_card</i><br> Invoice Payment</span>
+        </a>
+
+        <a class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1-phone mdc-layout-grid__cell--span-3-tablet mdc-button mdc-button--outlined" href="/wardrobe/" style="text-align: center; padding: 32px;">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label" style="text-transform: none;"><i class="material-icons">storefront</i><br> Buy Merch</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Work -->
+  <section class="mdc-card mdc-card--outlined">
+    <div class="mdc-card__content highlighted">
+      <h2>Research Work</h2>
+      <p>My research work primarily focuses on Computer Vision applications including biometric authentication, image segmentation and 3D reconstruction using deep learning.</p>
+      {% assign research = site.datasets | concat: site.research | sort: "date" | reverse %}
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          {% for item in research %}
+          <div class="mdc-layout-grid__cell mdc-card mdc-card--outlined">
+            <div class="mdc-card__content">
+              <small class="text-uppercase">{{ item.category | first | replace: ",", "" }}</small><br>
+              <hr class="small" style="border: dashed 1px silver;">
+              <p><a href="{{ item.url }}">{{ item.title }} ({{ item.date | date: "%Y"}})</a></p>
+              {% assign categories = item.category | shift %}
+              {% for category in categories %}<span class="project-tag" style="word-wrap: break-word;">{{ category | replace: ",", "" }}</span> &nbsp;{% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="mdc-card__actions highlighted">
+      <div class="mdc-card__action-icons">
+        <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="window.location.href='/research/'">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">See details</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="mdc-card mdc-card--outlined">
+    <div class="mdc-card__content">
+      <h2>Featured Projects</h2>
+      <p>In addition to ML research, I work as a hobbyist software developer with most work in Android app development. Some of my featured projects are listed below:</p>
+      {% include list_projects_featured.html %}
+    </div>
+    <div class="mdc-card__actions">
+      <div class="mdc-card__action-icons">
+        <a class="mdc-button mdc-card__action mdc-card__action--button" href="projects/">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">See all projects</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="hire-callout">
+      <img src="{{ site.baseurl }}/assets/images/open-for-work.png" />
+      <p>Have a project that needs to be done?</p>
+      <div>
+        <a class="mdc-button mdc-button--unelevated" href="/contact/" style="background-color: #f28faa !important;">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label" style="text-transform: none; color: black !important;">Get a Quote</span>
+        </a>
+      </div>
+    </div>
+    <br>
+    Available for work on projects in the categories listed below.
+    <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        {% for service in site.services %}
+        <div class="mdc-layout-grid__cell mdc-card mdc-card--outlined service-item">
+          <span class="material-icons">{{ service.icon }}</span>
+          <h2>{{ service.title }}</h2>
+          <p>{{ service.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <p>
+      You can see my <a href="/projects/">past projects</a> to learn more about my work experience related to the offered services.<br>
+    </p>
+
+  </section>
+
+  <section>
+    <p>
+      To pay for a completed service, you can either send the invoice amount on <a href="https://www.paypal.com/paypalme/saifkhichi06" target="_blank">PayPal</a> or use <a href="/payments/">this checkout page</a>.
+    </p>
+  </section>
+</div>
+
+<div class="c-minor">
+
+  <!-- Sponsorship card-->
+  <section class="mdc-card mdc-card--outlined">
+    <div class="mdc-card__content">
+      <h2>Dig Deeper</h2>
+      <p>To learn more about what type of software I work on and how I do it, you can directly see all source code
+        on <a href="{{ site.github.owner.html_url }}" target="_blank">my GitHub profile</a>.</p>
+
+      <!-- GitHub contributions -->
+      {% include widget_github.html %}
+
+      <h3>Sponsor on GitHub</h3>
+      <p>
+        Support my open source work by sponsoring me while I work on creating and maintaining some awesome tools for developers.
+      </p>
+      <iframe src="https://github.com/sponsors/saifkhichi96/button" title="Sponsor saifkhichi96" scrolling="no" frameborder="0" style="position: relative; width: 100%; height: 40px;"></iframe>
+
+      <div class="mdc-card mdc-card--outlined">
+        <div class="mdc-card__content">
+          <h2>My Top-10 Repos</h2>
+          <ul class="mdc-list mdc-list--two-line">
+            {% assign repos = site.github.public_repositories | sort: "stargazers_count" | reverse %}
+            {% for repo in repos limit:10 %}
+            {% unless repo.name == site.github.owner.login %}
+            {% unless repo.name == site.github.project_title %}
+            <li class="mdc-list-item">
+              <span class="mdc-list-item__ripple"></span>
+              <a href="{{repo.html_url}}">
+                <span class="mdc-list-item__text">
+                  <span class="mdc-list-item__primary-text">{{ repo.name }}</span>
+                  <span class="mdc-list-item__secondary-text">{{ repo.description }}</span>
+                </span>
+                <div class="project-tags">
+                  <span class="project-tag">
+                    <i class="material-icons">star</i>{{ repo.stargazers_count }}
+                  </span>
+                  <span class="project-tag">
+                    <i class="material-icons">fork_left</i>{{ repo.forks }}
+                  </span>
+                  <span class="project-tag">
+                    <i class="material-icons">language</i>{{ repo.language }}
+                  </span>
+                  {% assign topics = repo.topics | sort %}
+                  {% for topic in topics %}
+                  <span class="project-tag">
+                    <i class="material-icons">tag</i>{{ topic }}
+                  </span>
+                  {% endfor %}
+                </div>
+              </a>
+            </li>
+            <li class="mdc-list-divider" style="margin: 0 8px;"></li>
+            {% endunless %}
+            {% endunless %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal -->
+  <section class="mdc-card highlighted" style="border-radius: 8px;">
+    <div class="mdc-card__content" style="background-color: {{ site.data.manifest.theme_color }}; color: #ffffff;">
+      <h2>Beyond Programming</h2>
+      <p>Everyone needs time-off, and in hopes of not appearing one-dimensional, here I share brief glimpses of my life outside computers.</p>
+
+      <section class="slideshow-container">
+
+        <div class="mdc-card mdc-card--outlined">
+          <!-- Tab Bar -->
+          <div class="mdc-tab-bar" role="tablist">
+            <div class="mdc-tab-scroller">
+              <div class="mdc-tab-scroller__scroll-area">
+                <div class="mdc-tab-scroller__scroll-content">
+                  <button class="mdc-tab mdc-tab--active" role="tab" tabindex="0" onclick="currentSlide(1)">
+                    <span class="mdc-tab__content">
+                      <span class="mdc-tab__text-label" style="text-transform: none;">Blog</span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                  <button class="mdc-tab" role="tab" onclick="currentSlide(2)">
+                    <span class="mdc-tab__content">
+                      <span class="mdc-tab__text-label" style="text-transform: none;">Sports</span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                  <button class="mdc-tab" role="tab" onclick="currentSlide(3)">
+                    <span class="mdc-tab__content">
+                      <span class="mdc-tab__text-label" style="text-transform: none;">More</span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="mdc-card__content">
+            <!-- Blog -->
+            <section class="mySlides fade">
+              <h3>The S Word</h3>
+              <p>I intermittently write about things which are on my mind or of a particular interest to me, and share tips and tutorials about software development on my blog here.</p>
+              {% include list_posts.html %}
+              <div class="mdc-card__action-icons">
+                <a class="mdc-button mdc-card__action mdc-card__action--button" href="/blog/">
+                  <span class="mdc-button__ripple"></span>
+                  <span class="mdc-button__label">See all posts</span>
+                </a>
+              </div>
+            </section>
+
+            <!-- Sports -->
+            <section class="mySlides fade">
+              <h3>Longboarding</h3>
+              <p>Not exactly the sporty type, but sometimes you have to bend your own rules.</p>
+              <div class="embed-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLV58xS0RVnALMrjZTEsPgKwW23oBqTDpY" title="Saif Goes Longboarding" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope;"
+                  allowfullscreen></iframe>
+              </div>
+              <br>
+              <p>This playlist shows me trying to learn longboarding at 25. Better late than never, right?</p>
+              <h3>Biycling</h3>
+              <p>I use my bicycle to get around town or take occasional trips into the forests and mountains around.</p>
+              <div class="embed-container">
+                <img src="{{ site.baseurl }}/assets/images/cycling.jpg" />
+              </div>
+            </section>
+
+            <!-- Chess -->
+            <section class="mySlides fade">
+              <h3>Cooking</h3>
+              <p>I like to cook and occasionally bake. Here's a list of my favorite recipes on YouTube. Cheers!</p>
+              <div class="embed-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLV58xS0RVnAI32GQ7zFwX9pqAyDiTfKR6" title="My favorite recipes" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+              </div>
+              <h3>Chess</h3>
+              <p>Nowhere near Ms. Harmon, but I love chess and I'm down for a game if I could find a partner.</p>
+
+            </section>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>
+
+<!-- PWA -->
+<script src="{{ site.baseurl }}/assets/scripts/webapp.js"></script>
+<script type="module">
+  import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+  const el = document.createElement('pwa-update');
+  document.body.appendChild(el);
+
+</script>
+<script>
+  function install() {
+    const ref = document.getElementById("a2hs");
+    if (!ref.getInstalledStatus()) {
+      ref.openPrompt();
+    } else {
+      showSnackbar("You have already installed the app.");
+    }
+  }
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("mdc-tab");
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+      slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" mdc-tab--active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " mdc-tab--active";
+  }
+
+</script>
+
+<!-- Page specific scripts -->
+<script async data-name="BMC-Widget" data-cfasync="true" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="saifkhichi96" data-description="Support me on Buy me a coffee!"
+  data-message="You can support my work by buying me a coffee :-)" data-color="{{ site.data.manifest.theme_color }}" data-position="Right" data-x_margin="16" data-y_margin="16">
+</script>

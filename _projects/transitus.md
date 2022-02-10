@@ -1,0 +1,23 @@
+---
+layout: project
+title: Transitus&#58; Towards Higher Education
+categories: app
+keywords: college, education
+device: Mobile App
+description: Transitus prepares high-school and college graduates for the next step in their journey.
+image: /assets/images/projects/transitus-cover.png
+icon: /assets/images/projects/transitus-logo.png
+---
+
+## Key Features
+1. Information about universities.
+2. Entrance requirements/tests.
+3. Community forums.
+4. Survival guides
+
+## Supported Platforms
+- Android
+
+## Programming Languages
+- Java
+- Kotlin

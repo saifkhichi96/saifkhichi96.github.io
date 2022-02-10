@@ -1,0 +1,214 @@
+theme:                     simple-material
+baseurl:                   ''
+url:                       http://www.saifkhichi.com
+enforce_ssl:               https://www.saifkhichi.com
+
+author:                    saifkhichi96
+favicon:                   /favicon.ico
+logo:                      /assets/images/logo.png
+
+google_site_verification:  a756de613e3e91e14743d6a24b29a35c
+google_adsense:            ca-pub-4333877529904422
+# google_analytics:        UA-43339302-11
+# google_analytics_ga4:    G-GABC1DEFG
+
+# -----------------------------------------------------------------------------
+# Site Navigation
+# -----------------------------------------------------------------------------
+menu_main:
+  - title:                   Home
+    icon:                    roofing
+    url:                     /
+  - title:                   About Me
+    icon:                    person
+    url:                     /resume/
+  - title:                   Coding Projects
+    icon:                    cases
+    url:                     /projects/
+  - title:                   Research Work
+    icon:                    science
+    url:                     /research/
+  - title:                   Contact
+    icon:                    support_agent
+    url:                     /contact/
+
+
+
+# Includes an icon in the footer for each username you enter
+menu_social:
+  email:                   saifkhichi96@gmail.com
+  github:                  saifkhichi96
+  linkedin:                saifkhichi96
+  rss:                     rss
+  twitter:                 saifkhichi96
+  stackoverflow:           4690466
+  youtube:                 /channel/UCj4yPuKHi9pZ9WbKbfh5MEQ
+  playconsole:             7722501168179136426
+
+
+# Includes links to your site's privacy policy and terms of service in the footer
+menu_footer:
+  - cookies:
+    title:                 'Cookies'
+    url:                   '/cookie-policy/'
+  - privacy:
+    title:                 'Privacy'
+    url:                   '/privacy/'
+  - terms:
+    title:                 'Terms'
+    url:                   '/terms/'
+
+breadcrubms:               true
+navigation_footer:         true
+icons:                     true
+
+# Enable commenting on posts
+disqus:                    saifkhichi
+
+# For showing Twitter cards
+twitter:
+  username: saifkhichi96
+
+# For specifying social profiles
+social:
+  name: Muhammad Saif Ullah Khan
+  links:
+    - https://twitter.com/saifkhichi96
+    - https://www.linkedin.com/in/saifkhichi96
+    - https://github.com/saifkhichi96
+
+# ----------------------------------------------------------------------------
+# Services
+# ----------------------------------------------------------------------------
+services:
+- title:                   App development
+  description:             Beautifully designed mobile applications, specifically tailored for your unique needs.
+  icon:                    android
+- title:                   Algorithm design
+  description:             Optimized algorithms to solve basic problems to complex machine learning tasks.
+  icon:                    memory
+- title:                   Game design
+  description:             Cross-platform 2D/3D games developed with beautiful assets and latest available tools.
+  icon:                    videogame_asset
+- title:                   Graphics design
+  description:             Aesthetic designs for book covers, beautiful logos, expressive icons, and much more.
+  icon:                    design_services
+- title:                   UI/ux design
+  description:             Intuitive UIs that speak for themselves, using Google's material design guidelines.
+  icon:                    widgets
+- title:                   Web development
+  description:             Portfolios, company profiles, app landing pages; any static/dynamic web app you need.
+  icon:                    public
+
+skills:
+  - type:                  Databases
+    items:
+      - name:              NoSQL
+      - name:              MySQL
+      - name:              SQLite
+
+  - type:                  Tools
+    items:
+      - name:              Firebase Services
+      - name:              Google Cloud Services
+      - name:              OpenCV
+      - name:              PyTorch
+      - name:              Tensorflow
+
+spoken_languages:
+- name:                    English
+  proficiency:             Bilingual
+- name:                    German
+  proficiency:             Basic (A2.1)
+- name:                    Urdu
+  proficiency:             Native
+
+interests:
+- name:                    Reading
+  description:             I read some fiction, but mostly non-fiction with topics ranging from history, politics, and theology to science, technology and current affairs.
+  url:                     https://www.goodreads.com/user/show/26736309-muhammad-saif-ullah-khan
+- name:                    Art &amp; Blogging
+  description:             Occasional writer and artist. I sometimes write short stories and poetry, and indulge in oil painting and pencil sketching.
+  url:                     /blog/
+
+experience:
+- institute:               Deutsches Forschungszentrum für Künstliche Intelligenz (DFKI)
+  location:                Kaiserslautern, Germany
+  position:                Research Assistant
+  time:                    11/2021 - 03/2022
+  type:                    1
+  url:
+- institute:               Technische Universität Kaiserslautern (TUK)
+  location:                Kaiserslautern, Germany
+  position:                Master of Computer Science
+  time:                    2019 - present
+  type:                    0
+  url:                     /resume/mscs/
+  details:
+    title:                 Specialisations
+    items:
+      - name:              Intelligent Systems
+        description:
+      - name:              Visualization and Scientific Computing
+        description:
+- institute:               Active Institute of Science, Arts &amp; Technology (AISAT)
+  location:                Multan, Pakistan
+  position:                Software Developer / Graphics Designer
+  time:                    09/2018 - 02/2019
+  type:                    1
+  url:
+- institute:               National University of Sciences and Technology (NUST)
+  location:                Islamabad, Pakistan
+  position:                Bachelor of Software Engineering
+  score:                   3.78 / 4.0 CGPA
+  time:                    2014 - 2018
+  type:                    0
+  url:                     /resume/bese/
+  details:
+    title:                 Co-Curricular Activities
+    items:
+      - name:              NUST Entreprenuers Club (NEC)
+        description:       10/2016 - 04/2017<br>As manager app development, I led a team developing a campus-wide social networking system and successfully designed and delivered the first functional prototype.
+      - name:              NUST International Model United Nations (NIMUN) 2017
+        description:       10/2016 - 02/2017<br>As an IT team member in the student organising committee, I was responsible for developing the Android version of the event's official mobile app, as well as a mobile app for the security team.
+      - name:              Beijing Forum Islamabad 2016
+        description:       04/2016 - 05/2016<br>As a member of the student organising committee for Beijing Forum '16, a global conference whose first international chapter was hosted in Islamabad, I was responsible for developing the official mobile app for the event to be used by the attendees.
+
+
+#
+# !! You don't need to change any of the configuration flags below !!
+#
+
+collections:
+  docs:
+    output:                true
+    permalink:             /docs/:path/
+  pages:
+    output:                true
+    permalink:             /:title/
+  projects:
+    output:                true
+    permalink:             /projects/:path/
+  services:
+    output:                true
+    permalink:             /services/:path/
+  research:
+    output:                true
+    permalink:             /research/:path/
+  datasets:
+    output:                true
+    permalink:             /research/datasets/:path/
+
+defaults:
+  - scope:
+      path: ''
+    values:
+      license:
+        content:
+          name: Creative Commons Attribution 4.0 International License
+          url: https://creativecommons.org/licenses/by/4.0/
+        code:
+          name: MIT License
+          url: https://opensource.org/licenses/MIT
+
+installable:               true
