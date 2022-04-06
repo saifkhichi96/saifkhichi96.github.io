@@ -2,16 +2,16 @@
 layout: project
 title: Doodle&#58; A Simple Paint App
 categories: [app, featured]
-keywords: paint-app, doodles
 download:
   android: sfllhkhan95.doodle
 client: Doodle is an personal, <b>open-source project</b> which started out as a class assignment.
 code: saifkhichi96/paint
-license: MIT
-device: Mobile App
-description: Doodle is a simple paint application for Android, written in Java and Kotlin programming languages.
 demo: 05itwsYAJkU
+description: Doodle is a simple paint application for Android, written in Java and Kotlin programming languages.
+device: Mobile App
 icon: /assets/images/projects/doodle-logo.png
+keywords: paint-app, doodles
+license: MIT
 ---
 
 Doodle is a complete art tool to help bring out your inner artist. The application offers a wide range of features,
@@ -25,8 +25,16 @@ application to base your drawing on. This app is also compatible with stylus.
 
 ### Tools
 
-Brush Tool {: .mdc-chip} Color Picker {: .mdc-chip} Eraser Tool {: .mdc-chip} Eyedropper Tool {: .mdc-chip} Predefined
-Shapes {: .mdc-chip}
+Brush Tool
+{: .mdc-chip}
+Color Picker
+{: .mdc-chip}
+Eraser Tool
+{: .mdc-chip}
+Eyedropper Tool
+{: .mdc-chip}
+Predefined Shapes
+{: .mdc-chip}
 
 ### Other Features
 
@@ -41,8 +49,12 @@ new stuff as the app will be consistently updated with more features and tools.
 
 ## Supported Platforms
 
-Android {: .mdc-chip}
+Android
+{: .mdc-chip}
 
 ## Programming Languages
 
-Java {: .mdc-chip} Kotlin {: .mdc-chip}
+Java
+{: .mdc-chip}
+Kotlin
+{: .mdc-chip}

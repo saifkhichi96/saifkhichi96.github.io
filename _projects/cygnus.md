@@ -2,11 +2,11 @@
 layout: project
 title: Cygnus&#58; Smart School App
 categories: [app, featured]
-keywords: digital learning, smart school
 client: This project was requested by a private client from India as a general solution which can be implemented in grade schools.
-device: Mobile App
 description: Cygnus is an online learning management system for smart schools, in shape of a mobile app, developed for a client in India.
+device: Mobile App
 icon: /assets/images/projects/cygnus-logo.png
+keywords: digital learning, smart school
 ---
 
 It aids schools, teachers and their students by allowing resource sharing, ability to communicate with each other, manage test grades, and much more.
@@ -42,8 +42,10 @@ It aids schools, teachers and their students by allowing resource sharing, abili
 
 ## Supported Platforms
 
-Android {: .mdc-chip}
+Android
+{: .mdc-chip}
 
 ## Programming Languages
 
-Kotlin {: .mdc-chip}
+Kotlin
+{: .mdc-chip}

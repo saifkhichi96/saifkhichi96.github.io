@@ -2,12 +2,12 @@
 layout: project
 title: NUST Connect Social Network
 categories: app
-keywords: social network, nust
 client: This project was an initiative of <a href="https://www.facebook.com/NEC.NUST/" rel="noopener" target="_blank">NUST Entrepreneurs Club</a>, where I was the project manager and headed the development team.
-device: Mobile App
 description: NUST Connect is a social networking mobile application for the community of NUST university.
+device: Mobile App
 image: /assets/images/projects/connect-cover.png
 icon: /assets/images/projects/connect-logo.png
+keywords: social network, nust
 ---
 
 NUST Connect is a platform where the whole community of National University of Sciences and Technology can come together and interact with each other.
@@ -50,11 +50,15 @@ NUST Connect is a platform where the whole community of National University of S
 
 ## Supported Platforms
 
-Android {: .mdc-chip}
+Android
+{: .mdc-chip}
 
 ## Programming Languages
 
-Java {: .mdc-chip} PHP {: .mdc-chip}
+Java
+{: .mdc-chip}
+PHP
+{: .mdc-chip}
 
 ## Learn More
 

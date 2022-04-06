@@ -1,12 +1,13 @@
 ---
 layout: project
-title:  Acacia Joinery Mobile App
+title: Acacia Joinery Mobile App
 categories: app
+client: <a href="https://www.acaciajoinery.com.au/" rel="noopener" target="_blank">Acacia Joinery</a> is an architectural company based in Bellambi, Australia.
+description: Acacia Joinery is a mobile application for an architectural firm based in Bellambi, Australia.
+device: Mobile App
+icon: /assets/images/projects/acacia-joinery-logo.png
+image: /assets/images/projects/acacia-joinery-cover.png
 keywords: data collection, pdf generator, email
-client: <a href="https://www.acaciajoinery.com.au/" rel="noopener" target="_blank">Acacia Joinery</a> is an
-architectural company based in Bellambi, Australia. device: Mobile App image:
-/assets/images/projects/acacia-joinery-cover.png description: Acacia Joinery is a mobile application for an
-architectural firm based in Bellambi, Australia. icon: /assets/images/projects/acacia-joinery-logo.png
 ---
 
 I developed this mobile application on request of an architectural company which specialises in building doors and
@@ -25,10 +26,12 @@ company to collect architectural requirements for their projects and coordinate 
 
 ## Supported Platforms
 
-Android {: .mdc-chip}
+Android
+{: .mdc-chip}
 
 ## Programming Languages
 
-Java {: .mdc-chip}
-
-SQLite {: .mdc-chip}
+Java
+{: .mdc-chip}
+SQLite
+{: .mdc-chip}

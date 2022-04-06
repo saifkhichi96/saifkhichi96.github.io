@@ -1,12 +1,12 @@
 ---
 layout: project
-title:  Bouncy&#58; Jump-'n'-Run
+title: Bouncy&#58; Jump-'n'-Run
 categories: game
-keywords: arcade, bounce, snow bros
-device: Cross-Platform
 description: Bouncy, part of the 'Classics&#58; Reimagined' series, combines the arcade game Snow Bros. and Bounce (classic Nokia game) into a single game.
+device: Cross-Platform
 image: /assets/images/projects/bouncy-cover.png
 icon: /assets/images/projects/bouncy-logo.png
+keywords: arcade, bounce, snow bros
 ---
 
 If you are a 90's kid, then you would remember [Snow Bros](https://en.wikipedia.org/wiki/Snow_Bros.) in arcades, and the
@@ -23,4 +23,5 @@ This game was developed with Unity Game Engine, and supports multiple platforms.
 
 ## Programming Languages
 
-C# {: .mdc-chip}
+C#
+{: .mdc-chip}

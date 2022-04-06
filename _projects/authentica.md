@@ -1,14 +1,14 @@
 ---
 layout: project
-title:  Authentica&#58; Signature Verification System
+title: Authentica&#58; Signature Verification System
 categories: [app, featured]
-keywords: signature verification, machine learning
-code: saifkhichi96/authentica
 client: This is a personal project, based on the work I did during the final-year project of my <a href="/resume/bese/">undergraduate studies</a> at NUST.
+code: saifkhichi96/authentica
 demo: i8i6sC14x1c
 device: Cross-Platform
 description: Authentica is a signature verification system which allows banks to verify signatures on bank checks.
 icon: /assets/images/projects/authentica-logo.png
+keywords: signature verification, machine learning
 ---
 
 Authentica is a signature verification system which allows banks to verify signatures on bank checks. It employs the latest techniques in deep learning to train a model for signature verification. With only eight signatures, a customer can be registered in our system, and all their subsequent bank checks can be checked for authenticity of signatures using our flexible user interfaces.
@@ -23,8 +23,22 @@ Verify signatures on bank checks in three easy steps:
 
 ## Supported Platforms
 
-Android {: .mdc-chip} Linux {: .mdc-chip} Mac OS {: .mdc-chip} Windows {: .mdc-chip}
+Android
+{: .mdc-chip}
+Linux
+{: .mdc-chip}
+Mac OS
+{: .mdc-chip}
+Windows
+{: .mdc-chip}
 
 ## Programming Languages
 
-Python {: .mdc-chip} Java {: .mdc-chip} PHP {: .mdc-chip} HTML/CSS {: .mdc-chip}
+Python
+{: .mdc-chip}
+Java
+{: .mdc-chip}
+PHP
+{: .mdc-chip}
+HTML/CSS
+{: .mdc-chip}
