@@ -4,20 +4,24 @@ title: Dodge&#58; Game of Survival
 categories: game
 keywords: arcade
 download:
-  android: pk.aspirasoft.dodge
-device: Mobile App
-description: Escape the onslaught by the drones flying overhead as you try to make your way towards your goal.
-image: /assets/images/projects/dodge-cover.png
-icon: /assets/images/projects/dodge-logo.png
+android: pk.aspirasoft.dodge device: Mobile App description: Escape the onslaught by the drones flying overhead as you
+try to make your way towards your goal. image: /assets/images/projects/dodge-cover.png icon:
+/assets/images/projects/dodge-logo.png
 ---
 
-Save your ships, dodge the bombs! Make way through each level of the game by dodging the falling bombs for specified time interval, and move through the levels and see your fleet of ships safely through the enemy ranks.
+Save your ships, dodge the bombs! Make way through each level of the game by dodging the falling bombs for specified
+time interval, and move through the levels and see your fleet of ships safely through the enemy ranks.
 
 ## Supported Platforms
-- Android
-- Windows
+
+Android {: .mdc-chip}
+
+Windows {: .mdc-chip}
 
 ## Programming Languages
-- C
-- C++
-- Java
+
+C {: .mdc-chip}
+
+C++ {: .mdc-chip}
+
+Java {: .mdc-chip}

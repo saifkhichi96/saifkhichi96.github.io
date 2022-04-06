@@ -12,23 +12,28 @@ icon: /assets/images/projects/cygnus-logo.png
 It aids schools, teachers and their students by allowing resource sharing, ability to communicate with each other, manage test grades, and much more.
 
 ## Key Features
+
 ### For Schools
+
 1. Manage subjects taught at the school
 2. Manage classes in the school.
 3. Invite teachers to join the app.
 4. Manage class and subject teachers.
 
 ### For Class Teachers
+
 1. Manage students in their class.
 2. Share class announcements.
 3. Mark daily student attendance.
 
 ### For Subject Teachers
+
 1. Upload course material.
 2. Share subject announcements.
 3. Create tests and share grades.
 
 ### For Students
+
 1. See class schedule.
 2. See attendance summary.
 3. See obtained grades.
@@ -36,7 +41,9 @@ It aids schools, teachers and their students by allowing resource sharing, abili
 5. Download course files (lectures, notes, etc).
 
 ## Supported Platforms
-- Android
+
+Android {: .mdc-chip}
 
 ## Programming Languages
-- Kotlin
+
+Kotlin {: .mdc-chip}

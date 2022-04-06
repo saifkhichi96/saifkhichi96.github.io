@@ -15,12 +15,15 @@ icon: /assets/images/projects/cafe-manager-logo.png
 Get ready to experience for the first time ever, the re-branded 'Khokha' in all its glory. A wide range of menu items to choose from, all throughout your hectic day.
 
 ## Key Features
+
 1. Be notified about new items, daily specials, and promotions in realtime.
 2. See our rate lists, anytime, anywhere.
 3. Provide feedback to help us improve your experience.
 
 ## Supported Platforms
-- Android
+
+Android {: .mdc-chip}
 
 ## Programming Languages
-- Java</span>
+
+Java {: .mdc-chip}

@@ -14,30 +14,35 @@ demo: 05itwsYAJkU
 icon: /assets/images/projects/doodle-logo.png
 ---
 
-Doodle is a complete art tool to help bring out your inner artist. The application offers a wide range of features, which allows you to express yourself without limits.
+Doodle is a complete art tool to help bring out your inner artist. The application offers a wide range of features,
+which allows you to express yourself without limits.
 
-It comes with a variety of brush sizes and an extensive set of vibrant colors to bring your creative ideas to life. Full Screen mode helps you focus on your projects by minimizing the distractions. You can load images from Gallery into the application to base your drawing on. This app is also compatible with stylus.
+It comes with a variety of brush sizes and an extensive set of vibrant colors to bring your creative ideas to life. Full
+Screen mode helps you focus on your projects by minimizing the distractions. You can load images from Gallery into the
+application to base your drawing on. This app is also compatible with stylus.
 
 ## Key Features
+
 ### Tools
-- Brush Tool
-- Color Picker
-- Eraser Tool
-- Eyedropper Tool
-- Predefined Shapes
+
+Brush Tool {: .mdc-chip} Color Picker {: .mdc-chip} Eraser Tool {: .mdc-chip} Eyedropper Tool {: .mdc-chip} Predefined
+Shapes {: .mdc-chip}
 
 ### Other Features
+
 1. Start with blank canvas
-2. Edit an exisiting image
+2. Edit an existing image
 3. Share doodles with friends
 4. Undo / Redo / Revert
-5. Smart, districation-free UI
+5. Smart, distraction-free UI
 
-With its light, easy-to-use and intuitive design, Doodle is the perfect choice for artists and art lovers. Stand by for new stuff as the app will be consistently updated with more features and tools.
+With its light, easy-to-use and intuitive design, Doodle is the perfect choice for artists and art lovers. Stand by for
+new stuff as the app will be consistently updated with more features and tools.
 
 ## Supported Platforms
-- Android
+
+Android {: .mdc-chip}
 
 ## Programming Languages
-- Java
-- Kotlin
+
+Java {: .mdc-chip} Kotlin {: .mdc-chip}
