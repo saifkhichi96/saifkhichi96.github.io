@@ -13,13 +13,18 @@ icon: /assets/images/projects/iprd-geotag-logo.png
 IPRD Geotag is a work-monitoring mobile application which allows district supervisors to assign location-based tasks to their staff, and monitor progress of tasks performed by the staff members.
 
 ## Key Features
+
 1. Ability to upload images.
 2. Automatic geotagging on new posts.
 3. Data management using Admin portal.
 4. Firebase Services (Authentication, Cloud Storage, Realtime Database)
 
 ## Supported Platforms
-- Android
+
+Android
+{: .mdc-chip}
 
 ## Programming Languages
-- Java
+
+Java
+{: .mdc-chip}

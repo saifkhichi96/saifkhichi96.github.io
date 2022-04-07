@@ -14,6 +14,10 @@ description: Research work of Muhammad Saif Ullah KHAN, including publications a
     font-weight: 800;
   }
 
+  .mdc-list-item__text:hover {
+    background: none;
+  }
+
 </style>
 
 <!-- Page Content -->
@@ -52,9 +56,9 @@ description: Research work of Muhammad Saif Ullah KHAN, including publications a
           {% for item in datasets_by_date %}
           <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
             <p><a href="{{ item.url }}">{{ item.title }} ({{ item.date | date: "%Y"}})</a></p>
-            <hr class="small" style="border: dashed 1px silver;">
             {% assign categories = item.category | shift %}
             {% for category in categories %}<span class="project-tag" style="word-wrap: break-word;">{{ category | replace: ",", "" }}</span> &nbsp;{% endfor %}
+            <hr class="small" style="border: dashed 1px silver;">
           </div>
           {% endfor %}
         </div>

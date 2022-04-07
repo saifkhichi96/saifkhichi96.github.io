@@ -1,0 +1,10 @@
+<article class="content-body">
+  {% include page_header.html %}
+
+  <!-- Page Content -->
+  {% if page.title %}
+  {{ content | replace_first: "h1", "h1 style='display: none;'" }}
+  {% else %}
+  {{ content }}
+  {% endif %}
+</article>

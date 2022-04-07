@@ -1,0 +1,64 @@
+<header>
+  <!-- Cover Image -->
+  {% if page.cover %}
+  {% if page.cover contains '://' %}
+  {% assign cover_url = page.cover %}
+  {% else %}
+  {% assign cover_url = page.cover | relative_url %}
+  {% endif %}
+  <div class="page-cover" style="background-image: url('{{ cover_url }}')">
+    {% endif %}
+
+    <!-- Get page categories (if any) -->
+    {% if post %}
+    {% assign categories = post.categories %}
+    {% else %}
+    {% assign categories = page.categories %}
+    {% endif %}
+    {% assign categories_size = categories | size %}
+
+    <!-- Summary -->
+    <div class="{% if page.cover %}align-bottom{% endif %}">
+      <div class="{% if page.cover %}project-summary{% endif %}">
+        <!-- Icon -->
+        {% include page_icon.html %}
+
+        <div>
+          <!-- Title -->
+          {% if page.cover or page.icon %}
+          {% if page.title %}<h1 class="project-title">{{ page.title }}</h1>{% endif %}
+          {% endif %}
+
+          <!-- Date: _posts/ -->
+          {% if page.collection == 'posts' %}
+          <span class="project-type">{% if page.date %}{{ page.date | date: "%B %e, %Y" }}{% endif %}</span>
+          {% endif %}
+
+          <!-- Tags -->
+          {% if categories_size > 0 %}
+          <div class="project-tags">
+            {% for category in categories %}
+            {% assign category_slug = category | slugify | replace: ',', '' %}
+            {% assign category_url = "/categories/#" | append: category_slug | relative_url %}
+            <a href="{{category_url}}">
+              <span class="project-tag">
+                <i class="material-icons">sell</i>{{ category | replace: ",", "" }}
+              </span>
+            </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <!-- Devices: _projects -->
+          {% if page.collection == 'projects' and page.device %}
+          <p class="project-type"><span class="material-icons">devices</span>&nbsp; {{ page.device }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+
+    {% if page.cover %}
+  </div>
+  {% endif %}
+</header>

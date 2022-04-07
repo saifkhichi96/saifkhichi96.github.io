@@ -1,0 +1,75 @@
+<!-- Top App Bar -->
+<header class="mdc-top-app-bar">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      {% unless page.drawer %}
+      <button class="material-icons mdc-icon-button"
+              aria-label="Go to previous page."
+              onclick="back();">arrow_back</button>
+      {% endunless %}
+
+      {% if page.drawer %}
+      {% if site.menu_main %}
+      <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
+              aria-label="Open navigation menu">menu</button>
+      {% else %}
+      <button class="material-icons mdc-icon-button" aria-label="Go to home page." onclick="window.location.href='{{ '/' | relative_url }}'">home</button>
+      {% endif %}
+      {% endif %}
+      {% unless page.cover or page.icon %}
+      <h1 class="mdc-top-app-bar__title" style="margin: 0;">
+      {% else %}
+      <span class="mdc-top-app-bar__title">
+      {% endunless %}
+          {% assign short_title = page.title | split: '&#58;' | first %}
+          {% if short_title %}
+          {{ short_title }}
+          {% elsif site.logo %}
+          <a href="{{ '/' | relative_url }}">
+          <img loading="lazy" src="{{ site.logo | relative_url }}" alt="{{ site.data.manifest.name }}" height="32" />
+          </a>
+          {% elsif site.data.manifest.short_name %}
+          {{ site.data.manifest.short_name }}
+          {% else %}
+          {{ site.data.manifest.name }}
+          {% endif %}
+      {% if page.cover %}
+      </span>
+      {% else %}
+      </h1>
+      {% endif %}
+    </section>
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+      {% if page.menuitem %}
+      {% if page.menuaction %}
+      <div class="mdc-touch-target-wrapper">
+        <button class="mdc-top-app-bar__action-item {% if page.menuicon %}mdc-icon-button{% else %}mdc-button mdc-button--outlined{% endif %}" onclick="{{ page.menuaction }}" aria-label="Download Transcript">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">
+            {% if page.menuicon %}
+            <i class="material-icons">{{ page.menuicon }}</i>
+            {% else %}
+            {{ page.menuitem }}
+            {% endif %}
+          </span>
+          <span class="mdc-button__touch"></span>
+        </button>
+      </div>
+      {% endif %}
+      {% endif %}
+
+      <!-- Share Buttons: _posts/, _projects/ -->
+      {% if page.collection == 'posts' or page.collection == 'projects' %}
+      {% include widget_share.html %}
+      {% endif %}
+
+      <div class="mdc-touch-target-wrapper">
+        <pwa-install id="a2hs" installbuttontext="Install" manifestpath="{{ '/manifest.json' | relative_url }}">
+          <span class="mdc-button__ripple"></span>
+          <i class="fas fa-arrow-circle-down"></i>
+          <span class="mdc-button__touch"></span>
+        </pwa-install>
+      </div>
+    </section>
+  </div>
+</header>

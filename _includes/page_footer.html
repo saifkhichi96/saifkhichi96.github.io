@@ -1,0 +1,69 @@
+<footer class="content-footer">
+  <div class="footnote">
+    {% if page.license.content or page.license.code %}
+    <p>
+      Except as otherwise noted,
+      {% if page.license.content and page.license.code %}
+
+      {% if page.license.content.name == page.license.code.name %}
+
+      the content and code samples on this page are licensed under <a href="{{ page.license.content.url }}" target="_blank">{{ page.license.content.name }}</a>.
+
+      {% else %}
+
+      the content of this page is licensed under <a href="{{ page.license.content.url }}" target="_blank">{{ page.license.content.name }}</a>, and the code samples are licensed under <a href="{{ page.license.code.url }}"
+        target="_blank">{{ page.license.code.name }}</a>.
+
+      {% endif %}
+
+      {% elsif page.license.content %}
+
+      the content of this page is licensed under <a href="{{ page.license.content.url }}" target="_blank">{{ page.license.content.name }}</a>.
+
+      {% elsif page.license.code %}
+
+      the code samples on this page are licensed under <a href="{{ page.license.code.url }}" target="_blank">{{ page.license.code.name }}</a>.
+
+      {% endif %}
+    </p>
+    {% endif %}
+    <p>
+      Last updated <span id="last-modified"></span>
+    </p>
+  </div>
+
+  <div class="footer">
+    {% if site.data.manifest.name %}
+    {% assign title = site.data.manifest.name %}
+    {% else %}
+    {% assign title = site.title %}
+    {% endif %}
+    <p>
+      <a href="{{ '/' | relative_url }}">
+        {% if site.logo %}
+        <img loading="lazy" src="{{ site.logo | relative_url }}" alt="{{ title }}" height="32" />
+        {% elsif site.data.manifest.short_name %}
+        {{ site.data.manifest.short_name }}
+        {% else %}
+        {{ title }}
+        {% endif %}
+      </a>
+    </p>
+    <div class="align-left">
+      {% include nav_social.html %}
+    </div>
+    {% include nav_footer.html %}
+    {% include breadcrumbs.html %}
+    <hr />
+    <span class="copyright">
+      <p>
+        Copyright &copy; {{ title }} {{ site.time | date: '%Y' }}. All rights reserved.<br>
+        <small>This site uses the <a href="https://www.saifkhichi.com/simple-material/">Simple Material</a> theme by <a href="https://github.com/saifkhichi96">saifkhichi96</a></small>
+      </p>
+      {% for item in site.menu_footer %}
+      <a href="{{ item.url | relative_url }}" class="muted">{{ item.title }}</a>
+      {% unless forloop.last == true %}&nbsp;|&nbsp;{% endunless %}
+      {% endfor %}
+    </span>
+  </div>
+</footer>
