@@ -8,7 +8,10 @@
     {% assign url = item.url | relative_url %}
     {% endif %}
 
-    {% if item.url == page.url %}
+    {% assign item_name = item.url | split : '/' %}
+    {% assign page_name = page.url | split : '/' %}
+
+    {% if item_name[1] == page_name[1] %}
     <li class="text-center active" aria-current="page">
     {% else %}
     <li class="text-center" {% if item.url %}onclick="window.location.href='{{ url }}'"{% endif %}>

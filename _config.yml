@@ -19,18 +19,18 @@ menu_main:
   - title:                   Home
     icon:                    roofing
     url:                     /
+  - title:                   Blog
+    icon:                    feed
+    url:                     /blog/
   - title:                   Projects
-    icon:                    cases
+    icon:                    webhook
     url:                     /projects/
   - title:                   Research
-    icon:                    science
+    icon:                    api
     url:                     /research/
   - title:                   CV
-    icon:                    person
+    icon:                    approval
     url:                     /resume/
-  - title:                   Contact
-    icon:                    support_agent
-    url:                     /contact/
 
 
 
