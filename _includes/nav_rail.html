@@ -17,7 +17,7 @@
     <li class="text-center" {% if item.url %}onclick="window.location.href='{{ url }}'"{% endif %}>
     {% endif %}
       {% if item.title %}
-      <span>
+      <span style="user-select: none;">
         <i class="material-icons" style="opacity: 0.75; position: relative; top: 6px;">{{ item.icon }}</i>
         <br>
         <small><small>{{ item.title }}</small></small>
