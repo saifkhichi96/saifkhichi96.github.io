@@ -19,15 +19,15 @@ menu_main:
   - title:                   Home
     icon:                    roofing
     url:                     /
-  - title:                   About Me
-    icon:                    person
-    url:                     /resume/
-  - title:                   Coding Projects
+  - title:                   Projects
     icon:                    cases
     url:                     /projects/
-  - title:                   Research Work
+  - title:                   Research
     icon:                    science
     url:                     /research/
+  - title:                   CV
+    icon:                    person
+    url:                     /resume/
   - title:                   Contact
     icon:                    support_agent
     url:                     /contact/

@@ -19,7 +19,7 @@
 
     <!-- Summary -->
     <div class="{% if page.cover %}align-bottom{% endif %}">
-      <div class="{% if page.cover %}project-summary{% endif %}">
+      <div class="project-summary">
         <!-- Icon -->
         {% include page_icon.html %}
 
@@ -51,11 +51,10 @@
 
           <!-- Devices: _projects -->
           {% if page.collection == 'projects' and page.device %}
-          <p class="project-type"><span class="material-icons">devices</span>&nbsp; {{ page.device }}</p>
+          <div class="project-type"><span class="material-icons">devices</span>&nbsp; {{ page.device }}</div>
           {% endif %}
         </div>
       </div>
-
     </div>
 
     {% if page.cover %}

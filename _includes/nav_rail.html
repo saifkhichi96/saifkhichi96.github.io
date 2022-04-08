@@ -1,0 +1,38 @@
+{% if site.menu_main %}
+<nav class="nav-rail">
+  <ul>
+    {% for item in site.menu_main %}
+    {% if item.url contains '://' %}
+    {% assign url = item.url %}
+    {% else %}
+    {% assign url = item.url | relative_url %}
+    {% endif %}
+
+    {% if item.url == page.url %}
+    <li class="text-center active" aria-current="page">
+    {% else %}
+    <li class="text-center" {% if item.url %}onclick="window.location.href='{{ url }}'"{% endif %}>
+    {% endif %}
+      {% if item.title %}
+      <span>
+        <i class="material-icons" style="opacity: 0.75; position: relative; top: 6px;">{{ item.icon }}</i>
+        <br>
+        <small><small>{{ item.title }}</small></small>
+      </span>
+      {% endif %}
+    </li>
+
+    {% endfor %}
+  </ul>
+
+  <div class="mdc-touch-target-wrapper text-center align-bottom hide-when-small">
+    <p>
+    <pwa-install id="a2hs" installbuttontext="Install" manifestpath="{{ '/manifest.json' | relative_url }}">
+      <span class="mdc-button__ripple"></span>
+      <i class="fas fa-arrow-circle-down"></i>
+      <span class="mdc-button__touch"></span>
+    </pwa-install>
+    </p>
+  </div>
+</nav>
+{% endif %}

@@ -1,5 +1,5 @@
 <!-- Top App Bar -->
-<header class="mdc-top-app-bar">
+<header class="mdc-top-app-bar mdc-top-app-bar--fixed">
   <div class="mdc-top-app-bar__row">
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
       {% unless page.drawer %}
@@ -9,12 +9,7 @@
       {% endunless %}
 
       {% if page.drawer %}
-      {% if site.menu_main %}
-      <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
-              aria-label="Open navigation menu">menu</button>
-      {% else %}
-      <button class="material-icons mdc-icon-button" aria-label="Go to home page." onclick="window.location.href='{{ '/' | relative_url }}'">home</button>
-      {% endif %}
+      <button class="mdc-icon-button" aria-label="Go to home page." onclick="window.location.href='{{ '/' | relative_url }}'"><img loading="lazy" src="/assets/images/logo-small.png" alt="{{ site.data.manifest.name }}" height="32" /></button>
       {% endif %}
       {% unless page.cover or page.icon %}
       <h1 class="mdc-top-app-bar__title" style="margin: 0;">
@@ -62,14 +57,6 @@
       {% if page.collection == 'posts' or page.collection == 'projects' %}
       {% include widget_share.html %}
       {% endif %}
-
-      <div class="mdc-touch-target-wrapper">
-        <pwa-install id="a2hs" installbuttontext="Install" manifestpath="{{ '/manifest.json' | relative_url }}">
-          <span class="mdc-button__ripple"></span>
-          <i class="fas fa-arrow-circle-down"></i>
-          <span class="mdc-button__touch"></span>
-        </pwa-install>
-      </div>
     </section>
   </div>
 </header>

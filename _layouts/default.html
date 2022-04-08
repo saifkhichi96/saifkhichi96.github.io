@@ -61,16 +61,6 @@
 
   </script>
   {% endif %}
-
-  <style>
-  .page-cover, .page-cover::after {
-    border-radius: var(--icon-radius);
-  }
-
-  .align-bottom {
-    bottom: 0;
-  }
-  </style>
 </head>
 
 <body class="layout-{{ page.layout }}{% if page.title %}  {{ page.title | slugify }}{% endif %}">
@@ -80,9 +70,7 @@
   {% include snackbar.html %}
 
   <main class="mdc-top-app-bar--fixed-adjust">
-    {% if page.drawer %}
-    {% include drawer.html %}
-    {% endif %}
+    {% include nav_rail.html %}
 
     <!-- Content -->
     <div class="page-content">
