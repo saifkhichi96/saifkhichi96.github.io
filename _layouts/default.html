@@ -101,6 +101,10 @@
       }
 
       console.log("Navigation setup complete!");
+
+      if (navigator.share) {
+        $('#share-button').show();
+      }
     });
 
     function back() {
@@ -108,6 +112,18 @@
         history.back();
       } else {
         window.location = "{{ '/' | relative_url }}";
+      }
+    }
+
+    function share(title, description, url) {
+      if (navigator.share) {
+        navigator.share({
+          title: title,
+          text: description,
+          url: url,
+        })
+          .then(() => console.log('Successful share'))
+          .catch((error) => console.log('Error sharing', error));
       }
     }
 

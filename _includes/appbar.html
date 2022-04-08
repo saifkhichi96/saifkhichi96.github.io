@@ -58,6 +58,16 @@
       {% include widget_share.html %}
       {% endif %}
 
+      <div class="mdc-touch-target-wrapper" id="share-button" style="display: none;">
+        <button class="mdc-top-app-bar__action-item mdc-icon-button" onclick="share('{{page.title}}', '{{page.description}}', '{{page.url | absolute_url}}')" aria-label="Share">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">
+            <i class="material-icons">share</i>
+          </span>
+          <span class="mdc-button__touch"></span>
+        </button>
+      </div>
+
       <div class="mdc-touch-target-wrapper">
         <a class="mdc-top-app-bar__action-item mdc-icon-button" href="/contact/" aria-label="Contact">
           <span class="mdc-button__ripple"></span>
