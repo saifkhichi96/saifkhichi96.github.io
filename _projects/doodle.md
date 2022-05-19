@@ -5,7 +5,7 @@ short_title: Doodle
 categories: [app, featured]
 download:
   android: sfllhkhan95.doodle
-client: Doodle is an personal, <b>open-source project</b> which started out as a class assignment.
+client: Doodle is an personal, open-source project which started out as a class assignment. See <a href='./privacy/'>privacy policy</a> for more information.
 code: saifkhichi96/paint
 demo: 05itwsYAJkU
 description: Doodle is a simple paint application for Android, written in Java and Kotlin programming languages.
@@ -31,7 +31,29 @@ license: MIT
     "creator": {
       "@type": "Person",
       "name": "Saif Khan",
-      "sameAs": "https://www.saifkhichi.com/"
+      "alternateName": "Saif Khichi",
+      "givenName": "Muhammad Saif Ullah",
+      "familyName": "Khan",
+      "sameAs": [
+        "https://www.twitter.com/saifkhichi96/",
+        "https://www.facebook.com/saifkhichi96/",
+        "https://www.instagram.com/saifkhichi96/",
+        "https://www.linkedin.com/in/saifkhichi96/",
+        "https://play.google.com/store/apps/dev?id=7722501168179136426&hl=en"
+      ],
+      "url": "https://www.saifkhichi.com/",
+      "image": "https://avatars.githubusercontent.com/u/15276012",
+      "jobTitle": "Software Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Aspirasoft Technologies",
+        "url": "https://www.aspirasoft.dev/"
+      },
+      "affiliation": {
+        "@type": "Organization",
+        "name": "University of Kaiserlautern, Germany",
+        "url": "https://www.uni-kl.de/en/"
+      }
     },
     "dateCreated": "2017-10-22",
     "softwareVersion": "3.7.0",

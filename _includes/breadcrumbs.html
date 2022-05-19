@@ -1,0 +1,41 @@
+{% if site.breadcrubms %}
+<!-- Breadcrumbs -->
+<section>
+  <nav class="breadcrumbs" aria-label="breadcrumb">
+    <li class='breadcrumb-item'><a class='muted' href='/'><span class='material-icons' style='font-size: 14pt; bottom: -4px; position: relative;'>home</span></a></li>
+
+    {% if site.baseurl.size > 0 %}
+    <li class='breadcrumb-item'><a class='muted' href="{{ '/' | relative_url }}">{{site.data.manifest.name}}</a></li>
+    {% endif %}
+
+    {% assign page_url_parts = page.url | split: '/'%}
+    {% assign part_url = '/' %}
+
+    {% for part in page_url_parts %}
+    {% unless part.size == 0 %}
+
+    {% assign part_url = part_url | append: part | append: '/'  %}
+
+    {% assign pages = site.pages | concat: site.posts | concat: site.docs | concat: site.projects | concat: site.services %}
+    {% assign item = pages | where: 'url', part_url | map: 'title' %}
+    {% assign item_short = pages | where: 'url', part_url | map: 'short_title' %}
+    {% assign link = pages | where: 'url', part_url | map: 'url' %}
+    <li class='breadcrumb-item {% if forloop.last %}active{% endif %}'>
+      {% unless forloop.last %}
+      <a class='muted' href='{{ link[0] | relative_url }}'>
+        {% if item_short[0] %}
+        {{ item_short[0] }}
+        {% else %}
+        {{ item[0] }}
+        {% endif %}
+      </a>
+      {% else %}
+      {{ page.short_title }}
+      {% endunless %}
+    </li>
+
+    {% endunless %}
+    {% endfor %}
+  </nav>
+</section>
+{% endif %}

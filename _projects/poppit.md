@@ -7,7 +7,7 @@ download:
   android: co.aspirasoft.poppit
 keywords: arcade, brain game
 device: Mobile App
-client: This is a personal project developed under brand name <a href='//aspirasoft.dev'>Aspirasoft Technologies</a>.
+client: This is an <a href='//aspirasoft.dev'>Aspirasoft Technologies</a> project.
 description: Poppit! is a classic balloon-popping game in which you race against time to pop as many balloons as you can and compete against other balloon poppers.
 image: /assets/images/projects/poppit-cover.png
 icon: /assets/images/projects/poppit-logo.png
@@ -66,7 +66,7 @@ There are different game modes, including tap, shoot and blow. In the tap mode, 
 [Learn More](//aspirasoft.dev/games/poppit/)
 {: .mdc-button .mdc-button--unelevated target="_blank"}
 
-[Privacy Policy](//aspirasoft.dev/games/poppit/privacy.html)
+[Privacy Policy](//aspirasoft.dev/games/poppit/privacy/)
 {: .mdc-button .mdc-button--outlined target="_blank"}
 
 ## Key Features
