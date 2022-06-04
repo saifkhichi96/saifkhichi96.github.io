@@ -65,7 +65,7 @@ PHP
 <a class="mdc-button" href="/assets/projects/connect/SRS_v1.3.pdf">
   <span class="mdc-button__ripple"></span>
   <span class="mdc-button__label">
-    <span class="material-icons" style="vertical-align: middle;">description</span>
+    <span class="material-icons">description</span>
     &nbsp; Requirements Sepcification
   </span>
   <span class="mdc-button__touch"></span>
@@ -73,7 +73,7 @@ PHP
 <a class="mdc-button" href="/assets/projects/connect/SDD_v1.0.pdf">
   <span class="mdc-button__ripple"></span>
   <span class="mdc-button__label">
-    <span class="material-icons" style="vertical-align: middle;">description</span>
+    <span class="material-icons">description</span>
     &nbsp; Design Description
   </span>
   <span class="mdc-button__touch"></span>
@@ -81,7 +81,7 @@ PHP
 <a class="mdc-button" href="/assets/projects/connect/SysArch_v1.0.pdf">
   <span class="mdc-button__ripple"></span>
   <span class="mdc-button__label">
-    <span class="material-icons" style="vertical-align: middle;">description</span>
+    <span class="material-icons">description</span>
     &nbsp; Detailed Architecture
   </span>
   <span class="mdc-button__touch"></span>

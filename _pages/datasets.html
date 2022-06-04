@@ -2,7 +2,7 @@
 layout: default
 permalink: /research/datasets/
 title: Datasets
-drawer: true
+drawer: false
 description: Details and access information of datasets published by Muhammad Saif Ullah KHAN as part of their original research work.
 ---
 
@@ -18,28 +18,7 @@ description: Details and access information of datasets published by Muhammad Sa
 
 <!-- Page Content -->
 <div class="c-major-r">
-  {% assign datasets_by_date = site.datasets | sort: "date" | reverse %}
-  <ul class="mdc-list mdc-list--two-line">
-    {% for item in datasets_by_date %}
-    <li class="mdc-list-item" style="padding: 8px; border-radius: 8px;">
-      <span class="mdc-list-item__ripple"></span>
-      <span class="mdc-list-item__text">
-        <span class="mdc-list-item__primary-text">
-          <a style="color: var(--mdc-theme-on-surface);" href="{{ item.url }}">
-            <h2 style="display: inline;">{{ item.title }} <i class="material-icons" style="font-size: 16px; line-height: 16px;">open_in_new</i></h2>
-          </a>
-          <span class="mdc-list-item__secondary-text">{{ item.authors }} &nbsp;({{ item.date | date: "%Y" }})</span>
-        </span>
-        <br>
-        <i>{{ item.description }}</i>
-      </span>
-      <br>
-      <br>
-      <hr style="border: dashed 1px silver;">
-    </li>
-    <br>
-    {% endfor %}
-  </ul>
+  {% include list_datasets.html %}
 </div>
 
 <aside class="c-minor">
@@ -52,7 +31,6 @@ description: Details and access information of datasets published by Muhammad Sa
           {% for item in research_by_date %}
           <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
             <p><a href="{{ item.url }}">{{ item.title }} ({{ item.date | date: "%Y"}})</a></p>
-            <hr class="small" style="border: dashed 1px silver;">
             {% assign categories = item.category | shift %}
             {% for category in categories %}<span class="project-tag" style="word-wrap: break-word;">{{ category | replace: ",", "" }}</span> &nbsp;{% endfor %}
           </div>
