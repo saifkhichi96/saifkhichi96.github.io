@@ -1,9 +1,10 @@
 ---
-layout: project
+layout: research
 title: RGB-D Data of Synthetic Textureless Surfaces
 description: The dataset features several common 3D objects rendered as images in Blender with no textures and different lights. Depth and normal maps are provided.
 abstract: The dataset features several common objects with uniform albedo rendered as images in Blender without any added textures and under varying lighting conditions and camera viewing angles. The intended use for the dataset is in 3D reconstruction from a single RGB image, and each sample is labelled with a ground truth (GT) depth map and normal map.
 authors: Muhammad Saif Ullah Khan, Muhammad Zeshan Afzal
+image: /assets/images/datasets/syntexless3d.png
 category: [Dataset, 3D Reconstruction]
 syntax: true
 ---
@@ -31,37 +32,50 @@ The dataset was rendered in Blender 2.93.6 as RGB images and corresponding depth
 ```
 def dmap2norm(dmap):
     """Computes surface normals from a depth map.
-    :param dmap: A grayscale depth map image as a numpy array of size (H,W).
-    :return: The corresponding surface normals map as numpy array of size (H,W,3).
+
+    Args:
+      dmap (np.ndarray): A grayscale depth map image of size (H,W).
+
+    Returns:
+      np.ndarray: The corresponding surface normals map of size (H,W,3).
     """
     # calculate surface normals
     zx = cv2.Sobel(dmap, cv2.CV_64F, 1, 0, ksize=5)
     zy = cv2.Sobel(dmap, cv2.CV_64F, 0, 1, ksize=5)
+    normal = np.dstack((-zx, -zy, np.ones_like(dmap)))
 
     # convert to unit vectors
-    normal = np.dstack((-zx, -zy, np.ones_like(dmap)))
-    n = np.linalg.norm(normal, axis=2)
-    normal[:, :, 0] /= n
-    normal[:, :, 1] /= n
-    normal[:, :, 2] /= n
+    length = np.linalg.norm(normal, axis=2)
+    normal[:, :, :] /= length
 
     # offset and rescale values to be in 0-1
-    normal += 1
-    normal /= 2
+    normal = (normal + 1) / 2
     return normal[:, :, ::-1]
 ```
 
-Each sequence renders a high-polygon 3D model of a common everyday object with realistic deformations which is gradually rotated through 360 rotations around itself. One sample is saved at each degree of rotation, ensuring sufficiently different samples while still completely capturing the object from all sides. This process is repeated in various configurations, as details in following subsections. We obtain 10,800 samples per object, and with 38 objects in total, a database of 410,400 labelled RGB-D samples is generated.
+Each sequence renders a high-polygon 3D model of a common everyday object with realistic deformations which is gradually rotated through 360 rotations around itself. One sample is saved at each degree of rotation, ensuring sufficiently different samples while still completely capturing the object from all sides. This process is repeated in various configurations, as details in following subsections. We obtain 8,640 samples per object, and with 35 objects in total, a database of 302,400 labelled RGB-D samples is generated.
 
 ### Lighting
 
-Four different lighting conditions are used, with each setup producing different shadows and making the dataset invariant to lighting. There are three lights in the scene, including a cool-blue colored, slightly tilted sunlight far above the object, two pale-yellow halogen lamps facing the object from front on the right and left respectively, and another halogen lamp facing towards the object from behind. Following combinations of lights are used:
+Four different lighting conditions are used, with each setup producing different shadows and making the dataset invariant to lighting. There are three lights in the scene, including a cool-blue colored, slightly tilted sunlight far above the object, two pale-yellow halogen lamps facing the object from front on the right and left respectively, and another halogen lamp facing towards the object from behind.
 
-1. 1) `Ls`: Sunlight only.
-2. 2) `Ll`: Front-left lamp (plus sunlight).
-3. 3) `Lr`: Front-right lamp (plus sunlight).
-4. 4) `Lb`: Back lamp (plus sunlight).
-5. 5) `La`: All lamps (plus sunlight).
+<figure>
+<img src="{{ '/assets/images/datasets/syntexless3d_blender.png' | relative_url }}"
+     alt="The Blender scene used to generate this dataset."
+     class="project-portfolio-img" />
+<figcaption>
+<b>The Blender scene.</b> The lights and cameras used in the the scenes are shown.
+</figcaption>
+</figure>
+<br>
+
+Following combinations of lights are used:
+
+1. 1) `L<sub>s</sub>`: Sunlight only.
+2. 2) `L<sub>l</sub>`: Front-left lamp (plus sunlight).
+3. 3) `L<sub>r</sub>`: Front-right lamp (plus sunlight).
+4. 4) `L<sub>b</sub>`: Back lamp (plus sunlight).
+5. 5) `L<sub>a</sub>`: All lamps (plus sunlight).
 
 This way, each sequence has at least two light sources, and a wide variety of shadows are generated on same surfaces.
 
@@ -82,17 +96,16 @@ All sequences are rendered once using a bare, colorless model with no texture ad
 
 ## Data Sources
 
-The dataset includes 38 different 3D models of varying degrees of realisticity in terms of deformations and polygon. See the table below for a summary of the included objects.
+The dataset includes 35 different 3D models of varying degrees of realisticity in terms of deformations and polygon. See the table below for a summary of the included objects.
 
-|  Category  | Objects                                                               | # of Objects |
-|:----------:|:----------------------------------------------------------------------|:------------:|
-| `clothing` | `hoodie`, `jacket`, `shirt`, `sweater`, `trouser`, `tshirt`           | 6            |
-| `animals`  | `asian_dargon`, `bunny`, `cat`, `dog`, `dragon`, `duck`, `fish`, `pig`| 8            |
-| `furniture`| `bed`, `chair`, `desk`, `rocking_chair`, `sofa`, `stool`, `table`     | 7            |
-| `vehicles` | `car`, `boat`, `bicycle`, `jeep`, `helicopter`, `motorcycle`, `plane` | 7            |
-| `statues`  | `armadillo`, `buddha`, `lucy`, `thai_statue`                          | 4            |
-| `misc`     | `electric_kettle`, `teapot`, `plant`, `skeleton`                      | 4            |
-| `buildings`| `chiba`, `diego`                                                      | 2            |
+|  Category  | Objects                                                                    | # of Objects |
+|:----------:|:---------------------------------------------------------------------------|:------------:|
+| `animals`  | `asian_dargon`, `bunny`, `cats`, `dragon`, `duck`, `pig`                   | 6            |
+| `clothing` | `cape`, `dress`, `hoodie`, `jacket`, `shirt`, `suit`, `tracksuit`, `tshirt`| 8            |
+| `furniture`| `bed`, `chair`, `desk`, `rocking_chair`, `sofa`, `table`                   | 6            |
+| `statues`  | `armadillo`, `buddha`, `lucy`, `roman`, `thai_statue`                      | 5            |
+| `misc`     | `diego`, `kettle`, `plants`, `teapot`, `skeleton`                          | 5            |
+| `vehicles` | `bicycle`, `car`, `jeep`, `ship`, `spaceship`                              | 5            |
 
 <br>
 These models were obtained from several sources in the public domain, as listed in the following subsections.
@@ -114,11 +127,9 @@ Models obtained from this repository include the following 5 Stanford models and
 This repository was published by Keenan Crane of Carnegie Mellon University under the [CC0 1.0 Universal (CC0 1.0) Public Domain License](https://creativecommons.org/publicdomain/zero/1.0/). The following 6 models were obtained from here:
 
 8. Bob (`duck`)
-9. Blub (`fish`)
-10. Spot (`pig`)
-11. Yeah Right (`skeleton`)
-12. Chiba City Blues (`chiba`)
-13. San Diego Convention Center (`diego`)
+9. Spot (`pig`)
+10. Yeah Right (`skeleton`)
+11. San Diego Convention Center (`diego`)
 
 ### Other Sources
 

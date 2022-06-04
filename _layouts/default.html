@@ -111,17 +111,22 @@
       if (document.referrer.indexOf(location.protocol + "//" + location.host) === 0) {
         history.back();
       } else {
-        window.location = "{{ '/' | relative_url }}";
+        var previous = location.pathname;
+        if (previous.endsWith('/')) {
+          previous = previous.substring(0, previous.length - 1);
+        }
+        previous = previous.substring(0, previous.lastIndexOf('/')) + '/';
+        window.location = previous;
       }
     }
 
     function share(title, description, url) {
       if (navigator.share) {
         navigator.share({
-          title: title,
-          text: description,
-          url: url,
-        })
+            title: title,
+            text: description,
+            url: url,
+          })
           .then(() => console.log('Successful share'))
           .catch((error) => console.log('Error sharing', error));
       }

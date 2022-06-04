@@ -165,7 +165,6 @@ github_stats: true
                     <div class="mdc-layout-grid__cell mdc-card mdc-card--outlined">
                         <div class="mdc-card__content">
                             <small class="text-uppercase">{{ item.category | first | replace: ",", "" }}</small><br>
-                            <hr class="small" style="border: dashed 1px silver;">
                             <p><a href="{{ item.url }}">{{ item.title }} ({{ item.date | date: "%Y"}})</a></p>
                             {% assign categories = item.category | shift %}
                             {% for category in categories %}<span class="project-tag" style="word-wrap: break-word;">{{ category | replace: ",", "" }}</span>
@@ -329,8 +328,7 @@ github_stats: true
     <section class="mdc-card highlighted" style="border-radius: 8px;">
         <div class="mdc-card__content" style="background-color: {{ site.data.manifest.theme_color }}; color: #ffffff;">
             <h2>Beyond Programming</h2>
-            <p>Everyone needs time-off, and in hopes of not appearing one-dimensional, here I share brief glimpses of my
-                life outside computers.</p>
+            <p>In this section, I share brief glimpses of my hobbies and life outside computers.</p>
 
             <section class="slideshow-container">
 

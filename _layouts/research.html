@@ -1,0 +1,96 @@
+---
+layout: default
+---
+
+<!-- Page Content -->
+<div class="c-major-r">
+  <!-- Overview -->
+  <section>
+    <p>{{ page.description }}</p>
+  </section>
+
+  <!-- Media -->
+  {% if page.demo %}
+  <section class="embed-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ page.demo }}?controls=0" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+  </section>
+  {% elsif page.image %}
+  {% if page.image contains '://' %}
+  {% assign image_url = page.image %}
+  {% else %}
+  {% assign image_url = page.image | relative_url %}
+  {% endif %}
+  <section>
+    <img loading="lazy" class="project-portfolio-img" src="{{ image_url }}" alt="{{ page.title }}" />
+  </section>
+  {% endif %}
+
+  {{ content }}
+</div>
+
+<aside class="c-minor">
+  <!-- Authors-->
+  {% if page.authors %}
+  <section>
+    <h2>Authors</h2>
+    <div class='mdc-list'>
+      {% assign authors = page.authors | split: ',' %}
+      {% for author in authors %}
+      <li class="mdc-list-item">
+        <span class="mdc-list-item__text">
+          <span class="material-icons" style="background: #8884; vertical-align: middle; font-size: 20pt; line-height: 20pt; border-radius: 24px; padding: 4px; margin-right: 4px;">person</span>
+          {{ author }}
+        </span>
+      </li>
+      <br>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Source Code -->
+  {% if page.code %}
+  <section>
+    <h2>Source Code</h2>
+    {% include widget_github_repo.html repo=page.code %}
+  </section>
+  {% endif %}
+
+  {% include widget_feedback.html %}
+</aside>
+
+<script>
+  $(function() {
+    $('.content-body ol').addClass('mdc-list');
+    $('.content-body ol li').each(function(index) {
+      $(this).addClass('mdc-list-item');
+      $(this).html('<span class="mdc-list-item__text">' + $(this).text() + '</span>');
+    });
+
+    $('.content-body ul').addClass('mdc-chip-set');
+    $('.content-body ul li').each(function(index) {
+      $(this).addClass('mdc-chip');
+
+      var html = "<div class='mdc-chip__ripple'></div><span role='gridcell'>"
+      html += "<span role='button' class='mdc-chip__primary-action><span class='mdc-chip__text'>"
+      $(this).html(html + $(this).text() + '</span></span>');
+    });
+
+    $('.highlighter-rouge').each(function(index) {
+      var pre = $(this);
+      var code = $(this).find('code');
+
+      var classList = pre.attr('class').split(/\s+/);
+      $.each(classList, function(i, item) {
+        if (item.startsWith('language-')) {
+          code.addClass(item.substring(9));
+        }
+      });
+
+      $(this).removeClass();
+      $(this).children().removeClass();
+      $(this).find('pre').removeClass();
+    });
+  })
+
+</script>
