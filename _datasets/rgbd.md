@@ -8,26 +8,8 @@ category: [Dataset, 3D Reconstruction]
 date: September 2021
 ---
 
+[Get Dataset](www.kaggle.com/saifkhichi96/textureless-real-data/)
+{: .mdc-button .mdc-button--unelevated}
 
-<p>
-  <a class="mdc-button mdc-button--unelevated" target="_blank" href="#">
-    <span class="mdc-button__ripple"></span>
-    <span class="mdc-button__label" style="text-transform: none;">Get Dataset</span>
-  </a>
-  <a class="mdc-button mdc-button--outlined" target="_blank" href="#">
-    <span class="mdc-button__ripple"></span>
-    <span class="mdc-button__label" style="text-transform: none;">Read Paper</span>
-  </a>
-</p>
-
-
-
-## Sources
-
-
-
-## Citation
-
-
-
-## Acknowledgements
+[Read Paper](#)
+{: .mdc-button .mdc-button--outlined}

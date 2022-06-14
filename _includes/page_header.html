@@ -1,4 +1,9 @@
 <header>
+  <!-- Breadcrumbs -->
+  <div class="hide-when-small">
+    {% include breadcrumbs.html %}
+  </div>
+
   <!-- Cover Image -->
   {% if page.cover %}
   {% if page.cover contains '://' %}

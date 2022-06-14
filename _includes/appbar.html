@@ -3,9 +3,7 @@
   <div class="mdc-top-app-bar__row">
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
       {% unless page.drawer %}
-      <button class="material-icons mdc-icon-button"
-              aria-label="Go to previous page."
-              onclick="back();">arrow_back</button>
+      <button class="material-icons mdc-icon-button" aria-label="Go to previous page." onclick="back();">arrow_back</button>
       {% endunless %}
 
       {% if page.drawer %}
@@ -13,24 +11,23 @@
       {% endif %}
       {% unless page.cover or page.icon %}
       <h1 class="mdc-top-app-bar__title" style="margin: 0;">
-      {% else %}
-      <span class="mdc-top-app-bar__title">
-      {% endunless %}
-          {% assign short_title = page.title | split: '&#58;' | first %}
-          {% if short_title %}
-          {{ short_title }}
+        {% else %}
+        <span class="mdc-top-app-bar__title">
+          {% endunless %}
+          {% if page.title %}
+          {{ page.title }}
           {% elsif site.logo %}
           <a href="{{ '/' | relative_url }}">
-          <img loading="lazy" src="{{ site.logo | relative_url }}" alt="{{ site.data.manifest.name }}" height="32" />
+            <img loading="lazy" src="{{ site.logo | relative_url }}" alt="{{ site.data.manifest.name }}" height="32" />
           </a>
           {% elsif site.data.manifest.short_name %}
           {{ site.data.manifest.short_name }}
           {% else %}
           {{ site.data.manifest.name }}
           {% endif %}
-      {% if page.cover %}
-      </span>
-      {% else %}
+          {% if page.cover %}
+        </span>
+        {% else %}
       </h1>
       {% endif %}
     </section>

@@ -6,18 +6,14 @@ abstract: The dataset provides 158 high-resolution images of real, filled out ba
 authors: Muhammad Saif Ullah Khan
 category: [Dataset, Banking, Segmentation]
 date: December 16, 2020
+code: saifkhichi96/bcsd
 ---
 
-<p>
-  <a class="mdc-button mdc-button--unelevated" target="_blank" href="https://www.kaggle.com/saifkhichi96/bank-checks-signatures-segmentation-dataset">
-    <span class="mdc-button__ripple"></span>
-    <span class="mdc-button__label" style="text-transform: none;">Get Dataset</span>
-  </a>
-  <a class="mdc-button mdc-button--outlined" target="_blank" href="https://www.researchgate.net/publication/351093948_A_novel_segmentation_dataset_for_signatures_on_bank_checks/">
-    <span class="mdc-button__ripple"></span>
-    <span class="mdc-button__label" style="text-transform: none;">Read Paper</span>
-  </a>
-</p>
+[Get Dataset](https://www.kaggle.com/saifkhichi96/bank-checks-signatures-segmentation-dataset)
+{: .mdc-button .mdc-button--unelevated}
+
+[Read Paper](https://www.researchgate.net/publication/351093948_A_novel_segmentation_dataset_for_signatures_on_bank_checks/)
+{: .mdc-button .mdc-button--outlined}
 
 ## Contents
 
@@ -31,10 +27,18 @@ It was created to train a network for signature extraction from bank checks.
 
 ## Sources
 
-- IDRBT Cheque Image Dataset (110)
-- NRIInternet Scam Documents (10)
-- Google (29)
-- Self-generated images (9)
+IDRBT Cheque Image Dataset (110)
+{: .mdc-chip}
+
+NRIInternet Scam Documents (10)
+{: .mdc-chip}
+
+Google (29)
+{: .mdc-chip}
+
+Self-generated images (9)
+{: .mdc-chip}
+
 
 ## Citation
 

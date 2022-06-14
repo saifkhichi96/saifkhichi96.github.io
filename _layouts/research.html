@@ -6,7 +6,7 @@ layout: default
 <div class="c-major-r">
   <!-- Overview -->
   <section>
-    <p>{{ page.description }}</p>
+    <p>{{ page.abstract }}</p>
   </section>
 
   <!-- Media -->
@@ -29,6 +29,28 @@ layout: default
 </div>
 
 <aside class="c-minor">
+  <!-- Related Research -->
+  {% if page.related and page.related.size > 0 %}
+  {% assign research_by_date = site.research | sort: "date" | reverse %}
+  {% assign datasets_by_date = site.datasets | sort: "date" | reverse %}
+  {% assign all_research = research_by_date | concat: datasets_by_date %}
+  {% if all_research.size > 0 %}
+  {% for item in all_research %}
+  {% assign item_path = item.path | split: "." %}
+  {% assign item_path = item_path[0] | split: "/" %}
+  {% if page.related contains item_path[-1] %}
+  <div class="mdc-list-item">
+    <span class="mdc-list-item__text">
+      <a href="{{ item.url }}">{{ item.title }} ({{ item.date | date: "%Y"}})</a>
+      {% assign categories = item.category | shift %}
+      {% for category in categories %}<span class="project-tag" style="word-wrap: break-word;">{{ category | replace: ",", "" }}</span> &nbsp;{% endfor %}
+    </span>
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  {% endif %}
+
   <!-- Authors-->
   {% if page.authors %}
   <section>
