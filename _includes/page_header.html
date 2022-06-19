@@ -43,13 +43,9 @@
           {% if categories_size > 0 %}
           <div class="project-tags">
             {% for category in categories %}
-            {% assign category_slug = category | slugify | replace: ',', '' %}
-            {% assign category_url = "/categories/#" | append: category_slug | relative_url %}
-            <a href="{{category_url}}">
-              <span class="project-tag">
-                <i class="material-icons">sell</i>{{ category | replace: ",", "" }}
-              </span>
-            </a>
+            <span class="project-tag">
+              <i class="material-icons">sell</i>{{ category | replace: ",", "" }}
+            </span>
             {% endfor %}
           </div>
           {% endif %}

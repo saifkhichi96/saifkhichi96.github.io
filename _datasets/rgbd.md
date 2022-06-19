@@ -8,7 +8,7 @@ category: [Dataset, 3D Reconstruction]
 date: September 2021
 ---
 
-[Get Dataset](www.kaggle.com/saifkhichi96/textureless-real-data/)
+[Get Dataset](https://kaggle.com/saifkhichi96/textureless-real-data/)
 {: .mdc-button .mdc-button--unelevated}
 
 [Read Paper](#)

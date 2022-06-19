@@ -21,7 +21,7 @@
       <div class="project-tags">
         {% assign categories = post.categories %}
         {% for category in categories %}
-        <a href="{{site.baseurl}}/categories/#{{category|slugize|replace:",",""}}"><span class="project-tag"><i class="material-icons">sell</i>{{ category | replace: ",", "" }}</span></a>
+        <span class="project-tag"><i class="material-icons">sell</i>{{ category | replace: ",", "" }}</span>
         {% endfor %}
       </div>
       <div><span class="mdc-list-item__secondary-text">({{ post.authors | split: ',' | first | split: ' ' | last }} <i>et al.</i>, {{ post.date | date: "%Y" }})</span></div>
