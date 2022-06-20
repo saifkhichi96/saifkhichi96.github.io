@@ -2,22 +2,28 @@
 layout: project
 title: Transitus&#58; Towards Higher Education
 categories: app
-keywords: college, education
+keywords: college, university, students, education
 device: Mobile App
-description: Transitus prepares high-school and college graduates for the next step in their journey.
+description: Transitus is an excellent resource for high-school and college graduates in Pakistan who are preparing for the next step in their educational journey.
 image: /assets/images/projects/transitus-cover.png
 icon: /assets/images/projects/transitus-logo.png
 ---
 
+This app provides information on a variety of topics, from choosing the right college to preparing for exams. Transitus also offers helpful tips and advice for prospective university students.
+
 ## Key Features
-1. Information about universities.
-2. Entrance requirements/tests.
-3. Community forums.
-4. Survival guides
+
+The app provides information about universities in Pakistan, including their entrance requirements and tests. It also includes community forums so prospective and current students can connect with one another, as well as survival guides with tips and advice to help them through the admissions process and beyond.
 
 ## Supported Platforms
-- Android
+
+Android
+{: .mdc-chip}
 
 ## Programming Languages
-- Java
-- Kotlin
+
+Java
+{: .mdc-chip}
+
+Kotlin
+{: .mdc-chip}

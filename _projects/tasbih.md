@@ -9,19 +9,32 @@ device: Mobile App
 client: This is a personal project developed under brand name AspiraSoft.
 code: aspirasoft/tasbih
 license: MIT
-description: Tasbih is a rosary app with a collection of Muslim prayers in Arabic and English, and includes a digital counter to keep track of your prayers.
+description: A rosary app with unlimited digital counters to keep track of your prayers and a collection of Islamic prayers in Arabic and English.
 icon: /assets/images/projects/tasbih-logo.png
 ---
 
-This is a native Android app initially written in Java, but later migrated to Kotlin in part.
+If you are looking for a quality Tasbih app (rosary app), look no further than the Tasbih app offered by developer Saif Khan. This is a native Android app initially written in Java, but later migrated to Kotlin in part.
 
 ## Key Features
-1. Unlimited separate counters for all your prayers.
-2. Huge collection of prayers in Arabic with English translation.
+
+This app includes a wide range of features, such as:
+
+1. A digital counter to track your prayers
+2. Prayers in Arabic and English
+3. Beautiful HD graphics
+4. Unlimited separate counters to track all your prayers
+
+This is an excellent resource for Muslims and non-Muslims alike who want to learn more about Islamic prayers.
 
 ## Supported Platforms
-- Android
+
+Android
+{: .mdc-chip}
 
 ## Programming Languages
-- Kotlin
-- Java
+
+Kotlin
+{: .mdc-chip}
+
+Java
+{: .mdc-chip}

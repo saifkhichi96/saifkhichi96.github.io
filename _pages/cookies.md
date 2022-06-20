@@ -1035,7 +1035,7 @@ keywords: cookies, privacy, policy, saif khan, saifkhichi96
                 </tr>
                 <tr>
                   <td>Service:</td>
-                  <td><span>Rubicon Project  <a href="https://rubiconproject.com/privacy/"  target="_blank">View Service Privacy Policy</a>  </span></td>
+                  <td><span>Rubicon Project  <a href="https://www.magnite.com/legal/"  target="_blank">View Service Privacy Policy</a>  </span></td>
                 </tr>
                 <tr>
                   <td>Country:</td>
@@ -1899,7 +1899,7 @@ keywords: cookies, privacy, policy, saif khan, saifkhichi96
                 </tr>
                 <tr>
                   <td>Service:</td>
-                  <td><span>Rubycon Project  <a href="https://rubiconproject.com/privacy/"  target="_blank">View Service Privacy Policy</a>  </span></td>
+                  <td><span>Rubycon Project  <a href="https://www.magnite.com/legal/"  target="_blank">View Service Privacy Policy</a>  </span></td>
                 </tr>
                 <tr>
                   <td>Country:</td>
@@ -2007,7 +2007,7 @@ keywords: cookies, privacy, policy, saif khan, saifkhichi96
                 </tr>
                 <tr>
                   <td>Service:</td>
-                  <td><span>Google Analytics  <a href="https://privacy.google.com/take-control.html"  target="_blank">View Service Privacy Policy</a>  </span></td>
+                  <td><span>Google Analytics  <a href="https://safety.google/"  target="_blank">View Service Privacy Policy</a>  </span></td>
                 </tr>
                 <tr>
                   <td>Country:</td>
@@ -4111,7 +4111,7 @@ keywords: cookies, privacy, policy, saif khan, saifkhichi96
                 </tr>
                 <tr>
                   <td>Service:</td>
-                  <td><span>AddThis  <a href="https://www.addthis.com/privacy"  target="_blank">View Service Privacy Policy</a>  </span></td>
+                  <td><span>AddThis  <a href="https://www.oracle.com/legal/privacy/addthis-privacy-policy.html"  target="_blank">View Service Privacy Policy</a>  </span></td>
                 </tr>
                 <tr>
                   <td>Country:</td>

@@ -179,7 +179,7 @@ description: Privacy Policy of Saif Khan's portfolio website outlining how user 
     </p>
 
     <p>
-      We may use cookies and similar tracking technologies (like web beacons and pixels) to access or store information. Specific information about how we use such technologies and how you can refuse certain cookies is set out in our Cookie Notice: <a href="https://www.saifkhichi.com/cookie-policy" target="_blank">https://www.saifkhichi.com/cookie-policy</a>.
+      We may use cookies and similar tracking technologies (like web beacons and pixels) to access or store information. Specific information about how we use such technologies and how you can refuse certain cookies is set out in our Cookie Notice: <a href="https://www.saifkhichi.com/cookie-policy/" target="_blank">https://www.saifkhichi.com/cookie-policy/</a>.
     </p>
   </section>
 

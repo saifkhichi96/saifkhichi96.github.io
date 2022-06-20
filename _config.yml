@@ -48,14 +48,11 @@ menu_social:
 
 # Includes links to your site's privacy policy and terms of service in the footer
 menu_footer:
-  - cookies:
-    title:                 'Cookies'
+  - title:                 'Cookies'
     url:                   '/cookie-policy/'
-  - privacy:
-    title:                 'Privacy'
+  - title:                 'Privacy'
     url:                   '/privacy/'
-  - terms:
-    title:                 'Terms'
+  - title:                 'Terms'
     url:                   '/terms/'
 
 breadcrubms:               true
