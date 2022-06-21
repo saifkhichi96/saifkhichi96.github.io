@@ -3,7 +3,10 @@ baseurl:                   ''
 url:                       http://www.saifkhichi.com
 enforce_ssl:               https://www.saifkhichi.com
 
-author:                    saifkhichi96
+author:
+  name: Saif Khan
+  url: https://www.saifkhichi.com/
+
 favicon:                   /favicon.ico
 logo:                      /assets/images/logo.png
 
