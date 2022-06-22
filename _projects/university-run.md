@@ -1,6 +1,7 @@
 ---
 layout: project
 title: University Run&#58; Flight of the Student
+short_title: University Run
 categories: game
 keywords: infinite runner
 device: Desktop App

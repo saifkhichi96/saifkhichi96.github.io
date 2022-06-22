@@ -14,7 +14,9 @@
         {% else %}
         <span class="mdc-top-app-bar__title">
           {% endunless %}
-          {% if page.title %}
+          {% if page.short_title %}
+          {{ page.short_title }}
+          {% elsif page.title %}
           {{ page.title }}
           {% elsif site.logo %}
           <a href="{{ '/' | relative_url }}">

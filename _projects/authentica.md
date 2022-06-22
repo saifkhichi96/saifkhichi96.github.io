@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Authentica&#58; Signature Verification System
+short_title: Authentica
 categories: [app, featured]
 client: This is a personal project, based on the work I did during the final-year project of my <a href="/resume/bese/">undergraduate studies</a> at NUST.
 code: saifkhichi96/authentica

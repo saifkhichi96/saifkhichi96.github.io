@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Lexiconic Dictionary App
+short_title: Lexiconic
 categories: app
 keywords: dictionary, brain game
 device: Desktop App

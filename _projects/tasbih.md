@@ -1,15 +1,17 @@
 ---
 layout: project
 title: Tasbih&#58; A Digital Rosary App
+short_title: Tasbih
 categories: app
 keywords: lifestyle, religion
 download:
   android: pk.aspirasoft.tasbih
 device: Mobile App
-client: This is a personal project developed under brand name AspiraSoft.
+client: This is a personal project.
 code: aspirasoft/tasbih
 license: MIT
 description: A rosary app with unlimited digital counters to keep track of your prayers and a collection of Islamic prayers in Arabic and English.
+image: /assets/images/projects/tasbih-cover.png
 icon: /assets/images/projects/tasbih-logo.png
 ---
 

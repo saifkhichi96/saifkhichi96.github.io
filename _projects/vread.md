@@ -1,6 +1,7 @@
 ---
 layout: project
 title: vRead&#58; Social Platform for Book Readers
+short_title: vRead
 categories: app
 keywords: social network, books, reading
 device: Web App

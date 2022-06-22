@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Jungle Run&#58; 2D Platformer Game
+short_title: Jungle Run
 categories: game
 device: Cross-Platform
 keywords: 2d platformer, java

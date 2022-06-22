@@ -1,6 +1,7 @@
 ---
 layout: project
 title:  DroidREST&#58; A RESTful Client for Android
+short_title: DroidREST
 categories: api
 keywords: rest api, java
 download:

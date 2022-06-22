@@ -1,9 +1,10 @@
 ---
 layout: project
-title: Cygnus&#58; Smart School App
+title: Eduistein&#58; Smart School App
+short_title: Eduistein
 categories: [app, featured]
-client: This project was requested by a private client from India as a general solution which can be implemented in grade schools.
-description: Cygnus is an online learning management system for smart schools, in shape of a mobile app, developed for a client in India.
+client: This project was requested by a <a href='//www.eduistein.com/'>client from India</a> as a general solution which can be implemented in grade schools.
+description: Eduistein is an online learning management system for smart schools, in shape of a mobile app, developed for a client in India.
 device: Mobile App
 icon: /assets/images/projects/cygnus-logo.png
 keywords: digital learning, smart school

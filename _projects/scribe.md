@@ -1,6 +1,7 @@
 ---
 layout: project
 title:  Scribe&#58; Generate PDFs in Android Apps
+short_title: Scribe
 categories: api
 keywords: pdf generation, android
 code: aspirasoft/scribe

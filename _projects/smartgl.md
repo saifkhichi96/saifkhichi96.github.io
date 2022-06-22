@@ -1,6 +1,7 @@
 ---
 layout: project
 title: SmartGL&#58; An OpenGL Wrapper
+short_title: SmartGL
 categories: api
 keywords: graphics, opengl
 device: Library

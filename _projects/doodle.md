@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Doodle&#58; A Simple Paint App
+short_title: Doodle
 categories: [app, featured]
 download:
   android: sfllhkhan95.doodle

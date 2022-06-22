@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Moksha&#58; Snakes and Ladders Game
+short_title: Moksha
 categories: game
 code: saifkhichi96/moksha
 demo: FyS29aw0JC4

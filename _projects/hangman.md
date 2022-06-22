@@ -1,8 +1,10 @@
 ---
 layout: project
 title: Hangman&#58; Classics Reimagined
+short_title: Hangman
 categories: game
 keywords: hangman, puzzle, classic
+client: This is a personal project developed under brand name <a href='//aspirasoft.dev'>Aspirasoft Technologies</a>.
 download:
   android: co.aspirasoft.hangman
 device: Cross-Platform
@@ -18,15 +20,31 @@ The hangman game will give you the option to choose vowels and consonants to try
 You will win the hangman game if you can write the correct word before the figure of the stick man is completed. If not, it will be hanged and the game will be finalized.
 
 ## In-Game Word Databases
-- English Vocabulary
-- German A1 Vocabulary
+
+English Vocabulary
+{: .mdc-chip}
+
+German A1 Vocabulary
+{: .mdc-chip}
 
 ## Supported Platforms
-- Android
-- Windows
+
+Android
+{: .mdc-chip}
+
+Windows
+{: .mdc-chip}
 
 ## Programming Languages
-- C
-- C++
-- Java
-- Kotlin
+
+C
+{: .mdc-chip}
+
+C++
+{: .mdc-chip}
+
+Java
+{: .mdc-chip}
+
+Kotlin
+{: .mdc-chip}

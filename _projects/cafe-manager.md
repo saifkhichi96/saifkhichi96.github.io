@@ -1,6 +1,7 @@
 ---
 layout: project
 title: e-Khokha Cafe Manager
+short_title: e-Khokha 
 categories: app
 client: This project was created for a student-run cafeteria at university, the Khaapa at NUST-SEECS.
 description: The legendary Khaapa of SEECS has yet again fallen into the hands of the SE batch and this time it's SE5B.

@@ -1,6 +1,7 @@
 ---
 layout: project
-title: RECatalyst
+title: RECatalyst- Better Project Management
+short_title: RECatalyst
 categories: [app, featured]
 keywords: developer tool, requirements engineering
 device: Mobile App

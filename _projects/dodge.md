@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Dodge&#58; Game of Survival
+short_title: Dodge
 categories: game
 download:
     android: pk.aspirasoft.dodge

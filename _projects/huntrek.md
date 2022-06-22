@@ -1,6 +1,7 @@
 ---
 layout: project
 title: HunTrek&#58; 3D Scavenger Hunt
+short_title: HunTrek
 categories: game
 code: saifkhichi96/huntit
 demo: bceFaOqTkhs

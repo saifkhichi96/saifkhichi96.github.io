@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Transitus&#58; Towards Higher Education
+short_title: Transitus
 categories: app
 keywords: college, university, students, education
 device: Mobile App

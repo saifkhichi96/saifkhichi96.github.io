@@ -1,6 +1,7 @@
 ---
 layout: project
 title: GameCore Java Library
+short_title: GameCore
 categories: api
 keywords: game engine, java
 code: saifkhichi96/game-core

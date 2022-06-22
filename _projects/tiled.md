@@ -1,6 +1,7 @@
 ---
 layout: project
 title:  Tiled&#58; Tilemaps on Android
+short_title: Tiled
 categories: [api, featured]
 keywords: tilemaps, ui
 download:

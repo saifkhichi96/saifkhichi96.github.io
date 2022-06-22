@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Acacia Joinery Mobile App
+short_title: Acacia Joinery
 categories: app
 client: <a href="https://www.acaciajoinery.com.au/" rel="noopener" target="_blank">Acacia Joinery</a> is an architectural company based in Bellambi, Australia.
 description: Acacia Joinery is a mobile application for an architectural firm based in Bellambi, Australia.

@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Scanner&#58; Easily Scan QR Codes
+short_title: Scanner
 categories: app
 keywords: tools, qr codes
 device: Mobile App

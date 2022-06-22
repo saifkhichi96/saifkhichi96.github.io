@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Space Shooter Arcade Game
+short_title: Space Shooter
 categories: game
 keywords: shooting, arcade
 device: Desktop App
@@ -11,8 +12,14 @@ icon: /assets/images/projects/space-shooter-logo.png
 
 
 ## Supported Platforms
-- Windows
+
+Windows
+{: .mdc-chip}
 
 ## Programming Languages
-- C
-- C++
+
+C
+{: .mdc-chip}
+
+C++
+{: .mdc-chip}

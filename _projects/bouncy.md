@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Bouncy&#58; Jump-'n'-Run
+short_title: Bouncy
 categories: game
 description: Bouncy, part of the 'Classics&#58; Reimagined' series, combines the arcade game Snow Bros. and Bounce (classic Nokia game) into a single game.
 device: Cross-Platform

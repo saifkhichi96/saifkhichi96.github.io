@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Quest&#58; Classics Reimagined
+short_title: Quest
 categories: game
 download:
   android: pk.smartgames.kaptaansquest
