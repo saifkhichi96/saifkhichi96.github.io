@@ -25,14 +25,16 @@
         {% endfor %}
       </div>
       <div><span class="mdc-list-item__secondary-text">({{ post.authors | split: ',' | first | split: ' ' | last }} <i>et al.</i>, {{ post.date | date: "%Y" }})</span></div>
-      <h2 class="post-title">{{ post.title }}</h2>
+      <a href="{{ post.url | relative_url }}" style='color:var(--mdc-theme-on-surface);'>
+        <h2 class="post-title">{{ post.title }}</h2>
+      </a>
       <p class="post-excerpt">{{ post.description }}</p>
       <div class="mdc-touch-target-wrapper">
-        <a class="mdc-button mdc-button--unelevated" href="{{ post.url | relative_url }}">
+        <button class="mdc-button mdc-button--unelevated" onclick="window.location.href='{{ post.url | relative_url }}'">
           <span class="mdc-button__ripple"></span>
           <span class="mdc-button__label">Read More</span>
           <span class="mdc-button__touch"></span>
-        </a>
+        </button>
       </div>
     </div>
   </div>
