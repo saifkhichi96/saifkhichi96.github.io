@@ -249,7 +249,7 @@ description: Privacy Policy of Saif Khan's portfolio website outlining how user 
       If you are a resident in Switzerland, the contact details for the data protection authorities are available here: <a href="https://www.edoeb.admin.ch/edoeb/en/home.html" rel="noopener noreferrer" target="_blank">https://www.edoeb.admin.ch/edoeb/en/home.html</a>.
     </p>
     <p>
-      <strong><u>Cookies and similar technologies:</u></strong> Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Website. To opt-out of interest-based advertising by advertisers on our Website visit <a href="https://optout.aboutads.info/" rel="noopener noreferrer" target="_blank">https://optout.aboutads.info/</a>. For further information, please see our Cookie Notice: <a href="https://www.saifkhichi.com/cookie-policy" target="_blank">https://www.saifkhichi.com/cookie-policy</a>.
+      <strong><u>Cookies and similar technologies:</u></strong> Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Website. To opt-out of interest-based advertising by advertisers on our Website visit <a href="https://optout.aboutads.info/" rel="noopener noreferrer" target="_blank">https://optout.aboutads.info/</a>. For further information, please see our Cookie Notice: <a href="https://www.saifkhichi.com/cookie-policy/" target="_blank">https://www.saifkhichi.com/cookie-policy/</a>.
     </p>
   </section>
 
@@ -335,7 +335,7 @@ description: Privacy Policy of Saif Khan's portfolio website outlining how user 
 
     <p><strong>How do we use and share your personal information?</strong></p>
     <p>
-      More information about our data collection and sharing practices can be found in this privacy notice and our Cookie Notice: <a href="https://www.saifkhichi.com/cookie-policy" target="_blank">https://www.saifkhichi.com/cookie-policy</a>.
+      More information about our data collection and sharing practices can be found in this privacy notice and our Cookie Notice: <a href="https://www.saifkhichi.com/cookie-policy/" target="_blank">https://www.saifkhichi.com/cookie-policy/</a>.
     </p>
     <p>
       You may contact us by email at admin@saifkhichi.com, by visiting <a href="http://www.saifkhichi.com/contact/" target="_blank">http://www.saifkhichi.com/contact/</a>, or by referring to the contact details at the bottom of this document.

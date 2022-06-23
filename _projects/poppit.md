@@ -60,6 +60,8 @@ Android
 
 ## Programming Languages
 
+It was initially written in Java language but later migrated to Kotlin.
+
 Java
 {: .mdc-chip}
 

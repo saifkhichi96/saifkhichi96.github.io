@@ -11,13 +11,11 @@ icon: /assets/images/projects/connect-logo.png
 keywords: social network, nust
 ---
 
-NUST Connect is a platform where the whole community of National University of Sciences and Technology can come together and interact with each other.
+National University of Sciences and Technology (NUST) is one of the leading universities in Pakistan. It has a large community of students, faculty, and staff. NUST Connect is a platform where this community can come together and interact with each other. It provides a forum for discussions, sharing ideas, and networking. NUST Connect also helps keep everyone connected with the latest news and events at NUST.
 
 ## Purpose
 
-1. To connect the NUST community by bridging the distance-gap between people, especially people from different schools/departments.
-2. To provide them a platform for sharing opportunities with each other.
-3. To allow students to get help from their peers and teachers.
+The NUST community is a large and diverse one, comprising of people from different schools and departments. The purpose of this app is to connect these people by bridging the distance-gap between them, and to provide them with a platform for sharing opportunities with each other. This app also allows students to get help from their peers and teachers, which can be extremely helpful in their academic journey.
 
 ## How it Works
 
@@ -25,7 +23,11 @@ NUST Connect is a platform where the whole community of National University of S
 2. Once approved, they can <b>sign in</b> to their accounts.
 3. Everyone is connected with everyone else by default (i.e. you see posts from whole community in your <b>timeline</b>), unless they <b>unfollow</b> someone.
 
-## Key Feature: Timeline
+## Key Features
+
+Some of the key features of this app include:
+
+### Timeline
 
 1. Updates from everyone (except people you unfollowed) appear in your timeline.
 2. Updates are grouped under/filtered by three categories:
@@ -34,13 +36,13 @@ NUST Connect is a platform where the whole community of National University of S
   - Department – Updates from people of your own degree, e.g. BESE
 4. You can only see posts which have you in their <b>target audience</b>.
 
-## Key Feature: Target Audience
+### Target Audience
 
 1. Who should see a status update you post?
 2. You limit the target audience by using the visibility controls.
 3. For each post, you select the target school, degree and batch.
 
-## Additional Features
+### Additional Features
 
 1. <b>Subscribe for notifications</b> for status updates by specific users.
 2. Ask for help by posting a <b>help request</b> on a user’s profile page, which starts a new discussion thread. You
@@ -67,7 +69,7 @@ PHP
   <span class="mdc-button__ripple"></span>
   <span class="mdc-button__label">
     <span class="material-icons">description</span>
-    &nbsp; Requirements Sepcification
+    &nbsp; Requirements Specification
   </span>
   <span class="mdc-button__touch"></span>
 </a>
