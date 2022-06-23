@@ -25,7 +25,7 @@ Fast forward a couple of hours. We are on our way back to Karimabad where we had
 We are traveling in two cars. I had been trying to enforce a garbage-in-bag-until-I-find-a-trashcan policy in our car even before we met Smiling Guy, but with little success. Since then, I had redoubled my efforts and expanded them to the second car too, asking them not to throw stuff on roadsides or out of car windows. There was absolute policy compliance in our car. The memory of the Smiling Guy was still fresh.
 
 <figure>
-  <img src="/assets/images/blog/environmental-lesson-from-hunza/1.jpg"
+  <img loading="lazy" src="/assets/images/blog/environmental-lesson-from-hunza/1.jpg"
        alt="Somewhere off the road between Attabad Lake and Khunjerab National Park in Hunza Valley."/>
   <figcaption>Somewhere off the road between Attabad Lake and Khunjerab National Park in Hunza Valley.</figcaption>
 </figure>
@@ -50,7 +50,7 @@ Again, I am impressed. My respect for the people of Hunza just skyrocketed. And 
 The town of Karimabad, and all other towns on way up to Khunjerab Pass, and the roadsides elsewhere, they always looked much too clean when compared to other tourist hotspots such as the Galiyat or Lake Saif al-Malook. I had always wondered, but now I realised why.
 
 <figure>
-  <img src="/assets/images/blog/environmental-lesson-from-hunza/2.jpg"
+  <img loading="lazy" src="/assets/images/blog/environmental-lesson-from-hunza/2.jpg"
        alt="The Passu cones." />
   <figcaption>Passu cones are few pointed peaks in the Karakoram Range that are located East of Karakoram Highway near the Passu village.</figcaption>
 </figure>

@@ -1,6 +1,6 @@
 theme:                     simple-material
 baseurl:                   ''
-url:                       http://www.saifkhichi.com
+url:                       https://www.saifkhichi.com
 enforce_ssl:               https://www.saifkhichi.com
 
 author:
@@ -189,9 +189,6 @@ collections:
   projects:
     output:                true
     permalink:             /projects/:path/
-  services:
-    output:                true
-    permalink:             /services/:path/
   research:
     output:                true
     permalink:             /research/:path/
