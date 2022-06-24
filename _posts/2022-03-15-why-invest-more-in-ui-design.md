@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why You Should Invest More in Designing the UI of Your Next App
+seo_title: Invest More in the UI of Your Next App
 categories: Code
 cover: https://www.elegantthemes.com/blog/wp-content/uploads/2018/10/000-Web-UI-Design.png
 description: A great UI is key to success of your app, and it’s important to focus on creating an intuitive UI design that looks great and makes it easy for users to navigate.

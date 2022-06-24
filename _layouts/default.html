@@ -14,7 +14,7 @@
   {% else %}
   {% assign title = site.title %}
   {% endif %}
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ title }}{% unless page.title %}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}{% endunless %}</title>
+  <title>{% if page.seo_title %}{{ page.seo_title }} | {% elsif page.title %}{{ page.title }} | {% endif %}{{ title }}{% unless page.title %}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}{% endunless %}</title>
 
   {% seo title=false %}
   {% include meta.html %}
