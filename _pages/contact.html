@@ -9,8 +9,13 @@ icons: true
 
 
 <style>
+  .carousel {
+    position: relative;
+  }
+
   .carousel .carousel-item {
     overflow: hidden;
+    min-height: 250px;
   }
 
   .carousel .testimonial {
@@ -144,8 +149,8 @@ icons: true
   <!-- Testimonials -->
   <section>
     <h2>Client Reviews</h2>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
+    <div class="carousel mdc-card mdc-card--outlined">
+      <div class="carousel-inner mdc-card__content">
         <div class="carousel-item active">
           <div class="media">
             <div class="media-body">
@@ -234,10 +239,6 @@ icons: true
         </div>
       </div>
     </div>
-    <script>
-      speed = 600
-
-    </script>
   </section>
 </aside>
 
@@ -305,6 +306,34 @@ icons: true
           });
       }
     });
+
+    var slides = $(".carousel-item");
+    slides.hide();
+
+    function setActiveCarouselItem(n) {
+      var slideIndex = n;
+      if (n > slides.length) {
+        slideIndex = 1
+      }
+      if (n < 1) {
+        slideIndex = slides.length
+      }
+
+      slides.hide(100);
+      slides.each(function(i) {
+        if (i == slideIndex - 1) {
+          $(this).show(1000);
+        }
+      });
+
+      return slideIndex;
+    }
+
+    // Automaticall slide the review carousel
+    var slideIndex = setActiveCarouselItem(1);
+    setInterval(function() {
+      slideIndex = setActiveCarouselItem(slideIndex + 1);
+    }, 7500);
   });
 
 </script>
