@@ -16,20 +16,26 @@ icon: /assets/images/projects/poppit-logo.png
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "MobileApplication",
     "name": "{{page.short_title}}",
-    "operatingSystem": "ANDROID",
+    "operatingSystem": "Android 4.1",
     "applicationCategory": "GameApplication",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "3.3",
-      "ratingCount": "25"
+      "ratingValue": "2.33",
+      "ratingCount": "9"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Aspirasoft Technologies",
+      "sameAs": "https://www.aspirasoft.dev/"
     },
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
-    }
+    },
+    "sameAs": "https://www.aspirasoft.dev/games/poppit/"
   }
 </script>
 

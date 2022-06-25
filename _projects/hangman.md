@@ -13,6 +13,32 @@ image: /assets/images/projects/hangman-cover.png
 icon: /assets/images/projects/hangman-logo.png
 ---
 
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "{{page.short_title}}",
+    "operatingSystem": "Android 4.4",
+    "applicationCategory": "GameApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.00",
+      "ratingCount": "4"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Aspirasoft Technologies",
+      "sameAs": "https://www.aspirasoft.dev/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "sameAs": "https://play.google.com/store/apps/details?id=co.aspirasoft.hangman"
+  }
+</script>
+
 The hangman, also known as "hanged" is a classic game in which you will have to guess a word by choosing the letters that you think may be included in it.
 
 The hangman game will give you the option to choose vowels and consonants to try to guess which word is hidden. For each mistake that you make, the figure of a stick man will be formed: first the gallows, then the head, the body and, finally, the arms and legs. Guess the word before the gallows is complete.

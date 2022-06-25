@@ -11,9 +11,46 @@ demo: 05itwsYAJkU
 description: Doodle is a simple paint application for Android, written in Java and Kotlin programming languages.
 device: Mobile App
 icon: /assets/images/projects/doodle-logo.png
+image: /assets/images/projects/doodle-cover.png
 keywords: paint-app, doodles
 license: MIT
 ---
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "{{page.short_title}}",
+    "operatingSystem": "Android 4.4",
+    "applicationCategory": "GameApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "3.32",
+      "ratingCount": "104"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Saif Khan",
+      "sameAs": "https://www.saifkhichi.com/"
+    },
+    "dateCreated": "2017-10-22",
+    "softwareVersion": "3.7.0",
+    "releaseNotes": "Fixes major bug which prevented the app from opening Gallery or Camera images, and adds Chinese localisation.",
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "price": "4.39",
+        "priceCurrency": "EUR"
+      }
+    ],
+    "sameAs": "https://play.google.com/store/apps/details?id=sfllhkhan95.doodle"
+  }
+</script>
 
 Doodle is a complete art tool to help bring out your inner artist. The application offers a wide range of features,
 which allows you to express yourself without limits.
@@ -23,6 +60,8 @@ Screen mode helps you focus on your projects by minimizing the distractions. You
 application to base your drawing on. This app is also compatible with stylus.
 
 ## Key Features
+
+![Doodle Key Features](/assets/images/projects/doodle-cover.png)
 
 ### Tools
 
