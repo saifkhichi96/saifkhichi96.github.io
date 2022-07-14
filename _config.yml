@@ -43,7 +43,6 @@ menu_social:
   github:                  saifkhichi96
   linkedin:                saifkhichi96
   rss:                     rss
-  twitter:                 saifkhichi96
   stackoverflow:           4690466
   youtube:                 /channel/UCj4yPuKHi9pZ9WbKbfh5MEQ
   playconsole:             7722501168179136426
@@ -68,14 +67,6 @@ disqus:                    saifkhichi
 # For showing Twitter cards
 twitter:
   username: saifkhichi96
-
-# For specifying social profiles
-social:
-  name: Muhammad Saif Ullah Khan
-  links:
-    - https://twitter.com/saifkhichi96
-    - https://www.linkedin.com/in/saifkhichi96
-    - https://github.com/saifkhichi96
 
 # ----------------------------------------------------------------------------
 # Services
@@ -103,17 +94,34 @@ services:
 skills:
   - type:                  Databases
     items:
-      - name:              NoSQL
       - name:              MySQL
+        use:               (with PHP)
       - name:              SQLite
+        use:               (for Android)
+      - name:              NoSQL databases
+        use:               like Firebase Realtime Database / Firestore and MongoDB.
 
-  - type:                  Tools
+  - type:                  Software and Tools
     items:
-      - name:              Firebase Services
-      - name:              Google Cloud Services
-      - name:              OpenCV
-      - name:              PyTorch
-      - name:              Tensorflow
+      - name:              Deep Learning
+        use:               (PyTorch, scikit-learn)
+      - name:              Image Processing
+        use:               (OpenCV, PIL, scikit-image)
+      - name:              Visualization/Computing
+        use:               (Matplotlib, NumPy, SciPy)
+      - name:              Advertisements/Analytics
+        use:               (Google Analytics, AdMob,AdSense, Crashlytics)
+      - name:              Web Hosting/DNS Setup
+        use:               (e.g. GitHub Pages, Firebase Hosting, etc.)
+
+  - type:                  Other Tools
+    items:
+      - name:              Jekyll
+        use:               website generator
+      - name:              Blender
+        use:               for 3D modeling
+      - name:              Unity
+        use:               game engine
 
 spoken_languages:
 - name:                    English
@@ -127,21 +135,21 @@ interests:
 - name:                    Reading
   description:             I read some fiction, but mostly non-fiction with topics ranging from history, politics, and theology to science, technology and current affairs.
   url:                     https://www.goodreads.com/user/show/26736309-muhammad-saif-ullah-khan
-- name:                    Art &amp; Blogging
+- name:                    Art and Blogging
   description:             Occasional writer and artist. I sometimes write short stories and poetry, and indulge in oil painting and pencil sketching.
   url:                     /blog/
 
 experience:
-- institute:               Deutsches Forschungszentrum für Künstliche Intelligenz (DFKI)
-  location:                Kaiserslautern, Germany
+- institute:               German Research Center for Artificial Intelligence (DFKI)
+  location:                Kaiserslautern, DE
   position:                Research Assistant
-  time:                    11/2021 - 03/2022
+  time:                    11/2021 - 08/2022
   type:                    1
   url:
 - institute:               Technische Universität Kaiserslautern (TUK)
-  location:                Kaiserslautern, Germany
+  location:                Kaiserslautern, DE
   position:                Master of Computer Science
-  time:                    2019 - present
+  time:                    2019 - 2022
   type:                    0
   url:                     /resume/mscs/
   details:
@@ -151,16 +159,16 @@ experience:
         description:
       - name:              Visualization and Scientific Computing
         description:
-- institute:               Active Institute of Science, Arts &amp; Technology (AISAT)
-  location:                Multan, Pakistan
-  position:                Software Developer / Graphics Designer
+- institute:               Active Institute of Science, Arts and Technology (AISAT)
+  location:                Multan, PK
+  position:                Software Developer and Graphics Designer
   time:                    09/2018 - 02/2019
   type:                    1
   url:
 - institute:               National University of Sciences and Technology (NUST)
   location:                Islamabad, Pakistan
   position:                Bachelor of Software Engineering
-  score:                   3.78 / 4.0 CGPA
+  score:                   3.78 CGPA (1.33 ECTS)
   time:                    2014 - 2018
   type:                    0
   url:                     /resume/bese/

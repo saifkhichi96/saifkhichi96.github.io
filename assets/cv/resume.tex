@@ -1,3 +1,6 @@
+---
+---
+
 \documentclass[%singlesided,
               doublesided,
               paper=a4,
@@ -61,91 +64,58 @@
 \highlightbar{
 
     \section{Contact}
-    
+
     \email{\myemail}
     \phone{\href{tel:\myphone}{\myphone}}
-    % \location{67663 Kaiserslautern}
     \vspace{0.5em}
-    \homepage{saifkhichi.com}{https://www.saifkhichi.com}
-    \github{@saifkhichi96}{https://github.com/saifkhichi96}
+    \homepage{saifkhichi.com}{ {{site.author.url}} }
+    \github{@\mygithub}{https://github.com/saifkhichi96}
     \linkedin{Muhammad Saif Ullah Khan}{https://www.linkedin.com/in/saifkhichi96/}
     \orcid{0000-0002-7375-807X}{https://www.orcid.org/0000-0002-7375-807X}
-    % \ads{NASA/ADS publication list}{}
-    
+
     \section{Skills}
-    
+
     \skillsection{Programming}
-    \skill{Python}$\cdot$
-    \skill{Kotlin}$\cdot$
-    \skill{Java}$\cdot$
-    \skill{JavaScript}$\cdot$
-    \skill{HTML/CSS}$\cdot$
-    \skill{C}$\cdot$
-    \skill{C++}$\cdot$
-    \skill{PHP}$\cdot$
-    \skill{Liquid}$\cdot$
-    \skill{LaTex}$\cdot$
-    \skill{Markdown}
-    
+
+    {% assign languages = site.github.public_repositories | map: "language" | compact | sort %}
+    {% assign languages = languages | group_by: '.' | sort: 'size' | reverse %}
+
+    {% for language in languages %}\skill{ {{language.name}} }{% unless forloop.last %}$\cdot${% endunless %}{% endfor %}
+
+    {% for skillset in site.skills %}
     \vspace{0.5em}
-    \skillsection{Databases}
-    \skill{MySQL}(with PHP),
-    \skill{SQLite}(for Android) and
-    \skill{NoSQL databases} like Firebase Realtime Database / Firestore and MongoDB.
-    
-    \vspace{0.5em}
-    \skillsection{Software \& Tools}
-    \skill{Deep Learning}\\(PyTorch, scikit-learn)\\
-    \skill{Image Processing}\\(OpenCV, PIL, scikit-image)\\
-    \skill{Visualization/Computing}\\(Matplotlib, NumPy, SciPy)\\
-    \skill{Advertisements/Analytics}\\(Google Analytics, AdMob, AdSense, Crashlytics)\\
-    \skill{Web Hosting/DNS Setup}\\(e.g. GitHub Pages, Firebase Hosting, etc.)
-    
-    \vspace{0.5em}
-    \skillsection{Other Tools}
-    \skill{Jekyll} website generator.\\
-    \skill{Blender} for 3D modeling.\\
-    \skill{Unity} game engine.
-    
+    \skillsection{ {{skillset.type}} }
+    {% for skill in skillset.items %}\skill{ {{skill.name}} }{{skill.use}}{% unless forloop.last %},{% endunless %}{% if forloop.last %}.{% endif %}{% endfor %}
+    {% endfor %}
+
     \vspace{0.5em}
     \skillsection{Languages}
-    \skill{English} (Bilingual)\\
-    \skill{German} (Basic A2.1)\\
-    \skill{Urdu} (Native)
-    % \bigskip
-    
-    % \section{Certificates}
-    % \simpleskill{AWS certified cloud practitioner}
-    % \simpleskill{AWS certified ML Specialist}
-    % \simpleskill{Databricks Lakehouse Platform}
+    {% for l in site.spoken_languages %}\skill{ {{l.name}} } ({{l.proficiency}}) {% unless forloop.last %} \\ {% endunless %}{% endfor %}
 
 }
 \mainbar{
     \section{Work history}
-    \job{11/2021 - 08/2022}
-        {German Research Center for Artificial Intelligence\\
-        \textit{Kaiserslautern, Germany}}
-        {Research Assistant}
+    {% for item in site.experience %}
+    {% if item.type == 1 %}
+    \job{ {{item.time}} }
+        { {{item.institute}}\\
+        \textit{ {{item.location}} }}
+        { \href{ {{item.url | absolute_url}} }{ {{item.position}} }}
         {}
-    \job{09/2018 - 02/2019}
-        {Active Institute of Science, Arts \& Technology (AISAT)\\
-        \textit{Multan, Pakistan}}
-        {Software Developer and \\ Graphics Designer}
-        {}
-    
+    {% endif %}
+    {% endfor %}
+
     \section{Education}
-    \job{10/2019 - 09/2022 (expected)}
-        {Technical University of Kaiserslautern \\
-        Kaiserslautern, Germany}
-        {\href{https://saifkhichi.com/resume/mscs/}{Master of Computer Science}}
+    {% for item in site.experience %}
+    {% if item.type == 0 %}
+    \job{ {{item.time}} }
+        { {{item.institute}}\\
+        \textit{ {{item.location}} }}
+        { \href{ {{item.url | absolute_url}} }{ {{item.position}} }\\
+        \small{ {{item.score}} }}
         {}
-        
-    \job{09/2014 - 06/2018}
-        {National University of Sciences and Technology\\
-        Islamabad, Pakistan}
-        {\href{https://saifkhichi.com/resume/bese/}{Bachelor of Software Engineering}\\
-        \small 3.78 CGPA (1.33 ECTS)}
-        {}
+    {% endif %}
+    {% endfor %}
 
     \section{Publications/Research}
     \tag{Dataset} \publication
@@ -154,7 +124,7 @@
     	{2022} % Year
     	{Proceedings of NeurIPS Track on Datasets and Benchmarks} % Journal
     	{(Pending)} % links
-    	
+
     \tag{Review} \publication
     	{\href{https://saifkhichi.com/research/reconstruction-review/}{3D Reconstruction from a Single RGB Image using Deep Learning: A Review}} % Title
     	{\textbf{M. Khan}, D. Stricker, M. Afzal} % Authors
@@ -168,7 +138,7 @@
     	{2021} % Year
     	{arXiv Preprint} % Journal
     	{http://doi.org/10.34740/KAGGLE/DS/1041694} % links
-    
+
     \tag{Thesis} \publication
     	{\href{https://saifkhichi.com/research/signature-verification/}{Signature Verification}} % Title
     	{\textbf{M. Khan}, B. Ahmad, M. Tariq, M. Malik} % Authors
@@ -184,29 +154,18 @@
     \project{Eduistein}
     {An online learning management system for smart schools in shape of an Android app, developed for a client in India.}
     {https://saifkhichi.com/projects/cygnus/}
-    
+
     \project{Acacia Joinery}
     {A mobile application to aid in customer requirements elicitation for an architectural firm based in Bellambi, Australia.}
     {https://saifkhichi.com/projects/acacia-joinery/}
-    
+
     \project{IPRD Geotag}
     {A location-based remote work status monitoring Android app developed for PRD Jharkhand, India.}
     {https://saifkhichi.com/projects/iprd-geotag/}
-    
+
     \project{Tiled}
     {Lightweight API for easily creating tilemaps in Android. It is useful for applications and games which need to display tile-based graphics.}
     {https://saifkhichi.com/projects/tiled/}
-    
-    % \section{Wheel Chart}
-    % % This is taken from AltaCV
-    % % see https://github.com/liantze/AltaCV for details
-    % \wheelchart{1.5cm}{0.5cm}{% outer and inner diameter
-    %     6/8em/accent!20/Sleep,          % comma-separated list of
-    %     8/8em/accent!40/Daytime job,    % fraction of 24 / line length / color / label
-    %     2/8em/accent!80/Training,          % here, the color is shades of the accent color
-    %     3/8em/accent!60/Recovering from fighting criminals,
-    %     5/8em/accent/Being Batman
-    % }
 }
 \makebody
 

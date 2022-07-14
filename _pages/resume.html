@@ -5,8 +5,8 @@ title: Education and Work History
 description: A downloadable, online resume which provides a summary of my technical skills, eductaion and work background.
 keywords: resume, education, jobs, saif khan, saifkhichi96
 menuitem: Print
-menuaction: print()
-menuicon: print
+menuaction: download()
+menuicon: download
 drawer: true
 icons: true
 ---
@@ -285,3 +285,10 @@ icons: true
     <p>Please visit the <a href="/contact/">contact page</a> for further information.</p>
   </section>
 </div>
+
+<script>
+  function download() {
+    window.location.href = "{{ '/assets/cv/resume.pdf' | relative_url }}";
+  }
+
+</script>
