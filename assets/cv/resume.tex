@@ -1,0 +1,213 @@
+\documentclass[%singlesided,
+              doublesided,
+              paper=a4,
+              fontsize=10pt
+              ]{my-resume}
+
+
+\input{info}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set geometry
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength\highlightwidth{6cm}
+\setlength\headerheight{4cm}            % note that margintop gets added to this value, i.e. the header bar is 5cm
+\setlength\marginleft{1cm}
+\setlength\marginright{\marginleft}      % needs to be 1.5 times to be actually equal. why?
+\setlength\margintop{1cm}
+\setlength\marginbottom{1cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FONTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{fontspec}
+\setmainfont{Carlito}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COLORS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{color-primary}{HTML}{3949ab}
+\definecolor{color-secondary}{HTML}{7e90ba}
+\definecolor{color-surface}{HTML}{f9f8ff}
+
+\colorlet{highlightbarcolor}{white}
+\colorlet{headerbarcolor}{color-surface}
+
+\colorlet{headerfontcolor}{black}
+\colorlet{accent}{color-primary}
+\colorlet{heading}{mediumgray}
+\colorlet{emphasis}{black}
+\colorlet{body}{mediumgray}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\name{\myname}
+\tagline{Computer Science student specialized in Deep Learning and Software Engineering.\\6+ years experience in native Android app development using Kotlin and Java\\languages. Skilled in mobile development, static web development and machine\\learning using various Python frameworks.}
+\photo[round]{images/picture.jpg}{\dimexpr \headerheight-\marginbottom}   % make photo exactly match the header with margintop/marginright/marginbottom as margin
+
+\makeheader
+
+\highlightbar{
+
+    \section{Contact}
+    
+    \email{\myemail}
+    \phone{\href{tel:\myphone}{\myphone}}
+    % \location{67663 Kaiserslautern}
+    \vspace{0.5em}
+    \homepage{saifkhichi.com}{https://www.saifkhichi.com}
+    \github{@saifkhichi96}{https://github.com/saifkhichi96}
+    \linkedin{Muhammad Saif Ullah Khan}{https://www.linkedin.com/in/saifkhichi96/}
+    \orcid{0000-0002-7375-807X}{https://www.orcid.org/0000-0002-7375-807X}
+    % \ads{NASA/ADS publication list}{}
+    
+    \section{Skills}
+    
+    \skillsection{Programming}
+    \skill{Python}$\cdot$
+    \skill{Kotlin}$\cdot$
+    \skill{Java}$\cdot$
+    \skill{JavaScript}$\cdot$
+    \skill{HTML/CSS}$\cdot$
+    \skill{C}$\cdot$
+    \skill{C++}$\cdot$
+    \skill{PHP}$\cdot$
+    \skill{Liquid}$\cdot$
+    \skill{LaTex}$\cdot$
+    \skill{Markdown}
+    
+    \vspace{0.5em}
+    \skillsection{Databases}
+    \skill{MySQL}(with PHP),
+    \skill{SQLite}(for Android) and
+    \skill{NoSQL databases} like Firebase Realtime Database / Firestore and MongoDB.
+    
+    \vspace{0.5em}
+    \skillsection{Software \& Tools}
+    \skill{Deep Learning}\\(PyTorch, scikit-learn)\\
+    \skill{Image Processing}\\(OpenCV, PIL, scikit-image)\\
+    \skill{Visualization/Computing}\\(Matplotlib, NumPy, SciPy)\\
+    \skill{Advertisements/Analytics}\\(Google Analytics, AdMob, AdSense, Crashlytics)\\
+    \skill{Web Hosting/DNS Setup}\\(e.g. GitHub Pages, Firebase Hosting, etc.)
+    
+    \vspace{0.5em}
+    \skillsection{Other Tools}
+    \skill{Jekyll} website generator.\\
+    \skill{Blender} for 3D modeling.\\
+    \skill{Unity} game engine.
+    
+    \vspace{0.5em}
+    \skillsection{Languages}
+    \skill{English} (Bilingual)\\
+    \skill{German} (Basic A2.1)\\
+    \skill{Urdu} (Native)
+    % \bigskip
+    
+    % \section{Certificates}
+    % \simpleskill{AWS certified cloud practitioner}
+    % \simpleskill{AWS certified ML Specialist}
+    % \simpleskill{Databricks Lakehouse Platform}
+
+}
+\mainbar{
+    \section{Work history}
+    \job{11/2021 - 08/2022}
+        {German Research Center for Artificial Intelligence\\
+        \textit{Kaiserslautern, Germany}}
+        {Research Assistant}
+        {}
+    \job{09/2018 - 02/2019}
+        {Active Institute of Science, Arts \& Technology (AISAT)\\
+        \textit{Multan, Pakistan}}
+        {Software Developer and \\ Graphics Designer}
+        {}
+    
+    \section{Education}
+    \job{10/2019 - 09/2022 (expected)}
+        {Technical University of Kaiserslautern \\
+        Kaiserslautern, Germany}
+        {\href{https://saifkhichi.com/resume/mscs/}{Master of Computer Science}}
+        {}
+        
+    \job{09/2014 - 06/2018}
+        {National University of Sciences and Technology\\
+        Islamabad, Pakistan}
+        {\href{https://saifkhichi.com/resume/bese/}{Bachelor of Software Engineering}\\
+        \small 3.78 CGPA (1.33 ECTS)}
+        {}
+
+    \section{Publications/Research}
+    \tag{Dataset} \publication
+    	{\href{https://projects.dfki.uni-kl.de/textureless_object_data/}{Generating Synthetic RGB-D Datasets for Texture-less Surfaces Reconstruction}} % Title
+    	{\textbf{M. Khan}, D. Stricker, M. Afzal} % Authors
+    	{2022} % Year
+    	{Proceedings of NeurIPS Track on Datasets and Benchmarks} % Journal
+    	{(Pending)} % links
+    	
+    \tag{Review} \publication
+    	{\href{https://saifkhichi.com/research/reconstruction-review/}{3D Reconstruction from a Single RGB Image using Deep Learning: A Review}} % Title
+    	{\textbf{M. Khan}, D. Stricker, M. Afzal} % Authors
+    	{2022} % Year
+    	{Journal of Imaging} % Journal
+    	{(Pending)} % links
+
+    \tag{Dataset} \publication
+    	{\href{https://saifkhichi.com/research/datasets/bcsd/}{A novel segmentation dataset for signatures on bank checks}} % Title
+    	{\textbf{M. Khan}} % Authors
+    	{2021} % Year
+    	{arXiv Preprint} % Journal
+    	{http://doi.org/10.34740/KAGGLE/DS/1041694} % links
+    
+    \tag{Thesis} \publication
+    	{\href{https://saifkhichi.com/research/signature-verification/}{Signature Verification}} % Title
+    	{\textbf{M. Khan}, B. Ahmad, M. Tariq, M. Malik} % Authors
+    	{2018} % Year
+    	{NUST School of Electrical Engineering and Computer Sciences} % Journal
+    	{http://doi.org/10.13140/RG.2.2.11002.24006/1} % links
+
+    \section{Projects}
+    \project{RECatalyst}
+    {A collaborative tool for software project management and requirements specification as an Android application.}
+    {https://saifkhichi.com/projects/recatalyst/}
+
+    \project{Eduistein}
+    {An online learning management system for smart schools in shape of an Android app, developed for a client in India.}
+    {https://saifkhichi.com/projects/cygnus/}
+    
+    \project{Acacia Joinery}
+    {A mobile application to aid in customer requirements elicitation for an architectural firm based in Bellambi, Australia.}
+    {https://saifkhichi.com/projects/acacia-joinery/}
+    
+    \project{IPRD Geotag}
+    {A location-based remote work status monitoring Android app developed for PRD Jharkhand, India.}
+    {https://saifkhichi.com/projects/iprd-geotag/}
+    
+    \project{Tiled}
+    {Lightweight API for easily creating tilemaps in Android. It is useful for applications and games which need to display tile-based graphics.}
+    {https://saifkhichi.com/projects/tiled/}
+    
+    % \section{Wheel Chart}
+    % % This is taken from AltaCV
+    % % see https://github.com/liantze/AltaCV for details
+    % \wheelchart{1.5cm}{0.5cm}{% outer and inner diameter
+    %     6/8em/accent!20/Sleep,          % comma-separated list of
+    %     8/8em/accent!40/Daytime job,    % fraction of 24 / line length / color / label
+    %     2/8em/accent!80/Training,          % here, the color is shades of the accent color
+    %     3/8em/accent!60/Recovering from fighting criminals,
+    %     5/8em/accent/Being Batman
+    % }
+}
+\makebody
+
+\end{document}
