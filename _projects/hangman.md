@@ -28,7 +28,24 @@ icon: /assets/images/projects/hangman-logo.png
     "creator": {
       "@type": "Organization",
       "name": "Aspirasoft Technologies",
-      "sameAs": "https://www.aspirasoft.dev/"
+      "url": "https://www.aspirasoft.dev/",
+      "description": "We design your dreams and translate your ideas into cutting-edge digital products.",
+      "sameAs": [
+        "https://www.instagram.com/aspirasoft/",
+        "https://www.linkedin.com/company/aspirasoft/",
+        "https://twitter.com/aspirasoft/",
+        "https://github.com/aspirasoft/",
+        "https://play.google.com/store/apps/dev?id=7906248998742234780"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PK",
+        "addressLocality": "Multan"
+      },
+      "email": "contact@aspirasoft.dev",
+      "logo": "https://aspirasoft.dev/assets/img/logo.png",
+      "image": "https://aspirasoft.dev/assets/img/hero-img.png",
+      "telephone": "+92 (312) 795 8695"
     },
     "offers": {
       "@type": "Offer",
