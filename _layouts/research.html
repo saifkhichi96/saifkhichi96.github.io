@@ -78,7 +78,11 @@ layout: default
     {% include widget_github_repo.html repo=page.code %}
   </section>
   {% endif %}
+  
+  <!-- Comments -->
+  {% include disqus.html %}
 
+  <!-- Report Issues/Contribute -->
   {% include widget_feedback.html %}
 </aside>
 
