@@ -2,6 +2,7 @@
 layout: post
 title:  Review of "Harry Potter and the Cursed Child" screenplay
 categories: Books
+cover: https://thebandarblog.com/wp-content/uploads/2016/08/IMG_2585-1365x700.jpg
 description: My first impressions after reading the Harry Potter and the Cursed Child screenplay
 permalink: /blog/:title
 ---
