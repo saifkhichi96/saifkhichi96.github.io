@@ -9,7 +9,7 @@ syntax: true
 
 In this blog post, we will go over the steps to quickly create a custom splash screen for your Android apps. But before we do that, it's important to understand what a splash screen, or a launch screen, is and why it's important for your app.
 
-According to Google's [Material Design guidelines](https://material.io/design/communication/launch-screen.html):
+According to Google's [Material Design guidelines](//m2.material.io/design/communication/launch-screen.html):
 
 > The launch screen is a user’s first experience of your app.
 

@@ -52,7 +52,7 @@ license: MIT
       "affiliation": {
         "@type": "Organization",
         "name": "University of Kaiserlautern, Germany",
-        "url": "https://www.uni-kl.de/en/"
+        "url": "https://rptu.de/en/"
       }
     },
     "dateCreated": "2017-10-22",

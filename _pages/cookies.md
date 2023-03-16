@@ -586,15 +586,15 @@ keywords: cookies, privacy, policy, saif khan, saifkhichi96
                   </tr>
                   <tr>
                     <td>Purpose:</td>
-                    <td><span>Used to record audience response to surveys on websites embedded by Survata. It is a session cookie</span></td>
+                    <td><span>Used to record audience response to surveys on websites embedded by Upwave. It is a session cookie</span></td>
                   </tr>
                   <tr>
                     <td>Provider:</td>
-                    <td><span>.surveywall-api.survata.com</span></td>
+                    <td><span>.surveywall-api.upwave.com</span></td>
                   </tr>
                   <tr>
                     <td>Service:</td>
-                    <td><span>Survata  <a href="https://www.survata.com/respondent-privacy-policy/"  target="_blank">View Service Privacy Policy</a>  </span></td>
+                    <td><span>Upwave  <a href="https://www.upwave.com/privacy-policy/"  target="_blank">View Service Privacy Policy</a>  </span></td>
                   </tr>
                   <tr>
                     <td>Country:</td>
@@ -955,7 +955,7 @@ keywords: cookies, privacy, policy, saif khan, saifkhichi96
                 </tr>
                 <tr>
                   <td>Purpose:</td>
-                  <td><span>Used by Towerdata to gather data about website clients to help site owners target better ads at them</span></td>
+                  <td><span>Used by AtData to gather data about website clients to help site owners target better ads at them</span></td>
                 </tr>
                 <tr>
                   <td>Provider:</td>
@@ -963,7 +963,7 @@ keywords: cookies, privacy, policy, saif khan, saifkhichi96
                 </tr>
                 <tr>
                   <td>Service:</td>
-                  <td><span>Towerdata  <a href="https://www.towerdata.com/company/privacy_policy"  target="_blank">View Service Privacy Policy</a>  </span></td>
+                  <td><span>AtData  <a href="https://www.atdata.com/privacy-policy"  target="_blank">View Service Privacy Policy</a>  </span></td>
                 </tr>
                 <tr>
                   <td>Country:</td>
@@ -1359,7 +1359,7 @@ keywords: cookies, privacy, policy, saif khan, saifkhichi96
                 </tr>
                 <tr>
                   <td>Service:</td>
-                  <td><span>Rapleaf  <a href="https://www.towerdata.com/company/privacy_policy"  target="_blank">View Service Privacy Policy</a>  </span></td>
+                  <td><span>Rapleaf  <a href="https://www.atdata.com/privacy-policy"  target="_blank">View Service Privacy Policy</a>  </span></td>
                 </tr>
                 <tr>
                   <td>Country:</td>
@@ -3167,7 +3167,7 @@ keywords: cookies, privacy, policy, saif khan, saifkhichi96
                 </tr>
                 <tr>
                   <td>Service:</td>
-                  <td><span>App Nexus  <a href="https://www.appnexus.com/en/company/cookie-policy"  target="_blank">View Service Privacy Policy</a>  </span></td>
+                  <td><span>App Nexus  <a href="https://about.ads.microsoft.com/en-us/solutions/xandr/xandr-premium-programmatic-advertising"  target="_blank">View Service Privacy Policy</a>  </span></td>
                 </tr>
                 <tr>
                   <td>Country:</td>
@@ -5843,7 +5843,7 @@ keywords: cookies, privacy, policy, saif khan, saifkhichi96
                 </tr>
                 <tr>
                   <td>Provider:</td>
-                  <td><span>.surveywall-api.survata.com</span></td>
+                  <td><span>.surveywall-api.upwave.com</span></td>
                 </tr>
                 <tr>
                   <td>Service:</td>

@@ -31,7 +31,7 @@ It was created to train a neural network for signature extraction from bank chec
 
 The bank check images were obtained from the following sources:
 
-[IDRBT Cheque Image Dataset](//www.idrbt.ac.in/icid.html) (110)
+[IDRBT Cheque Image Dataset](//www.idrbt.ac.in/idrbt-cheque-image-dataset/) (110)
 {: .mdc-chip}
 
 [NRIInternet Scam Documents](//nriinternet.com/NRI_Alerts/Nigeria/30%20phony%20documents%20used%20in%20Nigerian%204-1-9%20frauds%20and%20car%20buying%20scams_files/30%20phony%20documents%20used%20in%20Nigerian%204-1-9%20frauds%20and%20car%20buying%20scams.htm) (10)
