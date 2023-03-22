@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+  
+  <title>ADT Simulator&#58; Algorithms and Data Structures | Saif Khan</title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="ADT Simulator: Algorithms and Data Structures" />
+<meta name="author" content="Saif Khan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ADT Simulator is a desktop application which shows animated simulations of various data structures, and algorithms for searching and sorting." />
+<meta property="og:description" content="ADT Simulator is a desktop application which shows animated simulations of various data structures, and algorithms for searching and sorting." />
+<link rel="canonical" href="https://www.saifkhichi.com/projects/adt-simulator/" />
+<meta property="og:url" content="https://www.saifkhichi.com/projects/adt-simulator/" />
+<meta property="og:site_name" content="saifkhichi96.github.io" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-22T01:16:17+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ADT Simulator: Algorithms and Data Structures" />
+<meta name="twitter:site" content="@saifkhichi96" />
+<meta name="twitter:creator" content="@Saif Khan" />
+<meta name="google-site-verification" content="a756de613e3e91e14743d6a24b29a35c" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Saif Khan","url":"https://www.saifkhichi.com/"},"dateModified":"2023-03-22T01:16:17+01:00","datePublished":"2023-03-22T01:16:17+01:00","description":"ADT Simulator is a desktop application which shows animated simulations of various data structures, and algorithms for searching and sorting.","headline":"ADT Simulator: Algorithms and Data Structures","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.saifkhichi.com/projects/adt-simulator/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.saifkhichi.com/assets/images/logo.png"},"name":"Saif Khan"},"url":"https://www.saifkhichi.com/projects/adt-simulator/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+<meta property="og:title" content="ADT Simulator&#58; Algorithms and Data Structures" />
+<meta property="twitter:title" content="ADT Simulator&#58; Algorithms and Data Structures" />
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="algorithms, data structures, simulation, app, business, education, personalization, productivity, ">
+<meta property="og:keywords" content="algorithms, data structures, simulation, app, business, education, personalization, productivity, " />
+<meta property="twitter:keywords" content="algorithms, data structures, simulation, app, business, education, personalization, productivity, " />
+
+
+
+<meta property="og:image" content="https://www.saifkhichi.com/assets/images/projects/adt-simulator-logo.png" />
+<meta property="twitter:image" content="https://www.saifkhichi.com/assets/images/projects/adt-simulator-logo.png" />
+
+
+
+
+  <link rel="alternate" type="application/rss+xml" title="Saif Khan - PhD Student at RPTU Kaiserslautern, Germany" href="/feed.xml" />
+
+  <!-- Website icon -->
+  
+  <link rel="shortcut icon" href="/assets/images/icons/16.png">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3949ab" />
+
+  <!-- Material Components for Web -->
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+  <!-- Icon Fonts (FontAwesome, Material Icons, etc.) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script async src="https://kit.fontawesome.com/a8beec66c1.js" crossorigin="anonymous"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="/assets/styles/app.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/styles/style.css" />
+
+  <!-- Installable PWA -->
+  
+  <script async type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script>
+  
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+  
+
+  
+<script data-ad-client="ca-pub-4333877529904422" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  
+
+
+
+  <!-- Syntax Highlighting for Code Samples -->
+  
+</head>
+
+<body class="layout-project  adt-simulator-58-algorithms-and-data-structures">
+  <!-- Top App Bar -->
+<header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      
+      <button class="material-icons mdc-icon-button" aria-label="Go to previous page." onclick="back();">arrow_back</button>
+      
+
+      
+      
+        <span class="mdc-top-app-bar__title">
+          
+          
+          ADT Simulator
+          
+          
+      </h1>
+      
+    </section>
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+      
+
+      <!-- Share Button -->
+      <div class="mdc-touch-target-wrapper" id="share-button" style="display: none;">
+        <button class="mdc-top-app-bar__action-item mdc-icon-button" onclick="share('ADT Simulator&#58; Algorithms and Data Structures', 'ADT Simulator is a desktop application which shows animated simulations of various data structures, and algorithms for searching and sorting.', 'https://www.saifkhichi.com/projects/adt-simulator/')" aria-label="Share">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">
+            <i class="material-icons">share</i>
+          </span>
+          <span class="mdc-button__touch"></span>
+        </button>
+      </div>
+
+      <!-- Contact Button -->
+      <div class="mdc-touch-target-wrapper">
+        <a class="mdc-top-app-bar__action-item mdc-icon-button" href="/contact/" aria-label="Contact">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">
+            <i class="material-icons">question_answer</i>
+          </span>
+          <span class="mdc-button__touch"></span>
+        </a>
+      </div>
+    </section>
+  </div>
+</header>
+
+
+  <!-- Snackbar for showing notifications - use showSnackbar(msg) function in JS -->
+  <div class="mdc-snackbar" id="status-bar">
+  <div class="mdc-snackbar__surface" role="status" aria-relevant="additions">
+    <div class="mdc-snackbar__label" aria-atomic="false">
+    </div>
+    <div class="mdc-snackbar__actions" aria-atomic="true">
+      <button type="button" class="mdc-button mdc-snackbar__action">
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showSnackbar(text, action = null, callback = null, timeout = 5000) {
+    const snackbar = new mdc.snackbar.MDCSnackbar(document.querySelector('.mdc-snackbar'));
+    snackbar.timeoutMs = timeout
+    $('#status-bar .mdc-snackbar__label').text(text);
+    if (action != null && callback != null) {
+      $('#status-bar .mdc-snackbar__action').on('click', function() {
+        snackbar.close();
+        callback();
+      });
+      $('#status-bar .mdc-button__label').text(action);
+    }
+    snackbar.open();
+  }
+
+</script>
+
+
+  <main class="mdc-top-app-bar--fixed-adjust">
+    
+<nav class="nav-rail">
+  <ul>
+    
+    
+
+    
+    
+
+    
+    <li class="text-center" onclick="window.location.href='/'">
+    
+      
+      <span style="user-select: none;">
+        <i class="material-icons" style="opacity: 0.75; position: relative; top: 6px;">roofing</i>
+        <br>
+        <small><small>Home</small></small>
+      </span>
+      
+    </li>
+
+    
+    
+
+    
+    
+
+    
+    <li class="text-center" onclick="window.location.href='/blog/'">
+    
+      
+      <span style="user-select: none;">
+        <i class="material-icons" style="opacity: 0.75; position: relative; top: 6px;">feed</i>
+        <br>
+        <small><small>Blog</small></small>
+      </span>
+      
+    </li>
+
+    
+    
+
+    
+    
+
+    
+    <li class="text-center active" aria-current="page">
+    
+      
+      <span style="user-select: none;">
+        <i class="material-icons" style="opacity: 0.75; position: relative; top: 6px;">webhook</i>
+        <br>
+        <small><small>Projects</small></small>
+      </span>
+      
+    </li>
+
+    
+    
+
+    
+    
+
+    
+    <li class="text-center" onclick="window.location.href='/research/'">
+    
+      
+      <span style="user-select: none;">
+        <i class="material-icons" style="opacity: 0.75; position: relative; top: 6px;">api</i>
+        <br>
+        <small><small>Research</small></small>
+      </span>
+      
+    </li>
+
+    
+    
+
+    
+    
+
+    
+    <li class="text-center" onclick="window.location.href='/teaching/'">
+    
+      
+      <span style="user-select: none;">
+        <i class="material-icons" style="opacity: 0.75; position: relative; top: 6px;">school</i>
+        <br>
+        <small><small>Teaching</small></small>
+      </span>
+      
+    </li>
+
+    
+  </ul>
+
+  <div class="mdc-touch-target-wrapper text-center align-bottom hide-when-small">
+    <p>
+    <pwa-install id="a2hs" installbuttontext="Install" manifestpath="/manifest.json">
+      <span class="mdc-button__ripple"></span>
+      <i class="fas fa-arrow-circle-down"></i>
+      <span class="mdc-button__touch"></span>
+    </pwa-install>
+    </p>
+  </div>
+</nav>
+
+
+
+    <!-- Content -->
+    <div class="page-content">
+      <article class="content-body">
+  <header>
+  <!-- Breadcrumbs -->
+  <div class="hide-when-small">
+    
+<!-- Breadcrumbs -->
+<section>
+  <nav class="breadcrumbs" aria-label="breadcrumb">
+    <li class='breadcrumb-item'><a class='muted' href='/'><span class='material-icons' style='font-size: 14pt; bottom: -4px; position: relative;'>home</span></a></li>
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+    <li class='breadcrumb-item '>
+      
+      <a class='muted' href='/projects/'>
+        
+        Projects
+        
+      </a>
+      
+    </li>
+
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+    <li class='breadcrumb-item active'>
+      
+      ADT Simulator
+      
+    </li>
+
+    
+    
+  </nav>
+</section>
+
+  </div>
+
+  <!-- Cover Image -->
+  
+
+    <!-- Get page categories (if any) -->
+    
+    
+
+    <!-- Summary -->
+    <div class="">
+      <div class="project-summary">
+        <!-- Icon -->
+        
+
+<img loading="lazy" class="project-logo" src="/assets/images/projects/adt-simulator-logo.png" alt="A" />
+
+
+
+
+        <div>
+          <!-- Title -->
+          
+          <h1 class="project-title">ADT Simulator&#58; Algorithms and Data Structures</h1>
+          
+
+          <!-- Date: _posts/ -->
+          
+
+          <!-- Tags -->
+          
+          <div class="project-tags">
+            
+            <span class="project-tag">
+              <i class="material-icons">sell</i>app
+            </span>
+            
+          </div>
+          
+
+          <!-- Devices: _projects -->
+          
+          <div class="project-type"><span class="material-icons">devices</span>&nbsp; Desktop App</div>
+          
+        </div>
+      </div>
+    </div>
+
+    
+</header>
+
+
+  <!-- Page Content -->
+  
+  <!-- Page Content -->
+<div class="c-major-r">
+  <!-- Overview -->
+  <section>
+    <p>ADT Simulator is a desktop application which shows animated simulations of various data structures, and algorithms for searching and sorting.</p>
+  </section>
+
+  <!-- Media -->
+  
+
+  <h2 id="supported-platforms">Supported Platforms</h2>
+
+<p class="mdc-chip">Windows</p>
+
+<h2 id="programming-languages">Programming Languages</h2>
+
+<p class="mdc-chip">C</p>
+<p class="mdc-chip">C++</p>
+
+</div>
+
+<aside class="c-minor">
+  <!-- Client-->
+  
+  <section>
+    <h2>About the Client</h2>
+    This is a personal project which I developed independently for the Data Structures and Algorithms course during my <a href="/resume/bese/">undergraduate studies</a> at NUST.
+  </section>
+  
+
+  <!-- Source Code -->
+  
+
+  <!-- Download -->
+  
+
+  
+<section class="mdc-card mdc-card--outlined">
+  <div class="mdc-card__content">
+    <p>
+      This page is maintained by <a href="https://github.com/saifkhichi96">saifkhichi96</a> on GitHub under the MIT License.
+    </p>
+    
+    <p>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      Is there a problem? You can <a href="https://github.com/saifkhichi96/saifkhichi96.github.io/issues" target="_blank">submit an issue</a> or help us <a href="https://github.com/saifkhichi96/saifkhichi96.github.io/edit/master/_projects/adt-simulator.md" target="_blank">improve this page</a>.
+      
+    </p>
+    
+  </div>
+</section>
+
+
+</aside>
+
+<script>
+  $(function() {
+    $('.content-body ol').addClass('mdc-list');
+    $('.content-body ol li').each(function(index) {
+      $(this).addClass('mdc-list-item');
+      $(this).html('<span class="mdc-list-item__text">' + $(this).text() + '</span>');
+    });
+
+    $('.content-body ul').addClass('mdc-chip-set');
+    $('.content-body ul li').each(function(index) {
+      $(this).addClass('mdc-chip');
+
+      var html = "<div class='mdc-chip__ripple'></div><span role='gridcell'>"
+      html += "<span role='button' class='mdc-chip__primary-action><span class='mdc-chip__text'>"
+      $(this).html(html + $(this).text() + '</span></span>');
+    });
+
+    $('.highlighter-rouge').each(function(index) {
+      var pre = $(this);
+      var code = $(this).find('code');
+
+      var classList = pre.attr('class').split(/\s+/);
+      $.each(classList, function(i, item) {
+        if (item.startsWith('language-')) {
+          code.addClass(item.substring(9));
+        }
+      });
+
+      $(this).removeClass();
+      $(this).children().removeClass();
+      $(this).find('pre').removeClass();
+    });
+  })
+
+</script>
+
+  
+</article>
+
+      <footer class="content-footer">
+  <div class="footnote">
+    
+    <p>
+      Except as otherwise noted,
+      
+
+      
+
+      the content of this page is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>, and the code samples are licensed under <a href="https://opensource.org/licenses/MIT/"
+        target="_blank">MIT License</a>.
+
+      
+
+      
+    </p>
+    
+    <p>
+      As a personal portfolio and research hub, all projects and research published on this website are original works by me, <a href='/resume/'>Saif Khan</a>, unless otherwise specified. Collaborators or external sources used are clearly identified to ensure transparency and due credit. If you believe any content should be removed from this website, please contact us through the dedicated page or by writing an email to <a
+        href="mailto:admin@saifkhichi.com?subject=Content+Removal+Request">admin@saifkhichi.com</a>. In your message, kindly provide a brief explanation of the reason for removal.
+    </p>
+    <p>
+      This page was last updated on <span id="last-modified"></span>
+    </p>
+  </div>
+
+  <div class="footer">
+    
+    <p>
+      <a href="/">
+        
+        <img loading="lazy" src="/assets/images/logo.png" alt="Saif Khan" height="32" />
+        
+      </a>
+    </p>
+    <div class="align-left">
+      
+
+
+<a href="mailto:saifkhichi96@gmail.com" rel="noopener" target="_blank" style="padding-right: 4px;">
+  <i class="fas fa-envelope-square" style="color: var(--mdc-theme-on-surface)"></i>
+</a>
+
+
+
+
+
+
+
+<a href="https://github.com/saifkhichi96" rel="noopener" target="_blank" style="padding-right: 4px;">
+  <i class="fab fa-github-square" style="color: var(--mdc-theme-on-surface)"></i>
+</a>
+
+
+
+
+
+<a href="https://www.linkedin.com/in/saifkhichi96" rel="noopener" target="_blank" style="padding-right: 4px;">
+  <i class="fab fa-linkedin" style="color: var(--mdc-theme-on-surface)"></i>
+</a>
+
+
+
+
+
+<a href="https://www.twitter.com/saifkhichi96" rel="noopener" target="_blank" style="padding-right: 4px;">
+  <i class="fab fa-twitter-square" style="color: var(--mdc-theme-on-surface)"></i>
+</a>
+
+
+
+<a href="http://stackoverflow.com/users/4690466" rel="noopener" target="_blank" style="padding-right: 4px;">
+  <i class="fab fa-stack-overflow" style="color: var(--mdc-theme-on-surface)"></i>
+</a>
+
+
+
+<a href="https://youtube.com//channel/UCj4yPuKHi9pZ9WbKbfh5MEQ" rel="noopener" target="_blank" style="padding-right: 4px;">
+  <i class="fab fa-youtube-square" style="color: var(--mdc-theme-on-surface)"></i>
+</a>
+
+
+
+<a href="https://play.google.com/store/apps/dev?id=7722501168179136426" rel="noopener" target="_blank" style="padding-right: 4px;">
+  <i class="fab fa-google-play" style="color: var(--mdc-theme-on-surface)"></i>
+</a>
+
+
+    </div>
+    
+
+<nav>
+  <ul class="sitemap">
+    
+
+    
+
+    
+    <li>
+      <a class="muted" href="/">Home</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li>
+      <a class="muted" href="/blog/">Blog</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li>
+      <a class="muted" href="/projects/">Projects</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li>
+      <a class="muted" href="/research/">Research</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li>
+      <a class="muted" href="/teaching/">Teaching</a>
+    </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+
+    <hr />
+    <span class="copyright">
+      <p>
+        Copyright &copy; Saif Khan 2023. All rights reserved.<br>
+        <small>This site uses the <a href="https://www.saifkhichi.com/simple-material/">Simple Material</a> theme by <a href="https://github.com/saifkhichi96">saifkhichi96</a></small>
+      </p>
+      
+      <a href="/cookie-policy/" class="muted">Cookies</a>
+      &nbsp;|&nbsp;
+      
+      <a href="/privacy/" class="muted">Privacy</a>
+      &nbsp;|&nbsp;
+      
+      <a href="/terms/" class="muted">Terms</a>
+      
+      
+    </span>
+  </div>
+</footer>
+
+    </div>
+  </main>
+
+  <script>
+    $(function() {
+      console.log("Setting up site navigation...");
+      // Instantiate toolbar
+      const topAppBarEl = document.querySelector('.mdc-top-app-bar');
+      const topAppBar = new mdc.topAppBar.MDCTopAppBar.attachTo(topAppBarEl);
+
+      // Instantiate navigation drawer
+      const drawerEl = document.querySelector('.mdc-drawer');
+      if (drawerEl) {
+        const drawer = new mdc.drawer.MDCDrawer.attachTo(drawerEl);
+
+        // Attach toolbar to navigation drawer
+        topAppBar.setScrollTarget(document.querySelector('.page-content'));
+        topAppBar.listen('MDCTopAppBar:nav', () => {
+          drawer.open = !drawer.open;
+        });
+      } else {
+        console.log("Drawer disabled on this page.");
+      }
+
+      console.log("Navigation setup complete!");
+
+      if (navigator.share) {
+        $('#share-button').show();
+      }
+    });
+
+    function back() {
+      if (document.referrer.indexOf(location.protocol + "//" + location.host) === 0) {
+        history.back();
+      } else {
+        var previous = location.pathname;
+        if (previous.endsWith('/')) {
+          previous = previous.substring(0, previous.length - 1);
+        }
+        previous = previous.substring(0, previous.lastIndexOf('/')) + '/';
+        window.location = previous;
+      }
+    }
+
+    function share(title, description, url) {
+      if (navigator.share) {
+        navigator.share({
+            title: title,
+            text: description,
+            url: url,
+          })
+          .then(() => console.log('Successful share'))
+          .catch((error) => console.log('Error sharing', error));
+      }
+    }
+
+    // Update last modified time in footer
+    $('#last-modified').html(document.lastModified);
+
+    // Add material classes to table of contents
+    $('#toc .mdc-list-item a').addClass('mdc-list-item__text');
+
+  </script>
+
+  <!-- user-defined JavaScript -->
+  <script async src="/assets/scripts/script.js"></script>
+</body>
+
+</html>

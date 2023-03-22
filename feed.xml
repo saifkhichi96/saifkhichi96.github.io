@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.saifkhichi.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.saifkhichi.com/" rel="alternate" type="text/html" /><updated>2023-03-22T01:16:17+01:00</updated><id>https://www.saifkhichi.com/feed.xml</id><title type="html">saifkhichi96.github.io</title><subtitle>My portfolio.</subtitle><author><name>Saif Khan</name></author><entry><title type="html">Building a Personal AI Assistant with GPT-4</title><link href="https://www.saifkhichi.com/blog/building-personal-ai-assistant-gpt-4" rel="alternate" type="text/html" title="Building a Personal AI Assistant with GPT-4" /><published>2023-03-17T00:00:00+01:00</published><updated>2023-03-17T00:00:00+01:00</updated><id>https://www.saifkhichi.com/blog/building-personal-ai-assistant-gpt-4</id><content type="html" xml:base="https://www.saifkhichi.com/blog/building-personal-ai-assistant-gpt-4"><![CDATA[<p>The rapid advancements in artificial intelligence (AI) and natural language processing (NLP) have led to the development of increasingly powerful language models. One such model is OpenAI’s GPT-4, the latest version of the Generative Pre-trained Transformer (GPT) series. In this blog post, we’ll explore how you can harness the power of GPT-4 to build your own personal AI assistant capable of answering questions, providing recommendations, and even generating content for you. We’ll discuss creative use cases and provide necessary code snippets to help you get started.</p>
+
+<h2 id="setting-up-the-openai-api">Setting up the OpenAI API</h2>
+
+<p>To start, you’ll need to sign up for an API key from OpenAI (<a href="https://beta.openai.com/signup/">https://beta.openai.com/signup/</a>). Once you have your API key, you can use it to interact with GPT-4 through the OpenAI API. We’ll use Python as our programming language, and the openai package to interact with the API.</p>
+
+<p>First, install the <code class="language-plaintext highlighter-rouge">openai</code> package:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>openai
+</code></pre></div></div>
+<p>Next, import the package and set your API key:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">openai</span>
+
+<span class="n">openai</span><span class="p">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="s">"your-api-key"</span>
+</code></pre></div></div>
+
+<h2 id="creating-a-function-to-interact-with-gpt-4">Creating a function to interact with GPT-4</h2>
+
+<p>Now that we’ve set up the API, let’s create a function to interact with GPT-4. This function will take a prompt as input and return a response from the model.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">ask_gpt4</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="p">.</span><span class="n">Completion</span><span class="p">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">engine</span><span class="o">=</span><span class="s">"gpt-4"</span><span class="p">,</span>
+        <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
+        <span class="n">max_tokens</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">stop</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">response</span><span class="p">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">text</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="creative-use-cases">Creative use cases</h2>
+<p>With our <code class="language-plaintext highlighter-rouge">ask_gpt4</code> function in place, we can now build an AI assistant that can help us with various tasks. Here are some creative use cases:</p>
+
+<h3 id="a-content-generation">a. Content generation</h3>
+
+<p>Use GPT-4 to generate content for your blog, emails, or social media posts. Simply provide a prompt describing the topic or style you want, and let the AI assistant generate the content for you.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">prompt</span> <span class="o">=</span> <span class="s">"Write a brief summary of the advantages of using AI in healthcare."</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">ask_gpt4</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="b-answering-questions">b. Answering questions</h3>
+
+<p>Your AI assistant can help you find answers to questions on various topics. Just provide a question, and GPT-4 will do its best to provide an accurate answer.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">prompt</span> <span class="o">=</span> <span class="s">"What is the difference between supervised and unsupervised learning?"</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">ask_gpt4</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="c-recommendations">c. Recommendations</h3>
+
+<p>Ask GPT-4 for recommendations on books, movies, or any other topic of interest.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">prompt</span> <span class="o">=</span> <span class="s">"Recommend some must-read books on artificial intelligence."</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">ask_gpt4</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="d-code-generation">d. Code generation</h3>
+
+<p>GPT-4 can even generate code snippets for you, given a specific problem statement or requirement.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python
+prompt = "Write a Python function to calculate the factorial of a given number."
+response = ask_gpt4(prompt)
+print(response)
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>By leveraging the power of OpenAI’s GPT-4, you can build a versatile and powerful personal AI assistant capable of handling various tasks, from content generation to providing recommendations. With a bit of creativity and fine-tuning, your AI assistant can become an invaluable resource, saving you time and helping you be more productive.</p>
+
+<p>Keep in mind that while GPT-4 is incredibly powerful, it may sometimes provide incorrect or nonsensical answers. It’s essential to verify the information it generates, especially when using it for critical applications or decision-making. However, as AI technology continues to improve, the potential for AI assistants like GPT-4 will only grow, making them even more valuable tools in the future.</p>]]></content><author><name>Saif Khan</name></author><category term="Tutotial" /><summary type="html"><![CDATA[Discover how to build a powerful personal AI assistant using OpenAI's GPT-4. Learn creative use cases, from content generation to code generation, and enhance your productivity with this cutting-edge AI technology.]]></summary></entry><entry><title type="html">Pakistan’s Rocky Path to Democracy: A History of Military Interventions and Political Instability</title><link href="https://www.saifkhichi.com/blog/pakistan-democracy-military-interventions" rel="alternate" type="text/html" title="Pakistan’s Rocky Path to Democracy: A History of Military Interventions and Political Instability" /><published>2023-03-12T00:00:00+01:00</published><updated>2023-03-12T00:00:00+01:00</updated><id>https://www.saifkhichi.com/blog/pakistan-democracy-military-interventions</id><content type="html" xml:base="https://www.saifkhichi.com/blog/pakistan-democracy-military-interventions"><![CDATA[<p>Former Prime Minister of Pakistan, Benazir Bhutto once famously said, ‘Democracy is the best revenge’. This powerful statement reflects her determination to fight against authoritarianism in the country, following the unjust ousting and execution of her father, Zulfikar Ali Bhutto, by the military dictatorship of General Muhammad Zia-ul-Haq in 1979. Bhutto’s resolve to seek justice and bring about change through democratic means is an inspiration to many in Pakistan’s political landscape.</p>
+
+<p>Benazir Bhutto’s education at prestigious universities such as Harvard and Oxford provided her with a firsthand understanding of the value of democracy as an antithesis to the military rule prevalent in her homeland. She believed that the authoritarian rule of General Zia was the primary reason for her family’s tragic circumstances and considered the reintroduction of democracy as the most effective means of retaliation. However, with the passage of four decades, it has become increasingly challenging to determine who exactly democracy in Pakistan is seeking revenge against.</p>
+
+<h2 id="the-first-democracy-in-athens">The First Democracy in Athens</h2>
+
+<p>The concept of democracy can be traced back to ancient Greece, specifically to the city-state of Athens. The Athenian democracy was established in the 5th century BCE and is considered the first known democracy in the world. The word “democracy” comes from the Greek words “demos,” meaning “the people,” and “kratos,” meaning “power” or “rule.” In Athens, democracy meant that every male citizen had the right to vote on all major issues, regardless of their wealth or social status. This system allowed for a degree of political participation and representation that was unprecedented in its time.</p>
+
+<p>However, early Greek philosophers such as Socrates, Plato, and Aristotle expressed skepticism about democracy. Socrates believed that voting was a skill that could not be entrusted to just anyone, while Plato believed that democracy followed citizens’ impulses rather than a common good. Aristotle favored an aristocracy based on merit rather than blood. These philosophers believed that a sufficiently informed voter was essential for a successful democracy.</p>
+
+<h2 id="pakistan-movement-and-western-democracy">Pakistan Movement and Western Democracy</h2>
+
+<p>Sir Syed Ahmad Khan (1817 - 1898) is widely attributed with the two-nation theory which became the basis of the movement struggling to get a separate country for Indian Muslims. He believed that “if the democratic principle was introduced in India, the Muslims would find themselves completely at the mercy of the Hindu majority”.</p>
+
+<p>Taking inspiration from Khan’s views, the Indian poet and philosopher Sir Muhammad Iqbal (1877 - 1938) criticised democracy in its Western form, calling it a quantitative system which “counts people rather than weighing them”. He believed that Western democracy presented the same old systems of monarchy and aristocracy camouflaged in a new cloak, and that it favoured the rich and the majority and failed to protect the minorities.</p>
+
+<p>Iqbal went on to become the first person to publicly voice a demand for a separate country for Muslims in India. His demand materialised as the new country called Pakistan in August 1947, when the British partitioned India and finally left the subcontinent.</p>
+
+<p>Therefore, in addition to an uninformed voter, Syed Ahmad Khan and Iqbal argued that Western democracy, when introduced as-is in India, would suppress the minority views.</p>
+
+<p>Three months after the Partition, on 11 November 1947 in House of Commons, Winston Churchill, who was then the Prime Minister of the United Kingdom, himself remarked that “[n]o one pretends that democracy is perfect or all-wise. Indeed it has been said that democracy is the worst form of Government except for all those other forms that have been tried from time to time”.</p>
+
+<h2 id="the-intelligence-distribution-in-society">The Intelligence Distribution in Society</h2>
+
+<p>The limitations of democracy have long been known and acknowledged, and democracy has evolved to overcome these limitations. Reserved seats and separate electorates were introduced to ensure that minority views got representation. Unlike in Athens, in most democracies today, the public no longer directly chooses the head of state.</p>
+
+<p>However, the biggest factor in the success or failure of a democratic system remains the same: the common people. Logic demands that people making a decision about a certain subject must be sufficiently equipped with knowledge of that particular subject to make an informed decision. It is, therefore, necessary for there to be a unit for measuring this “sufficient knowledge,” or political awareness, which qualifies a person to vote.</p>
+
+<p>Today, in most countries, this unit of measurement is age, with everyone over a certain age being allowed to have a say. This is problematic because age does not directly translate to political awareness. Just because someone is over the age of 18 does not mean they are educated enough about the political landscape to make an informed decision.</p>
+
+<p>Another unit could be education, where people with only a specific level of minimum education should be allowed to vote. This is again problematic because, in most cases, a degree does not equal education. Similarly, in many parts of the world, older generations or certain members of society, such as women, did or do not go to school due to multiple factors. This does not mean that they are unaware of political matters. Therefore, making a certain level of education necessary for casting a ballot would put these groups at a disadvantage.</p>
+
+<p>One other unit could be the IQ, where people above a certain threshold, when compared to the national average, would be eligible for voting. This, however, has similar disadvantages.</p>
+
+<p>What makes a person eligible for having a say in a certain matter depends on the nature of the matter and the people to whom this person belongs. Political awareness of people is subjective and fluid, and therefore almost impossible to measure objectively. This makes it difficult to make a fair decision about who should and should not be allowed to vote. Age seems like the safest, least controversial bet, and that is what most democracies today are following.</p>
+
+<p>However, it is worth noting that a one-size-fits-all approach is not the solution, and a democratic system should be tailored according to the nature of the people where this system is being implemented.</p>
+
+<p>The German-born theoretical physicist Albert Einstein once expressed his belief that a large portion of people lack intelligence. He also noted that this group is inconsistent in their decision-making, which minimizes the harm they can cause to society with their poor choices.</p>
+
+<p>Einstein’s statement may appear brusque to more diplomatic individuals, but the truth in his words is undeniable. While determining intelligence can be subjective, it is evident that many people are misinformed or lack knowledge about reality, either due to external factors or their own unwillingness to learn. This may be due to projection bias, selective communication, a lack of curiosity, or other reasons.</p>
+
+<p>Given these factors, it is unreasonable to expect the majority of people to make well-informed decisions. This issue is particularly significant in societies like Pakistan, where literacy rates are low, conspiracy theories about imagined threats abound, and people are easily swayed by religious and cultural beliefs. In such societies, fact-checking and research are often neglected, and gullibility is commonplace.</p>
+
+<h2 id="modern-democracies">Modern Democracies</h2>
+
+<p>Top 5 successful democracies. When did they adopt democracy? What is their literacy rate?</p>
+
+<p>The Democracy Index, compiled by the UK-based company Economist Intelligence Unit (EIU), ranks the state of democracy in 167 countries based on some fifty indicators. Norway ranked highest in 2019, followed by Iceland, Sweden, New Zealand, and Finland, while Pakistan stood at the 108th position.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Type of Democracy</th>
+      <th>Year of Adoption</th>
+      <th>Literacy Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Norway</td>
+      <td>Parliamentary System</td>
+      <td>1814</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <td>Iceland</td>
+      <td>Unitary Parliamentary Representative</td>
+      <td>1944</td>
+      <td>99%</td>
+    </tr>
+    <tr>
+      <td>Sweden</td>
+      <td>Constitutional Monarchy</td>
+      <td>1809</td>
+      <td>99%</td>
+    </tr>
+    <tr>
+      <td>New Zealand</td>
+      <td>Unitary Parliamentary Representative</td>
+      <td>1852</td>
+      <td>99%</td>
+    </tr>
+    <tr>
+      <td>Finland</td>
+      <td>Parliamentary Representative</td>
+      <td>1919</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <td>United Kingdom</td>
+      <td>Unitary Parliamentary Democracy Monarchy	Evolved</td>
+      <td>99%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>United States</td>
+      <td>Federal Presidential Constitutional</td>
+      <td>1788</td>
+      <td>79%</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="democracy-in-pakistan">Democracy in Pakistan</h2>
+
+<p>Pakistan has always had an uneasy relationship with democracy. It became independent of the United Kingdom in 1947, but remained a British Dominion until 1956 when the first Constitution was adopted.</p>
+
+<p>During this period, Pakistan followed the Government of India Act 1935 and Indian Independence Act 1947, under which Pakistan’s head of state was the Monarch of the United Kingdom, represented by a Governor-General in Pakistan. The Governor-General was appointed for an indefinite time, and had unchecked powers.</p>
+
+<p>Before independence, the All-India Muslim League under the leadership of Muhammad Ali Jinnah, known as Quaid-i-Azam (the Great Leader), was at the forefront of Pakistan Movement. Jinnah became first Governor-General of Pakistan, and he appointed Liaquat Ali Khan as his Prime Minister.</p>
+
+<h3 id="liaquat-ali-khan-and-kashmir-1947-1951">Liaquat Ali Khan and Kashmir: 1947-1951</h3>
+
+<p>The two newly formed Dominions, India and Pakistan immediately went to war over the princely state of Kashmir. Policy differences between Jinnah and Khan led to friction between the two as early as 1948 but the Governor-General, who favoured a military confrontation in Kashmir, died in September that year. By then Pakistan, with the support of local rebels, had already liberated a third of Kashmir.</p>
+
+<p>Jinnah’s successor, Sir Khawaja Nazimuddin, who was an aristocrat like Liaquat Ali Khan and had been appointed with the Prime Minister’s complete support, adopted a policy of non-interference and deferred  policy matters to the Prime Minister. This provided space for Khan to further his policy of hard diplomacy and less military stance on Kashmir and other matters of contentions with India. Khan approached the Indian Prime Minister Jawaharlal Nehru, who had referred the matter of Kashmir to the United Nations. Pakistan accepted UN mediation and a cease-fire was reached in 1949. Khan and Nehru also signed a pact addressing other disagreements in 1950.</p>
+
+<p>The Armed Forces of Pakistan, who were sympathetic to Pakistan’s founding father Jinnah’s views on Kashmir, were not happy with Prime Minister Liaquat Ali Khan. Many top military officials believed that Pakistan should not have accepted UN mediation, and that it could have liberated rest of the Kashmir too. Deeming Khan’s government as weak and self-serving, a group of over two dozen army officials and left-wing politicians attempted a <em>coup d’état</em> against Khan’s government in 1951, but their attempt was foiled.</p>
+
+<p>The perceived inability of Khan’s government to safeguard the values of founding fathers of the newly formed Pakistan, combined with the military nature of the conflict and the Armed Forces’ stake in it, invited a faction within the military to try and intervene. This set a precedent for all the subsequent military interventions whenever it found the democratic government lacking.</p>
+
+<h3 id="the-first-constitution-of-pakistan-1951-1958">The First Constitution of Pakistan: 1951-1958</h3>
+
+<p>The first Constitution of Pakistan was adopted in 1956, which established Pakistan as an Islamic Republic. The Constitution provided for a parliamentary form of government, with the Prime Minister as the head of the government and the President as the head of the state. The Constitution also guaranteed fundamental rights to the citizens, including freedom of speech, religion, and equality before the law.</p>
+
+<p>However, the implementation of the Constitution was short-lived, as the democratic government was overthrown by the military in 1958. General Ayub Khan took over as the President of Pakistan, suspended the Constitution, and imposed martial law. This marked the beginning of a long period of military rule in Pakistan.</p>
+
+<h3 id="military-rule-and-the-second-constitution-1958-1970">Military Rule and the Second Constitution: 1958-1970</h3>
+
+<p>During the military rule, several amendments were made to the Constitution to legitimize the military regime. In 1962, a new Constitution was introduced, which provided for a presidential form of government and centralized power in the hands of the President. The Constitution also introduced the concept of Basic Democracies, which were local-level bodies that were supposed to act as a bridge between the government and the people.</p>
+
+<p>However, the Basic Democracies failed to create a meaningful participatory democracy, and the military government continued to suppress political opposition and restrict civil liberties.</p>
+
+<h3 id="first-democratic-elections-and-the-third-constitution-1970-1977">First Democratic Elections and the Third Constitution: 1970-1977</h3>
+
+<p>In 1970, the first democratic elections were held, but the military regime refused to hand over power to the elected representatives, which led to a civil war and the secession of East Pakistan (now Bangladesh).</p>
+
+<p>After the civil war, General Yahya Khan stepped down and handed over power to Zulfikar Ali Bhutto, who became the first civilian President of Pakistan. Bhutto introduced a new Constitution in 1973, which provided for a parliamentary form of government and restored the fundamental rights of citizens. However, Bhutto’s government was overthrown by another military coup in 1977.</p>
+
+<h3 id="the-military-rule-under-zia-and-the-rise-of-islamic-fundamentalism-1977-1988">The Military Rule under Zia and the Rise of Islamic Fundamentalism: 1977-1988</h3>
+
+<p>The military regime of General Zia-ul-Haq ruled Pakistan from 1977 to 1988 and introduced several amendments to the Constitution to further centralize power in the hands of the President. Zia-ul-Haq also introduced strict Islamic laws, which further restricted civil liberties and marginalized religious minorities.</p>
+
+<h3 id="a-democratic-farce-1988-1999">A Democratic Farce: 1988-1999</h3>
+
+<p>In 1988, democratic elections were held, and Benazir Bhutto, the daughter of Zulfikar Ali Bhutto, became the first female Prime Minister of Pakistan. However, her government was dismissed twice by the President on charges of corruption and incompetence. The democratic process in Pakistan has been marred by frequent military interventions, political instability, and weak institutions.</p>
+
+<p>Despite the efforts to strengthen democratic institutions, the 1990s saw a continuation of the cycle of military interventions and unstable civilian governments. Benazir Bhutto was again dismissed in 1990, and Nawaz Sharif became the Prime Minister for the first time. However, his government was also dismissed twice by the President, once in 1993 and then again in 1999, on charges of corruption and mismanagement.</p>
+
+<h3 id="the-military-coup-of-musharraf-1999-2008">The Military Coup of Musharraf: 1999-2008</h3>
+
+<p>In 1999, General Pervez Musharraf staged a military coup and overthrew the elected government of Nawaz Sharif. Musharraf suspended the Constitution and assumed the role of Chief Executive. He promised to hold elections and restore democracy, but his regime was marked by repression of political opponents and restrictions on freedom of the press.</p>
+
+<p>In 2002, Musharraf held elections and formed a new political party, the Pakistan Muslim League (Q), which won a majority of seats in the National Assembly. However, the elections were widely criticized for being rigged in favor of the ruling party. The opposition parties, including the Pakistan Peoples Party (PPP) led by Benazir Bhutto, boycotted the elections.</p>
+
+<p>In 2007, Musharraf dismissed the Chief Justice of the Supreme Court, sparking a nationwide protest movement led by lawyers and civil society activists. Bhutto returned to Pakistan from self-exile and joined the protest movement, demanding an end to military rule and the restoration of democracy. In December 2007, she was assassinated at a political rally in Rawalpindi.</p>
+
+<h3 id="the-return-of-democracy-2008-2018">The Return of Democracy: 2008-2018</h3>
+
+<p>Despite the turmoil, democratic elections were held in 2008, and the PPP won a majority of seats in the National Assembly. Asif Ali Zardari, Bhutto’s widower, became the President of Pakistan, and Yousaf Raza Gilani was appointed as the Prime Minister. However, the PPP government was plagued by allegations of corruption and mismanagement, and it was dismissed by the Supreme Court in 2012.</p>
+
+<p>The 2013 general elections were marked by allegations of rigging, and the opposition parties, including the Pakistan Tehreek-e-Insaf (PTI) led by Imran Khan, staged protests and sit-ins in Islamabad. Khan demanded a recount of votes and an independent investigation into the allegations of rigging. However, the government refused to accede to his demands, and the protests were eventually dispersed.</p>
+
+<p>In 2018, general elections were held, and Imran Khan’s PTI won a majority of seats in the National Assembly. The elections were again marred by allegations of rigging, but the opposition parties accepted the results and the transfer of power was peaceful. Imran Khan became the Prime Minister of Pakistan, promising to root out corruption and strengthen democratic institutions.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In conclusion, Pakistan’s struggle for democracy has been long and challenging due to various factors. One of the key factors hindering the growth of democracy in Pakistan is its low literacy rate, which limits the political awareness and civic participation of the masses. Additionally, the authoritarian nature of military regimes and the controlled press have restricted the space for dissenting voices, further undermining democratic principles.</p>
+
+<p>Moreover, allegations of rigging and electoral malpractices have become a recurrent feature in Pakistan’s democratic process, weakening the public’s faith in democratic institutions. This has led to frequent protests and calls for electoral reforms, with the recent 2018 general elections being one of the most fiercely contested and controversial ones.</p>
+
+<p>However, despite these challenges, Pakistan has also witnessed moments of hope, such as the successful transfer of power from one elected government to another in 2013, marking the first time in the country’s history where a democratically elected government completed its full term.</p>
+
+<p>The path to democracy in Pakistan is still long and arduous, but it is imperative for the country’s stability and progress. For this, it is crucial to ensure a level playing field for all political parties, strengthen democratic institutions, and promote political education and awareness among the masses. Only then can Pakistan’s democratic aspirations be fulfilled, and the country move towards a stable, prosperous, and democratic future.</p>]]></content><author><name>Saif Khan</name></author><category term="Politics" /><summary type="html"><![CDATA[Explore Pakistan's tumultuous journey towards democracy since independence in 1947, marked by military interventions, political instability, and allegations of corruption and rigging in elections.]]></summary></entry><entry><title type="html">Why You Should Invest More in Designing the UI of Your Next App</title><link href="https://www.saifkhichi.com/blog/why-invest-more-in-ui-design" rel="alternate" type="text/html" title="Why You Should Invest More in Designing the UI of Your Next App" /><published>2022-03-15T00:00:00+01:00</published><updated>2022-03-15T00:00:00+01:00</updated><id>https://www.saifkhichi.com/blog/why-invest-more-in-ui-design</id><content type="html" xml:base="https://www.saifkhichi.com/blog/why-invest-more-in-ui-design"><![CDATA[<p>As a mobile developer, you know that having a great UI is key to the success of your app. Users need to be able to navigate your app easily and understand how it works quickly – after all, users won’t stick around if your app is difficult to use or doesn’t look good.</p>
+
+<p>A well-designed app will also look great on all devices, regardless of screen size or operating system. This is especially important for mobile developers as people are increasingly using their smartphones and tablets for more than just phone calls and web browsing – they’re using them for work, entertainment and shopping too.</p>
+
+<p>That’s why it’s important to focus on creating an intuitive UI design that makes it easy for users to navigate your app and looks great no matter what device it’s being used on. Here are a few tips:</p>
+
+<h2 id="1-keep-things-simple">1. Keep things simple</h2>
+
+<p>Remember that people using your app are likely in a hurry and don’t want to waste time trying to figure out how to use it. Don’t overload users with too much information or complicated buttons and menus. Keep things simple and easy-to-use, so they can get around your app quickly and easily.</p>
+
+<p>Visual cues are an important part of user interface design. They help users understand what actions they can take and how to interact with the app or website. Good visual cues are clear and concise, and they make things intuitive and easy to use. By making buttons, icons, and other elements visible and easily recognizable, you can help your users navigate your site or app with ease.</p>
+
+<p>One way to use visual cues effectively is to create a consistent design language throughout your interface. This means using the same colors, shapes, and fonts for all of your UI elements. When everything looks familiar, users will be able to quickly understand how everything works without having to spend time learning the ropes.</p>
+
+<p>Another way to use visuals effectively is by keeping things simple. Use clear labels and concise instructions so that users don’t have to guess what they’re supposed to do next. And if there are any complex processes or procedures involved, break them down into step-by-step tutorials that users can follow at their own pace.</p>
+
+<h2 id="2-use-standard-controls">2. Use standard controls</h2>
+
+<p>Most users are familiar with standard controls like buttons and checkboxes, so using them in your app will make it more user-friendly. Users will know how to use these controls instinctively, without having to learn any new gestures or commands. Additionally, using standard controls makes your app look more polished and professional. So if you’re looking to create an app that’s both easy to use and looks great, be sure to use standard controls!</p>
+
+<h2 id="3-pay-attention-to-detail">3. Pay attention to detail</h2>
+
+<p>Designing an intuitive and user-friendly app is no easy task. It requires a lot of attention to detail – from the layout of pages and fonts used, to the smallest details like button placement. Everything needs to be perfect in order for users have a positive experience using your app.</p>
+
+<p>This is why it’s so important to take care with every aspect of your UI design, from start to finish. By paying close attention to detail, you can create an app that looks great and functions flawlessly – resulting in a satisfied user base!</p>
+
+<h2 id="4-test-extensively">4. Test extensively</h2>
+
+<p>It’s crucial to test your designs extensively before releasing them to users. By testing on different devices and platforms with different types of users, you can catch any errors and get feedback on how well the design works in practice. This will help you ensure that your app looks great and functions properly for everyone who uses it.</p>
+
+<p>However, a good UI design alone isn’t everything when it comes to apps – you also need a strong idea behind it - but if you get the two right, then you stand a much better chance of success.</p>]]></content><author><name>Saif Khan</name></author><category term="Insights" /><summary type="html"><![CDATA[A great UI is key to success of your app, and it’s important to focus on creating an intuitive UI design that looks great and makes it easy for users to navigate.]]></summary></entry><entry><title type="html">Generate Depth and Normal Maps with Blender</title><link href="https://www.saifkhichi.com/blog/blender-depth-map-surface-normals" rel="alternate" type="text/html" title="Generate Depth and Normal Maps with Blender" /><published>2021-12-26T00:00:00+01:00</published><updated>2021-12-26T00:00:00+01:00</updated><id>https://www.saifkhichi.com/blog/blender-depth-map-surface-normals</id><content type="html" xml:base="https://www.saifkhichi.com/blog/blender-depth-map-surface-normals"><![CDATA[<p>Blender is popular open-source 3D computer graphics tool widely used among the developer community, with over <a href="https://www.blender.org/news/blender-by-the-numbers-2020/">14 million downloads in 2020 alone</a>. Primarily aimed at the 3D modelling and animation industry, such as for games, advertisements and entertainment, it also offers researchers working on 3D reconstruction a powerful tool at their disposal for generation of ground-truth 3D data.</p>
+
+<p>3D reconstruction is an active research field in which we try to recreate the 3D shape of an object or a scene from a 2D image or a sequence of images, such as video frames. There are many ways to represent the 3D shape of an object in a computer, such as the mesh vertices of the object, a <a href="https://en.wikipedia.org/wiki/Depth_map">depth map</a> labelling each pixel in an object with its distance from the camera, a normal map providing <a href="https://en.wikipedia.org/wiki/Normal_(geometry)">surface normal vectors</a> at each pixel in an image, etc. In this tutorial, we use Blender 2.93.6 to render images of a 3D surface, and save the corresponding depth maps and normal maps as <code class="language-plaintext highlighter-rouge">numpy</code> arrays using the Blender Python API.</p>
+
+<p>Without further ado, let’s begin.</p>
+
+<p>Create an empty project in Blender <em>(File &gt; New &gt; General)</em>. It should give you something like this in the <strong>Layout</strong> tab.
+<br /><br /><img src="/assets/images/blog/blender-depth-map-surface-normals/1.png" alt="Layout tab in Blender showing the 3D scene layout." /><br /><br />
+The default scene already has a cube, a camera and a light source added to it. In the bottom pane on the right-hand side, find the <em>View Layer Properties</em> and make sure that both the <em>Combined</em> and <em>Z</em> data passes are enabled.</p>
+
+<p>Next, go to the <strong>Compositing</strong> tab and enable nodes by checking the <em>Use Nodes</em> box. The compositor should show a <em>Render Layer</em> and a <em>Composite</em> node at this point. Add a <em>Viewer</em> node and a <em>Normalize</em> node, and connect everything as follows:</p>
+
+<p><img src="/assets/images/blog/blender-depth-map-surface-normals/2.png" alt="Compositing tab in Blender showing node connections." /></p>
+
+<p>The <em>Viewer</em> node shows depth map of the camera view, with depth values normalised between 0 and 1.</p>
+
+<p>Using the <a href="https://docs.blender.org/api/current/index.html">Blender Python API</a>, we can access the raw depth values from the <em>Viewer</em> node with the following code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_depth</span><span class="p">():</span>
+    <span class="s">"""Obtains depth map from Blender render.
+    :return: The depth map of the rendered camera view as a numpy array of size (H,W).
+    """</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">bpy</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">images</span><span class="p">[</span><span class="s">'Viewer Node'</span><span class="p">]</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">z</span><span class="p">.</span><span class="n">size</span>
+    <span class="n">dmap</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">z</span><span class="p">.</span><span class="n">pixels</span><span class="p">[:],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># convert to numpy array
+</span>    <span class="n">dmap</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">dmap</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="mi">4</span><span class="p">))[:,:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">dmap</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">dmap</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">dmap</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fliplr</span><span class="p">(</span><span class="n">dmap</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dmap</span>
+</code></pre></div></div>
+<p>The rotation and horizontal flipping is required to align the array values with the rendered image.</p>
+
+<p>Surface normals can be computed from depth values by taking the gradient of the depth map.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dmap2norm</span><span class="p">(</span><span class="n">dmap</span><span class="p">):</span>
+    <span class="s">"""Computes surface normals from a depth map.
+    :param dmap: A grayscale depth map image as a numpy array of size (H,W).
+    :return: The corresponding surface normals map as numpy array of size (H,W,3).
+    """</span>
+    <span class="n">zx</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">Sobel</span><span class="p">(</span><span class="n">dmap</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">CV_64F</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ksize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">zy</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">Sobel</span><span class="p">(</span><span class="n">dmap</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">CV_64F</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ksize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="c1"># convert to unit vectors
+</span>    <span class="n">normals</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dstack</span><span class="p">((</span><span class="o">-</span><span class="n">zx</span><span class="p">,</span> <span class="o">-</span><span class="n">zy</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">dmap</span><span class="p">)))</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">normals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">normals</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">/=</span> <span class="n">length</span>
+
+    <span class="c1"># offset and rescale values to be in 0-1
+</span>    <span class="n">normals</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">normals</span> <span class="o">/=</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">normals</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Alternatively, surface normals can also be directly generated by Blender itself. For this, you would need to enable the <em>Normal</em> data pass in <em>View Layer Properties</em>, and the connect the <em>Normal</em> output of the <em>Render Layer</em> to a <em>Viewer</em> node in the <em>Compositor</em>. Normal values can then be read similarly to the depth values in the <code class="language-plaintext highlighter-rouge">get_depth()</code> function above.</p>
+
+<p>In the <strong>Scripting</strong> tab, create an empty Python script and add the code snippets above. Everything can be combined like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">bpy</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">bpy</span><span class="p">.</span><span class="n">context</span><span class="p">.</span><span class="n">scene</span><span class="p">.</span><span class="n">render</span><span class="p">.</span><span class="n">filepath</span> <span class="o">=</span> <span class="s">"rgb.png"</span>
+<span class="n">bpy</span><span class="p">.</span><span class="n">ops</span><span class="p">.</span><span class="n">render</span><span class="p">.</span><span class="n">render</span><span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="n">animation</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">write_still</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">dmap</span> <span class="o">=</span> <span class="n">get_depth</span><span class="p">()</span>
+<span class="n">nmap</span> <span class="o">=</span> <span class="n">dmap2norm</span><span class="p">(</span><span class="n">dmap</span><span class="p">)</span>
+<span class="n">np</span><span class="p">.</span><span class="n">savez_compressed</span><span class="p">(</span><span class="s">"d.npz"</span><span class="p">,</span> <span class="n">dmap</span><span class="o">=</span><span class="n">dmap</span><span class="p">,</span> <span class="n">nmap</span><span class="o">=</span><span class="n">nmap</span><span class="p">)</span>
+
+</code></pre></div></div>
+<p>When you execute this script, an RGB image of the rendered camera view, as well as the corresponding depth map and surface normals map as a <code class="language-plaintext highlighter-rouge">numpy</code> array would be saved on disk.</p>]]></content><author><name>Saif Khan</name></author><category term="Tutorial" /><summary type="html"><![CDATA[In this tutorial, we use Blender 2.93.6 to render and save depth maps and surface normals of a 3D object as Numpy arrays in Python.]]></summary></entry><entry><title type="html">How to Create a Splash Screen in Android</title><link href="https://www.saifkhichi.com/blog/create-splash-screen-android" rel="alternate" type="text/html" title="How to Create a Splash Screen in Android" /><published>2021-02-24T00:00:00+01:00</published><updated>2021-02-24T00:00:00+01:00</updated><id>https://www.saifkhichi.com/blog/create-splash-screen-android</id><content type="html" xml:base="https://www.saifkhichi.com/blog/create-splash-screen-android"><![CDATA[<p>In this blog post, we will go over the steps to quickly create a custom splash screen for your Android apps. But before we do that, it’s important to understand what a splash screen, or a launch screen, is and why it’s important for your app.</p>
+
+<p>According to Google’s <a href="//m2.material.io/design/communication/launch-screen.html">Material Design guidelines</a>:</p>
+
+<blockquote>
+  <p>The launch screen is a user’s first experience of your app.</p>
+</blockquote>
+
+<p>It’s the initial screen that appears when the user launches your app. It’s important to make sure that your launch screen is visually appealing and provides a good first impression of your app.</p>
+
+<p>Here’s a step-by-step guide to creating a custom splash screen for your Android app:</p>
+
+<h2 id="step-1-create-a-new-drawable-resource-file">Step 1: Create a new drawable resource file</h2>
+<p>In the <code class="language-plaintext highlighter-rouge">res</code> folder of your Android Studio project, right-click and select <code class="language-plaintext highlighter-rouge">New</code> &gt; <code class="language-plaintext highlighter-rouge">Drawable resource file</code>. Name the file <code class="language-plaintext highlighter-rouge">splash.xml</code>.</p>
+
+<h2 id="step-2-add-the-background-color-and-image">Step 2: Add the background color and image</h2>
+<p>In the <code class="language-plaintext highlighter-rouge">splash.xml</code> file, add the following code:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;layer-list xmlns:android="http://schemas.android.com/apk/res/android"&gt;
+    &lt;item android:drawable="@color/colorPrimary"/&gt;
+    &lt;item&gt;
+        &lt;bitmap
+            android:gravity="center"
+            android:src="@drawable/splash_logo"/&gt;
+    &lt;/item&gt;
+&lt;/layer-list&gt;
+</code></pre></div></div>
+
+<p>In this code, we’re setting the background color to <code class="language-plaintext highlighter-rouge">colorPrimary</code> and adding an image to the center of the screen. Replace <code class="language-plaintext highlighter-rouge">@color/colorPrimary</code> and <code class="language-plaintext highlighter-rouge">@drawable/splash_logo</code> with the color and image you want to use for your splash screen.</p>
+
+<h2 id="step-3-modify-the-theme">Step 3: Modify the theme</h2>
+<p>In the <code class="language-plaintext highlighter-rouge">styles.xml</code> file, add the following code:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;resources&gt;
+    &lt;style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"&gt;
+        &lt;!-- customize your theme here --&gt;
+    &lt;/style&gt;
+    &lt;style name="AppTheme.Launcher" parent="AppTheme"&gt;
+        &lt;item name="android:windowBackground"&gt;@drawable/splash&lt;/item&gt;
+    &lt;/style&gt;
+&lt;/resources&gt;
+</code></pre></div></div>
+
+<p>This code sets the <code class="language-plaintext highlighter-rouge">windowBackground</code> to the splash drawable we created in step 1.</p>
+
+<h2 id="step-4-update-the-launcher-activity">Step 4: Update the launcher activity</h2>
+<p>In your launcher activity’s <code class="language-plaintext highlighter-rouge">onCreate</code> method, add the following code:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Override
+protected void onCreate(Bundle savedInstanceState) {
+    setTheme(R.style.AppTheme_Launcher);
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+}
+</code></pre></div></div>
+<p>This code sets the theme of the launcher activity to <code class="language-plaintext highlighter-rouge">AppTheme.Launcher</code>, which we created in step 3.</p>
+
+<h2 id="step-5-test-the-splash-screen">Step 5: Test the splash screen</h2>
+<p>Run your app on an emulator or a device to see the splash screen in action.</p>
+
+<p>And that’s it! You have now successfully created a custom splash screen for your Android app. To further customize your splash screen, you can play around with the theme, background color, and image size. Additionally, you can also add a logo or other branding elements to your</p>]]></content><author><name>Saif Khan</name></author><category term="Tutorial" /><summary type="html"><![CDATA[In this blog post, I will show you how to quickly create a custom splash screen for your Android apps.]]></summary></entry><entry><title type="html">Karen Armstrong’s Guide to a Compassionate Life</title><link href="https://www.saifkhichi.com/blog/karen-armstrong-guide-to-a-compassionate-life" rel="alternate" type="text/html" title="Karen Armstrong’s Guide to a Compassionate Life" /><published>2020-12-23T00:00:00+01:00</published><updated>2020-12-23T00:00:00+01:00</updated><id>https://www.saifkhichi.com/blog/karen-armstrong-guide-to-a-compassionate-life</id><content type="html" xml:base="https://www.saifkhichi.com/blog/karen-armstrong-guide-to-a-compassionate-life"><![CDATA[<p>Karen Armstrong is a celebrated author specialising in religious affairs. As a former professed nun in a Roman Catholic convent, where she claims she suffered physical and psychological abuse, Armstrong sees the bigger picture behind all faiths and treats it with an open mind. I first stumbled across her in late 2016 when I was clearing out the top-shelf of my new university dorm. The previous resident had left some books there, and among them was Karen Armstrong’s <em>Buddha</em>.</p>
+
+<p>Since then I have read more of her work, most recent of which was <em>Twelve Steps to a Compassionate Life</em> which is an Alcoholics Anonymous-like twelve-step program for fighting our addiction to egotism. While most people agree that we need more compassion in our lives, the task can seem so daunting that we are often left stumped because we don’t know where to start. It is a deeply moving and thought-provoking book. Karen Armstrong’s writing is both eloquent and accessible, making it easy to understand and apply the principles she presents. The book guides the reader through the 12 steps to cultivate compassion in their lives, and I found it to be a valuable tool for personal growth and self-reflection. The book is not only for spiritual people, it’s for anyone looking to improve their relationships with others and themselves. It has changed my perspective on compassion and how to practice it in my daily life.</p>
+
+<p>In this blog post, I am going to summarize these twelve steps. So, without further ado, let’s begin.</p>
+
+<h2 id="1-learn-about-compassion">1. Learn About Compassion</h2>
+<p>Armstrong suggests that we first need to understand what compassion is and where it comes from. This step involves studying the history and practices of compassion in different cultures and religions, as well as examining our own emotions and experiences.</p>
+
+<h2 id="2-look-at-your-own-world">2. Look at Your Own World</h2>
+<p>In this step, we are encouraged to take a closer look at our own lives and the way we interact with the world around us. This includes examining our relationships, the way we treat others, and the impact of our actions on those around us.</p>
+
+<h2 id="3-compassion-for-yourself">3. Compassion for Yourself</h2>
+<p>This step focuses on self-compassion, which involves treating ourselves with kindness and understanding, and recognizing that we are all human and make mistakes.</p>
+
+<h2 id="4-empathy">4. Empathy</h2>
+<p>Empathy is the ability to understand and share the feelings of others. Armstrong suggests that we should try to put ourselves in the shoes of others and try to understand their perspectives.</p>
+
+<h2 id="5-mindfulness">5. Mindfulness</h2>
+<p>Mindfulness is the practice of being present in the moment and paying attention to our thoughts and feelings. Armstrong suggests that mindfulness can help us to become more aware of our own emotions and the emotions of those around us, which can lead to greater compassion.</p>
+
+<h2 id="6-action">6. Action</h2>
+<p>Compassion is not just about feeling sorry for others; it requires action. Armstrong suggests that we should look for ways to help others and make a positive difference in their lives.</p>
+
+<h2 id="7-how-little-we-know">7. How Little We Know</h2>
+<p>This step reminds us that we can never truly know what is going on in the minds of others, and that we should be humble and open-minded when interacting with others.</p>
+
+<h2 id="8-how-should-we-speak-to-one-another">8. How Should We Speak To One Another?</h2>
+<p>This step encourages us to think about the way we communicate with others and to be mindful of the impact of our words.</p>
+
+<h2 id="9-concern-for-everybody">9. Concern for Everybody</h2>
+<p>This step reminds us that compassion should extend to all living beings and not just to those we consider to be “like us.”</p>
+
+<h2 id="10-knowledge">10. Knowledge</h2>
+<p>This step encourages us to continue learning and expanding our understanding of the world and the people in it.</p>
+
+<h2 id="11-recognition">11. Recognition</h2>
+<p>Recognition is the ability to see the good in others and to acknowledge their contributions. Armstrong suggests that we should try to recognize the good in others and to express our appreciation for it.</p>
+
+<h2 id="12-love-your-enemies">12. Love Your Enemies</h2>
+<p>This final step is perhaps the most challenging, as it involves extending compassion and understanding to those who have hurt us or with whom we disagree. Armstrong suggests that this is the ultimate test of compassion, and that it is only by loving our enemies that we can truly become compassionate individuals.</p>]]></content><author><name>Saif Khan</name></author><category term="Book" /><category term="Review" /><summary type="html"><![CDATA[A summary of Karen Armstrong's Twelve Steps to a Compassionate Life]]></summary></entry><entry><title type="html">Challenges and Failures of Pakistan’s 2018 General Election Result Transmission System (RTS)</title><link href="https://www.saifkhichi.com/blog/rts-failure-pakistan-elections-2018" rel="alternate" type="text/html" title="Challenges and Failures of Pakistan’s 2018 General Election Result Transmission System (RTS)" /><published>2020-10-14T00:00:00+02:00</published><updated>2020-10-14T00:00:00+02:00</updated><id>https://www.saifkhichi.com/blog/rts-failure-pakistan-elections-2018</id><content type="html" xml:base="https://www.saifkhichi.com/blog/rts-failure-pakistan-elections-2018"><![CDATA[<p>On July 25 2018, one-fourth of Pakistan’s total population (and <a href="https://tribune.com.pk/story/1767487/1-voter-turnout-stood-55-8-per-cent-says-ecp">more than half of registered voters</a>) went to polls to mark the second ever peaceful democratic transition of power in Pakistan’s 72-year history. Throughout the day, <a href="https://www.ecp.gov.pk/documents/genderaffairs/National%20Assembly.pdf">54 million people</a> slowly trickled in and out of some 84 thousand polling stations across the country, stamping their choice of representatives in 272 Federal and 577 Provincial constituencies on secret ballot papers, until the clock struck six in the evening.</p>
+
+<p>And then began the real test: counting the votes.</p>
+
+<h2 id="context-and-problem-description">Context and Problem Description</h2>
+
+<p>Pakistan had its last general elections in 2013, when the Election Commission of Pakistan (ECP) received a <a href="https://www.pakistantoday.com.pk/2013/05/16/rigging-in-election-2013-ecp-receives-152-applications-orders-recounting-in-9-constituencies/">record number of complaints</a> against electoral fraud, and the country saw <a href="https://www.dawn.com/news/1014699/recount-thumb-impression-verification-ordered-on-two-na-seven-pa-seats">many legal battles</a> and <a href="https://www.wsj.com/articles/pakistan-supreme-court-issues-warning-as-protesters-march-on-capital-1408120922">street protests</a> in the aftermath. An <a href="http://www.na.gov.pk/uploads/documents/1429632373_316.pdf">Inquiry Commission was formed in April 2015</a> to investigate the fraud allegations. It concluded that while there had not been any systematic rigging either against or in favor of any particular party, there were a large number of shortcomings and irregularities in the electoral process which made the election controversial.</p>
+
+<p>One of the identified shortcoming was the insufficiently transparent consolidation process of votes counted at each polling station.</p>
+
+<h3 id="stakeholders-in-the-counting-process">Stakeholders in the Counting Process</h3>
+
+<p>It is important to understand the hierarchy of the electoral staff and their role in the counting process to understand the context.</p>
+
+<p>ECP has a central headquarter in Islamabad, and four provincial headquarters in each of the four provinces.</p>
+
+<h4 id="district-returning-officers-dros">District Returning Officers (DROs)</h4>
+
+<p>Right below the administrative tier of the election commission lie the District Returning Officers (DROs). The DROs are responsible for the election process in the entire district and report directly to the provincial commissioners. They receive results of each constituency in the district from the Returning Officers, and forward them.</p>
+
+<h4 id="returning-officers-ros">Returning Officers (ROs)</h4>
+
+<p>Next in the hierarchy are the Returning Officers (ROs), who look after an area which usually comprises of one National Assembly and two Provincial Assembly seats. There are most often over a 100 polling stations in each constituency. An RO collects results of the count from each of these polling stations (sent by the Presiding Officers), sums them up and forwards them to DROs.</p>
+
+<h4 id="presiding-officers-pos">Presiding Officers (POs)</h4>
+
+<p>Each polling station is presided over by a Presiding Officer (PO) and aided by other polling staff. Their job is to organise a smooth polling process, ensuring that votes are cast only by registered voters and each voter casts their vote only once.</p>
+
+<p>At the end of the day, the PO counts the votes, prepares a statement of the count for communication to the Returning Officer, affixes the same outside the polling station and also provides copies of the statement to a representative of each candidate.</p>
+
+<h3 id="counting-and-consolidation-in-2013">Counting and Consolidation in 2013</h3>
+
+<p>The Presiding Officer (PO) at each polling station was responsible for manually counting the votes polled there, with the help of other polling staff and in presence of a representative of each contesting candidate. The total for each candidate would then be written on the Statement of the Count (Form XIV, see figure below) and signed by the PO.</p>
+
+<figure class="wp-block-image size-large">
+    <img src="https://pbs.twimg.com/media/BKpRENcCUAEeO_T?format=jpg&amp;name=large" alt="" />
+    <figcaption><small>An image of Form XIV ("The Statement of the Count") shared by <a href="http://fafen.org">FAFEN</a> on <a href="https://twitter.com/_FAFEN/status/336170254956908544">Twitter</a></small></figcaption>
+</figure>
+<p><br /></p>
+
+<p>This statement of count, along with other important forms (including Form XV (“Ballot Paper Account”) which counts the number of used/unused ballots) and all polled ballot papers, were sealed in polling bags by the PO, and then physically transported to the RO who was responsible for this constituency.</p>
+
+<p>After having received and verified provisional results from all polling stations in the area, the RO would prepare a consolidated statement of count for all constituencies (usually one National and two Provincial seats), and then again physically transport the results to the DRO. The DRO would collect results from all ROs in their district, and report them to the provincial commissioner, where the official results would finally be announced.</p>
+
+<h3 id="problems-with-the-existing-process">Problems with the Existing Process</h3>
+
+<p>Physical transportation of the statement of the count caused delays in reporting election results, which provided space for rumors and allegations of mishandling and rigging to spread. There were also many security challenges linked to this process, such as restricting unauthorized access to the statements and ensuring that they were not manipulated in any way during transportation.</p>
+
+<p>The law requires publication of these statements of vote count, but the ECP failed to make them public even after more than a year. The independent watchdog Free and Fair Election Network (FAFEN) <a href="https://www.dawn.com/news/1131303/newspaper/column">called on the ECP in September 2014</a> to release these statements as soon as possible. About 90% of the Form XIV’s had been published on the ECP’s website by the time it was called to answer before the Inquiry Commission in 2015, a full two years after the elections. The ECP never managed to make the Form XV (“Ballot Count Account”) public, and <a href="https://www.scribd.com/doc/272375113/Judicial-Commision-Report#from_embed">investigations confirmed that about 35% of them were not in the polling bags</a> which the ROs received from the polling stations.</p>
+
+<p>Several reasons were identified for these irregularities, one such being an inadequately trained election staff. Nonetheless, <a href="https://fafen.org/wp-content/uploads/2014/12/Key-Findings-May13.pdf">this raised all kinds of questions on the integrity of the election</a> and resulted in prolonged protests, which <a href="https://www.dawn.com/news/1128786">sometimes grew violent</a>, <a href="https://www.theguardian.com/world/2014/aug/31/islamabad-protests-violent-injured">even resulting in some deaths</a>, and <a href="https://economictimes.indiatimes.com/news/international/world-news/protests-in-pakistan-caused-rs-547-billion-economic-losses-government/articleshow/42024367.cms">caused a loss of billions of rupees to the economy</a>.</p>
+
+<p>All because of a failed vote counting system.</p>
+
+<h2 id="the-2018-general-elections-and-the-introduction-of-new-it-systems">The 2018 General Elections and the Introduction of New IT Systems</h2>
+
+<p>Learning from the mistakes in 2013, the Election Commission of Pakistan sought to bring more transparency to the vote counting and reporting process in the next elections. To achieve this, they introduced a number of new technologies with the primary goal of speeding up the election process and improving transparency.</p>
+
+<p>Two main systems developed for this purpose were the Result Management System (RMS) and the Result Transmission System (RTS), which replaced some parts of the existing process and collaborated with each other to make result transmission, management and reporting faster, more secure and more transparent. These were developed jointly by the National Database &amp; Registration Authority (NADRA) and ECP.</p>
+
+<h3 id="the-result-management-system-rms">The Result Management System (RMS)</h3>
+
+<p>The Result Management System (RMS) was a form-based desktop application installed at the Returning Officer’s (RO) office, which streamlined the time-consuming process of manually filling out forms for the 2018 General Elections. It allowed for quick and efficient data entry, including candidate names, number of registered voters, polling station names, and number of votes cast for each candidate. The RMS enabled electronic compilation of election results, making the process more transparent, verifiable, and auditable. This helped prevent tampering of results and minimized errors during data entry. The digital results were made publicly available on a website, allowing access to the statement of counts for all polling stations and consolidated results for each constituency, enabling the public to easily track the progress of the election results.</p>
+
+<p>The RMS had three modules:</p>
+
+<ol>
+  <li>
+    <p><strong>Polling Scheme Module</strong>:
+The Polling Scheme module allowed Returning Officers (ROs) to finalize polling schemes with the assistance of data-entry operators (DEOs). This module enabled the entry of voting details for each polling station in the constituency and generated Form 28, which included fields for the identification and name of the polling station, the electoral area or block code, and the number of registered voters by gender, along with the number of booths for male and female voters.</p>
+  </li>
+  <li>
+    <p><strong>Contesting Candidate Module</strong>:
+The Contesting Candidate enabled the quick and efficient entry of the names of candidates, their affiliated party, and their respective election symbols. It output Form 33, which contained details of the contesting candidates. The Contesting Candidate Module was designed to speed up data entry on the night of the election, making the process of consolidating and verifying election results quicker and more accurate.</p>
+  </li>
+  <li>
+    <p><strong>Result Management Module</strong>:
+The Result Management Module was the most critical module of the Result Management System (RMS) and was exclusively used on the day of the actual election. This module was responsible for managing and consolidating the election results received from the Presiding Officers (POs) at each polling station. The Returning Officers (ROs) received Form 45, which contained the vote count for each candidate at a particular polling station, from the POs.</p>
+  </li>
+</ol>
+
+<p>Once the ROs received the Form 45, the Data Entry Operators (DEOs) entered this data into the RMS system, which already had the polling schemes and candidate details entered from the other modules. The system then generated three critical forms: Form 47, which included draft consolidated results for each candidate; Form 48, which presented polling station-wise results summarized in a single table, and Form 49, which provided the final consolidated results for that constituency.</p>
+
+<p>The Result Management Module was designed to expedite the process of consolidating election results and minimize the risk of human error. This module enabled ROs to quickly receive, securely transmit and process election results and release the outcome promptly, promoting transparency and public confidence in the election process. The results were securely transmitted from the ROs’ desktop application to the Election Commission of Pakistan’s (ECP) main server, and eventually published on the ECP website, <a href="https://drive.google.com/drive/folders/1cyPM-MUkP8-Sj6cxW-WHHwp60Pq3Hj27">making them accessible to the public</a>.</p>
+
+<h3 id="the-result-transmission-system-rts">The Result Transmission System (RTS)</h3>
+
+<p>The Result Transmission System (RTS) was a mobile app used by Presiding Officers overseeing each polling station to electronically transmit the vote count to the Election Commission of Pakistan (ECP) for consolidation. To use RTS, the POs manually filled out Form 45, containing polling station results, and entered the number of votes for each candidate into the app before sending the data to the Returning Officers (ROs) through the app. The ROs received this data in their RMS system and used it to create provisional consolidated results (Form 47). Meanwhile, the POs also sent a hard copy of Form 45 to the RO physically. The app’s functionality helped the ROs to begin the consolidation process while waiting for the hard copy of Form 45 to arrive physically, and also helped to reduce the risk of data entry errors. Once the hard copy of the form arrived, the ROs could quickly validate the data entered in the app and use it to create provisional consolidated results. Finally, the ROs used the RMS system to send the final consolidated results (Form 49) to the ECP, which provided a secure and reliable way of transmitting election results.</p>
+
+<h3 id="pilot-experiments">Pilot Experiments</h3>
+
+<p>The ECP lists <a href="https://www.ecp.gov.pk/frmGenericPage.aspx?PageID=3083">two pilot experiments on its website</a> which were carried out in 2017 prior to the deployment of the RTS in the 2018 general elections. However, reports suggest there were two more tests, and at least some version of the system was under development and tested as early as 2015.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right"> </th>
+      <th style="text-align: center"><strong>PP-16 Attock-II</strong><br />(October 16, 2015)</th>
+      <th style="text-align: center"><strong>PS-114 Karachi-XXVI</strong><br />(July 9, 2017)</th>
+      <th style="text-align: center"><strong>NA-4 Peshawar-IV</strong><br />(October 26, 2017)</th>
+      <th style="text-align: center"><strong>PP-20 Chakwal-I</strong><br />(January 9, 2018)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><strong>Location</strong></td>
+      <td style="text-align: center">Punjab</td>
+      <td style="text-align: center">Sindh</td>
+      <td style="text-align: center">KPK</td>
+      <td style="text-align: center">Punjab</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong>Candidates</strong></td>
+      <td style="text-align: center">?</td>
+      <td style="text-align: center">27</td>
+      <td style="text-align: center">?</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong>Polling Stations</strong></td>
+      <td style="text-align: center">61</td>
+      <td style="text-align: center">92</td>
+      <td style="text-align: center">269</td>
+      <td style="text-align: center">227</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong>Data Types</strong></td>
+      <td style="text-align: center">📷 🚩 🕤</td>
+      <td style="text-align: center">?</td>
+      <td style="text-align: center">?</td>
+      <td style="text-align: center">?</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong>Acquisition Device</strong></td>
+      <td style="text-align: center">Smartphone</td>
+      <td style="text-align: center">“Special electronic devices”</td>
+      <td style="text-align: center">?</td>
+      <td style="text-align: center">?</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong>Operating System</strong></td>
+      <td style="text-align: center">Android</td>
+      <td style="text-align: center">?</td>
+      <td style="text-align: center">?</td>
+      <td style="text-align: center">?</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong>Provision of Devices</strong></td>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">?</td>
+      <td style="text-align: center">?</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong>User Training</strong></td>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: center">At least some POs were not trained, if not all</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong>Destination</strong></td>
+      <td style="text-align: center">ECP Central Server</td>
+      <td style="text-align: center">?</td>
+      <td style="text-align: center">?</td>
+      <td style="text-align: center">?</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small><strong>Table 1:</strong> Pilot experiments of the RTS in 2015-2017. (<strong>Key:</strong> 📷 = Photo, 🚩 = GPS, 🕤 = Time, ✅ = Yes, ❌ = No, ? = Unknown)</small></p>
+
+<h2 id="analysis">Analysis</h2>
+
+<p>From a software engineering perspective, the Result Transmission System (RTS) faced several challenges that could have contributed to its unresponsiveness on election night. One significant difference between the RTS and the Result Management System (RMS) was the scale of the system. The RMS was only used at the 272 RO offices, while the RTS was used at 84,000 polling stations across the country. This meant that the RTS had a much greater scalability requirement than the RMS, and any issues with scaling the system could have led to its unresponsiveness.</p>
+
+<p>During the pilot tests, the ECP trained some staff on how to use the RTS app, but on election night, it was impossible to train all of the POs using the app. This lack of training, coupled with the fact that the POs were not specifically trained and were using their own smartphones, could have led to problems with using the app, which could have contributed to the system’s unresponsiveness.</p>
+
+<p>The RTS app was designed to be used on mobile devices, which can have different hardware and software configurations. This could have led to compatibility issues and other technical problems that could have contributed to the system’s unresponsiveness. Furthermore, the lack of proper internet connectivity in many regions across the country could have slowed down the transmission of data, leading to a backlog of results and potential network failures.</p>
+
+<p>Each PO had to transfer three pictures through the RTS app, one for the National Assembly constituency and two for the Provincial Assembly constituencies. Therefore, the total number of photos to be transferred was 252,000 (84,000 polling stations x 3 photos per polling station). Assuming an average photo size of 12 MP, the total amount of data to be transferred through the RTS app would be around 0.91 TB (252,000 photos x 3.6 MB per photo). This would require a significant amount of bandwidth, especially when 84,000 devices were trying to connect to the same servers simultaneously, which could have caused the servers to become unresponsive or crash if not properly managed.</p>
+
+<p>The use of personal smartphones by the POs also presented a security risk. Unlike the desktop computers used by the ROs for the RMS, the smartphones used by the POs may not have had the same level of security measures in place. This could have made the system vulnerable to hacking or other types of cyber attacks, which could have contributed to the system’s unresponsiveness.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Pakistan’s democratic system is still in its early stages of development, with transparency in the Election Commission of Pakistan’s (ECP) working being a major factor contributing to its slow growth. The lack of transparency was evident in the development, testing, and deployment processes surrounding the Result Management System (RMS) and Results Transmission System (RTS), with minimal data made public by the ECP. The absence of transparency in the software development process, coupled with a lack of information on the software’s design, implementation, and testing procedures, has left many questions unanswered.</p>
+
+<p>The RTS faced several challenges related to scalability, compatibility, connectivity, and security. These challenges, combined with the lack of training for many of the POs, the use of personal smartphones, and the significant amount of data to be transferred, could have contributed to the system’s unresponsiveness on election night. To prevent similar issues in the future, it would be essential to address these challenges and develop appropriate measures to ensure the smooth functioning of the RTS.</p>
+
+<p>Furthermore, the pilot tests of the software were conducted on a much smaller scale than the actual country-wide election. When the software failed to scale, there were no contingency plans in place to handle the situation, which led to all sorts of wild speculations and rumors about army interference and result manipulation to break out. These rumors were also fueled by Pakistan’s past experiences, where the establishment has always tried to meddle in civilian matters.</p>
+
+<p>The lack of transparency and accountability in the entire process only added to the confusion and mistrust in the election system, causing significant damage to the credibility of the election results. There was no clear ownership of the projects, and no one was held responsible for the failure of the software on election night. The absence of accountability measures not only undermines public trust in the election process but also makes it difficult to identify and correct the mistakes made.</p>
+
+<p>Therefore, it is imperative that the Election Commission of Pakistan takes necessary steps to ensure that proper accountability mechanisms are put in place, and any future software development and deployment is done transparently, with the involvement of independent third-party experts. Only then can the public have confidence in the integrity of the election process.</p>
+
+<h2 id="references">References</h2>
+
+<ol id="cit-1">
+    <li>FAFEN. (2015, October 16). Number of voters increases in PP-16 Attock II. <em>FAFEN News Alert: A Fortnightly Newsletter</em>, <em>1(6)</em>, 2. Retrieved November 8, 2020, from https://fafen.org/wp-content/uploads/2015/10/FAFEN-News-Alerts-Issue-6.pdf</li>
+    <li>FAFEN. (2017, July 9). <em>By-Election Observation Report PS-114 Karachi-XXVI</em> (Rep.). Retrieved November 8, 2020, from https://fafen.org/wp-content/uploads/2017/07/By-Election-Report-PS-114.pdf</li>
+    <li>FAFEN. (2017, October 26). <em>Pre-Election Report NA-4 Peshawar-IV By-Election</em> (Rep.). Retrieved November 8, 2020, from https://fafen.org/wp-content/uploads/2017/10/06-NA-4-By-Election.pdf</li>
+    <li>FAFEN. (2018, January 9). <em>By-Election Observation Report PP-20 Chakwal-I</em> (Rep.). Retrieved November 8, 2020, from https://fafen.org/wp-content/uploads/2018/01/By-Election-Report-PP-20.pdf</li>
+</ol>]]></content><author><name>Saif Khan</name></author><category term="Politics" /><summary type="html"><![CDATA[Explore the reasons behind the software failures in Pakistan's 2018 general elections and their impact on transparency, accountability, and election credibility. Learn about the Result Transmission System, the importance of third-party verification, and the need for accountability measures to restore public trust in the election process.]]></summary></entry><entry><title type="html">Turkey’s Decision about Reconvertion of Hagia Sophia: A Step Backwards</title><link href="https://www.saifkhichi.com/blog/hagia-sophia-my-disappointment-as-a-muslim" rel="alternate" type="text/html" title="Turkey’s Decision about Reconvertion of Hagia Sophia: A Step Backwards" /><published>2020-07-11T00:00:00+02:00</published><updated>2020-07-11T00:00:00+02:00</updated><id>https://www.saifkhichi.com/blog/hagia-sophia-my-disappointment-as-a-muslim</id><content type="html" xml:base="https://www.saifkhichi.com/blog/hagia-sophia-my-disappointment-as-a-muslim"><![CDATA[<p>On July 10, 2020, President Erdogan signed a decree allowing the Hagia Sophia to be reconverted into a mosque. The move came after an administrative court annulled the Cabinet’s 1934 decision, signed by the founder of the Republic of Turkey, Mustafa Kemal Atatürk, himself. The Hagia Sophia, or Great Mosque of Ayasofya as it is officially named, is now all set to begin daily Muslim prayers from July 24.</p>
+
+<p>As I sit here, reading about Turkey’s decision to reconvert the Hagia Sophia into a mosque, I can’t help but feel deeply disappointed. This historic and iconic structure has been a symbol of both Christianity and Islam, a testament to the rich and diverse cultural heritage of Turkey, and a source of pride for people of different faiths all over the world. And now, it has been stripped of its secular status and turned into yet another battleground in the ideological wars of our time.</p>
+
+<p>The Hagia Sophia is a marvel of architectural design and engineering, a masterpiece that has survived wars, earthquakes, and political upheavals for over a millennium. Built as a Christian cathedral in 537 AD by the Byzantine emperor Justinian I, it remained the largest cathedral in the world for almost a thousand years. In 1453, when the Ottoman Turks conquered Constantinople, the cathedral was turned into a mosque and remained so for almost 500 years. In 1935, the founder of the modern Turkish state, Mustafa Kemal Atatürk, turned the Hagia Sophia into a museum, recognizing its historical and cultural significance for both Christians and Muslims.</p>
+
+<p>But now, all of that has been undone. President Erdogan’s decision to reconvert the Hagia Sophia into a mosque is not only a regressive step, but also an unnecessary provocation against Christianity. It sends a message that Turkey is more interested in asserting its Islamic identity than in preserving its multicultural heritage. It’s true that there has been a long-standing demand among nationalist and conservative Turkish Muslims to turn the Hagia Sophia back into a mosque, but that doesn’t mean that it was the right thing to do.</p>
+
+<p>As an admirer of Turkey’s rich and diverse history, I can’t help but feel sad and disappointed by this decision. It’s not just about the Hagia Sophia; it’s about what it represents – a shared history, a common cultural legacy, and a sense of belonging to something larger than ourselves. By turning the Hagia Sophia into a mosque, Turkey is sending a message that it values its Islamic identity more than its secular and pluralistic traditions. This is a dangerous path to take, one that will only lead to more divisions and conflicts.</p>
+
+<p>In conclusion, I hope that Turkey’s leaders will reconsider their decision and restore the Hagia Sophia to its former status as a museum. Let’s not let our narrow sectarian interests override our common humanity and our shared cultural heritage.</p>]]></content><author><name>Saif Khan</name></author><category term="Politics" /><summary type="html"><![CDATA[As an admirer of Turkey's rich and diverse history, I feel disappointed by the decision to reconvert the Hagia Sophia into a mosque. It's a regressive step that undermines Turkey's secular and pluralistic traditions.]]></summary></entry><entry><title type="html">Coronavirus Economics: Pakistan Goes Green</title><link href="https://www.saifkhichi.com/blog/coronavirus-economics-pakistan-responds-by-going-green" rel="alternate" type="text/html" title="Coronavirus Economics: Pakistan Goes Green" /><published>2020-05-01T00:00:00+02:00</published><updated>2020-05-01T00:00:00+02:00</updated><id>https://www.saifkhichi.com/blog/coronavirus-economics-pakistan-responds-by-going-green</id><content type="html" xml:base="https://www.saifkhichi.com/blog/coronavirus-economics-pakistan-responds-by-going-green"><![CDATA[<!-- wp:paragraph -->
+<p>Earlier this week, Prime Minister Imran Khan's government approved the 'Green Stimulus' package as a part of its ongoing efforts to increase Pakistan's green cover.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Pakistan is one the six countries expected to be <a href="https://www.un.org.pk/environment-day/">most affected by global warming</a>, experiencing more than 150 extreme weather events in the last decade. In August 2017, Pakistan became the <a href="https://www.weforum.org/agenda/2018/07/pakistan-s-billion-tree-tsunami-is-astonishing/">first country in the world to complete its <em>Bonn Challenge</em> pledge of planting one billion trees</a>. From 2014 to 2017, about 350,000 hectares of trees were added by plantation and natural regeneration in the northern Khyber Pakhtunkhwa province governed by Imran Khan's party. When Khan ascended to the Prime Minister's office in August 2018, he pledged to plant a further 10 billion trees all over the country.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Dubbed the 10 Billion Tree Tsunami, the <a href="https://news.trust.org/item/20190321124827-fk3qq">ambitious five-year project has always been multi-pronged</a>. It addresses the adverse effects of climate change including rising temperatures, floods, droughts and extreme weathers. At the same time, it also supports the economy by creating thousands of new jobs.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A quarter of Pakistan's population lives below the national poverty line, with <a href="https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?end=2019&amp;locations=PK">unemployment rate in 2019 already standing at 4.5%</a> before coronavirus forced the country to shutdown. Pakistan has been walking a tightrope these past few months, with its lower and lower-middle classes faced with extreme choices of "<a href="https://nation.com.pk/2020/04/04/pakistan-faced-with-dilemma-of-starvation-and-lockdown-pm-imran-khan/">death by either the virus or hunger</a>", as the Prime Minister put it. A recent report by the Pakistan Institute of Development Economics states that the COVID-19 lockdown could force&nbsp;<a rel="noreferrer noopener" href="https://www.pide.org.pk/pdf/PIDE-COVID-Bulletin-13.pdf" target="_blank">up to 19 million people getting laid off</a>. For thousands of people who have already lost their jobs to the lockdown, the only options are to either go hungry or resort to begging.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Under the <a href="https://dailytimes.com.pk/604285/pm-okays-green-stimulus-package-to-extend-green-cover-create-jobs/">new Green Stimulus package</a>, initially aiming to create 65,000 job opportunities, unemployed day laborers are now being given jobs as "jungle workers", planting saplings under the 10 Billion Tree Tsunami programme. The Ministry of Climate Change is also working on a plan to engage the international community under the <a href="https://www1.undp.org/content/dam/sdfinance/doc/Debt%20for%20Nature%20Swaps%20_%20UNDP.pdf">Debt for Nature Swap</a> programme to convert part of the country’s debt into grant for greater environment protection activities. This is an ingenious idea which effectively uses funds allocated for fighting the current global crisis by directly supporting the worst-affected families, while at the same time preparing for the next global crisis: climate change.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Something tells me that <a href="https://www.unicef.org/coronavirus/join-greta">Greta Thunberg will be proud</a> of Pakistan.</p>
+<!-- /wp:paragraph -->]]></content><author><name>Saif Khan</name></author><category term="Environment" /><summary type="html"><![CDATA[Earlier this week, PM Imran Khan's government approved the 'Green Stimulus' package as a part of its ongoing efforts to increase Pakistan's green cover.]]></summary></entry><entry><title type="html">Il Duce and the Forgotten Tramp</title><link href="https://www.saifkhichi.com/blog/il-duce-and-the-forgotten-tramp" rel="alternate" type="text/html" title="Il Duce and the Forgotten Tramp" /><published>2020-04-15T00:00:00+02:00</published><updated>2020-04-15T00:00:00+02:00</updated><id>https://www.saifkhichi.com/blog/il-duce-and-the-forgotten-tramp</id><content type="html" xml:base="https://www.saifkhichi.com/blog/il-duce-and-the-forgotten-tramp"><![CDATA[<!-- wp:quote {"className":"is-style-default"} -->
+<blockquote class="wp-block-quote is-style-default"><p>This story is based on true events of a tactical deception operation codenamed <a href="https://www.bbc.com/news/magazine-11887115">Mincemeat</a> carried out by the British forces against Nazi Germany during World War II.</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:heading {"textAlign":"center"} -->
+<h2 class="has-text-align-center">Part 1<br /><strong>Discovery</strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>It was a pleasant spring day in the year 1943. The sun shone brightly over the port city of Huelva in southwestern Spain. While the month of April was nearing its end, the blazing war all around remained incessant as ever. The budding flowers on the trees had blossomed over the past few weeks, and as <a href="https://books.google.de/books?id=991oOoyimssC&amp;lpg=PP1&amp;dq=isbn%3A9781408809211&amp;pg=PP1#v=onepage&amp;q&amp;f=false">José</a> walked towards the beach, he could almost forget about the fighting which had now spread across three continents.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The salty ocean smell rode the wind blowing in from the Gulf of Cádiz. Warm weather had brought hordes of tuna and marlin out into the shallow waters, indifferent to the widespread violence in the human world. José was happy about it, as he depended on the fish for his livelihood. It was only nine in the morning. He hoped to make good use of the day and catch a decent number of fish.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As he walked towards his usual spot, he started as he spied something in his periphery lying just out of the water a little distance away. He was too far away to make out what it was, but it looked too big to be the fish that he knew swam in these waters. The beach was deserted with not many people about at this hour. Curious, he redirected his feet to investigate what it was. As he drew nearer, his feet ground to a sudden halt when he realised it was a <em>who</em> and not a <em>what</em>. Heart pounding, he broke into a run and skidded to a halt right next to a face-down corpse lying in the sand. It must have washed ashore sometime during the night, José thought.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The putrid stench of decaying flesh mingled with the ocean breeze. The body had probably spent several days in water before floating. The reality of the war which had remained elusive to José because of his country's <a href="https://books.google.de/books?id=Yp8PflGFt0wC&amp;lpg=PP1&amp;pg=PP1#v=onepage&amp;q&amp;f=false">nominal neutrality</a> suddenly came crashing down on him. In midst of one of the most brutal wars the world has ever seen, dead men turning up on random shores was probably not a big deal, he told himself.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Trying not to throw up, José cautiously extended a hand to turn the body over. His heart suddenly leapt in his chest when he noticed what the dead man was wearing. If he was not mistaken, it was the uniform of the British navy. Not caring about the unbearable smell or the maggots crawling out of the man's face anymore, José dug into the pockets of his trench coat to find something which will confirm his suspicion.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>William Martin, born 1907 in Cardiff, Wales. Captain (Acting Major) of the <a href="https://en.wikipedia.org/wiki/Royal_Marines">Royal Marines</a> of the United Kingdom.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>José could clearly read the name and rank on the laminated identity card he found inside the wallet in one of the coat's inner pockets. It was then that he saw a delicate briefcase lying just next to the dead Captain, a <a href="https://en.wikipedia.org/wiki/Operation_Mincemeat#Developing_the_plan;_the_corpse's_new_identity">leather-covered chain</a> attaching it to his belt. Weak with excitement, he sat back in the sand and stared at his discovery in wonder. He had a feeling that he had caught the biggest fish of his life.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"textAlign":"center"} -->
+<h2 class="has-text-align-center" id="block-d40aacb5-5a8e-45dd-a7eb-0529c81bd9fc">Part 2<br /><strong>Excitement</strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Adolf Clauss was pacing angrily in a dimly lit bedroom. Earlier today, he was jarred out of reading the morning copy of <em>El Nuevo Dia</em> by the harsh telephone tone. It was Santiago on other side of the line. Santiago was a low-ranking officer in Spanish navy, and a German sympathiser. Clauss had met him when <em><a href="https://spartacus-educational.com/GERabwehr.htm">Abwehr</a></em> had first stationed him in Huelva, and Santiago had immediately offered to be his eyes and ears inside the Spanish navy headquarters.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Clauss could barely contain his excitement by the time Santiago had finished telling him about how a dead officer of the British navy had been found by a local fisherman yesterday. His name was Captain Martin, and the Spaniards had concluded that he was a diplomatic courier meant to convey unofficial correspondence between some Allied officials, and the prospect of finding something useful in these documents which Germany could use to its advantage made Clauss giddy. An autopsy carried out in presence of the <a href="https://books.google.de/books?id=5z3o4ZovHBwC&amp;pg=PT327&amp;lpg=PT327&amp;dq=Francis+Haselden+british+vice-consul&amp;source=bl&amp;ots=EijX09_fMK&amp;sig=ACfU3U3P3RZfbF-94jvUOLGdzpFUz-V9jQ&amp;hl=en&amp;sa=X&amp;ved=2ahUKEwiAhb2R7OzoAhVMUhUIHZUQBF8Q6AEwAnoECAsQKQ#v=onepage&amp;q=Francis%20Haselden%20british%20vice-consul&amp;f=false">British vice-consul</a> had confirmed the cause of death as "asphyxiation through immersion in the sea". He had immediately talked to the commander of the Spanish navy in Huelva, soliciting a quick look at the documents. But his request had been unceremoniously denied and another call from Santiago an hour ago had informed him that the briefcase found with the late Captain was being forwarded to Madrid where Spanish officials would decide what to do with it. Clauss knew that Spain was not a direct player in the war, and he did not want to miss out on the opportunity which had presented itself before them just so Spain could maintain the facade of its neutrality.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Knowing he didn't have any chance to convince the Spaniards otherwise, Clauss had already dispatched a message ahead to Kühlenthal,&nbsp;his counterpart in Madrid and a fellow <em>Abwehr</em> agent. Now, all he could do was wait. He abruptly ceased his relentless pacing and sat down on his bed. It was going to be long night.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator" />
+
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p>A week had passed. Clauss had finally received a message from Kühlenthal and he was currently seated behind the large mahogany desk in his office, decrypting the encoded letter, a column of sunlight streaming in from the large windows. It had rained during the night, first time this week, and the window was thrown open to let in the cool, damp air. He heaved a sigh as he finished decoding the message, and sat back in his chair, pushing his reading glasses up his nose. The corners of his mouth twitched, and then his mouth broke into a wide smile as he read the letter. Oh, this was <em>toll</em>!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When Kühlenthal had not been able to persuade the Spanish authorities to hand over the documents, he had enlisted the help of Admiral Canaris, the head of <em>Abwehr</em> himself. Upon Canaris's insistence, the Spaniards had finally relented and even outdid themselves by coming up with a method to read the contents of the sealed correspondence without breaking the wax seal. And what the documents had revealed proved that once again, Führer was right in his suspicions and should have gone with his gut instead of agreeing to Il Duce.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The Allied forces, fresh from their victory of North Africa, were heading towards Europe with two possible targets. The Führer was concerned that the Allies would invade the Balkans as it was the source of <a href="https://www.ww2-weapons.com/german-arms-production/">German war industry</a>. But Il Duce had managed to convince him that Sicily was the more likely target with its strategic location on the Mediterranean Sea. Consequently, the Führer had directed his forces to pour reinforcements into the Italian island. This was a mistake, as the contents of the late <a href="https://www.newyorker.com/magazine/2010/05/10/pandoras-briefcase">Captain Martin's briefcase</a> had revealed. The Allies were feinting in Sicily. The real goal had always been to go into Greece and the Balkans, and trap the German forces between the British and American invaders and the Soviets.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Admiral Canaris had immediately set off from Madrid to personally deliver the documents to the Führer in Germany, Kühlenthal wrote in his letter. Clauss closed his eyes and let out a snort of laughter. <em>They thought they could fool the Führer! </em>He was really looking forward to see the look on the Allied forces' faces when they realise their ploy had backfired.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator" />
+
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p>He should never have listened to Mussolini, Hitler thought with a self-satisfied grin as he read the documents Admiral Canaris had brought him. Well, there was still time to change things. Mussolini can fend for himself.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The very next week, German reinforcements had started pulling back from Sicily on Hitler's orders, as they relocated to Greece, Sardinia and Corsica. Within a few weeks, his forces were all set to defend the Allied invasion of the Balkans.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"textAlign":"center"} -->
+<h2 class="has-text-align-center" id="block-d40aacb5-5a8e-45dd-a7eb-0529c81bd9fc">Part 3<br /><strong>Realisation</strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>Mincemeat swallowed rod, line and sinker by the right people and from the best information they look like acting on it.</p><cite>British <a href="https://www.britannica.com/biography/Winston-Churchill">Prime Minister Churchill</a> was informed of the operation's success</cite></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>As July started, the last of Nazi German reinforcements had joined their fellow soldiers in the Balkans. Even as the Allied forces finally mounted their attack on Sicily, dozens of air jets carrying German forces left Sicily to reinforce Sardinia. Hitler was convinced this was the feint he had read about in the documents his intelligence has unearthed. He kept his armies on a tether in anticipation of the attack he was sure will come. But it never did.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The Allies had always intended to <a href="https://www.historyplace.com/worldwar2/defeat/italy-invaded.htm">invade Sicily</a>. And with all the reinforcements gone, Sicily was vulnerable. By the time Hitler realised his mistakes, there was nothing he could do. There was no Captain (Acting Major) William Martin of the Royal Marines. It had all been a part of an elaborate scheme playing on Hitler's preconceived notions. The British had dressed up a <a href="http://omgfacts.com/the-homeless-man-who-helped-win-wwii/">homeless "ne'er-do-well" man</a> by the name of Glyndwr Michael, who had died from ingesting rat poison, for the part. The Germans had fallen for the ruse with almost puerile ease.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Left to fight for himself, it didn't take long to defeat Il Duce Benito Mussolini. As the battle for Sicily went horribly wrong for the Axis, Mussolini was removed from power, imprisoned and two years later, <a href="https://www.history.com/news/mussolinis-final-hours-70-years-ago">executed by a firing squad</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>And thus, the forgotten tramp from Wales became a part of the chain which led to the eventual downfall of Il Duce, or "the Leader" of Italy.</p>
+<!-- /wp:paragraph -->]]></content><author><name>Saif Khan</name></author><category term="Fiction" /><summary type="html"><![CDATA[It was a pleasant spring day in the year 1943. The sun shone brightly over a peaceful Spanish port city of Huelva, while the war blazed all around.]]></summary></entry></feed>
