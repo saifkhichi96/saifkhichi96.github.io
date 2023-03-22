@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Pakistan's Rocky Path to Democracy: A History of Military Interventions and Political Instability"
-category: [Politics]
+category: Politics
 cover: https://static.dw.com/image/61269684_605.jpg
 keywords: Pakistan, democracy, military interventions, political instability, elections, corruption, institutions.
 description: Explore Pakistan's tumultuous journey towards democracy since independence in 1947, marked by military interventions, political instability, and allegations of corruption and rigging in elections.

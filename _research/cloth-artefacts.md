@@ -9,7 +9,27 @@ keywords: tailornet, saif khan, cloth artefacts, body sensors, seminar, bertram 
 authors: Muhammad Saif Ullah Khan, Bertram Taetz
 category: [Seminar, Body Sensors]
 date: January 2021
+syntax: true
 ---
 
-[Read Full-Text](https://www.researchgate.net/publication/348807713_Investigate_Cloth_Artefacts_of_Loosely_Coupled_Sensor_Networks_with_TailorNet)
+[Read Full-Text](https://ags.cs.uni-kl.de/fileadmin/inf_ags/Project_Seminar/Proceedings_2DIP_WS2021.pdf#page=11)
 {: .mdc-button .mdc-button--unelevated}
+
+## How to Cite
+
+Please include the following citation if you refer to this publication in your work:
+
+```bibtex
+@misc{khantn2021
+    place={Kaiserslautern, Germany},
+    volume={WS 2020/21},
+    title={Investigate Cloth Artefacts of Loosely Coupled Sensor
+Networks with TailorNet},
+    url={https://ags.cs.uni-kl.de/fileadmin/inf_ags/Project_Seminar/Proceedings_2DIP_WS2021.pdf},
+    booktitle={Seminar and Project 2D Image Processing and Augmented Reality - Winter Semester 2020/21},
+    publisher={Department Augmented Vision},
+    author={Khan, Muhammad Saif Ullah and Afzal, Muhammad Zeshan},
+    year={2021},
+    pages={92–100}
+}
+```

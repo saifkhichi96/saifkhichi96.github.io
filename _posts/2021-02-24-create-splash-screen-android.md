@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  How to Create a Splash Screen in Android
-categories: Code
+categories: Tutorial
 description: In this blog post, I will show you how to quickly create a custom splash screen for your Android apps.
 permalink: /blog/:title
 syntax: true

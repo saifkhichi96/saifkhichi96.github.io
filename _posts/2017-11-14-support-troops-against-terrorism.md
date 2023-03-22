@@ -1,6 +1,6 @@
 ---
 layout: post
-category: [Opinion]
+category: Politics
 title: Why We Need to Support Our Troops in the Fight Against Terrorism
 cover: https://static.dw.com/image/18944292_605.jpg
 description: Our defenders have risked their lives for the nation. Let's provide them with the trust and support they need to fight terrorism and protect Pakistan.

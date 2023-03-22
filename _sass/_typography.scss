@@ -1,0 +1,58 @@
+/*
+ *------------------------------------------------
+ * text styles
+ *------------------------------------------------
+ */
+ @import 'fonts.scss';
+ @import 'variables.scss';
+ 
+ // font-size
+ html { font-size: 16px; }
+ @include for-phone-tablet-only {
+   html { font-size: 14px; }
+ }
+ 
+ h1 { font-size: 1.5rem; }
+ h2 { font-size: 1.25rem; }
+ h3 { font-size: 1.1rem; }
+ h4 { font-size: 1.0rem; }
+ h5 { font-size: 0.9rem; }
+ h6 { font-size: 0.8rem; }
+ 
+ // font weight
+ html { font-weight: 300; }
+ h1 { font-weight: 400; }
+ h2 { font-weight: 400; }
+ h3 { font-weight: 400; }
+ h4 { font-weight: 300; }
+ h5 { font-weight: 300; }
+ h6 { font-weight: 300; }
+ blockquote, i, small, .light { font-weight: 200; }
+ a, b, strong, sub, sup, .bold { font-weight: 400; }
+ 
+ // font-face
+ html { font-family: $base-font; }
+ h1, h2, h3, h4, h5, h6 { font-family: $head-font; }
+ 
+ // text margins
+ h1, h2, h3, h4, h5, h6 { margin: 0; margin-bottom: 0.5rem; }
+ h1:not(:first-child), h2:not(:first-child) { margin-top: 1rem; }
+ p { margin-bottom: 1rem; }
+ 
+ // line heights
+ html { line-height: normal; }
+ 
+ // more text styles
+ a, a:hover, a:focus { text-decoration: none; }
+ blockquote { @extend .text-justify; @extend .text-italic; }
+ 
+ // titles
+ .title { @extend h1;}
+ .subtitle { @extend h2; opacity: 0.8; }
+ 
+ // text transforms
+ .text-uppercase { text-transform: uppercase; }
+ .text-lowercase { text-transform: lowercase; }
+ .text-titlecase { text-transform: capitalize; }
+ .text-italic { font-style: italic; }
+ 

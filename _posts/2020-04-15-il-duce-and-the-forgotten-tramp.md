@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Il Duce and the Forgotten Tramp
-categories: Ramblings
+categories: Fiction
 cover: /assets/images/blog/il-duce-and-the-forgotten-tramp/0.jpg
 description: It was a pleasant spring day in the year 1943. The sun shone brightly over a peaceful Spanish port city of Huelva, while the war blazed all around.
 permalink: /blog/:title

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  An Environmental Lesson from the Hunza Valley
-categories: Ramblings
+categories: Environment
 cover: /assets/images/blog/environmental-lesson-from-hunza/0.jpg
 description: A few kilometres down the road from Sost in Upper Hunza, Gilgit-Baltistan, we are on our way to Khunjerab Pass when a uniformed official signals us to stop.
 permalink: /blog/:title

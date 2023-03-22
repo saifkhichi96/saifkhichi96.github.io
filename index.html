@@ -35,6 +35,13 @@ github_stats: true
         "https://nust.edu.pk/"
       ]
     },
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "Technical University of Kaiserslautern (TUK)",
+      "sameAs": [
+        "https://www.uni-kl.de/"
+      ]
+    },
     "worksFor": {
       "@type": "Organization",
       "name": "German Research Centre for Artificial Intelligence (DFKI)",
@@ -174,39 +181,36 @@ github_stats: true
 </style>
 
 <div class="c-major-r">
-  <section>
-    <!-- Business Card -->
-    <section class="business-card">
-      <div class="info-grid">
-        <div class="name">
-          <p class="title text-uppercase"><span class="light">Saif</span> Khan</p>
-        </div>
-        <div class="bio">
-          <p class="text-uppercase"><b>{{ site.github.owner.bio }}</b></p>
-          <hr class="small" style="margin: 0;" />
-        </div>
-        <div class="logo"></div>
-        <div class="email">
-          <a class="mdc-button mdc-button--unelevated" href="/resume/">
-            <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label" style="text-transform: none;">Learn More</span>
-          </a>
-          <a class="mdc-button mdc-button--outlined" href="#services" style="margin-left: 8px; background-color: var(--mdc-theme-surface);">
-            <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label" style="text-transform: none;">Contact Me</span>
-          </a>
-        </div>
+  <!-- Business Card -->
+  <section class="business-card">
+    <div class="info-grid">
+      <div class="name">
+        <p class="title text-uppercase"><span class="light">Saif</span> Khan</p>
       </div>
-    </section>
+      <div class="bio">
+        <p class="text-uppercase"><b>{{ site.github.owner.bio }}</b></p>
+        <hr class="small" style="margin: 0;" />
+      </div>
+      <div class="logo"></div>
+      <div class="email">
+        <a class="mdc-button mdc-button--unelevated" href="/resume/">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label" style="text-transform: none;">Learn More</span>
+        </a>
+        <a class="mdc-button mdc-button--outlined" href="#services" style="margin-left: 8px; background-color: var(--mdc-theme-surface);">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label" style="text-transform: none;">Contact Me</span>
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- Research Work -->
   <section class="mdc-card mdc-card--outlined">
     <div class="mdc-card__content highlighted">
       <h2>Research Work</h2>
-      <p>My research work primarily focuses on Computer Vision applications including biometric authentication,
-        image segmentation and 3D reconstruction using deep learning.</p>
-      {% assign research = site.datasets | concat: site.research | sort: "date" | reverse %}
+      <p>My research work focuses on using Deep Learning for vision tasks like pose estimation and 3D reconstruction, and optimizing neural networks for deployment on edge devices such as smartphones.</p>
+      {% assign research = site.research | sort: "date" | reverse %}
       <div class="mdc-layout-grid">
         <div class="mdc-layout-grid__inner">
           {% for item in research %}
@@ -312,8 +316,18 @@ github_stats: true
 
     <!-- Contributions widget -->
     {% include widget_github.html %}
-
-    <br>
+    <div class="text-center">
+      <br>
+      Most Frequently Used Programming Languages on GitHub<br>
+      <hr class="small">
+      {% assign languages = site.github.public_repositories | map: "language" | compact %}
+      {% assign languages = languages | group_by: '.' | sort: 'name' %}
+      <p>
+        {% for language in languages %}
+        <span style="font-size: {{language.size | times: 0.25 | plus: 1}}rem">{{ language.name }}</span>
+        {% endfor %}
+      </p>
+    </div>
     <iframe frameborder="0" scrolling="no" src="https://github.com/sponsors/saifkhichi96/button" style="position: relative; width: 100%; height: 40px;"></iframe>
 
     <div class="mdc-card mdc-card--outlined">

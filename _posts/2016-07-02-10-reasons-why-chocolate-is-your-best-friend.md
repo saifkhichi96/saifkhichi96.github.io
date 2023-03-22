@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  10 Reasons Why Chocolate is Your Best Friend
-categories: Food
+categories: Lifestyle
 cover: /assets/images/blog/10-reasons-why-chocolate-is-your-best-friend/0.jpg
 description: Many chocolate lovers justify their addiction by claiming it is healthy, but are they correct? Read on to learn 10 reasons why chocolate is good for you!
 permalink: /blog/:title

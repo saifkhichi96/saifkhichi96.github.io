@@ -31,9 +31,9 @@ menu_main:
   - title:                   Research
     icon:                    api
     url:                     /research/
-  - title:                   CV
-    icon:                    approval
-    url:                     /resume/
+  - title:                   Teaching
+    icon:                    school
+    url:                     /teaching/
 
 
 
@@ -132,18 +132,29 @@ spoken_languages:
   proficiency:             Native
 
 interests:
-- name:                    Reading
-  description:             I read some fiction, but mostly non-fiction with topics ranging from history, politics, and theology to science, technology and current affairs.
-  url:                     https://www.goodreads.com/user/show/26736309-muhammad-saif-ullah-khan
 - name:                    Art and Blogging
   description:             Occasional writer and artist. I sometimes write short stories and poetry, and indulge in oil painting and pencil sketching.
   url:                     /blog/
+- name:                    Bicyling and Travel
+  description:             I use my bicycle to get around town or take occasional trips into the forests and mountains around.
+- name:                    Plants and Gardening
+  description:             Proud dad of two-dozen houseplants.
+- name:                    Reading
+  description:             I read some fiction, but mostly non-fiction with topics ranging from history, politics, and theology to science, technology and current affairs.
+  url:                     https://www.goodreads.com/user/show/26736309-muhammad-saif-ullah-khan
+
 
 experience:
+- institute:               Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau (RPTU)
+  location:                Kaiserslautern, DE
+  position:                PhD Student
+  time:                    2023 - present
+  type:                    0
+  url:                     /education/phd/
 - institute:               German Research Center for Artificial Intelligence (DFKI)
   location:                Kaiserslautern, DE
   position:                Research Assistant
-  time:                    11/2021 - 08/2022
+  time:                    11/2021 - present
   type:                    1
   url:
 - institute:               Technische Universität Kaiserslautern (TUK)
@@ -151,7 +162,7 @@ experience:
   position:                Master of Computer Science
   time:                    2019 - 2022
   type:                    0
-  url:                     /resume/mscs/
+  url:                     /education/masters/
   details:
     title:                 Specialisations
     items:
@@ -171,7 +182,7 @@ experience:
   score:                   3.78 CGPA (1.33 ECTS)
   time:                    2014 - 2018
   type:                    0
-  url:                     /resume/bese/
+  url:                     /education/bachelors/
   details:
     title:                 Co-Curricular Activities
     items:
@@ -200,9 +211,9 @@ collections:
   research:
     output:                true
     permalink:             /research/:path/
-  datasets:
+  teaching:
     output:                true
-    permalink:             /research/datasets/:path/
+    permalink:             /teaching/:path/
 
 defaults:
   - scope:

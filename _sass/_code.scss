@@ -1,0 +1,52 @@
+/*
+ *------------------------------------------------
+ * code syntax highlighting styles
+ *------------------------------------------------
+ */
+ $highlightjs_theme: "github-dark";
+ @import 'fonts.scss';
+ @import 'variables.scss';
+ $theme_url: "https://unpkg.com/@highlightjs/cdn-assets@latest/styles/" + $highlightjs_theme + ".min.css";
+ @import url($theme_url);
+ 
+ .text-mono {
+   font-family: $mono-font;
+   font-size: 1rem;
+ }
+ 
+ code, .code,
+ .gist-file, .gist-file * {
+   @extend .text-mono;
+ }
+ 
+ pre, code, .code {
+   background-color: var(--mdc-theme-background);
+   border-radius: var(--card-radius);
+ }
+ 
+ pre code, .gist-data {
+   @extend .text-mono;
+   @extend .card--outlined;
+   margin-bottom: var(--item-spacing-y);
+   width: 100%;
+   display: block;
+   overflow-x: auto;
+   white-space: pre;
+   padding: 0.8rem;
+ }
+ 
+ .gist-file,
+ .gist-file * {
+   background-color: var(--mdc-theme-background) !important;
+   border-color: var(--mdc-theme-border) !important;
+ }
+ 
+ .gist-data .blob-num,
+ .gist-meta {
+   color: var(--mdc-theme-on-surface) !important;
+ }
+ 
+ .gist-meta {
+   display: none;
+ }
+ 

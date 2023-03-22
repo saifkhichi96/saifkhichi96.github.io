@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Coronavirus Economics&#58; Pakistan Goes Green
-categories: Trending
+categories: Environment
 cover: /assets/images/blog/coronavirus-economics-pakistan-responds-by-going-green/0.jpg
 description: Earlier this week, PM Imran Khan's government approved the 'Green Stimulus' package as a part of its ongoing efforts to increase Pakistan's green cover.
 permalink: /blog/:title

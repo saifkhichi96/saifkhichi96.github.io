@@ -1,41 +1,22 @@
 {% assign research_by_date = site.research | sort: "date" | reverse %}
-{% for post in research_by_date %}
-{% assign categories = post.categories %}
-<section class="post-container">
-  <div class="post">
-    {% if post.cover %}
-    {% assign post_image = post.cover %}
-    {% elsif post.image %}
-    {% assign post_image = post.image %}
-    {% else %}
-    {% assign post_image = '/assets/images/blog/default.png' %}
-    {% endif %}
+{% assign all_items = research_by_date | sort: "date" | reverse %}
 
-    {% if post_image contains '://' %}
-    {% assign image_url = post_image %}
-    {% else %}
-    {% assign image_url = post_image | relative_url %}
-    {% endif %}
-    <div class="post-img" style="background-image: url('{{ image_url }}')"></div>
-    <div class="post-details">
-      <div class="project-tags">
-        {% assign categories = post.categories %}
+{% for item in all_items %}
+{% assign categories = item.categories %}
+<section class="publication-container">
+  <div class="publication">
+    <div class="publication-details">
+      <div class="publication-tags">
+        {% assign categories = item.categories %}
         {% for category in categories %}
-        <span class="project-tag"><i class="material-icons">sell</i>{{ category | replace: ",", "" }}</span>
+        <span class="publication-tag">{{ category | replace: ",", "" }}</span>
         {% endfor %}
       </div>
-      <div><span class="mdc-list-item__secondary-text">({{ post.authors | split: ',' | first | split: ' ' | last }} <i>et al.</i>, {{ post.date | date: "%Y" }})</span></div>
-      <a href="{{ post.url | relative_url }}" style='color:var(--mdc-theme-on-surface);'>
-        <h2 class="post-title">{{ post.title }}</h2>
+      <div class="publication-authors">({{ item.authors | split: ',' | first | split: ' ' | last }} <i>et al.</i>, {{ item.date | date: "%Y" }})</div>
+      <a href="{{ item.url | relative_url }}" class="publication-title-link">
+        <h2 class="publication-title">{{ item.title }}</h2>
       </a>
-      <p class="post-excerpt">{{ post.description }}</p>
-      <div class="mdc-touch-target-wrapper">
-        <button class="mdc-button mdc-button--unelevated" onclick="window.location.href='{{ post.url | relative_url }}'">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">Read More</span>
-          <span class="mdc-button__touch"></span>
-        </button>
-      </div>
+      <p class="publication-description">{{ item.description }}</p>
     </div>
   </div>
 </section>

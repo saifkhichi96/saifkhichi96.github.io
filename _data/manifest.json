@@ -3,8 +3,8 @@
   "short_name": "Saif Khan",
   "name": "Saif Khan",
   "categories": ["business", "education", "personalization", "productivity"],
-  "tagline": "Mobile Developer and ML Engineer",
-  "description": "Versatile software engineer skilled in <b>mobile development</b>, <b>machine learning</b>, and <b>computer vision</b>.",
+  "tagline": "PhD Student at RPTU Kaiserslautern, Germany",
+  "description": "PhD candidate and research assistant with expertise in developing and implementing deep learning models for robust human kinematics capturing on edge devices. Skilled in mobile app development, computer vision, and machine learning.",
   "icons": [{
       "src": "/assets/images/icons/16.png",
       "type": "image/png",

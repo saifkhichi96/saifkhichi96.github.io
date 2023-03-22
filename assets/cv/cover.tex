@@ -1,0 +1,61 @@
+\documentclass[12pt]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage[empty]{fullpage}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{fontawesome5}
+\usepackage{eso-pic}
+\usepackage{charter}
+
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+\definecolor{gr}{RGB}{225,225,225}
+
+\input{info}
+
+\begin{document}
+
+% Shaded header banner
+\AddToShipoutPictureBG{%
+\color{gr}
+\AtPageUpperLeft{\rule[-1.3in]{\paperwidth}{1.3in}}
+}
+
+% Header
+\begin{center}
+{\fontsize{28}{0}\selectfont\scshape \myname}
+
+\href{mailto:\myemail}{\faEnvelope\enspace \myemail}\hfill
+\href{https://linkedin.com/in/\mylinkedin}{\faLinkedinIn\enspace \mylinkedin}\hfill
+\href{tel:\myphone}{\faPhone\enspace \myphone}\hfill
+\faMapMarker\enspace \mylocation
+\end{center}
+
+\vspace{0.2in}
+
+% Opening block
+\today\\
+
+\vspace{-0.1in}\company\\
+\street\\
+\zip\space \city, \state\ \\
+
+\vspace{-0.1in}\greeting\ \recipient,\\
+
+% Body
+\vspace{-0.1in}\setlength\parindent{24pt}
+\noindent\input{body}
+
+% Closer
+\vspace{0.1in}
+\vfill
+
+\begin{flushright}
+\closer,
+
+\vspace{-0.1in}\includegraphics[width=1.5in]{images/sig.png}\vspace{-0.1in}
+
+\mylegalname
+\end{flushright}
+
+\end{document}

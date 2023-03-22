@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Karen Armstrong's Guide to a Compassionate Life
-categories: [Books]
+categories: Book Review
 cover: https://wallpaper.dog/large/5516660.jpg
 description: A summary of Karen Armstrong's Twelve Steps to a Compassionate Life
 permalink: /blog/:title

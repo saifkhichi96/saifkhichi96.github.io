@@ -28,31 +28,17 @@ keywords: research, saif khan, publications, machine learning, computer vision, 
 </div>
 
 <aside class="c-minor">
-  <section class="mdc-card mdc-card--outlined">
-    <div class="mdc-card__content">
-      <h2>Datasets</h2>
-      {% assign datasets_by_date = site.datasets | sort: "date" | reverse %}
-      <div class="mdc-layout-grid">
-        <div class="mdc-layout-grid__inner">
-          {% for item in datasets_by_date %}
-          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-            <p><a href="{{ item.url }}">{{ item.title }} ({{ item.date | date: "%Y"}})</a></p>
-            {% assign categories = item.category | shift %}
-            {% for category in categories %}<span class="project-tag" style="word-wrap: break-word;">{{ category | replace: ",", "" }}</span> &nbsp;{% endfor %}
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-    <div class="mdc-card__actions">
-      <div class="mdc-card__action-icons">
-        <a class="mdc-button mdc-card__action mdc-card__action--button" href="datasets/">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">See all datasets</span>
-        </a>
-      </div>
-    </div>
-  </section>
+  <div class="research-interests">
+    <h2>Research Interests</h2>
+    <ul>
+      <li>Deep Learning</li>
+      <li>Human Motion Estimation</li>
+      <li>AI on Edge Devices</li>
+      <li>Optimal Neural Networks</li>
+      <li>3D Reconstruction</li>
+      <li>Behavioral Biometrics</li>
+    </ul>
+  </div>
 
   {% include widget_feedback.html %}
 </aside>

@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  Generate Depth and Normal Maps with Blender
-categories: [3D, Python]
+categories: Tutorial
 cover: /assets/images/blog/blender-depth-map-surface-normals/0.png
 description: In this tutorial, we use Blender 2.93.6 to render and save depth maps and surface normals of a 3D object as Numpy arrays in Python.
+keywords: blender, depth maps, normal maps, 3d modeling, python
 permalink: /blog/:title
 syntax: true
 ---

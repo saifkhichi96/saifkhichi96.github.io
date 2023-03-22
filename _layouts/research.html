@@ -2,11 +2,38 @@
 layout: default
 ---
 
+<style>
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 75%; /* 4:3 Aspect Ratio (divide 3 by 4 = 0.75) */
+  margin-bottom: 1rem;
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
 <!-- Page Content -->
 <div class="c-major-r">
   <!-- Overview -->
   <section>
-    <h2>Abstract</h2>
+    <h2>{{ page.title }}</h2>
+    {% if page.slides %}
+    <div class="iframe-container">
+      <iframe class="responsive-iframe" src="https://docs.google.com/presentation/d/e/{{page.slides}}/embed" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div>
+    {% endif %}
+
     <p><em>{{ page.abstract }}</em></p>
   </section>
 
@@ -32,9 +59,7 @@ layout: default
 <aside class="c-minor">
   <!-- Related Research -->
   {% if page.related and page.related.size > 0 %}
-  {% assign research_by_date = site.research | sort: "date" | reverse %}
-  {% assign datasets_by_date = site.datasets | sort: "date" | reverse %}
-  {% assign all_research = research_by_date | concat: datasets_by_date %}
+  {% assign all_research = site.research | sort: "date" | reverse %}
   {% if all_research.size > 0 %}
   {% for item in all_research %}
   {% assign item_path = item.path | split: "." %}

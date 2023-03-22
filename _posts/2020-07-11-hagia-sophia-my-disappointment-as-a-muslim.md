@@ -1,6 +1,6 @@
 ---
 layout: post
-category: [Opinion]
+category: Politics
 title: "Turkey's Decision about Reconvertion of Hagia Sophia: A Step Backwards"
 cover: https://cdn.pixabay.com/photo/2017/12/04/11/49/istanbul-2996818_1280.jpg
 keywords: "Hagia Sophia, Turkey, mosque, museum, cultural heritage, religion, history, multiculturalism, secularism, nationalism"

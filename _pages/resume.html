@@ -73,76 +73,50 @@ icons: true
     }
   }
 
+  .info-grid .logo {
+    background-image: url('/{{ site.baseurl }}assets/images/banner/home-right.png');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: contain;
+    grid-column: 4 / span 3;
+    grid-row: 1 / span 3;
+    margin-bottom: 8px;
+  }
+
+  .info-grid .email {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 2;
+    line-height: normal;
+    font-size: 1.05rem;
+    padding-top: 0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .info-grid .logo {
+      background-image: url('/{{ site.baseurl }}assets/images/banner/home-right-dark.png');
+    }
+  }
+
 </style>
 
-<!-- Page Title and Description -->
-<section class="bio">
-  <img loading="lazy" src="{{site.github.owner.avatar_url}}" class="img-responsive" alt="A portrait of Muhammad Saif Ullah Khan." />
-  <div>
-    <p class="name">{{ site.github.owner.name }}</p>
-    <p class="tagline">{{ site.tagline }}</p>
-    <p class="summary">
-      {{ site.data.manifest.description }} Self-directed leader who fosters a collaborative
-      and supportive team environment. Dedicated, hard-working and open to new experiences.
-    </p>
-  </div>
-</section>
-
 <div class="c-major-r">
-  <!-- Skills and Abilities-->
-  <section>
-    <h2>Technical Skills</h2>
-    {% assign languages = site.github.public_repositories | map: "language" | compact | sort %}
-    {% assign languages = languages | group_by: '.' | sort: 'size' | reverse %}
-
-    <ul class="mdc-list">
-      <li>
-        Programming Languages<sup>&#x271D;</sup>
-        <div class="mdc-chip-set">
-          {% for language in languages %}
-          <div class="mdc-chip">
-            <span role="button" class="mdc-chip__text">{{ language.name }}</span>
-          </div>
-          {% endfor %}
-        </div>
-      </li>
-      <small><sup>&#x271D; Main languages used in public repositories on my GitHub, sorted by frequency.</sup></small>
-
-      {% if site.skills %}
-      {% for skillset in site.skills %}
-      <li>
-        {{ skillset.type }}
-        <div class="mdc-chip-set">
-          {% for skill in skillset.items %}
-          <div class="mdc-chip">
-            <span role="button" class="mdc-chip__text">{{ skill.name }}</span>
-          </div>
-          {% endfor %}
-        </div>
-      </li>
-      {% endfor %}
-      {% endif %}
-    </ul>
-
-    <ul class="highlight">
-      <li>
-        Sound knowledge of <strong>object-oriented concepts</strong>, basic
-        <strong>design
-          patterns</strong> and <strong>good programming
-          practices</strong>.
-      </li>
-      <br>
-
-      <li>
-        Ability to <strong>work independently</strong> as well as <strong>with
-          others</strong>. Experienced in <strong>leading teams</strong> and
-        <strong>managing projects</strong>.
-      </li>
-    </ul>
+  <!-- Business Card -->
+  <section class="business-card">
+    <div class="info-grid">
+      <div class="name">
+        <p class="title text-uppercase"><span class="light">Saif</span> Khan</p>
+      </div>
+      <div class="bio">
+        <p class="text-uppercase"><b>{{ site.github.owner.bio }}</b></p>
+      </div>
+      <div class="logo"></div>
+      <div class="email">
+        {{ site.data.manifest.description }}
+      </div>
+    </div>
   </section>
 
   <!-- Experience-->
-  <h2>Experience Summary</h2>
   <ul>
     {% for item in site.experience %}
     <li class="experience-item">
@@ -204,61 +178,15 @@ icons: true
 </div>
 
 <div class="c-minor">
-  <!-- Accomplishments -->
-  <section>
-    <h2>Achievements &amp; Projects</h2>
-    <ul>
-      <li>The final project of my Bachelor degree, called <a href="/projects/authentica/">Signature Verification</a> was
-        nominated for gold medal in our department.
-        <hr class="mdc-list-divider">
-      </li>
-
-      <li>Wrote an object-oriented binding for the OpenGL/GLUT in C++ language, called <a href="/projects/smartgl/">SmartGL</a>,
-        to easily create GUI apps on the Windows platform.
-        <hr class="mdc-list-divider">
-      </li>
-
-      <li>Multiple APIs and packages, written in Java, Kotlin and Python langauges, published on <a href="https://mvnrepository.com/search?q=aspirasoft+sfllhkhan95" rel="noopener" target="_blank">JCenter</a> and <a
-          href="https://pypi.org/user/saifkhichi96/" rel="noopener" target="_blank">PyPI</a>.
-        <hr class="mdc-list-divider">
-      </li>
-
-      <li>Several well-performing games and applications published on <a href="https://play.google.com/store/apps/dev?id=7722501168179136426" rel="noopener" target="_blank">Google Play Store</a>
-        <hr class="mdc-list-divider">
-      </li>
-
-      <li>Won the first prize, along with my team, in a local hackathon <a href="#">NUST Pakathon 2015</a>.
-        <hr class="mdc-list-divider">
-      </li>
-
-      <li>Successfully led a team to participate in <a href="#">LUMS PsiFi 2014</a>.
-        <hr class="mdc-list-divider">
-      </li>
-    </ul>
-    <div class="mdc-card__actions">
-      <div class="mdc-card__action-icons">
-        <a class="mdc-button mdc-card__action mdc-card__action--button" href="/projects/">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">See all projects</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- Languages -->
   {% if site.spoken_languages %}
   <section>
-    <h2>Languages</h2>
-    <ul class="mdc-list mdc-list--two-line">
+    <h2>Spoken Languages</h2>
+    <div class="mdc-chip-set">
       {% for language in site.spoken_languages %}
-      <li class="mdc-list-item">
-        <span class="mdc-list-item__text">
-          <span class="mdc-list-item__primary-text">{{ language.name }}</span>
-          <span class="mdc-list-item__secondary-text">{{ language.proficiency }}</span>
-        </span>
-      </li>
+      <span class="mdc-chip">{{ language.name }}</span>
       {% endfor %}
-    </ul>
+    </div>
   </section>
   {% endif %}
 
@@ -266,16 +194,11 @@ icons: true
   {% if site.interests %}
   <section>
     <h2>Interests</h2>
-    <ul class="mdc-list mdc-list--two-line">
+    <div class="mdc-chip-set">
       {% for interest in site.interests %}
-      <li class="mdc-list-item">
-        <span class="mdc-list-item__text">
-          <span class="mdc-list-item__primary-text">{{ interest.name }}</span>
-          <span class="mdc-list-item__secondary-text">{{ interest.description }}</span>
-        </span>
-      </li>
+      <span class="mdc-chip">{{ interest.name }}</span>
       {% endfor %}
-    </ul>
+    </div>
   </section>
   {% endif %}
 
