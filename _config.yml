@@ -2,6 +2,7 @@ theme:                     simple-material
 baseurl:                   ''
 url:                       https://www.saifkhichi.com
 enforce_ssl:               https://www.saifkhichi.com
+repository:                saifkhichi96/saifkhichi96.github.io
 
 author:
   name: Saif Khan
