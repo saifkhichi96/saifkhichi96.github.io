@@ -1,6 +1,11 @@
 {% assign research_by_date = site.research | sort: "date" | reverse %}
 {% assign all_items = research_by_date | sort: "date" | reverse %}
 
+
+<p>
+  Showing {{ all_items.size }} research items.
+</p>
+
 {% for item in all_items %}
 {% assign categories = item.categories %}
 <section class="publication-container">
@@ -9,14 +14,35 @@
       <div class="publication-tags">
         {% assign categories = item.categories %}
         {% for category in categories %}
-        <span class="publication-tag">{{ category | replace: ",", "" }}</span>
+        <span class="publication-tag {% if forloop.first %}primary{% endif %}">{{ category | replace: ",", "" }}</span>
         {% endfor %}
       </div>
-      <div class="publication-authors">({{ item.authors | split: ',' | first | split: ' ' | last }} <i>et al.</i>, {{ item.date | date: "%Y" }})</div>
-      <a href="{{ item.url | relative_url }}" class="publication-title-link">
-        <h2 class="publication-title">{{ item.title }}</h2>
-      </a>
-      <p class="publication-description">{{ item.description }}</p>
+      {% assign authors = item.authors | split: ',' %}
+      <p class="publication-description">
+        {% for author in authors %}
+          {% assign last_name = author | split: ' ' | last %}
+          {% assign all_names = author | split: ' ' %}
+          
+          <!-- For each name except the last, get the initial and add to an "initials" variable -->
+          {% assign initials = "" %}
+          {% for name in all_names %}
+            {% unless forloop.last %}
+              {% assign initial = name | slice: 0, 1 %}
+              {% assign initials = initials | append: ' ' | append: initial | append: "." %}
+            {% endunless %}
+          {% endfor %}
+
+          <!-- If there is more than one author, add a comma after the last name -->
+          {% unless forloop.last %}
+            {% assign last_name = last_name | append: "," %}
+          {% endunless %}
+
+          <!-- Print the author's name -->
+          {{ last_name }}{{ initials }}{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+        ({{ item.date | date: "%Y" }}).
+        <a href="{{ item.url | relative_url }}" class="publication-link">{{ item.title }}</a>.
+      </p>
     </div>
   </div>
 </section>

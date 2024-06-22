@@ -280,8 +280,10 @@ main {
 
 /* Publication styles */
 .publication-container {
-  border-bottom: 1px solid var(--mdc-theme-border);
-  padding: 8px;
+  border: 1px solid var(--mdc-theme-border);
+  border-radius: 16px;
+  background-color: var(--mdc-theme-border);
+  padding: 32px;
   width: 100%;
 }
 
@@ -304,10 +306,21 @@ main {
 }
 
 .publication-tag {
-  background-color: var(--mdc-theme-background);
+  background-color: var(--mdc-theme-overlay);
   border: 1px solid var(--mdc-theme-border);
   border-radius: 4px;
   color: var(--mdc-theme-on-surface);
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 8px;
+  text-transform: uppercase;
+}
+
+.publication-tag.primary {
+  background-color: var(--mdc-theme-overlay);
+  border: 1px solid var(--mdc-theme-overlay);
+  border-radius: 4px;
+  color: var(--mdc-theme-primary-variant);
   font-size: 10px;
   font-weight: bold;
   padding: 2px 8px;
@@ -345,7 +358,7 @@ main {
 
 /** Research interests styles */
 .research-interests {
-  background-color: var(--mdc-theme-background);
+  background-color: var(--mdc-theme-surface);
   border-radius: var(--card-radius);
   padding: 1rem;
   margin-bottom: 1rem;
