@@ -65,18 +65,12 @@ github_stats: true
 
 <style>
   #services .hire-callout {
-    background: #f9f7ff;
+    background: var(--mdc-theme-overlay);
     font-weight: bold;
     font-size: 20px;
     text-align: center;
     padding: 16px;
-    border-radius: 8px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    #services .hire-callout {
-      background: #191330;
-    }
+    border-radius: var(--card-radius);
   }
 
   #services img {
@@ -97,11 +91,6 @@ github_stats: true
   .mdc-list-item__secondary-text {
     position: relative !important;
     top: -8px !important;
-  }
-
-  .project-tag {
-    font-weight: normal;
-    line-height: 0;
   }
 
   pwa-install {
@@ -206,14 +195,14 @@ github_stats: true
   </section>
 
   <!-- Research Work -->
-  <section class="mdc-card mdc-card--outlined">
-    <div class="mdc-card__content highlighted">
+  <section class="mdc-card mdc-card--outlined highlighted">
+    <div class="mdc-card__content">
       <h2>Research Work</h2>
-      <p>My research work focuses on using Deep Learning for vision tasks like pose estimation and 3D reconstruction, and optimizing neural networks for deployment on edge devices such as smartphones.</p>
+      <p>My research work focuses on deep learning applications for language and vision tasks including human motion understanding and 3D reconstruction. I am also working on neural network optimization for deployment on edge devices such as smartphones.</p>
       {% assign research = site.research | sort: "date" | reverse %}
       <div class="mdc-layout-grid">
         <div class="mdc-layout-grid__inner">
-          {% for item in research %}
+          {% for item in research limit: 6 %}
           <div class="mdc-layout-grid__cell mdc-card mdc-card--outlined">
             <div class="mdc-card__content">
               <small class="text-uppercase">{{ item.category | first | replace: ",", "" }}</small><br>
@@ -227,11 +216,12 @@ github_stats: true
         </div>
       </div>
     </div>
-    <div class="mdc-card__actions highlighted">
+    <div class="mdc-card__actions">
       <div class="mdc-card__action-icons">
+        <p>Showing 6 of {{ research | size }} research projects.</p>
         <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="window.location.href='/research/'">
           <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">See details</span>
+          <span class="mdc-button__label">See all</span>
         </button>
       </div>
     </div>
@@ -339,26 +329,26 @@ github_stats: true
           {% for repo in repos limit:10 %}
           {% unless repo.name == site.github.owner.login %}
           {% unless repo.name == site.github.project_title %}
-          <li class="mdc-list-item no-hover highlighted">
+          <li class="mdc-list-item" style="background-color: var(--mdc-theme-background);">
             <a href="{{repo.html_url}}">
               <span class="mdc-list-item__text">
                 <span class="mdc-list-item__primary-text">{{ repo.name }}</span>
                 <span class="mdc-list-item__secondary-text">{{ repo.description }}</span>
+                <div class="project-tags">
+                  <span class="project-tag">
+                    <i class="material-icons">star</i>{{ repo.stargazers_count }}
+                  </span>
+                  <span class="project-tag">
+                    <i class="material-icons">fork_left</i>{{ repo.forks }}
+                  </span>
+                  <span class="project-tag">
+                    <i class="material-icons">language</i>{{ repo.language }}
+                  </span>
+                </div>
               </span>
             </a>
-            <div class="project-tags">
-              <span class="project-tag">
-                <i class="material-icons">star</i>{{ repo.stargazers_count }}
-              </span>
-              <span class="project-tag">
-                <i class="material-icons">fork_left</i>{{ repo.forks }}
-              </span>
-              <span class="project-tag">
-                <i class="material-icons">language</i>{{ repo.language }}
-              </span>
-            </div>
           </li>
-          <li class="mdc-list-divider" style="margin: 8px;"></li>
+          <li class="mdc-list-divider" style="margin: var(--content-spacing);"></li>
           {% endunless %}
           {% endunless %}
           {% endfor %}
@@ -376,8 +366,8 @@ github_stats: true
   </div>
 
   <!-- Personal -->
-  <section class="mdc-card highlighted" style="border-radius: 8px;">
-    <div class="mdc-card__content" style="background-color: {{ site.data.manifest.theme_color }}; color: #ffffff;">
+  <section class="mdc-card" style="background-color: var(--mdc-theme-primary); color: #ffffff;">
+    <div class="mdc-card__content">
       <h2>Beyond Programming</h2>
       <p>In this section, I share brief glimpses of my hobbies and life outside computers.</p>
 

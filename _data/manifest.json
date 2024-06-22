@@ -157,10 +157,10 @@
       }]
     }
   ],
-  "background_color": "#fafafa",
+  "background_color": "#E8EAF6",
   "display": "standalone",
   "orientation": "natural",
   "scope": "/",
   "start_url": "/",
-  "theme_color": "#3949ab"
+  "theme_color": "#311B92"
 }
