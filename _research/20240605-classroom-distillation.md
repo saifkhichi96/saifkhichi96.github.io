@@ -18,9 +18,10 @@ permalink: /research/classroom-distillation/
 <div class="mdc-card mdc-card--outlined highlighted" style="margin: 1em 0;">
     <h6 class="mdc-typography--headline6">TL;DR</h6>
     <ol>
-        <li>We reformulate cross-dataset human pose estimation as a continual learning task.</li>
-        <li>We propose a novel Importance-Weighted Distillation method for incremental integration of keypoints and pose variations.</li>
-        <li>Our approach outperforms existing regularization-based continual learning strategies by 0.71% on average.
+        <li>We introduce ClassroomKD, a novel knowledge distillation framework inspired by classroom environments.</li>
+        <li>Our framework comprises two main modules: the Knowledge Filtering (KF) Module and the Mentoring Module.</li>
+        <li>Extensive experiments on CIFAR-100 demonstrate that our approach significantly improves student model performance.</li>
+        <li>Our results suggest that students learn more effectively in a diverse classroom with strategically chosen feedback and adaptive teaching.</li>
     </ol>
 </div>
 
@@ -29,9 +30,9 @@ permalink: /research/classroom-distillation/
 If you find this useful, please include the following citation in your work:
 
 ```bibtex
-@article{khan2024continual,
-  title={Continual Human Pose Estimation for Incremental Integration of Keypoints and Pose Variations},
-  author={Khan, Muhammad Saif Ullah and Khan, Muhammad Ahmed Ullah and Stricker, Didier and Afzal, Muhammad Zeshan},
+@article{sarode2024classroom,
+  title={Classroom-Inspired Knowledge Distillation with Adaptive Peer Ranking},
+  author={Sarode, Shalini and Khan, Muhammad Saif Ullah and Stricker, Didier and Afzal, Muhammad Zeshan},
   journal={OpenReview Preprint},
   year={2024}
 }

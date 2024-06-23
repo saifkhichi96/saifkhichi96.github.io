@@ -20,7 +20,7 @@ permalink: /research/continual-pose/
     <ol>
         <li>We reformulate cross-dataset human pose estimation as a continual learning task.</li>
         <li>We propose a novel Importance-Weighted Distillation method for incremental integration of keypoints and pose variations.</li>
-        <li>Our approach outperforms existing regularization-based continual learning strategies by 0.71% on average.
+        <li>Our approach outperforms existing regularization-based continual learning strategies by 0.71% on average.</li>
     </ol>
 </div>
 
