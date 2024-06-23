@@ -207,7 +207,8 @@ main {
 }
 
 .content-body {
-  margin: 8px;
+  margin: var(--content-spacing);
+  border-radius: var(--content-corners);
 }
 
 .c-major-r section:first-child,
@@ -259,6 +260,7 @@ main {
 
   .content-body {
     margin: 0;
+    border-radius: 0 !important;
   }
 
   #bmc-wbtn {
@@ -271,7 +273,7 @@ main {
   border: 1px solid var(--mdc-theme-border);
   border-radius: var(--card-radius);
   background-color: var(--mdc-theme-overlay);
-  padding: var(--content-padding);
+  padding: var(--card-padding);
   width: 100%;
   gap: var(--content-spacing);
 }
@@ -337,13 +339,6 @@ main {
   font-size: 0.9rem;
   margin-bottom: 4px;
 }
-
-@media screen and (max-width: 840px) {
-  .publication-container {
-    padding: 4px;
-  }
-}
-
 
 /** Research interests styles */
 .research-interests {

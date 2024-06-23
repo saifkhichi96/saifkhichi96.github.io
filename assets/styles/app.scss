@@ -113,6 +113,11 @@
   padding: 0;
 }
 
+.no-spacing {
+  margin: 0;
+  padding: 0;
+}
+
 /******************************************************************************/
 /* Main Title Section                                                         */
 /******************************************************************************/
@@ -289,7 +294,7 @@
 }
 
 .portfolio .grid .portfolio-item .project-icon {
-  background-color: var(--mdc-theme-background);
+  background-color: whitesmoke;
   border-radius: var(--icon-radius);
 }
 

@@ -23,9 +23,6 @@ menu_main:
   - title:                   Home
     icon:                    roofing
     url:                     /
-  - title:                   Blog
-    icon:                    feed
-    url:                     /blog/
   - title:                   Projects
     icon:                    webhook
     url:                     /projects/
@@ -35,6 +32,9 @@ menu_main:
   - title:                   Teaching
     icon:                    school
     url:                     /teaching/
+  - title:                   Blog
+    icon:                    feed
+    url:                     /blog/
 
 
 
@@ -53,9 +53,9 @@ menu_social:
 menu_footer:
   - title:                 'Cookies'
     url:                   '/cookie-policy/'
-  - title:                 'Privacy'
+  - title:                 'Privacy Policy'
     url:                   '/privacy/'
-  - title:                 'Terms'
+  - title:                 'Terms of Service'
     url:                   '/terms/'
 
 breadcrubms:               true

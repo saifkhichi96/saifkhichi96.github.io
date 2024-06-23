@@ -29,6 +29,19 @@ drawer: true
     }
   }
 
+  .hire-callout {
+    background: var(--mdc-theme-overlay);
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: var(--card-padding);
+    border-radius: var(--card-radius);
+  }
+
+  .hire-callout img {
+    width: 100%;
+    height: auto;
+  }
 </style>
 
 <div class="c-minor-r hide-when-small">
@@ -40,6 +53,21 @@ drawer: true
         <br>
         Use the filters below to search for projects by platform and type.
       </p>
+    </section>
+
+    <section>
+      <div class="callout hire-callout">
+        <img alt="Open for work" src="{{ site.baseurl }}/assets/images/open-for-work.png" />
+        <p>Have a project that needs to be done?<br>
+          <small>Do you have a question, feedback or a comment?</small>
+        </p>
+        <div>
+          <a class="mdc-button mdc-button--unelevated" href="/contact/" style="background-color: #f28faa !important;">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label" style="text-transform: none; color: black !important;">Talk to Me</span>
+          </a>
+        </div>
+      </div>
     </section>
   </header>
 
@@ -121,9 +149,8 @@ drawer: true
     <!-- Apps -->
     <section>
       <div class="grid filters-content">
-
         <a href="/projects/acacia-joinery/" class="portfolio-item all app mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/acacia-joinery-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -137,7 +164,7 @@ drawer: true
         </a>
 
         <a href="/projects/adt-simulator/" class="portfolio-item all app desktop">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/adt-simulator-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -151,7 +178,7 @@ drawer: true
         </a>
 
         <a href="/projects/authentica/" class="portfolio-item all app mobile desktop web">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/authentica-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -165,7 +192,7 @@ drawer: true
         </a>
 
         <a href="/projects/cafe-manager/" class="portfolio-item all app mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/cafe-manager-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -179,7 +206,7 @@ drawer: true
         </a>
 
         <a href="/projects/connect/" class="portfolio-item all app mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/connect-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -193,7 +220,7 @@ drawer: true
         </a>
 
         <a href="/projects/cygnus/" class="portfolio-item all app mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/cygnus-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -207,7 +234,7 @@ drawer: true
         </a>
 
         <a href="/projects/doodle/" class="portfolio-item all app mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/doodle-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -221,7 +248,7 @@ drawer: true
         </a>
 
         <a href="/projects/iprd-geotag/" class="portfolio-item all app mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/iprd-geotag-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -235,7 +262,7 @@ drawer: true
         </a>
 
         <a href="/projects/lexiconic/" class="portfolio-item all app desktop">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/lexiconic-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -249,7 +276,7 @@ drawer: true
         </a>
 
         <a href="/projects/recatalyst/" class="portfolio-item all app mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/recatalyst-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -263,7 +290,7 @@ drawer: true
         </a>
 
         <a href="/projects/scanner/" class="portfolio-item all app mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/scanner-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -277,7 +304,7 @@ drawer: true
         </a>
 
         <!-- <a href="/projects/servus/" class="portfolio-item all app mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/servus-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -291,7 +318,7 @@ drawer: true
         </a> -->
 
         <a href="/projects/tasbih/" class="portfolio-item all app mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/tasbih-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -305,7 +332,7 @@ drawer: true
         </a>
 
         <a href="/projects/transitus/" class="portfolio-item all app mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/transitus-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -319,7 +346,7 @@ drawer: true
         </a>
 
         <a href="/projects/vread/" class="portfolio-item all app web">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/vread-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -340,7 +367,7 @@ drawer: true
       <div class="grid filters-content">
 
         <a href="/projects/bouncy/" class="portfolio-item all game mobile desktop">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/bouncy-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -354,7 +381,7 @@ drawer: true
         </a>
 
         <a href="/projects/dodge/" class="portfolio-item all game mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/dodge-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -368,7 +395,7 @@ drawer: true
         </a>
 
         <a href="/projects/hangman/" class="portfolio-item all game mobile desktop">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/hangman-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -382,7 +409,7 @@ drawer: true
         </a>
 
         <a href="/projects/huntrek/" class="portfolio-item all game mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/huntrek-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -396,7 +423,7 @@ drawer: true
         </a>
 
         <a href="/projects/jungle-run/" class="portfolio-item all game mobile desktop">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/jungle-run-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -410,7 +437,7 @@ drawer: true
         </a>
 
         <a href="/projects/moksha/" class="portfolio-item all game mobile desktop">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/moksha-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -424,7 +451,7 @@ drawer: true
         </a>
 
         <a href="/projects/poppit/" class="portfolio-item all game mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/poppit-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -438,7 +465,7 @@ drawer: true
         </a>
 
         <a href="/projects/quest/" class="portfolio-item all game mobile desktop">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/quest-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -452,7 +479,7 @@ drawer: true
         </a>
 
         <a href="/projects/space-shooter/" class="portfolio-item all game desktop">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/space-shooter-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -466,7 +493,7 @@ drawer: true
         </a>
 
         <a href="/projects/university-run/" class="portfolio-item all game desktop">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/university-run-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -486,7 +513,7 @@ drawer: true
     <section>
       <div class="grid filters-content">
         <a href="/projects/droid-rest/" class="portfolio-item all api mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/droid-rest-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -500,7 +527,7 @@ drawer: true
         </a>
 
         <a href="/projects/game-core/" class="portfolio-item all api mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/game-core-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -514,7 +541,7 @@ drawer: true
         </a>
 
         <a href="/projects/scribe/" class="portfolio-item all api mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/scribe-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -528,7 +555,7 @@ drawer: true
         </a>
 
         <a href="/projects/smartgl/" class="portfolio-item all api desktop">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/smartgl-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -542,7 +569,7 @@ drawer: true
         </a>
 
         <a href="/projects/tiled/" class="portfolio-item all api mobile">
-          <div class="mdc-card">
+          <div class="mdc-card no-spacing">
             <div class="project-icon mdc-card__primary-action">
               <div class="mdc-card__media mdc-card__media--square" style="background: url('/assets/images/projects/tiled-logo.png') center center no-repeat; background-size: cover;">
               </div>
@@ -559,12 +586,32 @@ drawer: true
     </section>
   </section>
 
-  <section class="text-center">
-    <div class="callout">
-      Do you have a project?
-    </div>
+  <section id="services">
+    <!-- Services -->
+    
+    <br>
+    {% assign services = site.services | size %}
+    {% if services > 0 %}
     <p>
-      I can help! Learn more about the <a href="/#services">services I offer</a> and <a href="/contact/">contact me</a> with your project requirements to get a quote.
+      I can help! Learn more about the services I offer and <a href="/contact/">contact me</a> with your project requirements to get a quote.
+    </p>
+    <div class="mdc-layout-grid no-spacing">
+      <div class="mdc-layout-grid__inner">
+        {% for service in site.services %}
+        <div class="mdc-layout-grid__cell mdc-card mdc-card--outlined service-item">
+          <span class="material-icons">{{ service.icon }}</span>
+          <h2>{{ service.title }}</h2>
+          <p>{{ service.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </section>
+
+  <section>
+    <p>
+      To pay for a completed service, you can either send the invoice amount on <a href="https://www.paypal.com/paypalme/saifkhichi06" target="_blank">PayPal</a> or use <a href="/payments/">this checkout page</a>.
     </p>
   </section>
 </div>

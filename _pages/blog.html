@@ -9,11 +9,206 @@ pagination:
   enabled: true
 ---
 
+<style>
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+  }
+
+  .mySlides {
+    min-height: 448px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Hide scrollbars */
+
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+</style>
+
 <div class="c-major-r">
   {% include list_blog_posts.html %}
 </div>
 
 <div class="c-minor">
-  {% include widget_search.html %}
-  {% include widget_goodreads.html %}
+  <!-- Personal -->
+  <section class="mdc-card" style="background-color: var(--mdc-theme-primary); color: #ffffff;">
+    <div class="mdc-card__content">
+      <h2>More About Me</h2>
+      <p>In this section, I share brief glimpses of my hobbies and life outside computers.</p>
+
+      <section class="slideshow-container">
+        <div class="mdc-card mdc-card--outlined">
+          <!-- Tab Bar -->
+          <div class="mdc-tab-bar" role="tablist">
+            <div class="mdc-tab-scroller">
+              <div class="mdc-tab-scroller__scroll-area">
+                <div class="mdc-tab-scroller__scroll-content">
+                  <button class="mdc-tab mdc-tab--active" onclick="currentSlide(1)" role="tab" tabindex="0">
+                    <span class="mdc-tab__content">
+                      <span class="mdc-tab__text-label" style="text-transform: none;">Reading List</span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                  <button class="mdc-tab" onclick="currentSlide(2)" role="tab">
+                    <span class="mdc-tab__content">
+                      <span class="mdc-tab__text-label" style="text-transform: none;">Sports</span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                  <button class="mdc-tab" onclick="currentSlide(3)" role="tab">
+                    <span class="mdc-tab__content">
+                      <span class="mdc-tab__text-label" style="text-transform: none;">More</span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="mdc-card__content">
+            <!-- Reading List -->
+            <section class="mySlides fade">
+              <p>
+                When I was little, books were my escape and, as far as I can remember, I've always loved reading. However, Harry Potter is the reason I became obsessed with them, and then it never stopped.
+              </p>
+              <div>
+                <p>
+                  Since 2012, I've been doing this thing where I set myself a personal reading goal for the year.
+                </p>
+                <div id="gr_challenge_11634" class="mdc-card mdc-card--outlined">
+                  <div id="gr_challenge_progress_body_11634" class="mdc-card__content">
+                    <h3 style="margin: 4px 0 10px; font-weight: normal; text-align: center">
+                      <a style="text-decoration: none; font-family:georgia,serif;font-style:italic; font-size: 1.1em" rel="nofollow" href="https://www.goodreads.com/challenges/11634-2024-reading-challenge">2024 Reading Challenge</a>
+                    </h3>
+                        <div class="challengePic">
+                          <a rel="nofollow" href="https://www.goodreads.com/challenges/11634-2024-reading-challenge"><img alt="2024 Reading Challenge" style="float:left; margin-right: 10px; border: 0 none" src="https://images.gr-assets.com/challenges/1701888414p2/11634.jpg" /></a>
+                        </div>
+                      <div>
+                        <a rel="nofollow" href="https://www.goodreads.com/user/show/26736309-saif">Saif</a> has
+                            read 9 books toward
+                            his goal of
+                            24 books.
+                      </div>
+                      <div style="width: 100px; margin: 4px 5px 5px 0; float: left; border: 1px solid #382110; height: 8px; overflow: hidden; background-color: #FFF">
+                        <div style="width: 37%; background-color: #D7D2C4; float: left"><span style="visibility:hidden">hide</span></div>
+                      </div>
+                      <div style="font-family: arial, verdana, helvetica, sans-serif;font-size:90%">
+                        <a rel="nofollow" href="https://www.goodreads.com/user_challenges/46990795">9 of 24 (37%)</a>
+                      </div>
+                        <div style="text-align: right;">
+                          <a style="text-decoration: none; font-size: 10px;" rel="nofollow" href="https://www.goodreads.com/user_challenges/46990795">view books</a>
+                        </div>
+                  </div>
+                  <script src="https://www.goodreads.com/user_challenges/widget/26736309-saif?challenge_id=11634&v=2"></script>
+                </div>
+              </div>
+              {% include widget_goodreads.html %}
+              <p>
+                Thanks to my penchant for meticulously logging everything I do, you can see (almost) every book I have read on <a href="https://www.goodreads.com/user/show/26736309-muhammad-saif-ullah-khan">Goodreads</a>.
+              </p>
+            </section>
+
+            <!-- Sports -->
+            <section class="mySlides fade">
+              <h3>Long-boarding</h3>
+              <p>Not exactly the sporty type, but sometimes you have to bend your own rules.</p>
+              <div class="embed-container">
+                <iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" allowfullscreen frameborder="0" src="https://www.youtube.com/embed/videoseries?list=PLV58xS0RVnALMrjZTEsPgKwW23oBqTDpY"
+                  title="Saif Goes Long-boarding"></iframe>
+              </div>
+              <br>
+              <p>This playlist shows me trying to learn long-boarding at 25. Better late than never,
+                right?</p>
+              <h3>Bicycling</h3>
+              <p>I use my bicycle to get around town or take occasional trips into the forests and
+                mountains around.</p>
+              <div class="embed-container">
+                <img loading="lazy" alt="Cycling" src="{{ site.baseurl }}/assets/images/cycling.jpg" />
+              </div>
+            </section>
+
+            <!-- Chess -->
+            <section class="mySlides fade">
+              <h3>Cooking</h3>
+              <p>I like to cook and occasionally bake. Here's a list of my favorite recipes on YouTube.
+                Cheers!</p>
+              <div class="embed-container">
+                <iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" allowfullscreen frameborder="0" src="https://www.youtube.com/embed/videoseries?list=PLV58xS0RVnAI32GQ7zFwX9pqAyDiTfKR6" title="My favorite recipes"></iframe>
+              </div>
+              <p>
+                I also sometimes bake cakes and breads.
+              </p>
+
+            </section>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
 </div>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.getElementsByClassName("mdc-tab");
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+      slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" mdc-tab--active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " mdc-tab--active";
+  }
+</script>
