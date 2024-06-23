@@ -1,0 +1,221 @@
+<div class="insights">
+    <h2>Research Insights</h2>
+  
+    <!-- Chart Container -->
+    <div>
+      <h3>Publication Trend</h3>
+      <canvas id="publicationsByYear"></canvas>
+    </div>
+    <div>
+      <h3>First Author Publications</h3>
+      <canvas id="firstAuthorPublications"></canvas>
+    </div>
+    <div>
+      <h3>Peer-Reviewed Publications</h3>
+      <canvas id="publishedUnpublished"></canvas>
+    </div>
+    <div>
+      <h3>Publication Venues</h3>
+      <canvas id="publicationVenues"></canvas>
+    </div>
+    <div>
+      <h3>Publication Types</h3>
+      <canvas id="publicationTypes"></canvas>
+    </div>
+  
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Data preparation
+        var publicationsByYear = {};
+        var firstAuthorPublications = 0;
+        var firstAuthorPreprints = 0;
+        var otherAuthorPublications = 0;
+        var otherAuthorPreprints = 0;
+        var published = 0;
+        var unpublished = 0;
+        var publicationVenues = {};
+        var publicationTypes = {};
+        var commonTags = {};
+  
+        {% assign first_author = "Muhammad Saif Ullah Khan" %}
+  
+        {% for item in site.research %}
+          var year = new Date("{{ item.date }}").getFullYear();
+          if (!publicationsByYear[year]) publicationsByYear[year] = 0;
+          publicationsByYear[year]++;
+  
+          var authors = "{{ item.authors }}".split(", ");
+          if (authors[0] == "{{ first_author }}") {
+            if ("{{ item.categories[1] }}" == "Preprint" || "{{ item.categories[0] }}" == "Report" || "{{ item.categories[0] }}" == "Thesis") {
+              firstAuthorPreprints++;
+            } else {
+              firstAuthorPublications++;
+            }
+          } else {
+            otherAuthorPublications++;
+          }
+  
+          if ("{{ item.categories[1] }}" == "Preprint" || "{{ item.categories[0] }}" == "Report" || "{{ item.categories[0] }}" == "Thesis") {
+            unpublished++;
+          } else {
+            published++;
+          }
+  
+          var venue = "{{ item.categories[1] }}";
+          if (!publicationVenues[venue]) publicationVenues[venue] = 0;
+          publicationVenues[venue]++;
+  
+          var type = "{{ item.categories[0] }}";
+          if (!publicationTypes[type]) publicationTypes[type] = 0;
+          publicationTypes[type]++;
+  
+          {% for tag in item.tags %}
+            if (!commonTags["{{ tag }}"]) commonTags["{{ tag }}"] = 0;
+            commonTags["{{ tag }}"]++;
+          {% endfor %}
+        {% endfor %}
+  
+        // Convert data to arrays for Chart.js
+        var years = Object.keys(publicationsByYear).sort();
+        var publicationsCount = years.map(function(year) { return publicationsByYear[year]; });
+  
+        var venues = Object.keys(publicationVenues).sort();
+        venues = venues.filter(function(venue) { return venue != "Preprint"; });
+        var venuesCount = venues.map(function(venue) { return publicationVenues[venue]; });
+  
+        var types = Object.keys(publicationTypes).sort();
+        var typesCount = types.map(function(type) { return publicationTypes[type]; });
+  
+        // Define colors
+        const backgroundColors = [
+            'rgba(255, 99, 132, 0.2)',    // Red
+            'rgba(255, 205, 86, 0.2)',    // Yellow
+            'rgba(75, 192, 192, 0.2)',    // Teal
+            'rgba(54, 162, 235, 0.2)',    // Blue
+            'rgba(153, 102, 255, 0.2)',   // Purple
+            'rgba(255, 159, 64, 0.2)',    // Orange (Light)
+            'rgba(255, 99, 132, 0.2)',    // Pink
+            'rgba(255, 159, 64, 0.2)',    // Coral
+            'rgba(255, 205, 86, 0.2)',    // Light Yellow
+            'rgba(75, 192, 192, 0.2)',    // Aqua
+            'rgba(54, 162, 235, 0.2)',    // Light Blue
+            'rgba(153, 102, 255, 0.2)'    // Light Purple
+        ];
+        const borderColors = [
+            'rgba(255, 99, 132, 1.0)',    // Red
+            'rgba(255, 205, 86, 1.0)',    // Yellow
+            'rgba(75, 192, 192, 1.0)',    // Teal
+            'rgba(54, 162, 235, 1.0)',    // Blue
+            'rgba(153, 102, 255, 1.0)',   // Purple
+            'rgba(255, 159, 64, 1.0)',    // Orange (Light)
+            'rgba(255, 99, 132, 1.0)',    // Pink
+            'rgba(255, 159, 64, 1.0)',    // Coral
+            'rgba(255, 205, 86, 1.0)',    // Light Yellow
+            'rgba(75, 192, 192, 1.0)',    // Aqua
+            'rgba(54, 162, 235, 1.0)',    // Light Blue
+            'rgba(153, 102, 255, 1.0)'    // Light Purple
+        ];
+
+        // Pick colors for each chart, cycling through the arrays if necessary
+        var venueBackgroundColors = venues.map(function(venue, index) { return backgroundColors[index % backgroundColors.length]; });
+        var venueBorderColors = venues.map(function(venue, index) { return borderColors[index % borderColors.length]; });
+        var typeBackgroundColors = types.map(function(type, index) { return backgroundColors[index % backgroundColors.length]; });
+        var typeBorderColors = types.map(function(type, index) { return borderColors[index % borderColors.length]; });
+
+        // Charts
+        new Chart(document.getElementById('publicationsByYear'), {
+          type: 'line',
+          data: {
+            labels: years,
+            datasets: [{
+              label: 'Publications by Year',
+              data: publicationsCount,
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: 'rgba(54, 162, 235, 1.0)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+  
+        new Chart(document.getElementById('firstAuthorPublications'), {
+          type: 'pie',
+          data: {
+            labels: ['Own Published', 'Own Preprints', 'Co-Authored'],
+            datasets: [{
+              label: 'First Author Publications',
+              data: [firstAuthorPublications, firstAuthorPreprints, otherAuthorPublications],
+              backgroundColor: backgroundColors,
+              borderColor: borderColors,
+              borderWidth: 1
+            }]
+          }
+        });
+  
+        new Chart(document.getElementById('publishedUnpublished'), {
+          type: 'pie',
+          data: {
+            labels: ['Published', 'Preprint'],
+            datasets: [{
+              label: 'Peer-Reviewed Publications',
+              data: [published, unpublished],
+              backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+              borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 159, 64, 1)'],
+              borderWidth: 1
+            }]
+          }
+        });
+  
+        new Chart(document.getElementById('publicationVenues'), {
+          type: 'horizontalBar',
+          data: {
+            labels: venues,
+            datasets: [{
+              label: 'Publication Venues',
+              data: venuesCount,
+              backgroundColor: venueBackgroundColors,
+              borderColor: venueBorderColors,
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              x: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+  
+        new Chart(document.getElementById('publicationTypes'), {
+          type: 'horizontalBar',
+          data: {
+            labels: types,
+            datasets: [{
+              label: 'Publication Types',
+              data: typesCount,
+              backgroundColor: typeBackgroundColors,
+              borderColor: typeBorderColors,
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              x: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+  
+        // If you want to add a tag cloud or other visualizations, you can use similar methods
+      });
+    </script>
+  </div>
+  

@@ -12,11 +12,11 @@ syntax: true
 permalink: /research/enhanced-bank-check-security/
 ---
 
-[Read Full-Text](https://arxiv.org/pdf/2406.14370)
+[Read Full-Text](https://arxiv.org/abs/2406.14370)
 {: .mdc-button .mdc-button--unelevated target="_blank"}
 
 <!-- TL;DR -->
-<div class="mdc-card mdc-card--outlined" style="background-color: var(--mdc-theme-overlay); margin: 1em 0;">
+<div class="mdc-card mdc-card--outlined highlighted" style="margin: 1em 0;">
     <h6 class="mdc-typography--headline6">TL;DR</h6>
     <ol>
         <li>We introduce the SSBI Dataset for bank check detection and signature verification.</li>

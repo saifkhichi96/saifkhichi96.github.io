@@ -8,7 +8,7 @@ abstract: "We propose a deep learning-based method for recovering depth maps and
 vectors of low-texture surfaces from a single RGB image. Our approach relies on an autoencoding network with multiple decoders which are trained jointly. It is based on a semantic segmentation network, called SegNet, with design modifications intended to speed up training. We demonstrate that despite reducing the network parameters and training time significantly, our performance is still comparable to the original network. We also present a new dataset of
 depth maps and surface normals for texture-less surfaces."
 authors: Muhammad Saif Ullah Khan, Muhammad Zeshan Afzal
-category: [Project Report, TUK, 3D Reconstruction, Low-Texture Objects]
+category: [Report, RPTU, Project, 3D Reconstruction, Low-Texture Objects]
 date: September 2021
 syntax: true
 permalink: /research/project-textureless/

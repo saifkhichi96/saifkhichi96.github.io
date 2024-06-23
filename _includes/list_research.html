@@ -1,12 +1,20 @@
 {% assign research_by_date = site.research | sort: "date" | reverse %}
 {% assign all_items = research_by_date | sort: "date" | reverse %}
 
+<!-- Group by first category only -->
+{% assign grouped_items = all_items | group_by_exp: "item", "item.categories[0]" %}
+
+<!-- Sort by group name -->
+{% assign grouped_items = grouped_items | sort: "name" %}
 
 <p>
   Showing {{ all_items.size }} research items.
 </p>
 
-{% for item in all_items %}
+<!-- Loop over each group and inspect contents -->
+{% for group in grouped_items %}
+  <h2>{{ group.name }}</h2>
+{% for item in group.items %}
 {% assign categories = item.categories %}
 <section class="publication-container">
   <div class="publication">
@@ -46,4 +54,6 @@
     </div>
   </div>
 </section>
+{% endfor %}
+
 {% endfor %}

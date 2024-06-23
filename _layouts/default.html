@@ -61,6 +61,11 @@
 
   </script>
   {% endif %}
+
+  <!-- Is this the /research/ page? -->
+  {% if page.url == '/research/' %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  {% endif %}
 </head>
 
 <body class="layout-{{ page.layout }}{% if page.title %}  {{ page.title | slugify }}{% endif %}">

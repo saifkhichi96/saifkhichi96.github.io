@@ -14,11 +14,11 @@ syntax: true
 permalink: /research/focusclip/
 ---
 
-[Read Full-Text](https://arxiv.org/pdf/2403.06904)
+[Read Full-Text](https://arxiv.org/abs/2403.06904)
 {: .mdc-button .mdc-button--unelevated target="_blank"}
 
 <!-- TL;DR -->
-<div class="mdc-card mdc-card--outlined" style="background-color: var(--mdc-theme-overlay); margin: 1em 0; color: black; padding: 16px; border-radius: 16px;">
+<div class="mdc-card mdc-card--outlined highlighted" style="margin: 1em 0;">
     <h6 class="mdc-typography--headline6">TL;DR</h6>
     <ol>
         <li>We introduce FocusCLIP, a CLIP variant with a third heatmap modality.</li>
