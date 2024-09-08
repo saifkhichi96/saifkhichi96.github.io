@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Confronting Imposter Syndrome: My Unexpected Journey at ICDAR 2024
+title: Post-ICDAR 2024 Self-Reflection and Academic Growth
 categories: Personal
 cover: /assets/images/blog/icdar-2024/0.webp
 description: Join me on a journey through the International Conference on Document Analysis and Recognition (ICDAR) 2024, where I confront imposter syndrome, academic challenges, and unexpected insights about my research journey.
