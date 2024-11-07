@@ -7,12 +7,12 @@ abstract: "Zero-shot learning has been extensively investigated in the broader f
 authors: Sankalp Sinha, Muhammad Saif Ullah Khan, Talha Uddin Sheikh, Didier Stricker, Muhammad Zeshan Afzal
 category: [Article, ICDAR, Image Classification, Zero-Shot Learning, Document Analysis]
 code: mindgarage/cica
-date: May 06, 2024
+date: September 11, 2024
 syntax: true
 permalink: /research/cica-document-image-classification/
 ---
 
-[Read Full-Text](https://arxiv.org/abs/2405.03660)
+[Read Full-Text](https://link.springer.com/chapter/10.1007/978-3-031-70546-5_8)
 {: .mdc-button .mdc-button--unelevated target="_blank"}
 
 <!-- TL;DR -->
@@ -30,10 +30,16 @@ permalink: /research/cica-document-image-classification/
 If you find this useful, please include the following citation in your work:
 
 ```bibtex
-@article{sinha2024cica,
-  title={CICA: Content-Injected Contrastive Alignment for Zero-Shot Document Image Classification},
-  author={Sinha, Sankalp and Khan, Muhammad Saif Ullah and Sheikh, Talha Uddin and Stricker, Didier and Afzal, Muhammad Zeshan},
-  journal={arXiv preprint arXiv:2405.03660},
-  year={2024}
+@inproceedings{,
+  author="Sinha, Sankalp and Khan, Muhammad Saif Ullah and Sheikh, Talha Uddin and Stricker, Didier and Afzal, Muhammad Zeshan",
+  editor="Barney Smith, Elisa H. and Liwicki, Marcus and Peng, Liangrui",
+  title="CICA: Content-Injected Contrastive Alignment for Zero-Shot Document Image Classification",
+  booktitle="Document Analysis and Recognition - ICDAR 2024",
+  year="2024",
+  publisher="Springer Nature Switzerland",
+  address="Cham",
+  pages="124--141",
+  isbn="978-3-031-70546-5",
+  doi="10.1007/978-3-031-70546-5_8"
 }
 ```

@@ -80,10 +80,11 @@
         var publicationsCount = years.map(function(year) { return publicationsByYear[year]; });
   
         var venues = Object.keys(publicationVenues).sort();
-        venues = venues.filter(function(venue) { return venue != "Preprint"; });
+        venues = venues.filter(function(venue) { return venue != "NUST" && venue != "RPTU" && venue != "Preprint" });
         var venuesCount = venues.map(function(venue) { return publicationVenues[venue]; });
   
         var types = Object.keys(publicationTypes).sort();
+        types = types.filter(function(type) { return type != "Preprint" && type != "Report" && type != "Thesis"; });
         var typesCount = types.map(function(type) { return publicationTypes[type]; });
   
         // Define colors
