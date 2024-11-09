@@ -2,6 +2,7 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+  color: inherit !important;
 }
 
 /******************************************************************************/
@@ -330,6 +331,7 @@ main {
 }
 
 .publication-title {
+  color: var(--mdc-theme-on-surface);
   font-size: 1.1rem;
   font-weight: bold;
   margin: 4px 0;
@@ -381,4 +383,35 @@ main {
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
+}
+
+.copy-code-button {
+  background-color: transparent;
+  border: 1px solid var(--mdc-theme-border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: var(--mdc-theme-border);
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+.copy-code-button .material-icons {
+  font-size: inherit;
+  vertical-align: middle;
+}
+
+.copy-code-button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+pre code {
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }

@@ -35,7 +35,8 @@
 
   <!-- Icon Fonts (FontAwesome, Material Icons, etc.) -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script async src="https://kit.fontawesome.com/a8beec66c1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{ '/assets/styles/fontawesome.all.min.css' | relative_url }}">
+  <script defer src="{{ '/assets/scripts/fontawesome.all.min.js' | relative_url }}"></script>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="{{ '/assets/styles/app.css' | relative_url }}" />
@@ -147,6 +148,7 @@
 
   <!-- user-defined JavaScript -->
   <script async src="{{ '/assets/scripts/script.js' | relative_url }}"></script>
+  <script async src="{{ '/assets/scripts/copy-button.js' | relative_url }}"></script>
 
   <!-- Default Statcounter code for Personal Website https://www.saifkhichi.com/ -->
   <script type="text/javascript">
