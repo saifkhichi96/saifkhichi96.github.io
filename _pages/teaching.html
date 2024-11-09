@@ -2,65 +2,88 @@
 layout: default
 permalink: /teaching/
 title: Teaching
-description:  
-keywords: 
+description:
+keywords:
 drawer: true
 ---
 
 
 <style>
-    .c-major-r h2 {
-      font-size: 16pt;
-      text-transform: none;
-      font-weight: 800;
-    }
-  
-    .mdc-list-item__text:hover {
-      background: none;
-    }
-  
-  </style>
-  
-  <!-- Page Content -->
-  <div class="c-major-r">
-    <h2>Supervision and Teaching</h2>
+  .c-major-r h2 {
+    font-size: 16pt;
+    text-transform: none;
+    font-weight: 800;
+  }
 
-    <h3>Student Projects at RPTU</h3>
+  .mdc-list-item__text:hover {
+    background: none;
+  }
+</style>
 
-    <p>In the current semester, I am offering the following topics:</p>
-    <div class="mdc-card mdc-card--outlined highlighted">
-      <h4>Winter Semester 2024/25</h4>
-      <ul>
-          <li><a href="#">Human Image Generation Through Multimodal Diffusion Models</a> (Master Project)</li>
-      </ul>
-      
-      <p>To learn more about how to get involved, please use the <a href="/contact/">contact page</a> to get in touch. You can also look at the <a href="/research/">research page</a> for more information on the topics. This <a href="https://av.cs.rptu.de/teaching/seminars-projects-and-guided-research" target="_blank">link</a> provides a list of all seminars and projects offered by the Augmented Vision Group at RPTU.
-      </p>
-    </div>
-    <br />
+<!-- Page Content -->
+<div class="c-major-r">
+  <h2 class="title">Student Supervision & Teaching</h2>
 
-    <p>The following seminars and projects were completed in previous semesters:</p>
-    <h4>Summer Semester 2024</h4>
+  <h3 class="subtitle">Current Projects at RPTU</h3>
+
+  <p>This semester, I am supervising the following project:</p>
+  <div class="mdc-card mdc-card--outlined highlighted">
+    <h4>Winter Semester 2024/25</h4>
     <ul>
-        <li><a href="#">Advances in Gait Recognition</a> (Seminar)</li>
-        <li><a href="#">Gait Recognition using OpenGait</a> (Master Project)</li>
-        <li><a href="#">Controllable Style Transfer for Pose-Guided Human Image Generation Using Diffusion</a> (Seminar)</li>
+      <li><a href="#">Human Image Generation through Multimodal Diffusion Models</a> (Master's Project)</li>
     </ul>
 
-    <h4>Winter Semester 2023/24</h4>
-    <ul>
-        <li><a href="#">Unified 2D Human Pose Estimation</a> (Master Project)</li>
-        <li><a href="#">Active Learning for Optimal Data Labeling</a> (Bachelor Project)</li>
-    </ul>
-
-    <h4>Summer Semester 2023</h4>
-    <ul>
-        <li><a href="#">Deep Neural Networks for Vision Tasks on Mobile Devices</a> (Seminar)</li>
-        <li><a href="#">Automating Design of Efficient Models with Neural Architectures</a> (Seminar)</li>
-        <li><a href="#">Optimize a Human Pose Estimation Network using Knowledge Distillation</a> (2x Master Projects)</li>
-    </ul>
+    <p>Interested in joining a project? Feel free to reach out via the <a href="/contact/">contact page</a>. You can
+      also explore the <a href="/research/">research page</a> for additional information. For a full list of available
+      projects and seminars, visit the <a href="https://av.cs.rptu.de/teaching/current-semester/seminars-projects-and-guided-research"
+        target="_blank">Augmented Vision Group's teaching page</a>.
+    </p>
   </div>
-  
-  <aside class="c-minor">
-    {% include widget_feedback.html %}
-  </aside>
+  <br />
+
+  <h3 class="subtitle">Past Projects and Seminars</h3>
+  <p>Below are some of the projects and seminars I supervised in previous semesters:</p>
+
+  <details>
+    <summary><h4>Summer Semester 2024</h4></summary>
+    <ul>
+      <li><a href="#">Advances in Gait Recognition</a> (Seminar)</li>
+      <li><a href="#">Gait Recognition using OpenGait</a> (Master's Project)</li>
+      <li><a href="#">Controllable Style Transfer for Pose-Guided Human Image Generation Using Diffusion</a> (Seminar)
+      </li>
+    </ul>
+  </details>
+
+  <details>
+    <summary><h4>Winter Semester 2023/24</h4></summary>
+    <ul>
+      <li><a href="#">Unified 2D Human Pose Estimation</a> (Master's Project)</li>
+      <li><a href="/teaching/project-active-labeling/">Active Learning for Optimal Data Labeling</a> (Bachelor's Project)</li>
+    </ul>
+  </details>
+
+
+  <details>
+    <summary><h4>Summer Semester 2023</h4></summary>
+    <ul>
+      <li><a href="/teaching/seminar-mobilenets/">Deep Neural Networks for Vision Tasks on Mobile Devices</a> (Seminar)</li>
+      <li><a href="/teaching/seminar-nas/">Automating Design of Efficient Models with Neural Architecture Search</a> (Seminar)</li>
+      <li><a href="#">Optimizing Human Pose Estimation through Knowledge Distillation</a> (Master's Projects)</li>
+    </ul>
+  </details>
+</div>
+
+<aside class="c-minor">
+  <h3 class="title">About the Augmented Vision Lab</h3>
+  <p>The Augmented Vision Lab at RPTU, led by <b>Prof. Dr. Didier Stricker</b>, is part of the Intelligent Systems faculty
+    within the Department of Computer Science at RPTU Kaiserslautern. Affiliated with the Augmented Vision Group at
+    DFKI, the lab offers students opportunities to engage in cutting-edge research through seminars, projects, and
+    guided research each semester.</p>
+
+  <h4 class="subtitle">Student Research Initiatives</h4>
+  <p>Since 2023, I have actively supervised various student projects, working closely with students who are eager to
+    explore innovative research topics. If you are a motivated student interested in collaborating on exciting projects,
+    please reach out!</p>
+
+  {% include widget_feedback.html %}
+</aside>

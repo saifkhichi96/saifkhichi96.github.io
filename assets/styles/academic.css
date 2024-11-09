@@ -19,9 +19,20 @@ p { margin-bottom: 1rem; }
   padding-bottom: 3rem;
 }
 
+h2,
 .title,
 .publication-title {
+  font-weight: bold;
+  font-size: 1.5rem;
   color: var(--mdc-theme-on-surface);
+}
+
+h3,
+.subtitle {
+  font-weight: normal;
+  font-size: 1.25rem;
+  color: var(--mdc-theme-on-surface);
+  margin-bottom: 0 !important;
 }
 
 .publication-banner {

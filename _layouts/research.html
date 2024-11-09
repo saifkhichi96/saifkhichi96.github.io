@@ -232,9 +232,21 @@
           {% endif %}
           <!-- End teaser video -->
 
+          <!-- Page content -->
+          <section class="hero is-small">
+            <div class="hero-body">
+              <div class="container">
+                {{ content }}
+              </div>
+            </div>
+          </section>
+          <!-- End page content -->
+        </div>
+
+        <aside class="c-minor">
           <!-- Paper poster -->
           {% if page.slides %}
-          <section class="hero is-small">
+          <section class="hero">
             <div class="hero-body">
               <div class="container">
                 <h2 class="title">Slides</h2>
@@ -248,18 +260,6 @@
           {% endif %}
           <!--End paper poster -->
 
-          <!-- Page content -->
-          <section class="hero is-small">
-            <div class="hero-body">
-              <div class="container">
-                {{ content }}
-              </div>
-            </div>
-          </section>
-          <!-- End page content -->
-        </div>
-
-        <aside class="c-minor">
           <!-- Related Research -->
           {% if page.related and page.related.size > 0 %}
           {% assign all_research = site.research | sort: "date" | reverse %}

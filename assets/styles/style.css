@@ -204,12 +204,21 @@ main {
 .page-content {
   background-color: var(--mdc-theme-background);
   margin-left: 72px;
-  width: calc(100% - 80px);
+  width: calc(100% - 72px);
+  padding: 0 !important;
 }
 
 .content-body {
-  margin: var(--content-spacing);
-  border-radius: var(--content-corners);
+  background-color: var(--mdc-theme-surface);
+  margin: 0;
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
+  padding: 32px !important;
+  width: 100%;
+}
+
+footer {
+  padding-top: calc(var(--content-spacing) / 2);
 }
 
 .c-major-r section:first-child,
@@ -262,6 +271,10 @@ main {
   .content-body {
     margin: 0;
     border-radius: 0 !important;
+  }
+
+  .c-minor {
+    margin-top: 16px;
   }
 
   #bmc-wbtn {
