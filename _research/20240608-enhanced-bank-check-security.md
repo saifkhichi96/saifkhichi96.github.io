@@ -7,41 +7,27 @@ abstract: "Automated signature verification on bank checks is critical for fraud
 authors: Muhammad Saif Ullah Khan, Tahira Shehzadi, Rabeya Noor, Didier Stricker, Muhammad Zeshan Afzal
 category: [Article, ICDAR Workshops, Bank Checks, Object Detection, Signature Verification, Security, Dataset]
 code: saifkhichi96/ssbi-dataset
+paper: "https://doi.org/10.1007/978-3-031-70442-0_3"
+bibtex: "@inproceedings{khan2024enhanced,
+\n  author={Khan, Muhammad Saif Ullah and Shehzadi, Tahira and Noor, Rabeya and Stricker, Didier and Afzal, Muhammad Zeshan},
+\n  editor={Sfikas, Giorgos and Retsinas, George},
+\n  title={Enhanced Bank Check Security: Introducing a Novel Dataset and Transformer-Based Approach for Detection and Verification},
+\n  booktitle={Document Analysis Systems},
+\n  year={2024},
+\n  publisher={Springer Nature Switzerland},
+\n  address={Cham},
+\n  pages={37--54},
+\n  isbn={978-3-031-70442-0},
+\n  doi={10.1007/978-3-031-70442-0_3}
+\n}"
 date: September 11, 2024
 syntax: true
 permalink: /research/enhanced-bank-check-security/
 ---
 
-[Get Dataset](https://github.com/saifkhichi96/ssbi-dataset)
-{: .mdc-button .mdc-button--unelevated target="_blank"}
-
-[Read Full-Text](https://doi.org/10.1007/978-3-031-70442-0_3)
-{: .mdc-button .mdc-button--outlined target="_blank"}
-
 <!-- TL;DR -->
-<div class="mdc-card mdc-card--outlined highlighted" style="margin: 1em 0;">
-    <h6 class="mdc-typography--headline6">TL;DR</h6>
-    <ol>
-        <li>We introduce the SSBI Dataset for bank check detection and signature verification.</li>
-        <li>We propose novel enhancements to the DINO network for simultaneously detecting check elements and verifying signature authenticity.</li>
-    </ol>
-</div>
+## TL;DR
+{: .title}
 
-## How to Cite
-
-If you find this useful, please include the following citation in your work:
-
-```bibtex
-@inproceedings{khan2024enhanced,
-  author="Khan, Muhammad Saif Ullah and Shehzadi, Tahira and Noor, Rabeya and Stricker, Didier and Afzal, Muhammad Zeshan",
-  editor="Sfikas, Giorgos and Retsinas, George",
-  title="Enhanced Bank Check Security: Introducing a Novel Dataset and Transformer-Based Approach for Detection and Verification",
-  booktitle="Document Analysis Systems",
-  year="2024",
-  publisher="Springer Nature Switzerland",
-  address="Cham",
-  pages="37--54",
-  isbn="978-3-031-70442-0",
-  doi="10.1007/978-3-031-70442-0_3"
-}
-```
+1. We introduce the SSBI Dataset for bank check detection and signature verification.
+2. We propose novel enhancements to the DINO network for simultaneously detecting check elements and verifying signature authenticity.

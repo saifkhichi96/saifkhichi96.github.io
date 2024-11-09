@@ -8,28 +8,20 @@ abstract: We investigate current techniques for modeling cloth deformation on hu
 keywords: tailornet, saif khan, cloth artefacts, body sensors, seminar, bertram taetz
 authors: Muhammad Saif Ullah Khan, Bertram Taetz
 category: [Report, RPTU, Seminar, Body Sensor Networks, Clothing Artefacts, TailorNet]
+paper: "https://ags.cs.uni-kl.de/fileadmin/inf_ags/Project_Seminar/Proceedings_2DIP_WS2021.pdf#page=11"
+bibtex: "@inbook{khan2021tailornet,
+\n place={Kaiserslautern, Germany},
+\n volume={WS 2020/21},
+\n title={Investigate Cloth Artefacts of Loosely Coupled Sensor
+Networks with TailorNet},
+\n url={https://ags.cs.uni-kl.de/fileadmin/inf_ags/Project_Seminar/Proceedings_2DIP_WS2021.pdf},
+\n booktitle={Seminar and Project 2D Image Processing and Augmented Reality - Winter Semester 2020/21},
+\n publisher={Department Augmented Vision},
+\n author={Khan, Muhammad Saif Ullah and Taetz, Bertram},
+\n year={2021},
+\n pages={92–100}
+\n}"
 date: January 2021
 syntax: true
 permalink: /research/seminar-tailornet/
 ---
-
-[Read Full-Text](https://ags.cs.uni-kl.de/fileadmin/inf_ags/Project_Seminar/Proceedings_2DIP_WS2021.pdf#page=11)
-{: .mdc-button .mdc-button--unelevated}
-
-## How to Cite
-
-If you find this useful, please include the following citation in your work:
-
-```bibtex
-@misc{khan2021tailornet,
-    volume={WS 2020/21},
-    title={Investigate Cloth Artefacts of Loosely Coupled Sensor
-Networks with TailorNet},
-    url={https://ags.cs.uni-kl.de/fileadmin/inf_ags/Project_Seminar/Proceedings_2DIP_WS2021.pdf},
-    booktitle={Seminar and Project 2D Image Processing and Augmented Reality - Winter Semester 2020/21},
-    publisher={Department Augmented Vision},
-    author={Khan, Muhammad Saif Ullah and Afzal, Muhammad Zeshan},
-    year={2021},
-    pages={92–100}
-}
-```

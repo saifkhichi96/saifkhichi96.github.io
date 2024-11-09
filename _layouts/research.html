@@ -1,148 +1,389 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ site.data.manifest.lang | default: " en-US" }}">
 
-<style>
-.iframe-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 75%; /* 4:3 Aspect Ratio (divide 3 by 4 = 0.75) */
-  margin-bottom: 1rem;
-}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-/* Then style the iframe to fit in the container div with full height and width */
-.responsive-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-}
-</style>
-
-<!-- Page Content -->
-<div class="c-major-r">
-  <!-- Overview -->
-  <section>
-    <h2>{{ page.title }}</h2>
-    {% if page.slides %}
-    <div class="iframe-container">
-      <iframe class="responsive-iframe" src="https://docs.google.com/presentation/d/e/{{page.slides}}/embed" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-    </div>
-    {% endif %}
-
-    <p><em>{{ page.abstract }}</em></p>
-  </section>
-
-  <!-- Media -->
-  {% if page.demo %}
-  <section class="embed-container">
-    <iframe src="https://www.youtube-nocookie.com/embed/{{ page.demo }}?controls=0" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
-  </section>
-  {% elsif page.image %}
-  {% if page.image contains '://' %}
-  {% assign image_url = page.image %}
+  {% if site.data.manifest.name %}
+  {% assign title = site.data.manifest.name %}
+  {% if page.title and site.data.manifest.short_name %}
+  {% assign title = site.data.manifest.short_name %}
+  {% endif %}
   {% else %}
-  {% assign image_url = page.image | relative_url %}
+  {% assign title = site.title %}
   {% endif %}
-  <section>
-    <img loading="lazy" class="project-portfolio-img" src="{{ image_url }}" alt="{{ page.title }}" />
-  </section>
+  <title>{% if page.seo_title %}{{ page.seo_title }} | {% elsif page.title %}{{ page.title }} | {% endif %}{{ title }}{%
+    unless page.title %}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}{% endunless %}
+  </title>
+
+  {% seo title=false %}
+  {% include meta.html %}
+
+  <link rel="alternate" type="application/rss+xml"
+    title="{{ title }}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}"
+    href="{{ '/feed.xml' | relative_url }}" />
+
+  <!-- Website icon -->
+  {% capture site_icon %}{% if site.data.manifest.icons[0] %}{{site.data.manifest.icons[0].src}}{% else
+  %}{{site.logo}}{% endif %}{% endcapture %}
+  <link rel="shortcut icon" href="{{ site_icon | relative_url }}">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="{{'/manifest.json' | relative_url}}">
+  <meta name="theme-color" content="{{ site.data.manifest.theme_color | default: '#854fee' }}" />
+
+  <!-- Material Components for Web -->
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+  <!-- Icon Fonts (FontAwesome, Material Icons, etc.) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script async src="https://kit.fontawesome.com/a8beec66c1.js" crossorigin="anonymous"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="{{ '/assets/styles/app.css' | relative_url }}" />
+  <link rel="stylesheet" type="text/css" href="{{ '/assets/styles/style.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/styles/bulma.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/styles/bulma-carousel.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/styles/bulma-slider.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/styles/fontawesome.all.min.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="{{ '/assets/styles/academic.css' | relative_url }}">
+
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="{{ '/assets/scripts/fontawesome.all.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/scripts/bulma-carousel.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/scripts/bulma-slider.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/scripts/academic.js' | relative_url }}"></script>
+
+  <!-- Installable PWA -->
+  {% if site.installable %}
+  <script async type="module"
+    src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script>
   {% endif %}
 
-  {{ content }}
-</div>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-<aside class="c-minor">
-  <!-- Related Research -->
-  {% if page.related and page.related.size > 0 %}
-  {% assign all_research = site.research | sort: "date" | reverse %}
-  {% if all_research.size > 0 %}
-  {% for item in all_research %}
-  {% assign item_path = item.path | split: "." %}
-  {% assign item_path = item_path[0] | split: "/" %}
-  {% if page.related contains item_path[-1] %}
-  <div class="mdc-list-item">
-    <span class="mdc-list-item__text">
-      <a href="{{ item.url }}">{{ item.title }} ({{ item.date | date: "%Y"}})</a>
-      {% assign categories = item.category | shift %}
-      {% for category in categories %}<span class="project-tag" style="word-wrap: break-word;">{{ category | replace: ",", "" }}</span> &nbsp;{% endfor %}
-    </span>
-  </div>
-  {% endif %}
-  {% endfor %}
-  {% endif %}
-  {% endif %}
+  {% include github_head.html %}
+  {% include adsense_head.html %}
+  {% include analytics_head.html %}
 
-  <!-- Authors-->
-  {% if page.authors %}
-  <section>
-    <h2>Authors</h2>
-    <div class='mdc-list'>
-      {% assign authors = page.authors | split: ',' %}
-      {% for author in authors %}
-      <li class="mdc-list-item">
-        <span class="mdc-list-item__text">
-          <span class="material-icons" style="background: #8884; vertical-align: middle; font-size: 20pt; line-height: 20pt; border-radius: 24px; padding: 4px; margin-right: 4px;">person</span>
-          {{ author }}
-        </span>
-      </li>
-      <br>
-      {% endfor %}
+  <!-- Syntax Highlighting for Code Samples -->
+  {% if site.syntax or page.syntax %}
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@latest/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+  </script>
+  {% endif %}
+</head>
+
+<body class="layout-{{ page.layout }}{% if page.title %}  {{ page.title | slugify }}{% endif %}">
+  {% include appbar.html %}
+
+  <!-- Snackbar for showing notifications - use showSnackbar(msg) function in JS -->
+  {% include snackbar.html %}
+
+  <main class="mdc-top-app-bar--fixed-adjust">
+    {% include nav_rail.html %}
+
+    <div class="page-content">
+      <article class="content-body">
+        {% include page_header.html %}
+        <section class="hero">
+          <div class="hero-body">
+            <div class="container is-max-desktop">
+              <div class="columns is-centered">
+                <div class="column has-text-centered">
+                  <h1 class="title is-1 publication-title">{{ page.title }}</h1>
+                  <div class="is-size-5 publication-authors">
+                    <!-- Paper authors -->
+                    {% assign authors = page.authors | split: ',' %}
+                    {% for author in authors %}
+                    <span class="author-block">
+                      <a href="#">{{ author }}</a>{% unless forloop.last %}, {% endunless %}
+                    </span>
+                    {% endfor %}
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+
+                      <!-- Paper link -->
+                      {% if page.paper %}
+                      <span class="link-block">
+                        <a href="{{page.paper}}" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                          </span>
+                          <span>Paper</span>
+                        </a>
+                      </span>
+                      {% endif %}
+
+                      <!-- Supplementary link -->
+                      {% if page.supplement %}
+                      <span class="link-block">
+                        <a href="{{page.supplement}}" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                          </span>
+                          <span>Supplementary</span>
+                        </a>
+                      </span>
+                      {% endif %}
+
+                      <!-- Github link -->
+                      {% if page.code %}
+                      <span class="link-block">
+                        <a href="https://github.com/{{page.code}}" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fab fa-github"></i>
+                          </span>
+                          <span>Code</span>
+                        </a>
+                      </span>
+                      {% endif %}
+
+                      <!-- ArXiv abstract Link -->
+                      {% if page.arxiv %}
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/{{page.arxiv}}" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                          </span>
+                          <span>arXiv</span>
+                        </a>
+                      </span>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Page Content -->
+        <div class="c-major-r">
+
+          <!-- Teaser image-->
+          {% if page.image %}
+          {% if page.image contains '://' %}
+          {% assign image_url = page.image %}
+          {% else %}
+          {% assign image_url = page.image | relative_url %}
+          {% endif %}
+          <section class="hero teaser">
+            <div class="container is-max-desktop">
+              <div class="hero-body">
+                <img src="{{ image_url }}" alt="{{ page.title }}" />
+                <h2 class="subtitle has-text-centered">
+                  {{ page.description }}
+                </h2>
+              </div>
+            </div>
+          </section>
+          {% endif %}
+          <!-- End teaser image -->
+
+          <!-- Paper abstract -->
+          <section class="section hero is-light">
+            <div class="container is-max-desktop">
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                  <h2 class="title is-3">Abstract</h2>
+                  <div class="content has-text-justified">
+                    <p>{{ page.abstract }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- End paper abstract -->
+
+          <!-- Teaser video (youtube) -->
+          {% if page.demo %}
+          <section class="hero">
+            <div class="hero-body">
+              <div class="container">
+                <!-- Paper video. -->
+                <h2 class="title is-3">Video Presentation</h2>
+                <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+
+                    <div class="publication-video">
+                      <!-- Youtube embed code here -->
+                      <iframe src="https://www.youtube.com/embed/{{ page.demo }}?controls=0" frameborder="0" width="100%"
+                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          {% endif %}
+          <!-- End teaser video -->
+
+          <!-- Paper poster -->
+          {% if page.slides %}
+          <section class="hero is-small">
+            <div class="hero-body">
+              <div class="container">
+                <h2 class="title">Slides</h2>
+
+                <iframe src="https://docs.google.com/presentation/d/e/{{page.slides}}/embed" width="100%" height="550">
+                </iframe>
+
+              </div>
+            </div>
+          </section>
+          {% endif %}
+          <!--End paper poster -->
+
+          <!-- Page content -->
+          <section class="hero is-small">
+            <div class="hero-body">
+              <div class="container">
+                {{ content }}
+              </div>
+            </div>
+          </section>
+          <!-- End page content -->
+        </div>
+
+        <aside class="c-minor">
+          <!-- Related Research -->
+          {% if page.related and page.related.size > 0 %}
+          {% assign all_research = site.research | sort: "date" | reverse %}
+          {% if all_research.size > 0 %}
+          {% for item in all_research %}
+          {% assign item_path = item.path | split: "." %}
+          {% assign item_path = item_path[0] | split: "/" %}
+          {% if page.related contains item_path[-1] %}
+          <div class="mdc-list-item">
+            <span class="mdc-list-item__text">
+              <a href="{{ item.url }}">{{ item.title }} ({{ item.date | date: "%Y"}})</a>
+              {% assign categories = item.category | shift %}
+              {% for category in categories %}<span class="project-tag" style="word-wrap: break-word">{{ category |
+                replace: ",", "" }}</span> &nbsp;{% endfor %}
+            </span>
+          </div>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+          {% endif %}
+
+          <!--BibTex citation -->
+          {% if page.bibtex %}
+          <pre><code style="word-wrap: break-word; white-space: pre-wrap;">{{ page.bibtex }}</code></pre>
+          {% endif %}
+          <!--End BibTex citation -->
+
+          <!-- Report Issues/Contribute -->
+          {% include widget_feedback.html %}
+
+          <p>
+            This page uses code from <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+              target="_blank">Academic
+              Project Page Template</a> which was adapted from the <a href="https://nerfies.github.io"
+              target="_blank">Nerfies</a> project page, and is licensed under a <a rel="license"
+              href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0 License</a>.
+          </p>
+        </aside>
+      </article>
+
+      {% include page_footer.html %}
     </div>
-  </section>
-  {% endif %}
+  </main>
 
-  <!-- Source Code -->
-  {% if page.code %}
-  <section>
-    <h2>Source Code</h2>
-    {% include widget_github_repo.html repo=page.code %}
-  </section>
-  {% endif %}
-  
-  <!-- Comments -->
-  {% include disqus.html %}
+  <script>
+    $(function () {
+      console.log("Setting up site navigation...");
+      // Instantiate toolbar
+      const topAppBarEl = document.querySelector('.mdc-top-app-bar');
+      const topAppBar = new mdc.topAppBar.MDCTopAppBar.attachTo(topAppBarEl);
 
-  <!-- Report Issues/Contribute -->
-  {% include widget_feedback.html %}
-</aside>
+      // Instantiate navigation drawer
+      const drawerEl = document.querySelector('.mdc-drawer');
+      if (drawerEl) {
+        const drawer = new mdc.drawer.MDCDrawer.attachTo(drawerEl);
 
-<script>
-  $(function() {
-    $('.content-body ol').addClass('mdc-list');
-    $('.content-body ol li').each(function(index) {
-      $(this).addClass('mdc-list-item');
-      $(this).html('<span class="mdc-list-item__text">' + $(this).text() + '</span>');
+        // Attach toolbar to navigation drawer
+        topAppBar.setScrollTarget(document.querySelector('.page-content'));
+        topAppBar.listen('MDCTopAppBar:nav', () => {
+          drawer.open = !drawer.open;
+        });
+      } else {
+        console.log("Drawer disabled on this page.");
+      }
+
+      console.log("Navigation setup complete!");
+
+      if (navigator.share) {
+        $('#share-button').show();
+      }
     });
 
-    $('.content-body ul').addClass('mdc-chip-set');
-    $('.content-body ul li').each(function(index) {
-      $(this).addClass('mdc-chip');
-
-      var html = "<div class='mdc-chip__ripple'></div><span role='gridcell'>"
-      html += "<span role='button' class='mdc-chip__primary-action><span class='mdc-chip__text'>"
-      $(this).html(html + $(this).text() + '</span></span>');
-    });
-
-    $('.highlighter-rouge').each(function(index) {
-      var pre = $(this);
-      var code = $(this).find('code');
-
-      var classList = pre.attr('class').split(/\s+/);
-      $.each(classList, function(i, item) {
-        if (item.startsWith('language-')) {
-          code.addClass(item.substring(9));
+    function back() {
+      if (document.referrer.indexOf(location.protocol + "//" + location.host) === 0) {
+        history.back();
+      } else {
+        var previous = location.pathname;
+        if (previous.endsWith('/')) {
+          previous = previous.substring(0, previous.length - 1);
         }
-      });
+        previous = previous.substring(0, previous.lastIndexOf('/')) + '/';
+        window.location = previous;
+      }
+    }
 
-      $(this).removeClass();
-      $(this).children().removeClass();
-      $(this).find('pre').removeClass();
-    });
-  })
+    function share(title, description, url) {
+      if (navigator.share) {
+        navigator.share({
+          title: title,
+          text: description,
+          url: url,
+        })
+          .then(() => console.log('Successful share'))
+          .catch((error) => console.log('Error sharing', error));
+      }
+    }
 
-</script>
+    // Update last modified time in footer
+    $('#last-modified').html(document.lastModified);
+
+    // Add material classes to table of contents
+    $('#toc .mdc-list-item a').addClass('mdc-list-item__text');
+
+  </script>
+
+  <!-- user-defined JavaScript -->
+  <script async src="{{ '/assets/scripts/script.js' | relative_url }}"></script>
+
+  <!-- Default Statcounter code for Personal Website https://www.saifkhichi.com/ -->
+  <script type="text/javascript">
+    var sc_project = 13058988;
+    var sc_invisible = 1;
+    var sc_security = "ae71a5e6"; 
+  </script>
+  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/"
+        target="_blank">
+        <img class="statcounter" src="https://c.statcounter.com/13058988/0/ae71a5e6/1/"
+          alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a>
+    </div>
+  </noscript>
+  <!-- End of Statcounter Code -->
+</body>
+
+</html>

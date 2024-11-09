@@ -10,23 +10,14 @@ abstract: "Performing 3D reconstruction from a single 2D input is a challenging 
 authors: Muhammad Saif Ullah Khan, Muhammad Zeshan Afzal, Didier Stricker
 category: [Thesis, RPTU, Master, 3D Reconstruction, Non-Lambertian Surfaces, Texureless, Transparent]
 date: September 2022
+paper: "https://www.researchgate.net/publication/364197082_Learning_to_Reconstruct_Textureless_and_Transparent_Surfaces_in_3D/"
+bibtex: "@thesis{khan3d2022,
+\n author = {Khan, Muhammad Saif Ullah},
+\n year = {2022},
+\n month = {09},
+\n pages = {},
+\n title = {Learning to Reconstruct Textureless and Transparent Surfaces in 3D}
+\n }"
 syntax: true
 permalink: /research/non-lambertian-surface-reconstruction/
 ---
-
-[Read Full-Text](https://www.researchgate.net/publication/364197082_Learning_to_Reconstruct_Textureless_and_Transparent_Surfaces_in_3D/)
-{: .mdc-button .mdc-button--unelevated}
-
-## How to Cite
-
-If you find this useful, please include the following citation in your work:
-
-```bibtex
-@thesis{khan3d2022,
-author = {Khan, Muhammad Saif Ullah},
-year = {2022},
-month = {09},
-pages = {},
-title = {Learning to Reconstruct Textureless and Transparent Surfaces in 3D}
-}
-```

@@ -9,35 +9,21 @@ authors: Muhammad Saif Ullah Khan, Alain Pagani, Marcus Liwicki, Didier Stricker
 category: [Review Paper, J. Imaging, 3d Reconstruction, Single-View, Deep Learning]
 date: 23 August 2022
 keywords: deep learning; 3D reconstruction; convolutional neural networks; textureless surfaces
-image: /assets/images/research/reconstruction-review.png
+paper: "https://www.mdpi.com/2313-433X/8/9/225"
+bibtex: "@article{jimaging8090225,
+\n author={Khan, Muhammad Saif Ullah and Pagani, Alain and Liwicki, Marcus and Stricker, Didier and Afzal, Muhammad Zeshan},
+\n title={Three-Dimensional Reconstruction from a Single RGB Image Using Deep Learning: A Review},
+\n journal={Journal of Imaging},
+\n volume={8},
+\n year={2022},
+\n number={9},
+\n article-number={225},
+\n url={https://www.mdpi.com/2313-433X/8/9/225},
+\n pubmedid={36135391},
+\n issn={2313-433X},
+\n doi={10.3390/jimaging8090225}
+\n}"
 related: [rgbd, rgbd-synthetic, textureless-surfaces]
 syntax: true
 permalink: /research/monocular-reconstruction-review/
 ---
-
-[Read Full-Text](https://www.mdpi.com/2313-433X/8/9/225)
-{: .mdc-button .mdc-button--unelevated}
-
-## How to Cite
-
-If you find this useful, please include the following citation in your work:
-
-```bibtex
-@article{jimaging8090225,
-    author={Khan, Muhammad Saif Ullah and Pagani, Alain and Liwicki, Marcus and Stricker, Didier and Afzal, Muhammad Zeshan},
-    title={Three-Dimensional Reconstruction from a Single RGB Image Using Deep Learning: A Review},
-    journal={Journal of Imaging},
-    volume={8},
-    year={2022},
-    number={9},
-    article-number={225},
-    url={https://www.mdpi.com/2313-433X/8/9/225},
-    pubmedid={36135391},
-    issn={2313-433X},
-    doi={10.3390/jimaging8090225}
-}
-```
-
-## Copyright
-
-This is an open access article distributed under the [Creative Commons Attribution License](https://creativecommons.org/licenses/by/4.0/) which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.

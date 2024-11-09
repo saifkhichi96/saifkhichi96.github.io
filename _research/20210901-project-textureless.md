@@ -9,35 +9,21 @@ vectors of low-texture surfaces from a single RGB image. Our approach relies on 
 depth maps and surface normals for texture-less surfaces."
 authors: Muhammad Saif Ullah Khan, Muhammad Zeshan Afzal
 category: [Report, RPTU, Project, 3D Reconstruction, Low-Texture Objects]
+paper: "https://ags.cs.uni-kl.de/fileadmin/inf_ags/Project_Seminar/Proceedings_3DCV_SS2021.pdf#page=92"
+supplement: "https://kaggle.com/saifkhichi96/textureless-real-data/"
+code: "saifkhichi96/texless_recon_pytorch"
+bibtex: "@inbook{khan2021drec,
+\n place={Kaiserslautern, Germany},
+\n volume={SS 2021},
+\n title={Depth Reconstruction of Low-Texture Surfaces from a Single View},
+\n url={https://ags.cs.uni-kl.de/fileadmin/inf_ags/Project_Seminar/Proceedings_3DCV_SS2021.pdf},
+\n booktitle={Seminar and Project 3D Computer Vision and Augmented Reality - Summer Semester 2021},
+\n publisher={Department Augmented Vision},
+\n author={Khan, Muhammad Saif Ullah and Afzal, Muhammad Zeshan},
+\n year={2021},
+\n pages={92–100}
+\n}"
 date: September 2021
 syntax: true
 permalink: /research/project-textureless/
 ---
-
-## Dataset
-
-Around 12 thousand synchronised RGB images, along with depth maps and surface normal maps for various textureless surfaces, obtained using a Microsoft Kinect v2 camera in real world. The dataset is available for download [here](https://kaggle.com/saifkhichi96/textureless-real-data/).
-
-[Read Full-Text](https://ags.cs.uni-kl.de/fileadmin/inf_ags/Project_Seminar/Proceedings_3DCV_SS2021.pdf#page=92)
-{: .mdc-button .mdc-button--unelevated}
-
-[Source Code](https://github.com/saifkhichi96/texless_recon_pytorch)
-{: .mdc-button .mdc-button--outlined}
-
-## How to Cite
-
-If you find this useful, please include the following citation in your work:
-
-```bibtex
- @inbook{khandrec2021,
-    place={Kaiserslautern, Germany},
-    volume={SS 2021},
-    title={Depth Reconstruction of Low-Texture Surfaces from a Single View},
-    url={https://ags.cs.uni-kl.de/fileadmin/inf_ags/Project_Seminar/Proceedings_3DCV_SS2021.pdf},
-    booktitle={Seminar and Project 3D Computer Vision and Augmented Reality - Summer Semester 2021},
-    publisher={Department Augmented Vision},
-    author={Khan, Muhammad Saif Ullah and Afzal, Muhammad Zeshan},
-    year={2021},
-    pages={92–100}
-} 
-```
