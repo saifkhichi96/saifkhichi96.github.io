@@ -7,13 +7,19 @@
   font-variant: small-caps;
 }
 
+.hero {
+  border-radius: 16px;
+}
+
 
 .teaser .hero-body {
   padding-top: 0;
   padding-bottom: 3rem;
 }
 
+.title,
 .publication-title {
+  color: var(--mdc-theme-on-surface);
 }
 
 .publication-banner {
