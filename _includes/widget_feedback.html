@@ -1,0 +1,22 @@
+{% if site.github %}
+<section class="mdc-card mdc-card--outlined">
+  <div class="mdc-card__content">
+    <p>
+    Maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a> on GitHub. 
+    </p>
+    <p>
+    The website is  distributed under different open-source licenses. For more details, see the notice at the bottom of the page.
+    </p>
+    {% unless site.github.private %}
+    <p>
+      {% for repository in site.github.public_repositories %}
+      {% if repository.name == site.github.repository_name %}
+        Found an issue? <a href="{{ site.github.issues_url }}" target="_blank">Report it</a> or <a href="{{ site.github.repository_url }}/edit/{{ repository.default_branch }}/{{ page.path }}" target="_blank">edit this page</a> to help us improve.
+      {% break %}
+      {% endif %}
+      {% endfor %}
+    </p>
+    {% endunless %}
+  </div>
+</section>
+{% endif %}
