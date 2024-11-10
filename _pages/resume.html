@@ -5,115 +5,25 @@ title: Education and Work History
 description: A downloadable, online resume which provides a summary of my technical skills, eductaion and work background.
 keywords: resume, education, jobs, saif khan, saifkhichi96
 menuitem: Print
-menuaction: download()
+menuaction: print()
 menuicon: download
 drawer: true
 icons: true
 ---
 
-<style>
-  .bio {
-    display: flex;
-    float: left;
-  }
-
-  .bio>div {
-    display: inline-block;
-    float: left;
-  }
-
-  .bio .name {
-    font-size: 18pt;
-    font-weight: normal;
-    margin: 0;
-  }
-
-  .bio .tagline {
-    font-size: 14pt;
-    font-weight: normal;
-  }
-
-  .bio img {
-    width: 128px;
-    height: 128px;
-    border-radius: 64px;
-    margin-right: var(--content-padding);
-  }
-
-  @media (max-width: 840px) {
-    .bio {
-      background: var(--mdc-theme-primary);
-      color: var(--mdc-theme-on-primary);
-      box-shadow: 0px 0px 2px var(--mdc-theme-overlay);
-      border-radius: var(--card-radius);
-      padding: var(--content-padding);
-    }
-
-    .bio img {
-      width: 96px;
-      height: 96px;
-      border-radius: 48px;
-
-    }
-  }
-
-  @media (max-width: 480px) {
-    .bio {
-      display: block;
-      text-align: center;
-    }
-
-    .bio .summary {
-      text-align: justify;
-    }
-
-    .bio>div {
-      display: block;
-      float: none;
-    }
-  }
-
-  .info-grid .logo {
-    background-image: url('/{{ site.baseurl }}assets/images/banner/home-right.png');
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    background-size: contain;
-    grid-column: 4 / span 3;
-    grid-row: 1 / span 3;
-    margin-bottom: 8px;
-  }
-
-  .info-grid .email {
-    grid-column: 2 / span 2;
-    grid-row: 2 / span 2;
-    line-height: normal;
-    font-size: 1.05rem;
-    padding-top: 0;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .info-grid .logo {
-      background-image: url('/{{ site.baseurl }}assets/images/banner/home-right-dark.png');
-    }
-  }
-
-</style>
-
 <div class="c-major-r">
   <!-- Business Card -->
   <section class="business-card">
     <div class="info-grid">
-      <div class="name">
-        <p class="title text-uppercase"><span class="light">Saif</span> Khan</p>
-      </div>
-      <div class="bio">
-        <p class="text-uppercase"><b>{{ site.github.owner.bio }}</b></p>
-      </div>
-      <div class="logo"></div>
-      <div class="email">
-        {{ site.data.manifest.description }}
+      <div class="name">Saif Khan</div>
+      <div class="tagline">{{ site.data.manifest.tagline }}</div>
+      <div class="description">
+        Augmented Vision Group at <a href="https://www.dfki.de/web/ueber-uns/mitarbeiter/person/mukh07" target="_blank">DFKI</a><br />
+        <hr class="small" />
+        <p>{{ site.data.manifest.description }}</p>
       </div>
     </div>
+    <div class="logo"></div>
   </section>
 
   <!-- Experience-->
@@ -137,7 +47,7 @@ icons: true
           {% assign url = '#' %}
           {% endif %}
           <a href="{{ url }}">
-            <h3 class="name">{{ item.position }} </h3>
+            <p class="name">{{ item.position }} </p>
           </a>
           <b>{{ item.institute }}</b>
           <address>{{ item.location }}</address>

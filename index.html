@@ -94,48 +94,21 @@ github_stats: true
   .no-hover:hover {
     cursor: default;
   }
-
-  .info-grid .logo {
-    background-image: url('/{{ site.baseurl }}assets/images/banner/home-right.png');
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    background-size: contain;
-    grid-column: 4 / span 3;
-    grid-row: 1 / span 3;
-    margin-bottom: 8px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .info-grid .logo {
-      background-image: url('/{{ site.baseurl }}assets/images/banner/home-right-dark.png');
-    }
-  }
-
 </style>
 
 <div class="c-major-r">
   <!-- Business Card -->
   <section class="business-card">
     <div class="info-grid">
-      <div class="name">
-        <p class="title text-uppercase"><span class="light">Saif</span> Khan</p>
-      </div>
-      <div class="bio">
-        <p class="text-uppercase"><b>{{ site.data.manifest.tagline }}</b></p>
-        <hr class="small" style="margin: 0;" />
-      </div>
-      <div class="logo"></div>
-      <div class="email">
-        <a class="mdc-button mdc-button--unelevated" href="/resume/">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label" style="text-transform: none;">Learn More</span>
-        </a>
-        <a class="mdc-button mdc-button--outlined" href="#services" style="margin-left: 8px; background-color: var(--mdc-theme-surface);">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label" style="text-transform: none;">Contact Me</span>
-        </a>
+      <div class="name">Saif Khan</div>
+      <div class="tagline">{{ site.data.manifest.tagline }}</div>
+      <div class="description">
+        Augmented Vision Group at <a href="https://www.dfki.de/web/ueber-uns/mitarbeiter/person/mukh07" target="_blank">DFKI</a><br />
+        <hr class="small" />
+        <p>Learn more about me on my <a href="/resume/">resume</a> or <a href="/contact/">contact me</a>.</p>
       </div>
     </div>
+    <div class="logo"></div>
   </section>
 
   <!-- Research Work -->

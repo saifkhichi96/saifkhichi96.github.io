@@ -20,6 +20,10 @@ drawer: true
     height: 48px;
   }
 
+  .bottom-navigation .material-icons {
+    color: var(--mdc-theme-on-surface) !important;
+  }
+
   @media screen and (max-width: 840px) {
     .bottom-navigation {
       margin-top: -52px;
@@ -93,7 +97,7 @@ drawer: true
 
           <button class="mdc-tab" data-filter=".game" role="1" aria-selected="true">
             <span class="mdc-tab__content">
-              <span class="mdc-tab__icon material-icons" aria-hidden="true">games</span>
+              <span class="mdc-tab__icon material-icons" aria-hidden="true">sports_esports</span>
               <span class="mdc-tab__text-label">Games</span>
             </span>
             <span class="mdc-tab-indicator mdc-tab-indicator">
@@ -104,7 +108,7 @@ drawer: true
 
           <button class="mdc-tab" data-filter=".api" role="2" aria-selected="true">
             <span class="mdc-tab__content">
-              <span class="mdc-tab__icon material-icons" aria-hidden="true">code</span>
+              <span class="mdc-tab__icon material-icons" aria-hidden="true">construction</span>
               <span class="mdc-tab__text-label">Tools</span>
             </span>
             <span class="mdc-tab-indicator mdc-tab-indicator">
@@ -120,30 +124,30 @@ drawer: true
   <section class="portfolio" id="portfolio">
     <!-- Filters -->
     <div class="mdc-chip-set mdc-chip-set--choice filters portfolio-filter" role="grid">
-      <div class="mdc-chip active" role="row" data-filter=".all">
+      <li class="mdc-chip active" role="row" data-filter=".all">
         <div class="mdc-chip__ripple"></div>
         <span role="gridcell">
           <span role="button" tabindex="0" class="mdc-chip__text">all platforms</span>
         </span>
-      </div>
-      <div class="mdc-chip" role="row" data-filter=".mobile">
+      </li>
+      <li class="mdc-chip" role="row" data-filter=".mobile">
         <div class="mdc-chip__ripple"></div>
         <span role="gridcell">
           <span role="button" tabindex="0" class="mdc-chip__text">mobile</span>
         </span>
-      </div>
-      <div class="mdc-chip" role="row" data-filter=".desktop">
+      </li>
+      <li class="mdc-chip" role="row" data-filter=".desktop">
         <div class="mdc-chip__ripple"></div>
         <span role="gridcell">
           <span role="button" class="mdc-chip__text">desktop</span>
         </span>
-      </div>
-      <div class="mdc-chip" role="row" data-filter=".web">
+      </li>
+      <li class="mdc-chip" role="row" data-filter=".web">
         <div class="mdc-chip__ripple"></div>
         <span role="gridcell">
           <span role="button" class="mdc-chip__text">web</span>
         </span>
-      </div>
+      </li>
     </div>
 
     <!-- Apps -->

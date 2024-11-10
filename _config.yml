@@ -146,16 +146,22 @@ interests:
 
 
 experience:
+- institute:               German Research Center for Artificial Intelligence (DFKI)
+  location:                Kaiserslautern, DE
+  position:                Researcher
+  time:                    02/2024 - present
+  type:                    1
+  url:
 - institute:               Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau (RPTU)
   location:                Kaiserslautern, DE
-  position:                PhD Student
+  position:                PhD Candidate
   time:                    2023 - present
   type:                    0
   url:
 - institute:               German Research Center for Artificial Intelligence (DFKI)
   location:                Kaiserslautern, DE
   position:                Research Assistant
-  time:                    11/2021 - present
+  time:                    11/2021 - 01/2024
   type:                    1
   url:
 - institute:               Technische Universität Kaiserslautern (TUK)
@@ -169,7 +175,7 @@ experience:
     items:
       - name:              Intelligent Systems
         description:
-      - name:              Visualization and Scientific Computing
+      - name:              Software Engineering
         description:
 - institute:               Active Institute of Science, Arts and Technology (AISAT)
   location:                Multan, PK
