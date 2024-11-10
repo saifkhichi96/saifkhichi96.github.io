@@ -38,9 +38,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --mdc-theme-primary: #9575CD;
+    --mdc-theme-primary: #7e75cd;
     --mdc-theme-primary-variant: #7986CB;
-    --mdc-theme-overlay: #AB47BC20;
+    --mdc-theme-overlay: #7986CB20;
 
     /* Background (different in light/dark) */
     {% assign background_color = '#000a12' %}

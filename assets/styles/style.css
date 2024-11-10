@@ -399,11 +399,14 @@ footer {
 }
 
 .copy-code-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
   background-color: transparent;
-  border: 1px solid var(--mdc-theme-border);
+  border: 1px solid whitesmoke;
   border-radius: 4px;
   padding: 4px 8px;
-  color: var(--mdc-theme-border);
+  color: whitesmoke;
   opacity: 0.5;
   font-size: 0.8rem;
 }
@@ -419,12 +422,14 @@ footer {
 }
 
 pre {
-  padding: 0;
+  padding: 0 !important;
   margin: 0;
+  border: 1px solid var(--mdc-theme-border);
 }
 
 pre code {
   padding: 0;
-  margin: 0;
+  margin: 0 !important;
   width: 100%;
+  border: 1px solid var(--mdc-theme-on-surface) !important;
 }

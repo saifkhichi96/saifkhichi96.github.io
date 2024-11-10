@@ -24,14 +24,14 @@ h2,
 .publication-title {
   font-weight: bold;
   font-size: 1.5rem;
-  color: var(--mdc-theme-on-surface);
+  color: inherit;
 }
 
 h3,
 .subtitle {
   font-weight: normal;
   font-size: 1.25rem;
-  color: var(--mdc-theme-on-surface);
+  color: inherit;
   margin-bottom: 0 !important;
 }
 
@@ -129,5 +129,14 @@ h3,
   font-size: smaller;
 }
 
+/* dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .is-light {
+    background-color: #0008 !important;
+    color: var(--mdc-theme-on-surface) !important;
+  }
 
-
+  .is-light .title {
+    color: inherit !important;
+  }
+}

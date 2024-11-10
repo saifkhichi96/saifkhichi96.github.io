@@ -6,11 +6,6 @@ codeBlocks.forEach((codeBlock, index) => {
     copyButton.className = 'copy-code-button';
     copyButton.innerHTML = '<i class="material-icons">content_copy</i> Copy';
 
-    // Position the button at the top-right of the code block
-    copyButton.style.position = 'absolute';
-    copyButton.style.top = '32px';
-    copyButton.style.right = '32px';
-
     // Ensure the parent element is relatively positioned
     const pre = codeBlock.closest('pre');
     pre.style.position = 'relative';
