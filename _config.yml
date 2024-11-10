@@ -151,7 +151,7 @@ experience:
   position:                PhD Student
   time:                    2023 - present
   type:                    0
-  url:                     /education/phd/
+  url:
 - institute:               German Research Center for Artificial Intelligence (DFKI)
   location:                Kaiserslautern, DE
   position:                Research Assistant
@@ -163,7 +163,7 @@ experience:
   position:                Master of Computer Science
   time:                    2019 - 2022
   type:                    0
-  url:                     /education/masters/
+  url:
   details:
     title:                 Specialisations
     items:
@@ -183,7 +183,7 @@ experience:
   score:                   3.78 CGPA (1.33 ECTS)
   time:                    2014 - 2018
   type:                    0
-  url:                     /education/bachelors/
+  url:
   details:
     title:                 Co-Curricular Activities
     items:
