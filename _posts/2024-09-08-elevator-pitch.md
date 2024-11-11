@@ -3,7 +3,7 @@ layout: post
 title: "Navigating Detachment: Reflections from ICDAR 2024"
 categories: Personal
 cover: /assets/images/blog/icdar-2024/0.webp
-description: Join me on a journey through the International Conference on Document Analysis and Recognition (ICDAR) 2024, where I confront imposter syndrome, academic challenges, and unexpected insights about my research journey.
+description: "Reflecting on my experience at ICDAR 2024, I confront feelings of disconnection and self-discovery amid shifting research interests and changing professional relationships. This personal journey explores the complexities of academic growth, detachment, and understanding one's evolving place in a research community."
 keywords: imposter syndrome, academic conference, research journey, academic challenges, academic imposter syndrome, academic self-doubt, academic journey, academic growth, academic self-reflection
 syntax: true
 permalink: /blog/:title
