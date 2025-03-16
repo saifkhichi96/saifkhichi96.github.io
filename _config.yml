@@ -4,6 +4,11 @@ url:                       https://www.saifkhichi.com
 enforce_ssl:               https://www.saifkhichi.com
 repository:                saifkhichi96/saifkhichi96.github.io
 
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-email-protect
+
 author:
   name: Saif Khan
   url: https://www.saifkhichi.com/
@@ -221,6 +226,9 @@ collections:
   teaching:
     output:                true
     permalink:             /teaching/:path/
+  news:
+    output:                true
+    permalink:             /news/:path/
 
 defaults:
   - scope:

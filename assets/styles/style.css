@@ -5,6 +5,10 @@
   color: inherit !important;
 }
 
+a {
+  font-weight: inherit;
+}
+
 /******************************************************************************/
 /* Expreience Section                                                          */
 /******************************************************************************/
@@ -79,7 +83,6 @@
   border-radius: var(--card-radius);
   width: 100%;
   min-height: 200px;
-  padding: var(--card-padding);
 }
 
 .business-card .info-grid {
@@ -89,18 +92,14 @@
 }
 
 .business-card .logo {
-  width: 30%;
+  width: 200px;
   height: 200px;
-  background-image: url('/assets/images/banner/home-right.png');
-  background-size: contain;
+  background-image: url('/assets/images/photos/portrait.png');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-@media (prefers-color-scheme: dark) {
-  .business-card .logo {
-    background-image: url('/assets/images/banner/home-right-dark.png');
-  }
+  border-radius: 50%;
+  margin-left: max(calc(30% - 200px), 16px);
 }
 
 .info-grid .name {
@@ -133,17 +132,8 @@
 }
 
 @media (max-width: 840px) {
-  .business-card {
-    background-color: var(--mdc-theme-primary);
-    color: var(--mdc-theme-on-primary);
-  }
-
   .info-grid {
     width: 100% !important;
-  }
-
-  .info-grid hr {
-    border-color: var(--mdc-theme-on-primary) !important;
   }
 
   .business-card .logo {
@@ -337,6 +327,7 @@ footer {
 .publication-tags {
   display: flex;
   flex-wrap: wrap;
+  font-size: 0.6rem;
   gap: 4px;
   margin-bottom: 4px;
 }
@@ -346,7 +337,6 @@ footer {
   border: 1px solid var(--mdc-theme-primary);
   border-radius: 4px;
   color: var(--mdc-theme-on-surface);
-  font-size: 10px;
   font-weight: bold;
   padding: 2px 8px;
   text-transform: uppercase;
@@ -357,7 +347,6 @@ footer {
   border: 1px solid var(--mdc-theme-primary);
   border-radius: 4px;
   color: var(--mdc-theme-primary);
-  font-size: 10px;
   font-weight: bold;
   padding: 2px 8px;
   text-transform: uppercase;
@@ -367,6 +356,10 @@ footer {
   font-size: 0.8rem;
   font-weight: 400;
   margin-bottom: 4px;
+}
+
+.highlighted-text {
+  
 }
 
 .publication-title-link {
@@ -384,6 +377,10 @@ footer {
 .publication-description {
   font-size: 0.9rem;
   margin-bottom: 4px;
+}
+
+.publication-description a {
+  font-weight: bold;
 }
 
 /** Research interests styles */
