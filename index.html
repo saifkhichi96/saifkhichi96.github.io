@@ -2,7 +2,7 @@
 layout: default
 title: Home
 seo_title: Portfilio Home
-description: Saif Khan is a software engineer and AI researcher. This is a personal blog and work portfolio containing all their projects, research and other work history.
+description: "Saif Khan is a software engineer and AI researcher. This is a personal blog and work portfolio containing all their projects, research and other work history."
 keywords: portfolio, saif khan, software engineer, researcher, projects
 drawer: true
 github_stats: true
@@ -98,45 +98,156 @@ github_stats: true
 
 <div class="c-major-r">
   <!-- Business Card -->
-  <section class="business-card">
-    <div class="info-grid">
-      <div class="name">Saif Khan</div>
-      <div class="tagline">{{ site.data.manifest.tagline }}</div>
-      <div class="description">
-        Augmented Vision Group at <a href="https://www.dfki.de/web/ueber-uns/mitarbeiter/person/mukh07" target="_blank">DFKI</a><br />
-        <hr class="small" />
-        <p>Learn more about me on my <a href="/resume/">resume</a> or <a href="/contact/">contact me</a>.</p>
+  <div class="mdc-card mdc-card--outlined">
+    <div class="mdc-card__content">
+      <div class="business-card">
+        <div class="info-grid">
+          <div class="name">{{ site.data.profile.primary_name }}</div>
+          <div class="description">
+            <div class="text-profile-position">
+              {% for position in site.data.profile.positions %}
+              {% if position.logo -%}
+              <img src="{{ position.logo | relative_url }}" alt="Logo" class="inline-badge" />
+              {%- endif %}
+              {{ position.name }}<br />
+              {% endfor %}
+            </div>
+            <hr class="small" />
+            <div class="text-profile-bio mt-3" {% if site.data.profile.short_bio_text_justify
+              %}style="text-align: justify;" {% endif %}>
+              {{ site.data.profile.short_bio }}
+            </div>
+            {% if site.data.profile.cv_link %}
+            <a target="_blank" href="{{ site.data.profile.cv_link | relative_url }}"><i class="fas fa-file-alt"></i>
+              Curriculum Vitae</a> <br />
+            {% endif %}
+          </div>
+        </div>
+        <div class="logo"></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <a class="pr-3 no-break" href="mailto:{{ site.data.profile.email | encode_email }}">
+            <i class="fas fa-at"></i> <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)"
+              }}</span>
+          </a>
+
+          {% if site.data.profile.gscholar %}
+          {%- if site.data.profile.gscholar contains 'scholar.google' -%}
+          {%- assign gscholar_url = site.data.profile.gscholar -%}
+          {%- else -%}
+          {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append:
+          site.data.profile.gscholar -%}
+          {%- endif -%}
+          <a class="pr-3 no-break" target="_blank" href="{{ gscholar_url }}">
+            <i class="fa-brands fa-google-scholar"></i> Google Scholar
+          </a>
+          {% endif %}
+
+          {% if site.data.profile.github %}
+          <a class="pr-3 no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          {% endif %}
+
+          {% if site.data.profile.twitter %}
+          <a class="pr-3 no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
+            <i class="fab fa-twitter"></i> Twitter
+          </a>
+          {% endif %}
+
+          {% if site.data.profile.linkedin %}
+          <a class="pr-3 no-break" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          {% endif %}
+
+          {% if site.data.profile.orcid %}
+          <a class="pr-3 no-break" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}">
+            <i class="fab fa-orcid"></i> ORCID
+          </a>
+          {% endif %}
+        </div>
       </div>
     </div>
-    <div class="logo"></div>
-  </section>
+  </div>
+
+  <!-- News -->
+  {% if site.data.display.homepage.show_news %}
+  {% assign count_news = site.news | size %}
+  {% if count_news > 0 %}
+  {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
+  {% endif %}
+  {% endif %}
 
   <!-- Research Work -->
-  <section class="mdc-card mdc-card--outlined highlighted">
-    <div class="mdc-card__content">
-      <h2>Research Work</h2>
-      <p>My research work focuses on deep learning applications for language and vision tasks including human motion understanding and 3D reconstruction. I am also working on neural network optimization for deployment on edge devices such as smartphones.</p>
-      {% assign research = site.research | sort: "date" | reverse %}
-      <div class="mdc-layout-grid no-spacing">
-        <div class="mdc-layout-grid__inner">
-          {% for item in research limit: 6 %}
-          <div class="mdc-layout-grid__cell mdc-card mdc-card--outlined">
-            <div class="mdc-card__content">
-              <small class="text-uppercase">{{ item.category | first | replace: ",", "" }}</small><br>
-              <p><a href="{{ item.url }}">{{ item.title }} ({{ item.date | date: "%Y"}})</a></p>
-              {% assign categories = item.category | shift %}
-              {% for category in categories %}<span class="project-tag" style="word-wrap: break-word;">{{ category | replace: ",", "" }}</span>
-              &nbsp;{% endfor %}
-            </div>
+  <section>
+    <h2>Recent Publications</h2>
+    <p></p>
+    {% assign research = site.research | sort: "date" | reverse %}
+    <div class="mdc-layout-grid no-spacing">
+      <div class="mdc-layout-grid__inner">
+        {% for item in research limit: 5 %}
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 publication-details">
+          <div class="publication-tags">
+            {% assign categories = item.categories %}
+            {% for category in categories %}
+            <span class="publication-tag {% if forloop.first %}primary{% endif %}">{{ category | replace: ",", ""
+              }}</span>
+            {% endfor %}
           </div>
-          {% endfor %}
+          {% assign authors = item.authors | split: ',' %}
+          <p class="publication-description">
+            {% assign equal_contribution = false %}
+            {% for author in authors %}
+            {% assign last_name = author | split: ' ' | last %}
+            {% assign all_names = author | split: ' ' %}
+
+            <!-- For each name except the last, get the initial and add to an "initials" variable -->
+            {% assign initials = "" %}
+            {% for name in all_names %}
+            {% unless forloop.last %}
+            {% assign initial = name | slice: 0, 1 %}
+            {% assign initials = initials | append: ' ' | append: initial | append: "." %}
+            {% endunless %}
+            {% endfor %}
+
+            <!-- If there is more than one author, add a comma after the last name -->
+            {% unless forloop.last %}
+            {% assign last_name = last_name | append: "," %}
+            {% endunless %}
+
+            <!-- Check for equal contribution marker -->
+            {% assign contribution = "" %}
+            {% if author contains '*' %}
+            {% assign equal_contribution = true %}
+            {% assign last_name = last_name | replace: '*', '' %}
+            {% assign contribution = '*' %}
+            {% endif %}
+
+            <!-- Print the author's name -->
+            {% if last_name == "Khan," and initials == " M. S. U." %}
+            <span class="highlighted-text">
+              {% else %}
+              <span>
+                {% endif %}
+                {{ last_name }}{{ initials }}{{ contribution }}{% unless forloop.last %}, {% endunless %}
+              </span>
+              {% endfor %}
+              ({{ item.date | date: "%Y" }}).
+              <a href="{{ item.url | relative_url }}" class="publication-link">{{ item.title }}</a>.
+              {% if equal_contribution %}(* Equal contribution.){% endif %}
+          </p>
+          <div class="mdc-list-divider mb-0"></div>
         </div>
+        {% endfor %}
       </div>
     </div>
     <div class="mdc-card__actions">
       <div class="mdc-card__action-icons">
-        <p style="color: var(--mdc-theme-on-surface)">Showing 6 of {{ research | size }} research projects.</p>
-        <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="window.location.href='/research/'">
+        <p style="color: var(--mdc-theme-on-surface)">Showing 5 of {{ research | size }} publications.</p>
+        <button class="mdc-button mdc-card__action mdc-card__action--button"
+          onclick="window.location.href='/research/'">
           <span class="mdc-button__ripple"></span>
           <span class="mdc-button__label">See all</span>
         </button>
@@ -144,14 +255,70 @@ github_stats: true
     </div>
   </section>
 
-  <!-- Featured Projects -->
-  <section class="mdc-card mdc-card--outlined">
-    <div class="mdc-card__content">
-      <h2>Featured Projects</h2>
-      <p>In addition to ML research, I work as a hobbyist software developer with most work in Android app
-        development. Some of my featured projects are listed below:</p>
-      {% include list_projects_featured.html %}
-    </div>
+  <section>
+    {% if site.data.display.homepage.show_experience %}
+    {% include widgets/experience_card.html %}
+    {% endif %}
+  </section>
+</div>
+
+<div class="c-minor">
+  <section>
+    <h2>Developer Profile</h2>
+    <p>
+      I love building software and AI systems to solve real-world problems. Experienced in web/mobile apps, machine
+      learning, and cloud services. Open-source advocate.
+    </p>
+
+    <!-- Contributions widget -->
+    <p>
+      {% include widget_github.html %}
+    </p>
+
+    <!-- GitHub -->
+    <h3>Open Source Contribution</h3>
+    <p>
+      Here are some of my most popular repositories on GitHub. If you like my work, consider supporting me on GitHub
+    </p>
+
+    <ul class="mdc-list mdc-list--two-line">
+      {% assign repos = site.github.public_repositories | sort: "stargazers_count" | reverse %}
+      {% for repo in repos limit:5 %}
+      {% unless repo.name == site.github.owner.login %}
+      {% unless repo.name == site.github.project_title %}
+      <li class="mdc-list-item" style="padding: 0;">
+        <span class="mdc-list-item__text">
+          <span class="mdc-list-item__primary-text"><a href="{{repo.html_url}}">{{ repo.name }}</a></span>
+          <span class="mdc-list-item__secondary-text">{{ repo.description }}</span>
+          <div class="publication-tags">
+            <span class="project-tag">
+              <i class="fa-solid fa-star"></i> {{ repo.stargazers_count }}
+            </span>
+            <span class="project-tag">
+              <i class="fa-solid fa-code-fork"></i> {{ repo.forks }}
+            </span>
+            <span class="project-tag">
+              <i class="fa-solid fa-globe"></i> {{ repo.language }}
+            </span>
+          </div>
+        </span>
+        <div class="mdc-list-divider"></div>
+      </li>
+      {% endunless %}
+      {% endunless %}
+      {% endfor %}
+    </ul>
+
+    <!-- Featured Projects -->
+    <h3>Personal Projects</h3>
+    <p>
+      A couple of other side projects that I worked on in my free time. These are mostly small projects that I
+      created to learn new technologies or solve a specific problem. Some of them are open-source and available on
+      GitHub.
+    </p>
+
+    {% include list_projects_featured.html %}
+
     <div class="mdc-card__actions">
       <div class="mdc-card__action-icons">
         <a class="mdc-button mdc-card__action mdc-card__action--button" href="projects/">
@@ -160,70 +327,12 @@ github_stats: true
         </a>
       </div>
     </div>
-  </section>
-</div>
 
-<div class="c-minor">
-  <!-- GitHub -->
-  <section>
-    <h2>Dig Deeper</h2>
-    <p>Head over to my <a href="{{ site.github.owner.html_url }}" target="_blank">GitHub profile</a>
-      to peek behind the scenes. Most of my projects are open-source.</p>
-
-    <!-- Contributions widget -->
-    {% include widget_github.html %}
-    <div class="text-center">
-      <br>
-      Most Frequently Used Programming Languages on GitHub<br>
-      <hr class="small">
-      {% assign languages = site.github.public_repositories | map: "language" | compact %}
-      {% assign languages = languages | group_by: '.' | sort: 'name' %}
-      <p>
-        {% for language in languages %}
-        <span style="font-size: {{language.size | times: 0.25 | plus: 1}}rem">{{ language.name }}</span>
-        {% endfor %}
-      </p>
-    </div>
     <p>
-      <iframe frameborder="0" scrolling="no" src="https://github.com/sponsors/saifkhichi96/button" style="position: relative; width: 100%; height: 40px;"></iframe>
+      If you like my work, please consider supporting me by leaving a star on GitHub or sponsoring me:
     </p>
-
-    <div class="mdc-card mdc-card--outlined">
-      <div class="mdc-card__content">
-        <h3>My Top-10 Repos</h3>
-        <p>Want to contribute? Check out my top-10 repos on GitHub.</p>
-        <ul class="mdc-list mdc-list--two-line">
-          {% assign repos = site.github.public_repositories | sort: "stargazers_count" | reverse %}
-          {% for repo in repos limit:10 %}
-          {% unless repo.name == site.github.owner.login %}
-          {% unless repo.name == site.github.project_title %}
-          <li class="mdc-list-item" style="background-color: var(--mdc-theme-background);">
-            <a href="{{repo.html_url}}">
-              <span class="mdc-list-item__text">
-                <span class="mdc-list-item__primary-text">{{ repo.name }}</span>
-                <span class="mdc-list-item__secondary-text">{{ repo.description }}</span>
-                <div class="project-tags">
-                  <span class="project-tag">
-                    <i class="material-icons">star</i>{{ repo.stargazers_count }}
-                  </span>
-                  <span class="project-tag">
-                    <i class="material-icons">fork_left</i>{{ repo.forks }}
-                  </span>
-                  <span class="project-tag">
-                    <i class="material-icons">language</i>{{ repo.language }}
-                  </span>
-                </div>
-              </span>
-            </a>
-          </li>
-          <li class="mdc-list-divider" style="margin: var(--card-padding);"></li>
-          {% endunless %}
-          {% endunless %}
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </section>
+    <iframe frameborder="0" scrolling="no" src="https://github.com/sponsors/saifkhichi96/button"
+        style="position: relative; width: 100%; height: 40px;"></iframe>
 </div>
 
 <!-- PWA -->
@@ -247,6 +356,8 @@ github_stats: true
 </script>
 
 <!-- Page specific scripts -->
-<script async data-cfasync="true" data-color="{{ site.data.manifest.theme_color }}" data-description="Support me on Buy me a coffee!" data-id="saifkhichi96" data-message="" data-name="BMC-Widget"
-  data-position="Right" data-x_margin="16" data-y_margin="16" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js">
-</script>
+<script async data-cfasync="true" data-color="{{ site.data.manifest.theme_color }}"
+  data-description="Support me on Buy me a coffee!" data-id="saifkhichi96" data-message="" data-name="BMC-Widget"
+  data-position="Right" data-x_margin="16" data-y_margin="16"
+  src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js">
+  </script>

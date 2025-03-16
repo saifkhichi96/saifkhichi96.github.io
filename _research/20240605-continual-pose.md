@@ -12,7 +12,7 @@ bibtex: "@article{khan2024continual,
 \n  journal={arXiv preprint arXiv:2409.20469},
 \n  year={2024}
 }"
-category: [Article, Preprint, Human Pose Estimation, Continual Learning, Regularization, Distillation]
+category: [Preprint, arXiv, Human Pose Estimation, Continual Learning, Regularization, Distillation]
 date: June 05, 2024
 syntax: true
 permalink: /research/continual-pose/

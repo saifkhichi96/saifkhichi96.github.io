@@ -1,0 +1,66 @@
+primary_name: "Muhammad Saif Ullah Khan"
+secondary_name: ""
+navbar_name: "Saif Khan"
+
+positions:
+- logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
+  name: Researcher at <a href="https://www.dfki.de/web/ueber-uns/mitarbeiter/person/mukh07" target="_blank">Augmented Vision Group, DFKI</a>
+
+
+email: "mukh07@dfki.de"
+# cv_link: link-to-your-cv-file
+gscholar: xFmQpf4AAAAJ  # This is an example, replace it with your own Google Scholar ID
+github: saifkhichi96
+twitter: saifkhichi96  # Do not include the '@' symbol
+# wechat_qrcode: /assets/images/etc/wechat.jpg
+# wechat_prompt: >-
+#   Please tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
+# linkedin: your-linked-in-id
+# orcid: 0000-0000-0000-0000
+
+short_bio_text_justify: false
+short_bio: >-
+  <p>
+    Ph.D. student at RPTU Kaiserslautern, dedicated to democratizing human motion understanding by optimizing neural networks for real-time deployment on consumer devices. Research focuses on markerless motion tracking, multimodal learning, and generative models to push the boundaries of human-centric AI. Previous work involved 3D reconstruction and signature verification.
+  </p>
+
+portrait_url: /assets/images/photos/portrait.png
+portrait_caption: >-
+  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+
+education:
+- name: Rhineland-Palatinate Technical University (RPTU)
+  logo: /assets/images/badges/MIT_Social_circle.png
+  position: >- 
+    Kaiserlautern, Germany <br/>
+    Department of Computer Science <br/>
+    Ph.D. Student
+  date: 2023 - present
+- name: Technical University of Kaiserslautern
+  logo: /assets/images/badges/PKU_red.png
+  position: >- 
+    Kaiserlautern, Germany <br/>
+    Department of Computer Science <br/>
+    M.Sc. in Computer Science
+  date: 2019 - 2022
+- name: National University of Sciences and Technology (NUST)
+  logo: /assets/images/badges/PKU_red.png
+  position: >- 
+    Islamabad, Pakistan <br/>
+    Department of Computer Science <br/>
+    B.E. in Software Engineering
+  date: 2014 - 2018
+
+# experience:
+# - name: Peking University
+#   logo: /assets/images/badges/PKU_red.png
+#   position: Research Intern
+#   date: Sep. 2019 - Jul. 2021
+
+awards:
+- name: Award Name 2
+  date: 2024
+- name: Award Name 1 
+  date: 2021
+- name: A quick brown fox jumps over the lazy dog and runs away award
+  date: 2021
