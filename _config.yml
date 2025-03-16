@@ -28,18 +28,12 @@ menu_main:
   - title:                   Home
     icon:                    roofing
     url:                     /
-  - title:                   Projects
-    icon:                    webhook
-    url:                     /projects/
   - title:                   Research
     icon:                    api
     url:                     /research/
   - title:                   Teaching
     icon:                    school
     url:                     /teaching/
-  - title:                   Blog
-    icon:                    feed
-    url:                     /blog/
 
 
 
