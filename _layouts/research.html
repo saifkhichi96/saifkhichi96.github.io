@@ -113,7 +113,7 @@
                     <div class="publication-links">
 
                       <!-- Paper link -->
-                      {% if page.paper %}
+                      {% if page.paper and page.paper != "" %}
                       <span class="link-block">
                         <a href="{{page.paper}}" target="_blank"
                           class="external-link button is-normal is-rounded is-dark">
@@ -195,6 +195,7 @@
           <!-- End teaser image -->
 
           <!-- Paper abstract -->
+          {% if page.abstract and page.abstract != "" %}
           <section class="section hero is-light">
             <div class="container is-max-desktop">
               <div class="columns is-centered has-text-centered">
@@ -207,6 +208,7 @@
               </div>
             </div>
           </section>
+          {% endif %}
           <!-- End paper abstract -->
 
           <!-- Teaser video (youtube) -->

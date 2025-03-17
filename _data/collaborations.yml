@@ -29,11 +29,25 @@ rptu:
   - id: sose-2025
     title: Summer Semester 2025
     projects:
-    - title: Compressing Neural Networks for Efficient Inference
+    - title: Sparse Neural Networks
       type: Project
       description: >-
         No abstract available.
-      url: /collaborate/rptu/2025-summer-project-compression/
+      url: /collaborate/rptu/2025-summer-project-sparse-nns/
+      started: false
+      completed: false
+    - title: Category-Agnostic Pose Estimation
+      type: Project
+      description: >-
+        No abstract available.
+      url: /collaborate/rptu/2025-summer-project-cape/
+      started: false
+      completed: false
+    - title: Small Vision Language Model
+      type: Project
+      description: >-
+        No abstract available.
+      url: /collaborate/rptu/2025-summer-project-mini-sapiens/
       started: false
       completed: false
   - id: wise-2024
