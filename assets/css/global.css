@@ -8,6 +8,7 @@
 }
 
 .inline-badge {
+    background-color: white;
     height: 16px;
     vertical-align: -10%;
     margin-right: 2px;
