@@ -89,18 +89,18 @@
   
         // Define colors
         const backgroundColors = [
-            'rgba(255, 99, 132, 0.2)',    // Red
-            'rgba(255, 205, 86, 0.2)',    // Yellow
-            'rgba(75, 192, 192, 0.2)',    // Teal
-            'rgba(54, 162, 235, 0.2)',    // Blue
-            'rgba(153, 102, 255, 0.2)',   // Purple
-            'rgba(255, 159, 64, 0.2)',    // Orange (Light)
-            'rgba(255, 99, 132, 0.2)',    // Pink
-            'rgba(255, 159, 64, 0.2)',    // Coral
-            'rgba(255, 205, 86, 0.2)',    // Light Yellow
-            'rgba(75, 192, 192, 0.2)',    // Aqua
-            'rgba(54, 162, 235, 0.2)',    // Light Blue
-            'rgba(153, 102, 255, 0.2)'    // Light Purple
+            'rgba(255, 99, 132, 0.5)',    // Red
+            'rgba(255, 205, 86, 0.5)',    // Yellow
+            'rgba(75, 192, 192, 0.5)',    // Teal
+            'rgba(54, 162, 235, 0.5)',    // Blue
+            'rgba(153, 102, 255, 0.5)',   // Purple
+            'rgba(255, 159, 64, 0.5)',    // Orange (Light)
+            'rgba(255, 99, 132, 0.5)',    // Pink
+            'rgba(255, 159, 64, 0.5)',    // Coral
+            'rgba(255, 205, 86, 0.5)',    // Light Yellow
+            'rgba(75, 192, 192, 0.5)',    // Aqua
+            'rgba(54, 162, 235, 0.5)',    // Light Blue
+            'rgba(153, 102, 255, 0.5)'    // Light Purple
         ];
         const borderColors = [
             'rgba(255, 99, 132, 1.0)',    // Red
@@ -125,22 +125,23 @@
 
         // Charts
         new Chart(document.getElementById('publicationsByYear'), {
-          type: 'line',
+          type: 'bar',
           data: {
             labels: years,
             datasets: [{
               label: 'Publications by Year',
               data: publicationsCount,
-              backgroundColor: 'rgba(54, 162, 235, 0.2)',
-              borderColor: 'rgba(54, 162, 235, 1.0)',
-              borderWidth: 1
+              backgroundColor: 'rgb(128, 128, 128)',
             }]
           },
           options: {
             scales: {
-              y: {
-                beginAtZero: true
-              }
+              yAxes: [{
+                display: true,
+                ticks: {
+                    beginAtZero: true
+                }
+              }]
             }
           }
         });
@@ -166,7 +167,7 @@
             datasets: [{
               label: 'Peer-Reviewed Publications',
               data: [published, unpublished],
-              backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+              backgroundColor: ['rgba(54, 162, 235, 0.5)', 'rgba(255, 159, 64, 0.5)'],
               borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 159, 64, 1)'],
               borderWidth: 1
             }]
@@ -187,9 +188,12 @@
           },
           options: {
             scales: {
-              x: {
-                beginAtZero: true
-              }
+              xAxes: [{
+                display: true,
+                ticks: {
+                    beginAtZero: true
+                }
+              }]
             }
           }
         });
@@ -208,9 +212,12 @@
           },
           options: {
             scales: {
-              x: {
-                beginAtZero: true
-              }
+              xAxes: [{
+                display: true,
+                ticks: {
+                    beginAtZero: true
+                }
+              }]
             }
           }
         });

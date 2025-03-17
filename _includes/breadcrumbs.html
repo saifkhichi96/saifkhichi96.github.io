@@ -16,7 +16,7 @@
 
     {% assign part_url = part_url | append: part | append: '/'  %}
 
-    {% assign pages = site.pages | concat: site.posts | concat: site.docs | concat: site.projects | concat: site.services %}
+    {% assign pages = site.pages | concat: site.posts | concat: site.docs | concat: site.projects %}
     {% assign item = pages | where: 'url', part_url | map: 'title' %}
     {% assign item_short = pages | where: 'url', part_url | map: 'short_title' %}
     {% assign link = pages | where: 'url', part_url | map: 'url' %}

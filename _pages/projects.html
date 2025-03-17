@@ -58,21 +58,6 @@ drawer: true
         Use the filters below to search for projects by platform and type.
       </p>
     </section>
-
-    <section>
-      <div class="callout hire-callout">
-        <img alt="Open for work" src="{{ site.baseurl }}/assets/images/open-for-work.png" />
-        <p>Have a project that needs to be done?<br>
-          <small>Do you have a question, feedback or a comment?</small>
-        </p>
-        <div>
-          <a class="mdc-button mdc-button--unelevated" href="/contact/" style="background-color: #f28faa !important;">
-            <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label" style="text-transform: none; color: black !important;">Talk to Me</span>
-          </a>
-        </div>
-      </div>
-    </section>
   </header>
 
   {% include widget_feedback.html %}
@@ -588,35 +573,6 @@ drawer: true
 
       </div>
     </section>
-  </section>
-
-  <section id="services">
-    <!-- Services -->
-    
-    <br>
-    {% assign services = site.services | size %}
-    {% if services > 0 %}
-    <p>
-      I can help! Learn more about the services I offer and <a href="/contact/">contact me</a> with your project requirements to get a quote.
-    </p>
-    <div class="mdc-layout-grid no-spacing">
-      <div class="mdc-layout-grid__inner">
-        {% for service in site.services %}
-        <div class="mdc-layout-grid__cell mdc-card mdc-card--outlined service-item">
-          <span class="material-icons">{{ service.icon }}</span>
-          <h2>{{ service.title }}</h2>
-          <p>{{ service.description }}</p>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-    {% endif %}
-  </section>
-
-  <section>
-    <p>
-      To pay for a completed service, you can either send the invoice amount on <a href="https://www.paypal.com/paypalme/saifkhichi06" target="_blank">PayPal</a> or use <a href="/payments/">this checkout page</a>.
-    </p>
   </section>
 </div>
 

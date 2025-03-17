@@ -135,26 +135,6 @@
         "src": "/assets/images/icons/shortcut-projects.png",
         "sizes": "96x96"
       }]
-    },
-    {
-      "name": "View Resume",
-      "short_name": "Resume",
-      "description": "View my education and work history",
-      "url": "/resume/",
-      "icons": [{
-        "src": "/assets/images/icons/shortcut-resume.png",
-        "sizes": "96x96"
-      }]
-    },
-    {
-      "name": "Talk to Me",
-      "short_name": "Contact",
-      "description": "Contact me with your questions or proposals",
-      "url": "/contact/",
-      "icons": [{
-        "src": "/assets/images/icons/shortcut-contact.png",
-        "sizes": "96x96"
-      }]
     }
   ],
   "background_color": "#E8EAF6",
