@@ -122,7 +122,7 @@ h3,
 }
 
 .slider-pagination .slider-page {
-  background: #000000;
+  background: #161b22;
 }
 
 .eql-cntrb { 
@@ -132,7 +132,7 @@ h3,
 /* dark mode styles */
 @media (prefers-color-scheme: dark) {
   .is-light {
-    background-color: #0008 !important;
+    background-color: #161b22 !important;
     color: var(--mdc-theme-on-surface) !important;
   }
 

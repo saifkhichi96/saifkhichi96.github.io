@@ -38,17 +38,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --mdc-theme-primary: #7e75cd;
-    --mdc-theme-primary-variant: #7986CB;
-    --mdc-theme-overlay: #7986CB20;
+    --mdc-theme-primary: #7A73D1;
+    --mdc-theme-primary-variant: #4D55CC;
+    --mdc-theme-overlay: #7A73D120;
 
     /* Background (different in light/dark) */
-    {% assign background_color = '#000a12' %}
+    {% assign background_color = '#161b22' %}
     --mdc-theme-background: {{ background_color }};
-    --mdc-theme-border: {{ background_color }};
+    --mdc-theme-border: #30363d;
 
     /* Surfaces (different in light/dark) */
-    --mdc-theme-surface: #121212;
+    --mdc-theme-surface: #21262d;
     --mdc-theme-on-surface: #ffffff;
   }
 }

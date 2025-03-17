@@ -360,6 +360,7 @@ footer {
 
 .highlighter-yellow {
   background-color: yellow;
+  color: black;
 }
 
 .highlighter-green {
@@ -372,6 +373,7 @@ footer {
 
 .highlighter-red {
   background-color: lightcoral;
+  color: black;
 }
 
 .publication-title-link {
