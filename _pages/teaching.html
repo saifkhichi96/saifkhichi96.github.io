@@ -24,61 +24,76 @@ drawer: true
 <div class="c-major-r">
   <h2 class="title">Supervision & Teaching</h2>
 
-  <h3 class="subtitle">Current Projects at RPTU</h3>
-
-  <p>This semester, I am supervising the following project:</p>
-  <div class="mdc-card mdc-card--outlined highlighted">
-    <h4>Summer Semester 2025</h4>
-    <ul>
-      <li>TBD.</li>
-    </ul>
-
-    <p>Interested in joining a project? Feel free to reach out <a class="pr-3 no-break" href="mailto:{{ site.data.profile.email | encode_email }}">
+  <div class="mdc-card mdc-card--outlined highlighted mb-4">
+    <p>Interested in collaborating? Reach out via <a class="pr-3 no-break" href="mailto:{{ site.data.profile.email | encode_email }}">
       <i class="fas fa-at"></i> <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span></a>. 
-      You can also explore the <a href="/research/">research page</a> for additional information. For a full list of available
-      projects and seminars, visit the <a href="https://av.cs.rptu.de/teaching/current-semester/seminars-projects-and-guided-research"
-        target="_blank">Augmented Vision Group's teaching page</a>.
+      I am seeking motivated students for theses and guided research. If you have ideas or projects, I'd love to hear from you! Some available topics are listed below:
+    </p>
+
+    <details open id="sose-2025">
+      <summary><h4>Summer Semester 2025</h4></summary>
+      <ul>
+        <li>TBD.</li>
+      </ul>
+    </details>
+
+    <p>
+      Want to learn more about my research interests? See my <a href="/research/">past publications</a>. For a complete list of topics advertised by the Augmented Vision Group, visit <a href="https://av.cs.rptu.de/teaching/current-semester/seminars-projects-and-guided-research" target="_blank">this page</a>.
     </p>
   </div>
-  <br />
 
-  <h3 class="subtitle">Past Projects and Seminars</h3>
-  <p>Below are some of the projects and seminars I supervised in previous semesters:</p>
+  <div class="mdc-card mdc-card--outlined mb-4" id="theses">
+    <h3 class="subtitle">Completed Theses</h3>
+    <ol>
+      <li><strong>Classroom-Inspired Learning for Deep Neural Networks</strong> (Shalini Sarode, October 2024)</li>
+    </ol>
+  </div>
 
-  <details open>
-    <summary><h4>Winter Semester 2024/25</h4></summary>
-    <ul>
-      <li><a href="#">Human Image Generation through Multimodal Diffusion Models</a> (Master's Project)</li>
-    </ul>
-  </details>
+  <div class="mdc-card mdc-card--outlined mb-4" id="guided-research">
+    <h3 class="subtitle">Completed Guided Research</h3>
+    <ol>
+      <li><strong>Enhancing Zero-Shot Classification with CLIP-Driven Optimal Natural Language Description Selection</strong> (Nosheen Nazir, November 2024)</li>
+      <li><strong>Monocular 3D Human Pose Estimation Using Depth Augmentation</strong> (Jeremias Krauss, October 2024)</li>
+    </ol>
+  </div>
 
-  <details open>
-    <summary><h4>Summer Semester 2024</h4></summary>
-    <ul>
-      <li><a href="#">Advances in Gait Recognition</a> (Seminar)</li>
-      <li><a href="#">Gait Recognition using OpenGait</a> (Master's Project)</li>
-      <li><a href="#">Controllable Style Transfer for Pose-Guided Human Image Generation Using Diffusion</a> (Seminar)
-      </li>
-    </ul>
-  </details>
+  <div class="mdc-card mdc-card--outlined mb-4" id="completed-projects">
+    <h3 class="subtitle">Completed Seminars and Projects</h3>
 
-  <details open>
-    <summary><h4>Winter Semester 2023/24</h4></summary>
-    <ul>
-      <li><a href="#">Unified 2D Human Pose Estimation</a> (Master's Project)</li>
-      <li><a href="/teaching/project-active-labeling/">Active Learning for Optimal Data Labeling</a> (Bachelor's Project)</li>
-    </ul>
-  </details>
+    <details open id="wise-2024">
+      <summary><h4>Winter Semester 2024/25</h4></summary>
+      <ul>
+        <li><a href="#">Human Image Generation through Multimodal Diffusion Models</a> (Master's Project)</li>
+      </ul>
+    </details>
 
+    <details open id="sose-2024">
+      <summary><h4>Summer Semester 2024</h4></summary>
+      <ul>
+        <li><a href="#">Advances in Gait Recognition</a> (Seminar)</li>
+        <li><a href="#">Gait Recognition using OpenGait</a> (Master's Project)</li>
+        <li><a href="#">Controllable Style Transfer for Pose-Guided Human Image Generation Using Diffusion</a> (Seminar)
+        </li>
+      </ul>
+    </details>
 
-  <details open>
-    <summary><h4>Summer Semester 2023</h4></summary>
-    <ul>
-      <li><a href="/teaching/seminar-mobilenets/">Deep Neural Networks for Vision Tasks on Mobile Devices</a> (Seminar)</li>
-      <li><a href="/teaching/seminar-nas/">Automating Design of Efficient Models with Neural Architecture Search</a> (Seminar)</li>
-      <li><a href="#">Optimizing Human Pose Estimation through Knowledge Distillation</a> (Master's Projects)</li>
-    </ul>
-  </details>
+    <details open id="wise-2023">
+      <summary><h4>Winter Semester 2023/24</h4></summary>
+      <ul>
+        <li><a href="#">Unified 2D Human Pose Estimation</a> (Master's Project)</li>
+        <li><a href="/teaching/project-active-labeling/">Active Learning for Optimal Data Labeling</a> (Bachelor's Project)</li>
+      </ul>
+    </details>
+
+    <details open id="sose-2023">
+      <summary><h4>Summer Semester 2023</h4></summary>
+      <ul>
+        <li><a href="/teaching/seminar-mobilenets/">Deep Neural Networks for Vision Tasks on Mobile Devices</a> (Seminar)</li>
+        <li><a href="/teaching/seminar-nas/">Automating Design of Efficient Models with Neural Architecture Search</a> (Seminar)</li>
+        <li><a href="#">Optimizing Human Pose Estimation through Knowledge Distillation</a> (Master's Projects)</li>
+      </ul>
+    </details>
+  </div>
 </div>
 
 <aside class="c-minor">

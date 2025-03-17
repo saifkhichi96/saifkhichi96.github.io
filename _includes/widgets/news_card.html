@@ -10,12 +10,9 @@
             <div class="media-body">
                 {% for item in year.items %}
                 <div class="my-1 d-flex">
-                    <div>
-                        <span class="{% if item.featured %}highlighter-green{% endif %}">
-                        {{ item.title }}
-                        </span>
+                    <div>{{ item.title }}
                         {% if item.link %}
-                        <a href="{{ item.link }}">Read more <i class="fas fa-angle-double-right"></i></a>
+                        <a class="{% if item.featured %}highlighter-blue{% endif %}" href="{{ item.link }}">Read more <i class="fas fa-angle-double-right"></i></a>
                         {% endif %}
                     </div>
                     <div class="ml-auto mt-auto text-muted no-break"><i>{{ item.date | date: "%b %d" }}</i></div>
