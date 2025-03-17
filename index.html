@@ -276,6 +276,7 @@ github_stats: true
     </p>
 
     <!-- GitHub -->
+    {% if site.github.public_repositories %}
     <h3>Open Source Contribution</h3>
     <p>
       Here are some of my most popular GitHub repositories:
@@ -308,6 +309,7 @@ github_stats: true
       {% endunless %}
       {% endfor %}
     </ul>
+    {% endif %}
 
     <!-- Featured Projects -->
     <h3>Personal Projects</h3>

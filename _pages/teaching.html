@@ -22,19 +22,20 @@ drawer: true
 
 <!-- Page Content -->
 <div class="c-major-r">
-  <h2 class="title">Student Supervision & Teaching</h2>
+  <h2 class="title">Supervision & Teaching</h2>
 
   <h3 class="subtitle">Current Projects at RPTU</h3>
 
   <p>This semester, I am supervising the following project:</p>
   <div class="mdc-card mdc-card--outlined highlighted">
-    <h4>Winter Semester 2024/25</h4>
+    <h4>Summer Semester 2025</h4>
     <ul>
-      <li><a href="#">Human Image Generation through Multimodal Diffusion Models</a> (Master's Project)</li>
+      <li>TBD.</li>
     </ul>
 
-    <p>Interested in joining a project? Feel free to reach out via the <a href="/contact/">contact page</a>. You can
-      also explore the <a href="/research/">research page</a> for additional information. For a full list of available
+    <p>Interested in joining a project? Feel free to reach out <a class="pr-3 no-break" href="mailto:{{ site.data.profile.email | encode_email }}">
+      <i class="fas fa-at"></i> <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span></a>. 
+      You can also explore the <a href="/research/">research page</a> for additional information. For a full list of available
       projects and seminars, visit the <a href="https://av.cs.rptu.de/teaching/current-semester/seminars-projects-and-guided-research"
         target="_blank">Augmented Vision Group's teaching page</a>.
     </p>
@@ -44,7 +45,14 @@ drawer: true
   <h3 class="subtitle">Past Projects and Seminars</h3>
   <p>Below are some of the projects and seminars I supervised in previous semesters:</p>
 
-  <details>
+  <details open>
+    <summary><h4>Winter Semester 2024/25</h4></summary>
+    <ul>
+      <li><a href="#">Human Image Generation through Multimodal Diffusion Models</a> (Master's Project)</li>
+    </ul>
+  </details>
+
+  <details open>
     <summary><h4>Summer Semester 2024</h4></summary>
     <ul>
       <li><a href="#">Advances in Gait Recognition</a> (Seminar)</li>
@@ -54,7 +62,7 @@ drawer: true
     </ul>
   </details>
 
-  <details>
+  <details open>
     <summary><h4>Winter Semester 2023/24</h4></summary>
     <ul>
       <li><a href="#">Unified 2D Human Pose Estimation</a> (Master's Project)</li>
@@ -63,7 +71,7 @@ drawer: true
   </details>
 
 
-  <details>
+  <details open>
     <summary><h4>Summer Semester 2023</h4></summary>
     <ul>
       <li><a href="/teaching/seminar-mobilenets/">Deep Neural Networks for Vision Tasks on Mobile Devices</a> (Seminar)</li>
