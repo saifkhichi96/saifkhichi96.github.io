@@ -10,7 +10,6 @@ category: [Seminar, DFKI, Augmented Vision, Deep Learning, MobileNets]
 date: March 2023
 paper: "https://av.cs.rptu.de/fileadmin/inf_ags/Project_Seminar/Proceedings_CVDL_SS2023.pdf#page=3.00"
 syntax: true
-permalink: /teaching/seminar-mobilenets/
 ---
 
 ## Topic

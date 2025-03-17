@@ -33,7 +33,7 @@ menu_main:
     url:                     /research/
   - title:                   Work with me
     icon:                    work
-    url:                     /teaching/
+    url:                     /collaborate/
 
 
 
@@ -217,9 +217,9 @@ collections:
   research:
     output:                true
     permalink:             /research/:path/
-  teaching:
+  collaboration:
     output:                true
-    permalink:             /teaching/:path/
+    permalink:             /collaborate/:path/
   news:
     output:                true
     permalink:             /news/:year/:month/:day/:title/

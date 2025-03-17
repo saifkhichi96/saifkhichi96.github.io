@@ -1,0 +1,122 @@
+rptu:
+  theses:
+  - title: Classroom-Inspired Learning for Deep Neural Networks
+    type: Thesis
+    description: >-
+      No abstract available.
+    url: /collaborate/rptu/2024-thesis-classroom-inspired-learning/
+    student: Shalini Sarode (Oct 2024)
+    started: true
+    completed: true
+  guided_research:
+  - title: Enhancing Zero-Shot Classification with CLIP-Driven Optimal Natural Language Description Selection
+    type: Guided Research
+    description: >-
+      No abstract available.
+    url: /collaborate/rptu/2024-guided-research-clip/
+    student: Nosheen Nazir (Nov 2024)
+    started: true
+    completed: true
+  - title: Monocular 3D Human Pose Estimation Using Depth Augmentation
+    type: Guided Research
+    description: >-
+      No abstract available.
+    url: /collaborate/rptu/2024-guided-research-pose-3d-rgbd/
+    student: Jeremias Krauss (Oct 2024)
+    started: true
+    completed: true
+  projects:
+  - id: sose-2025
+    title: Summer Semester 2025
+    projects:
+    - title: Compressing Neural Networks for Efficient Inference
+      type: Project
+      description: >-
+        No abstract available.
+      url: /collaborate/rptu/2025-summer-project-compression/
+      started: false
+      completed: false
+  - id: wise-2024
+    title: Winter Semester 2024/25
+    projects:
+    - title: Human Image Generation through Multimodal Diffusion Models
+      type: Project
+      description: >-
+        No abstract available.
+      url: /collaborate/rptu/2024-winter-project-hoi-image-generation/
+      student: Muhammad Usama
+      started: true
+      completed: false
+  - id: sose-2024
+    title: Summer Semester 2024
+    projects:
+    - title: Advances in Gait Recognition
+      type: Seminar
+      description: >-
+        No abstract available.
+      url: /collaborate/rptu/2024-summer-seminar-gait-recognition/
+      student: Shino Sam
+      started: true
+      completed: true
+    - title: Gait Recognition using OpenGait
+      type: Project
+      description: >-
+        No abstract available.
+      url: /collaborate/rptu/2024-summer-project-opengait/
+      student: Aakarsh Goel
+      started: true
+      completed: true
+    - title: Controllable Style Transfer for Pose-Guided Human Image Generation Using Diffusion
+      type: Seminar
+      description: >-
+        No abstract available.
+      url: /collaborate/rptu/2024-summer-seminar-pose-guided-style-transfer/
+      student: Muhammad Usama
+      started: true
+      completed: true
+  - id: wise-2023
+    title: Winter Semester 2023/24
+    projects:
+    - title: Unified 2D Human Pose Estimation
+      type: Project
+      description: >-
+        No abstract available.
+      url: /collaborate/rptu/2023-winter-project-pose-fusion/
+      student: Dhavalkumar Limbachiya
+      started: true
+      completed: true
+    - title: Active Learning for Optimal Data Labeling
+      type: Project
+      description: >-
+        No abstract available.
+      url: /collaborate/rptu/2023-winter-project-active-learning/
+      student: Nikita Khutorni
+      started: true
+      completed: true
+  - id: sose-2023
+    title: Summer Semester 2023
+    projects:
+    - title: Deep Neural Networks for Vision Tasks on Mobile Devices
+      type: Seminar
+      description: >-
+        No abstract available.
+      url: /collaborate/rptu/2023-summer-seminar-mobilenets/
+      student: Aditya Ranjan Dash
+      started: true
+      completed: true
+    - title: Automating Design of Efficient Models with Neural Architecture Search
+      type: Seminar
+      description: >-
+        No abstract available.
+      url: /collaborate/rptu/2023-summer-seminar-nas/
+      student: Sebastian Igel
+      started: true
+      completed: true
+    - title: Optimizing Human Pose Estimation through Knowledge Distillation
+      type: Project
+      description: >-
+        No abstract available.
+      url: /collaborate/rptu/2023-summer-project-pose-kd/
+      student: Sebastian Igel, Shalini Sarode
+      started: true
+      completed: true

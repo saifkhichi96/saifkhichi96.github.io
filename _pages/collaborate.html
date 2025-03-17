@@ -1,0 +1,116 @@
+---
+layout: default
+permalink: /collaborate/
+title: Work with Me
+description:
+keywords:
+drawer: true
+---
+
+
+<style>
+  .c-major-r h2 {
+    font-size: 16pt;
+    text-transform: none;
+    font-weight: 800;
+  }
+
+  .mdc-list-item__text:hover {
+    background: none;
+  }
+
+  .status-completed {
+    color: #28a745;
+  }
+
+  .status-in-progress {
+    color: #007bff;
+  }
+
+  .status-planned {
+    color: #ffc107;
+  }
+
+  .status-failed {
+    color: #dc3545;
+  }
+</style>
+
+<!-- Page Content -->
+<div class="c-major-r">
+  <h2 class="title">Supervision & Teaching</h2>
+
+  <div class="mdc-card mdc-card--outlined highlighted mb-4">
+    <p>Interested in collaborating? Reach out via <a class="pr-3 no-break" href="mailto:{{ site.data.profile.email | encode_email }}">
+      <i class="fas fa-at"></i> <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span></a>. 
+      I am seeking motivated students for theses and guided research. If you have ideas or projects, I'd love to hear from you! Some available topics are listed below:
+    </p>
+
+    {% for semester in site.data.collaborations.rptu.projects limit:1 %}
+    <details open id="{{ semester.id }}">
+      <summary><h4>{{ semester.title }}</h4></summary>
+      {% if semester.description %}
+      <p>{{ semester.description }}</p>
+      {% endif %}
+      <ul>
+        {% for project in semester.projects %}
+        <li><i class="project-tag">{{ project.type }}</i> {% if project.completed %}<i class="fa fa-check-circle status-completed"></i>{% elsif project.started %}<i class="fa-solid fa-circle-half-stroke status-in-progress"></i>{% else %}<i class="fa-solid fa-circle-notch status-planned"></i>{% endif %} <a href="{{ project.url }}">{{ project.title }}</a>{% if project.student %} - {{ project.student }}{% endif %}</li>
+        {% endfor %}
+    </details>
+    {% endfor %}
+
+    <p>
+      Want to learn more about my research interests? See my <a href="/research/">past publications</a>. For a complete list of topics advertised by the Augmented Vision Group, visit <a href="https://av.cs.rptu.de/teaching/current-semester/seminars-projects-and-guided-research" target="_blank">this page</a>.
+    </p>
+  </div>
+
+  <div class="mdc-card mdc-card--outlined mb-4" id="theses">
+    <h3 class="subtitle">Theses</h3>
+    <ol>
+      {% for project in site.data.collaborations.rptu.theses %}
+      <li><i class="project-tag">{{ project.type }}</i> {% if project.completed %}<i class="fa fa-check-circle status-completed"></i>{% elsif project.started %}<i class="fa-solid fa-circle-half-stroke status-in-progress"></i>{% else %}<i class="fa-solid fa-circle-notch status-planned"></i>{% endif %} <a href="{{ project.url }}">{{ project.title }}</a>{% if project.student %} - {{ project.student }}{% endif %}</li>
+      {% endfor %}
+    </ol>
+  </div>
+
+  <div class="mdc-card mdc-card--outlined mb-4" id="guided-research">
+    <h3 class="subtitle">Guided Research</h3>
+    <ol>
+      {% for project in site.data.collaborations.rptu.guided_research %}
+      <li><i class="project-tag">{{ project.type }}</i> {% if project.completed %}<i class="fa fa-check-circle status-completed"></i>{% elsif project.started %}<i class="fa-solid fa-circle-half-stroke status-in-progress"></i>{% else %}<i class="fa-solid fa-circle-notch status-planned"></i>{% endif %} <a href="{{ project.url }}">{{ project.title }}</a>{% if project.student %} - {{ project.student }}{% endif %}</li>
+      {% endfor %}
+    </ol>
+  </div>
+
+  <div class="mdc-card mdc-card--outlined mb-4" id="completed-projects">
+    <h3 class="subtitle">Seminars and Projects</h3>
+
+    {% for semester in site.data.collaborations.rptu.projects offset:1 %}
+    <details open id="{{ semester.id }}">
+      <summary><h4>{{ semester.title }}</h4></summary>
+      {% if semester.description %}
+      <p>{{ semester.description }}</p>
+      {% endif %}
+      <ul>
+        {% for project in semester.projects %}
+        <li><i class="project-tag">{{ project.type }}</i> {% if project.completed %}<i class="fa fa-check-circle status-completed"></i>{% elsif project.started %}<i class="fa-solid fa-circle-half-stroke status-in-progress"></i>{% else %}<i class="fa-solid fa-circle-notch status-planned"></i>{% endif %} <a href="{{ project.url }}">{{ project.title }}</a>{% if project.student %} - {{ project.student }}{% endif %}</li>
+        {% endfor %}
+    </details>
+    {% endfor %}
+  </div>
+</div>
+
+<aside class="c-minor">
+  <h3 class="title">About the Augmented Vision Lab</h3>
+  <p>The Augmented Vision Lab at RPTU, led by <b>Prof. Dr. Didier Stricker</b>, is part of the Intelligent Systems faculty
+    within the Department of Computer Science at RPTU Kaiserslautern. Affiliated with the Augmented Vision Group at
+    DFKI, the lab offers students opportunities to engage in cutting-edge research through seminars, projects, and
+    guided research each semester.</p>
+
+  <h4 class="subtitle">Student Research Initiatives</h4>
+  <p>Since 2023, I have actively supervised various student projects, working closely with students who are eager to
+    explore innovative research topics. If you are a motivated student interested in collaborating on exciting projects,
+    please reach out!</p>
+
+  {% include widget_feedback.html %}
+</aside>

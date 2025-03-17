@@ -23,7 +23,6 @@ date: October 2023
 paper: "https://av.cs.rptu.de/fileadmin/inf_ags/Project_Seminar/Proceedings_CVDL_WS2324_compressed.pdf#page=70.00"
 slides: 2PACX-1vRrjJynKOSlBlZBAWeMBq7vuSZ432xXWq534hLOwVks6DSd-wSB5xbtiuSoNEWgwfeYTEJBTDmcL1JB
 syntax: true
-permalink: /teaching/project-active-labeling/
 ---
 
 ## Topic
