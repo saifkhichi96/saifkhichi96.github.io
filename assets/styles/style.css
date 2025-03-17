@@ -5,72 +5,17 @@
   color: inherit !important;
 }
 
-a {
+a,
+a:visited {
   font-weight: inherit;
+  color: hsl(204, 86%, 53%) !important;
 }
 
-/******************************************************************************/
-/* Expreience Section                                                          */
-/******************************************************************************/
-.experience-item {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.experience-item .content {
-  float: left;
-  width: calc(100% - 32px);
-}
-
-.experience-item .content .details {
-  border: 0.5px solid var(--mdc-theme-overlay);
-  border-radius: 4px;
-  padding: 16px;
-  margin-top: 8px;
-}
-
-.experience-item .date {
-  color: var(--mdc-theme-secondary);
-}
-
-.experience-item .name {
-  margin: 0px;
-}
-
-.experience-item .timeline {
-  float: left;
-  width: 24px;
-  margin-right: 8px;
-  text-align: center;
-}
-
-.experience-item .timeline .dot {
-  color: var(--mdc-theme-secondary-variant);
-  font-size: 24px;
-  position: relative;
-  z-index: 2;
-}
-
-.experience-item .timeline .bar {
-  background-image: linear-gradient(to bottom, var(--mdc-theme-secondary-variant) 0%, var(--mdc-theme-primary-variant) 100%), radial-gradient(circle at top left, var(--mdc-theme-secondary-variant), var(--mdc-theme-primary-variant));
-  width: 2px;
-  position: absolute;
-  top: 20px;
-  bottom: -20px;
-  left: 11px;
-  z-index: 1;
-}
-
-.experience-item .timeline .bar-expanded {
-  background-color: var(--mdc-theme-primary-variant);
-  width: 28px;
-  height: 2px;
-  position: absolute;
-  top: 18px;
-  left: -18px;
-  z-index: 100;
+a:active,
+a:hover {
+  font-weight: inherit;
+  color: hsl(210, 100%, 35%) !important;
+  text-decoration: underline;
 }
 
 /******************************************************************************/
