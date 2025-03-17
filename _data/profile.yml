@@ -34,17 +34,17 @@ education:
     Ph.D. Student
   date: 2023 - present
 - name: Technical University of Kaiserslautern
-  logo: /assets/images/badges/PKU_red.png
+  logo: /assets/images/badges/TUK.png
   position: >- 
     Kaiserlautern, Germany <br/>
     Department of Computer Science <br/>
     M.Sc. in Computer Science
   date: 2019 - 2022
 - name: National University of Sciences and Technology (NUST)
-  logo: /assets/images/badges/PKU_red.png
+  logo: /assets/images/badges/NUST.png
   position: >- 
     Islamabad, Pakistan <br/>
-    Department of Computer Science <br/>
+    School of Electrical Engineering and Computer Science (SEECS)<br/>
     B.E. in Software Engineering
   date: 2014 - 2018
 
@@ -54,10 +54,10 @@ education:
 #   position: Research Intern
 #   date: Sep. 2019 - Jul. 2021
 
-awards:
-- name: Award Name 2
-  date: 2024
-- name: Award Name 1 
-  date: 2021
-- name: A quick brown fox jumps over the lazy dog and runs away award
-  date: 2021
+# awards:
+# - name: Award Name 2
+#   date: 2024
+# - name: Award Name 1 
+#   date: 2021
+# - name: A quick brown fox jumps over the lazy dog and runs away award
+#   date: 2021

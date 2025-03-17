@@ -28,11 +28,11 @@ menu_main:
   - title:                   Home
     icon:                    roofing
     url:                     /
-  - title:                   Research
-    icon:                    api
+  - title:                   My research
+    icon:                    science
     url:                     /research/
-  - title:                   Teaching
-    icon:                    school
+  - title:                   Work with me
+    icon:                    work
     url:                     /teaching/
 
 
@@ -222,7 +222,7 @@ collections:
     permalink:             /teaching/:path/
   news:
     output:                true
-    permalink:             /news/:path/
+    permalink:             /news/:year/:month/:day/:title/
 
 defaults:
   - scope:

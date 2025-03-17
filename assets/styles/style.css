@@ -272,7 +272,7 @@ footer {
 
   .nav-rail ul li > span {
     display: inline-block;
-    width: 19%;
+    width: 32%;
   }
 
   .nav-rail li.active>span {
@@ -358,8 +358,20 @@ footer {
   margin-bottom: 4px;
 }
 
-.highlighted-text {
-  
+.highlighter-yellow {
+  background-color: yellow;
+}
+
+.highlighter-green {
+  background-color: lightgreen;
+}
+
+.highlighter-blue {
+  background-color: lightblue;
+}
+
+.highlighter-red {
+  background-color: lightcoral;
 }
 
 .publication-title-link {
