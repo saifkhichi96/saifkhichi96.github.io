@@ -1,5 +1,7 @@
 p { margin-bottom: 1rem; }
 
+b, strong, em, i { color: inherit; }
+
 .link-block a {
     margin-top: 5px;
     margin-bottom: 5px;
