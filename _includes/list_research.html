@@ -1,11 +1,13 @@
 {% assign research_by_date = site.research | sort: "date" | reverse %}
 {% assign all_items = research_by_date | sort: "date" | reverse %}
 
-<!-- Group by first category only -->
-{% assign grouped_items = all_items | group_by_exp: "item", "item.categories[0]" %}
+<!-- Group by year -->
+{% assign grouped_items = all_items | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-<!-- Sort by group name -->
-{% assign grouped_items = grouped_items | sort: "name" %}
+<!-- Reverse sort items within each group by date -->
+{% for group in grouped_items %}
+  {% assign group.items = group.items | sort: "date" | reverse %}
+{% endfor %}
 
 <p>
   Showing {{ all_items.size }} research items.

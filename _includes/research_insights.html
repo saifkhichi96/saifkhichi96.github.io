@@ -46,7 +46,7 @@
   
           var authors = "{{ item.authors }}".split(", ");
           if (authors[0] == "{{ first_author }}") {
-            if ("{{ item.categories[1] }}" == "Preprint" || "{{ item.categories[0] }}" == "Report" || "{{ item.categories[0] }}" == "Thesis") {
+            if ("{{ item.categories[0] }}" == "Preprint" || "{{ item.categories[0] }}" == "Report" || "{{ item.categories[0] }}" == "Thesis") {
               firstAuthorPreprints++;
             } else {
               firstAuthorPublications++;
@@ -55,7 +55,7 @@
             otherAuthorPublications++;
           }
   
-          if ("{{ item.categories[1] }}" == "Preprint" || "{{ item.categories[0] }}" == "Report" || "{{ item.categories[0] }}" == "Thesis") {
+          if ("{{ item.categories[0] }}" == "Preprint" || "{{ item.categories[0] }}" == "Report" || "{{ item.categories[0] }}" == "Thesis") {
             unpublished++;
           } else {
             published++;
@@ -80,7 +80,7 @@
         var publicationsCount = years.map(function(year) { return publicationsByYear[year]; });
   
         var venues = Object.keys(publicationVenues).sort();
-        venues = venues.filter(function(venue) { return venue != "NUST" && venue != "RPTU" && venue != "Preprint" });
+        venues = venues.filter(function(venue) { return venue != "NUST" && venue != "RPTU" && venue != "arXiv" });
         var venuesCount = venues.map(function(venue) { return publicationVenues[venue]; });
   
         var types = Object.keys(publicationTypes).sort();
