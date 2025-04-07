@@ -71,7 +71,6 @@ SpinePose is now available on PyPI for seamless inference using ONNX Runtime, su
 pip install spinepose
 ```
 
-<br/>
 Model weights are downloaded automatically on the first run. The package includes a command-line interface (CLI) and a Python API for easy usage.
 
 For model training or reproducing the full pipeline, please refer to the [Training and Evaluation](#training-and-evaluation) section.

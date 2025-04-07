@@ -142,3 +142,28 @@ h3,
     color: inherit !important;
   }
 }
+
+.research-abstract {
+  cursor: pointer;
+  width: 100% !important;
+}
+
+.research-abstract .title {
+  width: 100%;
+}
+
+.research-abstract .title::after {
+  content: " Click to expand";
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: normal;
+  font-style: italic;
+  margin-left: 5px;
+  display: block;
+  transition: all 0.2s ease-in-out;
+  transform: translateY(0);
+}
+
+.research-abstract .content {
+
+}
