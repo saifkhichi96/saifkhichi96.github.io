@@ -10,19 +10,25 @@ bibtex: "@inproceedings{khan2025cvprw,
 \n  title={Towards Unconstrained 2D Pose Estimation of the Human Spine},
 \n  author={Khan, Muhammad Saif Ullah and Krauß, Stephan and Stricker, Didier},
 \n  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
-\n  month={},
+\n  month={June},
 \n  year={2025},
 \n  pages={}
 \n}"
+paper: "#"
+supplement: 
+  title: Dataset
+  icon: "fa-solid fa-database"
+  url: "https://doi.org/10.57967/hf/5114"
+arxiv: ""
 code: saifkhichi96/spinepose
 date: April 7, 2025
 syntax: true
 permalink: /research/spinepose/
 ---
 
-[![Conference](https://img.shields.io/badge/CVPRW-2025-6b8bc7.svg?style=for-the-badge)](https://cvpr2025.thecvf.com/)
-[![PyPI version](https://img.shields.io/pypi/v/spinepose.svg?style=for-the-badge)](https://pypi.org/project/spinepose/)
-[![License](https://img.shields.io/badge/License-CC--BY--NC--4.0-lightgrey.svg?style=for-the-badge)](LICENSE)
+[![Conference](https://img.shields.io/badge/CVPRW-2025-blue.svg)](https://vap.aau.dk/cvsports/)
+[![PyPI version](https://img.shields.io/pypi/v/spinepose.svg)](https://pypi.org/project/spinepose/)
+![PyPI - License](https://img.shields.io/pypi/l/spinepose)
 
 ---
 <div align="center">
@@ -122,11 +128,49 @@ results = infer_video('path/to/video.mp4', 'output_video.mp4', use_smoothing=Tru
 
 ## SpineTrack Dataset
 
-TBA
+SpineTrack is available on [HuggingFace](https://doi.org/10.57967/hf/5114). The dataset comprises:
+
+- **SpineTrack-Real**
+  A collection of real-world images annotated with nine spinal keypoints in addition to standard body joints. An active learning pipeline, combining pretrained neural annotators and human corrections, refines keypoints across diverse poses.
+
+- **SpineTrack-Unreal**
+  A synthetic subset rendered using Unreal Engine, paired with precise ground-truth from a biomechanically aligned OpenSim model. These synthetic images facilitate pretraining and complement real-world data.
+
+To download:
+
+```bash
+git lfs install
+git clone https://huggingface.co/datasets/saifkhichi96/spinetrack
+```
+
+Alternatively, use `wget` to download the dataset directly:
+
+```bash
+wget https://huggingface.co/datasets/saifkhichi96/spinetrack/resolve/main/annotations.zip
+wget https://huggingface.co/datasets/saifkhichi96/spinetrack/resolve/main/images.zip
+```
+
+In both cases, the dataset will download two zipped folders: `annotations` (24.8 MB) and `images` (19.4 GB), which can be unzipped to obtain the following structure:
+
+```plaintext
+spinetrack
+├── annotations/
+│   ├── person_keypoints_train-real-coco.json
+│   ├── person_keypoints_train-real-yoga.json
+│   ├── person_keypoints_train-unreal.json
+│   └── person_keypoints_val2017.json
+└── images/
+    ├── train-real-coco/
+    ├── train-real-yoga/
+    ├── train-unreal/
+    └── val2017/
+```
+
+All annotations are in COCO format and can be used with standard pose estimation libraries.
 
 ## Training and Evaluation
 
-TBA
+> TBA
 
 ## License
 

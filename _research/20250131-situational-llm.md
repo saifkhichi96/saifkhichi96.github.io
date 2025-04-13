@@ -13,8 +13,12 @@ bibtex: "@article{khan2024situational,
 \n  journal={arXiv preprint arXiv:2406.13302},
 \n  year={2024}
 \n}"
+paper: "https://open-research-europe.ec.europa.eu/articles/5-61/v1"
 code: saifkhichi96/situational-llm
-supplement: "https://github.com/saifkhichi96/sad-instruct"
+supplement: 
+  title: Dataset
+  icon: "fa-solid fa-database"
+  url: "https://github.com/saifkhichi96/sad-instruct"
 date: January 31, 2025
 syntax: true
 permalink: /research/situational-llm/
