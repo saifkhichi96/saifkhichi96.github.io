@@ -1,30 +1,120 @@
 ---
 layout: research
-title: "FocusCLIP: Multimodal Subject-Level Guidance for Zero-Shot Transfer in Human-Centric Tasks"
-seo_title: "Multimodal Subject-Level Guidance for Zero-Shot Transfer in Human-Centric Tasks"
-short_title: "FocusCLIP"
-abstract: "We propose FocusCLIP, integrating subject-level guidance--a specialized mechanism for target-specific supervision--into the CLIP framework for improved zero-shot transfer on human-centric tasks. Our novel contributions enhance CLIP on both the vision and text sides. On the vision side, we incorporate ROI heatmaps emulating human visual attention mechanisms to emphasize subject-relevant image regions. On the text side, we introduce human pose descriptions to provide rich contextual information. For human-centric tasks, FocusCLIP is trained with images from the MPII Human Pose dataset. The proposed approach surpassed CLIP by an average of 8.61% across five previously unseen datasets covering three human-centric tasks. FocusCLIP achieved an average accuracy of 33.65% compared to 25.04% by CLIP. We observed a 3.98% improvement in activity recognition, a 14.78% improvement in age classification, and a 7.06% improvement in emotion recognition. Moreover, using our proposed single-shot LLM prompting strategy, we release a high-quality MPII Pose Descriptions dataset to encourage further research in multimodal learning for human-centric tasks. Furthermore, we also demonstrate the effectiveness of our subject-level supervision on non-human-centric tasks. FocusCLIP shows a 2.47% improvement over CLIP in zero-shot bird classification using the CUB dataset. Our findings emphasize the potential of integrating subject-level guidance with general pretraining methods for enhanced downstream performance."
-description: "We introduce FocusCLIP for zero-shot classification on human-centric tasks, and publish a novel MPII Human Pose Descriptions dataset."
+title: "Human Pose Descriptions and Subject-Focused Attention for Improved Zero-Shot Transfer in Human-Centric Classification Tasks"
+seo_title: "LLM-Driven Pose Descriptions & FocusCLIP for Zero-Shot Human-Centric Classification"
+description: "Preliminary research showcasing an LLM-based pipeline for human pose descriptions, the MPII Pose Descriptions dataset, and the FocusCLIP framework for enhanced zero-shot transfer in human-centric tasks."
+short_title: "Human Pose Descriptions"
+abstract: "We present a novel LLM-based pipeline for creating contextual descriptions of human body poses in images using only auxiliary attributes. This approach facilitates the creation of the MPII Pose Descriptions dataset, which includes natural language annotations for 17,367 images containing people engaged in 410 distinct activities. We demonstrate the effectiveness of our pose descriptions in enabling zero-shot human-centric classification using CLIP. Moreover, we introduce the FocusCLIP framework, which incorporates Subject-Focused Attention (SFA) in CLIP for improved text-to-image alignment. Our models were pretrained on the MPII Pose Descriptions dataset and their zero-shot performance was evaluated on five unseen datasets covering three tasks. FocusCLIP outperformed the baseline CLIP model, achieving an average accuracy increase of 8.61% (33.65% compared to CLIP's 25.04%). Notably, our approach yielded improvements of 3.98% in activity recognition, 14.78% in age classification, and 7.06% in emotion recognition. These results highlight the potential of integrating detailed pose descriptions and subject-level guidance into general pretraining frameworks for enhanced performance in downstream tasks."
+description: ""
 authors: Muhammad Saif Ullah Khan, Muhammad Ferjad Naeem, Federico Tombari, Luc Van Gool, Didier Stricker, Muhammad Zeshan Afzal
 category: [Preprint, arXiv, CLIP, Zero-Shot Learning, Human-Centric Tasks, Multimodal Learning, Pose Descriptions]
 arxiv: 2403.06904
-bibtex: "@article{khan2024focusclip,
-\n  title={FocusCLIP: Multimodal Subject-Level Guidance for Zero-Shot Transfer in Human-Centric Tasks},
-\n  author={Khan, Muhammad Saif Ullah and Naeem, Muhammad Ferjad and Tombari, Federico and Van Gool, Luc and Stricker, Didier and Afzal, Muhammad Zeshan},
-\n  journal={arXiv preprint arXiv:2403.06904},
-\n  year={2024}
+bibtex: "@misc{khan2024human,
+\n      title={Human Pose Descriptions and Subject-Focused Attention for Improved Zero-Shot Transfer in Human-Centric Classification Tasks},
+\n      author={Muhammad Saif Ullah Khan and Muhammad Ferjad Naeem and Federico Tombari and Luc Van Gool and Didier Stricker and Muhammad Zeshan Afzal},
+\n      year={2024},
+\n      eprint={2403.06904},
+\n      archivePrefix={arXiv},
+\n      primaryClass={cs.CV},
+\n      url={https://arxiv.org/abs/2403.06904}, 
 \n}"
-supplement: "https://huggingface.co/datasets/saifkhichi96/mpii-human-pose-captions"
-code: saifkhichi96/FocusCLIP
+supplement:
+  title: Dataset
+  icon: "fa-solid fa-database"
+  url: "https://huggingface.co/datasets/saifkhichi96/mpii-human-pose-captions"
 date: March 11, 2024
 syntax: true
 permalink: /research/focusclip/
 ---
 
-## TL;DR
-{: .title}
+<h4>🚧 Preliminary Work</h4>
+<p>
+  Conducted in late 2023, this represents an early exploration of LLM-driven human pose descriptions—before the advent of multimodal LLMs.  
+  It serves as a proof of concept: embedding keypoint coordinates into text prompts to generate natural language annotations.  
+  Results are shared here as a preliminary study.
+</p>
 
-1. We introduce FocusCLIP, a CLIP variant with a third heatmap modality.
-2. FocusCLIP is pretrained on images of people and their body pose descriptions.
-3. FocusCLIP outperforms CLIP on zero-shot classification of activities, emotions, and age in images.
-4. We release our MPII Human Pose Descriptions dataset.
+<div class="mdc-layout-grid" style="margin-bottom: 2rem;">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
+      <div class="mdc-card mdc-card--outlined" style="padding: 1rem; text-align: center;">
+        <h5 class="title is-4">1. Unimodal LLM-Based Pipeline</h5>
+        <p>Structured LLM prompts that directly convert 2D keypoint cooordinates into rich, natural-language pose descriptions.</p>
+      </div>
+    </div>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
+      <div class="mdc-card mdc-card--outlined" style="padding: 1rem; text-align: center;">
+        <h5 class="title is-4">2. MPII Pose Descriptions</h5>
+        <p>Dataset of 17,367 images &amp; 410 activities, each annotated with contextual body pose descriptions.</p>
+      </div>
+    </div>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
+      <div class="mdc-card mdc-card--outlined" style="padding: 1rem; text-align: center;">
+        <h5 class="title is-4">3. FocusCLIP Framework</h5>
+        <p>Subject-Focused Attention in CLIP, boosting zero-shot accuracy by +8.61 pp on human-centric tasks.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## MPII Pose Descriptions Dataset
+
+Sample pose descriptions generated by the LLM pipeline are shown in the figure below, which is taken from the paper.
+
+![Sample Pose Description](/assets/images/research/focusclip/pose-descriptions-sample.png)
+**Sample Pose Description.** We use our pipeline to generate pose descriptions for two famous artworks, the Statue of David and the
+Mona Lisa. The LLM was provided body keypoints obtained using an off-the-shelf pose estimation network and manual activity labels.
+
+### Dataset Viewer
+
+<iframe
+  src="https://huggingface.co/datasets/saifkhichi96/mpii-human-pose-captions/embed/viewer/gpt-4/train"
+  frameborder="0"
+  width="100%"
+  height="560px"
+></iframe>
+
+### Dataset Details
+
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
+      
+<div>
+  <h5>Generation Method</h5>
+  <ul>
+    <li>Extract 2D keypoint coordinates from MPII images.</li>
+    <li>Embed joint locations and activity labels into structured LLM prompts.</li>
+    <li>Use GPT-3.5/GPT-4 to produce free-form descriptions of body posture and action.</li>
+  </ul>
+  <h5>Contents</h5>
+  <ul>
+    <li><strong>17,367</strong> human-centric images.</li>
+    <li><strong>410</strong> distinct activity categories (e.g., running, sitting, playing instrument).</li>
+    <li>Up to four varied natural-language descriptions per image, capturing pose nuances.</li>
+    <li>Available via Hugging Face: <a href="https://huggingface.co/datasets/saifkhichi96/mpii-human-pose-captions">MPII Pose Descriptions Dataset</a></li>
+  </ul>
+</div>
+    </div>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
+      <i class="fa-solid fa-database" style="font-size: 4rem; color: #616161; margin-bottom: 1rem;"></i>
+      <h6>Key Stats</h6>
+      <ul>
+        <li><strong>Images:</strong> 17,367</li>
+        <li><strong>Activities:</strong> 410</li>
+        <li><strong>CLS Tasks:</strong> Activity, Age, Emotion</li>
+        <li><strong>Zero-Shot Gain:</strong> +8.61 pp avg.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+## FocusCLIP Framework
+
+![FocusCLIP Framework](/assets/images/research/focusclip/focusclip-framework.png)
+
+**The FocusCLIP framework.** (a) We add SFA in CLIP, highlighting important areas for downstream tasks, and train the model with a
+dual contrastive loss to learn a joint embedding space between the raw image, heatmap-highlighted image, and text. The text consists of pose
+descriptions for people in images written by an LLM. (b) The heatmap generation process uses keypoints, which involves grouping keypoints into
+body parts and blending them together using Gaussian ellipses to produce the heatmaps. (c) This technique effectively highlights individuals
+within diverse environments.
