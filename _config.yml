@@ -1,4 +1,4 @@
-theme:                     simple-material
+remote_theme:              saifkhichi96/simple-material
 baseurl:                   ''
 url:                       https://www.saifkhichi.com
 enforce_ssl:               https://www.saifkhichi.com
