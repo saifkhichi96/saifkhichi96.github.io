@@ -8,7 +8,17 @@ abstract: "Neural Architecture Search (NAS) has emerged as a promising field in 
 authors: Sebastian Igel, Muhammad Saif Ullah Khan
 category: [Seminar, DFKI, Augmented Vision, Deep Learning, Neural Architecture Search]
 date: March 2023
-paper: "https://av.cs.rptu.de/fileadmin/inf_ags/Project_Seminar/Proceedings_CVDL_SS2023.pdf#page=17.00"
+bibtex: "@inproceedings{igel2023automating,
+\n  title={Automating Design of Efficient Models with Neural Architecture Search},
+\n  author={Igel, Sebastian and Khan, Muhammad Saif Ullah},
+\n  booktitle={Proceedings of the Computer Vision and Deep Learning (CVDL) Course},
+\n  month={October},
+\n  year={2023},
+\n  pages={11-18}
+\n}"
+supplement:
+  title: "Seminar Report"
+  url: "https://av.cs.rptu.de/fileadmin/inf_ags/Project_Seminar/Proceedings_CVDL_SS2023.pdf#page=17.00"
 syntax: true
 ---
 

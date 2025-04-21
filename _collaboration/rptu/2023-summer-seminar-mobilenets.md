@@ -8,7 +8,17 @@ abstract: "Deep neural networks (DNNs) have propelled significant advancements i
 authors: Aditya Ranjan Dash, Muhammad Saif Ullah Khan
 category: [Seminar, DFKI, Augmented Vision, Deep Learning, MobileNets]
 date: March 2023
-paper: "https://av.cs.rptu.de/fileadmin/inf_ags/Project_Seminar/Proceedings_CVDL_SS2023.pdf#page=3.00"
+bibtex: "@inproceedings{dash2023deep,
+\n  title={Deep Neural Networks for Vision Tasks on Mobile Devices},
+\n  author={Dash, Aditya Ranjan and Khan, Muhammad Saif Ullah},
+\n  booktitle={Proceedings of the Computer Vision and Deep Learning (CVDL) Course},
+\n  month={October},
+\n  year={2023},
+\n  pages={3-10}
+\n}"
+supplement:
+  title: "Seminar Report"
+  url: "https://av.cs.rptu.de/fileadmin/inf_ags/Project_Seminar/Proceedings_CVDL_SS2023.pdf#page=3.00"
 syntax: true
 ---
 

@@ -60,7 +60,7 @@ rptu:
       url: /collaborate/rptu/2024-winter-project-hoi-image-generation/
       student: Muhammad Usama
       started: true
-      completed: false
+      completed: true
   - id: sose-2024
     title: Summer Semester 2024
     projects:

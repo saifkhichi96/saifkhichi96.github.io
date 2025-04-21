@@ -20,7 +20,18 @@ in medical analysis, sports science, and interactive technology."
 authors: Nikita Khutorni, Muhammad Saif Ullah Khan
 category: [Project, DFKI, Augmented Vision, Deep Learning, Active Learning, Data Annotation]
 date: October 2023
-paper: "https://av.cs.rptu.de/fileadmin/inf_ags/Project_Seminar/Proceedings_CVDL_WS2324_compressed.pdf#page=70.00"
+code: mukh07/ws23_project_khutorni
+bibtex: "@inproceedings{khutorni2024active,
+\n  title={Active Learning for Optimal Data Labeling},
+\n  author={Khutorni, Nikita and Khan, Muhammad Saif Ullah},
+\n  booktitle={Proceedings of the Computer Vision and Deep Learning (CVDL) Course},
+\n  month={March},
+\n  year={2024},
+\n  pages={70-81}
+\n}"
+supplement:
+  title: "Project Report"
+  url: "https://av.cs.rptu.de/fileadmin/inf_ags/Project_Seminar/Proceedings_CVDL_WS2324_compressed.pdf#page=70.00"
 slides: 2PACX-1vRrjJynKOSlBlZBAWeMBq7vuSZ432xXWq534hLOwVks6DSd-wSB5xbtiuSoNEWgwfeYTEJBTDmcL1JB
 syntax: true
 ---
@@ -37,9 +48,17 @@ In this project, we will extend an existing dataset with new annotations using a
 2. Implement an active learning pipeline to aid in annotation.
 3. Manually review/refine predictions, finetune network, predict, repeat. _This step involves significant amount of manual data annotation._
 
+## Expected Skills
+{: .title}
+
+1. Python and PyTorch
+2. Basics of neural networks
+3. Familiarity with data annotation
+
 
 ## Related Literature
 {: .title}
 
 - [1] [Active Learning](https://neptune.ai/blog/active-learning-strategies-tools-use-cases)
 - [2] [CVAT Annotation Tool](https://github.com/opencv/cvat)
+- [3] [COCO Keypoints Dataset](https://cocodataset.org/#keypoints-2017)
