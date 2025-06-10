@@ -14,17 +14,28 @@ bibtex: "@inproceedings{khan2025cvprw,
 \n  year={2025},
 \n  pages={}
 \n}"
-paper: "#"
+paper: "https://cvpr.thecvf.com/virtual/2025/35514"
 supplement: 
   title: Dataset
   icon: "fa-solid fa-database"
   url: "https://doi.org/10.57967/hf/5114"
-arxiv: ""
+arxiv: "2504.08110"
 code: saifkhichi96/spinepose
 date: April 7, 2025
 syntax: true
 permalink: /research/spinepose/
 ---
+
+<div style="width: 100%; max-width: 900px; margin: 0 auto;">
+  <div style="position: relative; width: 100%; padding-bottom: 70%; height: 0; overflow: hidden;">
+    <iframe 
+      src="{{ '/assets/research/spinepose-poster.pdf' | relative_url }}" 
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
 
 [![Conference](https://img.shields.io/badge/CVPRW-2025-blue.svg)](https://vap.aau.dk/cvsports/)
 [![PyPI version](https://img.shields.io/pypi/v/spinepose.svg)](https://pypi.org/project/spinepose/)
