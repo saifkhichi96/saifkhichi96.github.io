@@ -6,15 +6,15 @@ seo_title: "Towards Unconstrained 2D Pose Estimation of the Human Spine"
 authors: Muhammad Saif Ullah Khan, Stephan Krauß, Didier Stricker
 abstract: "We introduce SpineTrack, the first comprehensive dataset dedicated to 2D spine pose estimation in unconstrained environments, addressing a critical gap in human pose analysis for sports and biomechanical applications. Existing pose datasets typically represent the spine with a single rigid segment, neglecting the detailed articulation required for precise analysis. To overcome this limitation, SpineTrack comprises two complementary components: SpineTrack-Real, a real-world dataset with high-fidelity spine annotations refined via an active learning pipeline, and SpineTrack-Unreal, a synthetic dataset generated using an Unreal Engine-based framework with accurate ground-truth labels. Additionally, we propose a novel biomechanical validation framework based on OpenSim to enforce anatomical consistency in the annotated keypoints. Complementing the dataset, our SpinePose model extends state-of-the-art body pose estimation networks through a teacher–student distillation approach and an anatomical regularization strategy, effectively incorporating detailed spine keypoints without sacrificing overall performance. Extensive experiments on standard benchmarks and sports-specific scenarios demonstrate that our approach significantly improves spine tracking accuracy while maintaining robust generalization."
 category: [Workshop Paper, CVPRW, Pose Estimation, Spine Tracking, Biomechanics]
-bibtex: "@inproceedings{khan2025cvprw,
+bibtex: "@inproceedings{Khan_2025_CVPR,
+\n  author={Khan, Muhammad Saif Ullah and Krau{\ss}, Stephan and Stricker, Didier},
 \n  title={Towards Unconstrained 2D Pose Estimation of the Human Spine},
-\n  author={Khan, Muhammad Saif Ullah and Krauß, Stephan and Stricker, Didier},
-\n  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+\n  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR) Workshops},
 \n  month={June},
 \n  year={2025},
-\n  pages={}
+\n  pages={6172-6181}
 \n}"
-paper: "https://cvpr.thecvf.com/virtual/2025/35514"
+paper: "https://openaccess.thecvf.com/content/CVPR2025W/CVSPORTS/html/Khan_Towards_Unconstrained_2D_Pose_Estimation_of_the_Human_Spine_CVPRW_2025_paper.html"
 supplement: 
   title: Dataset
   icon: "fa-solid fa-database"
@@ -37,7 +37,7 @@ permalink: /research/spinepose/
   </div>
 </div>
 
-[![Conference](https://img.shields.io/badge/CVPRW-2025-blue.svg)](https://vap.aau.dk/cvsports/)
+[![Conference](https://img.shields.io/badge/CVPRW-2025-blue.svg)](https://openaccess.thecvf.com/content/CVPR2025W/CVSPORTS/html/Khan_Towards_Unconstrained_2D_Pose_Estimation_of_the_Human_Spine_CVPRW_2025_paper.html)
 [![PyPI version](https://img.shields.io/pypi/v/spinepose.svg)](https://pypi.org/project/spinepose/)
 ![PyPI - License](https://img.shields.io/pypi/l/spinepose)
 
